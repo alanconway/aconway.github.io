@@ -1,0 +1,4 @@
+= Alan's stuff
+
+link:dispatch-doc/index.html[Qpid Dispatch Doc rendered from asciidoc]
+Code is https://github.com/alanconway/dispatch/tree/asciidoc[available here]
