@@ -55,7 +55,7 @@ connector {
     role: route-container
     host: <hostname>
     port: <port>
-    sasl-mechanisms: ANONYMOUS
+    saslMechanisms: ANONYMOUS
 }
 
 address {
@@ -195,7 +195,7 @@ connector {
     role: route-container
     host: <hostname>
     port: <port>
-    sasl-mechanisms: ANONYMOUS
+    saslMechanisms: ANONYMOUS
 }
 
 connector {
@@ -203,7 +203,7 @@ connector {
     role: route-container
     host: <hostname>
     port: <port>
-    sasl-mechanisms: ANONYMOUS
+    saslMechanisms: ANONYMOUS
 }
 
 address {

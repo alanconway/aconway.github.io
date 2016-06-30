@@ -797,14 +797,14 @@ attribute of <em>sslProfile</em> sections.</p></div>
 <div class="listingblock">
 <div class="content">
 <pre><code>sslProfile {
-    name: ssl-profile-one
+    name: my-ssl
     certDb: ca-certificate-1.pem
     certFile: server-certificate-1.pem
     keyFile: server-private-key.pem
 }
 
 listener {
-    sslProfile: ssl-profile-one
+    sslProfile: my-ssl
     host: 0.0.0.0
     port: 20102
     saslMechanisms: ANONYMOUS
@@ -820,6 +820,14 @@ listener {
 <div class="paragraph"><p>Attributes for setting TLS/SSL configuration for connections.</p></div>
 <div class="paragraph"><p>Used by: <strong>listener</strong>, <strong>connector</strong>.</p></div>
 <div class="dlist"><dl>
+<dt class="hdlist1">
+<em>name</em> (string)
+</dt>
+<dd>
+<p>
+  name of the sslProfile
+</p>
+</dd>
 <dt class="hdlist1">
 <em>certDb</em> (path)
 </dt>
@@ -874,14 +882,6 @@ listener {
 <dd>
 <p>
   The absolute path to the file containing the unique id to dispay name mapping
-</p>
-</dd>
-<dt class="hdlist1">
-<em>name</em> (string)
-</dt>
-<dd>
-<p>
-  name of the sslProfile
 </p>
 </dd>
 </dl></div>
@@ -1047,6 +1047,62 @@ listener {
 <div class="paragraph"><p>Listens for incoming connections to the router.</p></div>
 <div class="dlist"><dl>
 <dt class="hdlist1">
+<em>name</em> (string)
+</dt>
+<dd>
+<p>
+  Unique name optionally assigned by user. Can be changed.
+</p>
+</dd>
+<dt class="hdlist1">
+<em>host</em> (string)
+</dt>
+<dd>
+<p>
+  IP address: ipv4 or ipv6 literal or a host name
+</p>
+</dd>
+<dt class="hdlist1">
+<em>port</em> (string)
+</dt>
+<dd>
+<p>
+  Port number or symbolic service name.
+</p>
+</dd>
+<dt class="hdlist1">
+<em>protocolFamily</em> (One of [<em>IPv4</em>, <em>IPv6</em>])
+</dt>
+<dd>
+<p>
+  [<em>IPv4</em>, <em>IPv6</em>] IPv4: Internet Protocol version 4; IPv6: Internet Protocol version 6.  If not specified, the protocol family will be automatically determined from the address.
+</p>
+</dd>
+<dt class="hdlist1">
+<em>role</em> (One of [<em>normal</em>, <em>inter-router</em>, <em>route-container</em>, <em>on-demand</em>])
+</dt>
+<dd>
+<p>
+  The role of an established connection. In the normal role, the connection is assumed to be used for AMQP clients that are doing normal message delivery over the connection.  In the inter-router role, the connection is assumed to be to another router in the network.  Inter-router discovery and routing protocols can only be used over inter-router connections. route-container role can be used for router-container connections, for example, a router-broker connection. on-demand role has been deprecated.
+</p>
+</dd>
+<dt class="hdlist1">
+<em>cost</em> (integer)
+</dt>
+<dd>
+<p>
+  For the <em>inter-router</em> role only.  This value assigns a cost metric to the inter-router connection.  The default (and minimum) value is one.  Higher values represent higher costs.  The cost is used to influence the routing algorithm as it attempts to use the path with the lowest total cost from ingress to egress.
+</p>
+</dd>
+<dt class="hdlist1">
+<em>sslProfile</em> (string)
+</dt>
+<dd>
+<p>
+  name of the sslProfile
+</p>
+</dd>
+<dt class="hdlist1">
 <em>saslMechanisms</em> (string)
 </dt>
 <dd>
@@ -1142,8 +1198,14 @@ listener {
   The capacity of links within this connection, in terms of message deliveries.  The capacity is the number of messages that can be in-flight concurrently for each link.
 </p>
 </dd>
+</dl></div>
+</div>
+<div class="sect2">
+<h3 id="_connector">connector</h3>
+<div class="paragraph"><p>Establishes an outgoing connection from the router.</p></div>
+<div class="dlist"><dl>
 <dt class="hdlist1">
-<em>name</em> (string, unique)
+<em>name</em> (string)
 </dt>
 <dd>
 <p>
@@ -1198,12 +1260,6 @@ listener {
   name of the sslProfile
 </p>
 </dd>
-</dl></div>
-</div>
-<div class="sect2">
-<h3 id="_connector">connector</h3>
-<div class="paragraph"><p>Establishes an outgoing connection from the router.</p></div>
-<div class="dlist"><dl>
 <dt class="hdlist1">
 <em>saslMechanisms</em> (string)
 </dt>
@@ -1276,62 +1332,6 @@ listener {
   The password that the connector is using to connect to a peer.
 </p>
 </dd>
-<dt class="hdlist1">
-<em>name</em> (string, unique)
-</dt>
-<dd>
-<p>
-  Unique name optionally assigned by user. Can be changed.
-</p>
-</dd>
-<dt class="hdlist1">
-<em>host</em> (string)
-</dt>
-<dd>
-<p>
-  IP address: ipv4 or ipv6 literal or a host name
-</p>
-</dd>
-<dt class="hdlist1">
-<em>port</em> (string)
-</dt>
-<dd>
-<p>
-  Port number or symbolic service name.
-</p>
-</dd>
-<dt class="hdlist1">
-<em>protocolFamily</em> (One of [<em>IPv4</em>, <em>IPv6</em>])
-</dt>
-<dd>
-<p>
-  [<em>IPv4</em>, <em>IPv6</em>] IPv4: Internet Protocol version 4; IPv6: Internet Protocol version 6.  If not specified, the protocol family will be automatically determined from the address.
-</p>
-</dd>
-<dt class="hdlist1">
-<em>role</em> (One of [<em>normal</em>, <em>inter-router</em>, <em>route-container</em>, <em>on-demand</em>])
-</dt>
-<dd>
-<p>
-  The role of an established connection. In the normal role, the connection is assumed to be used for AMQP clients that are doing normal message delivery over the connection.  In the inter-router role, the connection is assumed to be to another router in the network.  Inter-router discovery and routing protocols can only be used over inter-router connections. route-container role can be used for router-container connections, for example, a router-broker connection. on-demand role has been deprecated.
-</p>
-</dd>
-<dt class="hdlist1">
-<em>cost</em> (integer)
-</dt>
-<dd>
-<p>
-  For the <em>inter-router</em> role only.  This value assigns a cost metric to the inter-router connection.  The default (and minimum) value is one.  Higher values represent higher costs.  The cost is used to influence the routing algorithm as it attempts to use the path with the lowest total cost from ingress to egress.
-</p>
-</dd>
-<dt class="hdlist1">
-<em>sslProfile</em> (string)
-</dt>
-<dd>
-<p>
-  name of the sslProfile
-</p>
-</dd>
 </dl></div>
 </div>
 <div class="sect2">
@@ -1347,11 +1347,11 @@ listener {
 </p>
 </dd>
 <dt class="hdlist1">
-<em>enable</em> (string, default=<em>default</em>, required)
+<em>enable</em> (string)
 </dt>
 <dd>
 <p>
-  Levels are: trace, debug, info, notice, warning, error, critical. The enable string is a comma-separated list of levels. A level may have a trailing <em>+</em> to enable that level and above. For example <em>trace,debug,warning+</em> means enable trace, debug, warning, error and critical. The value <em>none</em> means disable logging for the module. The value <em>default</em> means use the value from the DEFAULT module.
+  Levels are: trace, debug, info, notice, warning, error, critical. The enable string is a comma-separated list of levels. A level may have a trailing <em>+</em> to enable that level and above. For example <em>trace,debug,warning+</em> means enable trace, debug, warning, error and critical. The value <em>none</em> means disable logging for the module.
 </p>
 </dd>
 <dt class="hdlist1">
@@ -1375,7 +1375,7 @@ listener {
 </dt>
 <dd>
 <p>
-  Where to send log messages. Can be <em>stderr</em>, <em>syslog</em> or a file name.
+  Where to send log messages. Can be <em>stderr</em>, <em>stdout</em>, <em>syslog</em> or a file name.
 </p>
 </dd>
 </dl></div>
@@ -1799,7 +1799,7 @@ listener {
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-06-21 11:58:15 EDT
+Qpid Dispatch 0.7.0 - generated 2016-06-30 14:54:49 EDT
 </div>
 </div>
 </body>

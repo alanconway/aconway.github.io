@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
 <meta name="generator" content="AsciiDoc 8.6.8" />
-<title>qmanage(8)</title>
+<title>qdmanage(8)</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
 
@@ -732,7 +732,7 @@ asciidoc.install();
 <body class="manpage">
 <div id="header">
 <h1>
-qmanage(8) Manual Page
+qdmanage(8) Manual Page
 </h1>
 <h2>NAME</h2>
 <div class="sectionbody">
@@ -806,9 +806,10 @@ managed endpoint, not just with qdrouter.</p></div>
 </dt>
 <dd>
 <p>
-  Print the attributes named in the ATTR list or all attributes if none
-  are listed. Print attributes for all entities by default, use --type,
-  --name and --identity options to restrict what is printed.
+  Print attributes for multiple entities. Prints all entities by default, use
+  --type, --name or --identity options to restrict which entities are printed.
+  Prints the attributes named in the ATTR list, or all attributes if none are
+  listed.
 </p>
 </dd>
 <dt class="hdlist1">
@@ -819,7 +820,7 @@ managed endpoint, not just with qdrouter.</p></div>
   Create a new entity with the specified attributes. With the --stdin
   option, read attributes from stdin. This can be a JSON map of
   attributes to create a single entity, or a JSON list of maps to create
-  multiple entitiees.
+  multiple entities.
 </p>
 </dd>
 <dt class="hdlist1">
@@ -827,10 +828,8 @@ managed endpoint, not just with qdrouter.</p></div>
 </dt>
 <dd>
 <p>
-  Print the attributes of an entity specified by the --name or
-  --identity options. With the --stdin option, create entities based on
-  data from stdin. This can be a JSON map of attributes to create a
-  single entity, or a JSON list of maps to create multiple entitiees.
+  Print all the attributes of a single entity, specified by the --name or
+  --identity options.
 </p>
 </dd>
 <dt class="hdlist1">
@@ -838,11 +837,10 @@ managed endpoint, not just with qdrouter.</p></div>
 </dt>
 <dd>
 <p>
-  Update the attributes of an existing entity. With the --stdin option,
-  read attributes from stdin. This can be a JSON map of attributes to
-  update a single entity, or a JSON list of maps to update multiple
-  entitiees. If an ATTR name is listed with no =VALUE, that attribute
-  will be deleted from the entity.
+  Update the attributes of an existing entity. If an ATTR name is listed with
+  no =VALUE, that attribute will be deleted from the entity. With the --stdin
+  option, read attributes from stdin. This can be a JSON map of attributes to
+  update a single entity, or a JSON list of maps to update multiple entities.
 </p>
 </dd>
 <dt class="hdlist1">
@@ -951,22 +949,22 @@ managed endpoint, not just with qdrouter.</p></div>
 <div class="listingblock">
 <div class="title">Enable debug and higher log messages by default:</div>
 <div class="content">
-<pre><code>qdmanage udpdate name=log/DEFAULT enable=debug+</code></pre>
+<pre><code>qdmanage update name=log/DEFAULT enable=debug+</code></pre>
 </div></div>
 <div class="listingblock">
-<div class="title">Enable trace log messages only for the MESSAGE moudle and direct MESSAGE logs to the file "test.log"</div>
+<div class="title">Enable trace log messages only for the MESSAGE module and direct MESSAGE logs to the file "test.log"</div>
 <div class="content">
-<pre><code>qdmanage udpdate name=log/MESSAGE enable=trace output=test.log</code></pre>
+<pre><code>qdmanage update name=log/MESSAGE enable=trace output=test.log</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="title">Set MESSAGE logging back to the default</div>
 <div class="content">
-<pre><code>qdmanage udpdate name=log/MESSAGE enable=default</code></pre>
+<pre><code>qdmanage update name=log/MESSAGE enable=default</code></pre>
 </div></div>
 <div class="listingblock">
 <div class="title">Disable MESSAGE logging</div>
 <div class="content">
-<pre><code>qdmanage udpdate name=log/MESSAGE enable=none</code></pre>
+<pre><code>qdmanage update name=log/MESSAGE enable=none</code></pre>
 </div></div>
 </div>
 </div>
@@ -981,7 +979,7 @@ managed endpoint, not just with qdrouter.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-06-21 12:01:54 EDT
+Qpid Dispatch 0.7.0 - generated 2016-06-30 14:54:49 EDT
 </div>
 </div>
 </body>
