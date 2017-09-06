@@ -178,7 +178,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Coerce the contained value to type T. </p>
-<p>For example: </p><pre class="fragment">uint64_t i = get&lt;uint64_t&gt;(x)
+<p>For example: </p><pre class="fragment">uint64_t i = coerce&lt;uint64_t&gt;(x)
 </pre><p>This will succeed if x contains any numeric value, but may lose precision if it contains a float or double value.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -214,7 +214,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Coerce the contained value to type T. </p>
-<p>For example: </p><pre class="fragment">uint64_t i = get&lt;uint64_t&gt;(x)
+<p>For example: </p><pre class="fragment">uint64_t i = coerce&lt;uint64_t&gt;(x)
 </pre><p>This will succeed if x contains any numeric value, but may lose precision if it contains a float or double value.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">

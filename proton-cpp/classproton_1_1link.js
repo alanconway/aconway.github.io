@@ -13,5 +13,6 @@ var classproton_1_1link =
     [ "error", "classproton_1_1link.html#a090a10fab22d7faf0f74c8ccda0f1470", null ],
     [ "name", "classproton_1_1link.html#a1d89c28bd42ba9a52da008bb69367171", null ],
     [ "session", "classproton_1_1link.html#ab55cf76248b8b6e571a869c407ba39e6", null ],
-    [ "uninitialized", "classproton_1_1link.html#ab51c3843057c4c187574e2d44839f815", null ]
+    [ "uninitialized", "classproton_1_1link.html#ab51c3843057c4c187574e2d44839f815", null ],
+    [ "work_queue", "classproton_1_1link.html#a7c755d6ac6385e007adb61966598ba63", null ]
 ];

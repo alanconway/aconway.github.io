@@ -202,6 +202,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga42387f728f4817fdd393cc98315db332"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__delivery.html#ga42387f728f4817fdd393cc98315db332">pn_disposition_type</a> (<a class="el" href="group__delivery.html#ga4b28f6cd033babd8a7595fc5d292dca1">pn_disposition_t</a> *disposition)</td></tr>
 <tr class="memdesc:ga42387f728f4817fdd393cc98315db332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type of a disposition.  <a href="#ga42387f728f4817fdd393cc98315db332">More...</a><br /></td></tr>
 <tr class="separator:ga42387f728f4817fdd393cc98315db332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73aa02fe7f66d07514d4e5e1f74f8947"><td class="memItemLeft" align="right" valign="top"><a id="ga73aa02fe7f66d07514d4e5e1f74f8947"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__delivery.html#ga73aa02fe7f66d07514d4e5e1f74f8947">pn_disposition_type_name</a> (uint64_t disposition_type)</td></tr>
+<tr class="memdesc:ga73aa02fe7f66d07514d4e5e1f74f8947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of a disposition type for logging and debugging: "received", "accepted" etc. <br /></td></tr>
+<tr class="separator:ga73aa02fe7f66d07514d4e5e1f74f8947"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8989de9cdcbbc7d0fadc1bba1f71d991"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__condition.html#ga11eb7db7d2c205169fe3d47c996a95a5">pn_condition_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__delivery.html#ga8989de9cdcbbc7d0fadc1bba1f71d991">pn_disposition_condition</a> (<a class="el" href="group__delivery.html#ga4b28f6cd033babd8a7595fc5d292dca1">pn_disposition_t</a> *disposition)</td></tr>
 <tr class="memdesc:ga8989de9cdcbbc7d0fadc1bba1f71d991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the condition object associated with a disposition.  <a href="#ga8989de9cdcbbc7d0fadc1bba1f71d991">More...</a><br /></td></tr>
 <tr class="separator:ga8989de9cdcbbc7d0fadc1bba1f71d991"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -253,7 +257,7 @@ Functions</h2></td></tr>
 
 <p>The PN_ACCEPTED delivery state is a terminal state indicating that the delivery was successfully processed. </p>
 <p>Once in this state there will be no further state changes prior to the delivery being settled. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a65">broker.c</a>, <a class="el" href="direct_8c-example.html#a40">direct.c</a>, <a class="el" href="receive_8c-example.html#a30">receive.c</a>, and <a class="el" href="send_8c-example.html#a47">send.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a64">broker.c</a>, <a class="el" href="direct_8c-example.html#a40">direct.c</a>, <a class="el" href="receive_8c-example.html#a30">receive.c</a>, and <a class="el" href="send_8c-example.html#a47">send.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -602,7 +606,7 @@ least once" semantics.</p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the parent link </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a58">broker.c</a>, <a class="el" href="direct_8c-example.html#a28">direct.c</a>, and <a class="el" href="receive_8c-example.html#a9">receive.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a57">broker.c</a>, <a class="el" href="direct_8c-example.html#a28">direct.c</a>, and <a class="el" href="receive_8c-example.html#a9">receive.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -768,7 +772,7 @@ least once" semantics.</p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the amount of pending message data in bytes </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a62">broker.c</a>, <a class="el" href="direct_8c-example.html#a26">direct.c</a>, and <a class="el" href="receive_8c-example.html#a7">receive.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a61">broker.c</a>, <a class="el" href="direct_8c-example.html#a26">direct.c</a>, and <a class="el" href="receive_8c-example.html#a7">receive.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -796,7 +800,7 @@ least once" semantics.</p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the delivery only contains part of a message, false otherwise </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a61">broker.c</a>, <a class="el" href="direct_8c-example.html#a38">direct.c</a>, and <a class="el" href="receive_8c-example.html#a28">receive.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a60">broker.c</a>, <a class="el" href="direct_8c-example.html#a38">direct.c</a>, and <a class="el" href="receive_8c-example.html#a28">receive.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -853,7 +857,7 @@ least once" semantics.</p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the delivery is readable, false otherwise </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a60">broker.c</a>, <a class="el" href="direct_8c-example.html#a37">direct.c</a>, and <a class="el" href="receive_8c-example.html#a27">receive.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a59">broker.c</a>, <a class="el" href="direct_8c-example.html#a37">direct.c</a>, and <a class="el" href="receive_8c-example.html#a27">receive.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -920,7 +924,7 @@ least once" semantics.</p>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a64">broker.c</a>, <a class="el" href="direct_8c-example.html#a39">direct.c</a>, and <a class="el" href="receive_8c-example.html#a29">receive.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a63">broker.c</a>, <a class="el" href="direct_8c-example.html#a39">direct.c</a>, and <a class="el" href="receive_8c-example.html#a29">receive.c</a>.</dd>
 </dl>
 </div>
 </div>

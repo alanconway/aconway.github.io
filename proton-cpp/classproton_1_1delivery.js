@@ -19,5 +19,6 @@ var classproton_1_1delivery =
     [ "session", "classproton_1_1delivery.html#ab55cf76248b8b6e571a869c407ba39e6", null ],
     [ "settle", "classproton_1_1delivery.html#a172df06404ec241cee5281536db603a7", null ],
     [ "settled", "classproton_1_1delivery.html#ad72f81828cfabb957615d40cfdfed452", null ],
-    [ "state", "classproton_1_1delivery.html#a8073c1382e7adf81536001a8007924a5", null ]
+    [ "state", "classproton_1_1delivery.html#a8073c1382e7adf81536001a8007924a5", null ],
+    [ "work_queue", "classproton_1_1delivery.html#a7c755d6ac6385e007adb61966598ba63", null ]
 ];

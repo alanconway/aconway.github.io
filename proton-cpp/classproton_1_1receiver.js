@@ -19,5 +19,6 @@ var classproton_1_1receiver =
     [ "session", "classproton_1_1receiver.html#ab55cf76248b8b6e571a869c407ba39e6", null ],
     [ "source", "classproton_1_1receiver.html#a91a9e8a9445b29d83dd0514cd76503ae", null ],
     [ "target", "classproton_1_1receiver.html#a5f0b815f331997411a6794f8628592ba", null ],
-    [ "uninitialized", "classproton_1_1receiver.html#ab51c3843057c4c187574e2d44839f815", null ]
+    [ "uninitialized", "classproton_1_1receiver.html#ab51c3843057c4c187574e2d44839f815", null ],
+    [ "work_queue", "classproton_1_1receiver.html#a7c755d6ac6385e007adb61966598ba63", null ]
 ];

@@ -187,6 +187,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga04e6edffd24e5c865ac1f6b3529469e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__event.html#ga04e6edffd24e5c865ac1f6b3529469e4">pn_collector_release</a> (<a class="el" href="group__event.html#ga905cdecedb8020bc28e648e43348b5d1">pn_collector_t</a> *collector)</td></tr>
 <tr class="memdesc:ga04e6edffd24e5c865ac1f6b3529469e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release a collector.  <a href="#ga04e6edffd24e5c865ac1f6b3529469e4">More...</a><br /></td></tr>
 <tr class="separator:ga04e6edffd24e5c865ac1f6b3529469e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadab22668a28ff1af0d8ef82df516f94f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__event.html#gadab22668a28ff1af0d8ef82df516f94f">pn_collector_drain</a> (<a class="el" href="group__event.html#ga905cdecedb8020bc28e648e43348b5d1">pn_collector_t</a> *collector)</td></tr>
+<tr class="memdesc:gadab22668a28ff1af0d8ef82df516f94f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drain a collector: remove and discard all events.  <a href="#gadab22668a28ff1af0d8ef82df516f94f">More...</a><br /></td></tr>
+<tr class="separator:gadab22668a28ff1af0d8ef82df516f94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1857c64d3f8549209b0b8ec91bf81e89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__event.html#ga87f3028b4888632bbd56fb71ac737ae8">pn_event_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__event.html#ga1857c64d3f8549209b0b8ec91bf81e89">pn_collector_put</a> (<a class="el" href="group__event.html#ga905cdecedb8020bc28e648e43348b5d1">pn_collector_t</a> *collector, const pn_class_t *clazz, void *context, <a class="el" href="group__event.html#ga4876e2eed24a4d4e4c52b99842103cda">pn_event_type_t</a> type)</td></tr>
 <tr class="memdesc:ga1857c64d3f8549209b0b8ec91bf81e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place a new event on a collector.  <a href="#ga1857c64d3f8549209b0b8ec91bf81e89">More...</a><br /></td></tr>
 <tr class="separator:ga1857c64d3f8549209b0b8ec91bf81e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -437,8 +440,8 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 <tr><td class="fieldname"><a id="gga4876e2eed24a4d4e4c52b99842103cdaa4afa8c2da61f4c665c669fbe37b1c5fe"></a>PN_PROACTOR_TIMEOUT&#160;</td><td class="fielddoc"><p>Timeout set by <a class="el" href="group__proactor.html#gad7cd71f06282eb290699d90c316b2d32" title="Return a PN_PROACTOR_TIMEOUT after timeout milliseconds elapse. ">pn_proactor_set_timeout()</a> time limit expired. </p>
 <p>Events of this type point to the <a class="el" href="types_8h.html#abba42c7929dfceb9d296535bad0c93dc">pn_proactor_t</a>. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="gga4876e2eed24a4d4e4c52b99842103cdaa894e93f167ef39e28a07c9cdf6b1181b"></a>PN_PROACTOR_INACTIVE&#160;</td><td class="fielddoc"><p>The proactor is inactive. </p>
-<p>All listeners and connections are closed and their events processed, the timeout is expired.</p>
+<tr><td class="fieldname"><a id="gga4876e2eed24a4d4e4c52b99842103cdaa894e93f167ef39e28a07c9cdf6b1181b"></a>PN_PROACTOR_INACTIVE&#160;</td><td class="fielddoc"><p>The proactor has become inactive: all listeners and connections were closed and the timeout (if set) expired or was cancelled. </p>
+<p>There will be no further events unless new listeners or connections are opened, or a new timeout is set (possibly in other threads in a multi-threaded program.)</p>
 <p>Events of this type point to the <a class="el" href="types_8h.html#abba42c7929dfceb9d296535bad0c93dc">pn_proactor_t</a>. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga4876e2eed24a4d4e4c52b99842103cdaa6e25f00110ab278fd8b34fee00bd5fd7"></a>PN_LISTENER_OPEN&#160;</td><td class="fielddoc"><p>The listener is listeneing. </p>
@@ -542,6 +545,32 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
 
 <p>Release a collector. </p>
 <p>Once in a released state a collector will drain any internally queued events (thereby releasing any pointers they may hold), shrink it's memory footprint to a minimum, and discard any newly created events.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">collector</td><td>a collector object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gadab22668a28ff1af0d8ef82df516f94f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadab22668a28ff1af0d8ef82df516f94f">&#9670;&nbsp;</a></span>pn_collector_drain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pn_collector_drain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__event.html#ga905cdecedb8020bc28e648e43348b5d1">pn_collector_t</a> *&#160;</td>
+          <td class="paramname"><em>collector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Drain a collector: remove and discard all events. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">collector</td><td>a collector object </td></tr>
@@ -849,7 +878,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the session associated with the event (or NULL) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a46">broker.c</a>, <a class="el" href="direct_8c-example.html#a73">direct.c</a>, <a class="el" href="receive_8c-example.html#a45">receive.c</a>, and <a class="el" href="send_8c-example.html#a55">send.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a45">broker.c</a>, <a class="el" href="direct_8c-example.html#a73">direct.c</a>, <a class="el" href="receive_8c-example.html#a45">receive.c</a>, and <a class="el" href="send_8c-example.html#a55">send.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -877,7 +906,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the link associated with the event (or NULL) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a48">broker.c</a>, <a class="el" href="direct_8c-example.html#a32">direct.c</a>, <a class="el" href="receive_8c-example.html#a49">receive.c</a>, and <a class="el" href="send_8c-example.html#a36">send.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a47">broker.c</a>, <a class="el" href="direct_8c-example.html#a32">direct.c</a>, <a class="el" href="receive_8c-example.html#a49">receive.c</a>, and <a class="el" href="send_8c-example.html#a36">send.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -905,7 +934,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the delivery associated with the event (or NULL) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a57">broker.c</a>, <a class="el" href="direct_8c-example.html#a36">direct.c</a>, <a class="el" href="receive_8c-example.html#a26">receive.c</a>, and <a class="el" href="send_8c-example.html#a45">send.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a56">broker.c</a>, <a class="el" href="direct_8c-example.html#a36">direct.c</a>, <a class="el" href="receive_8c-example.html#a26">receive.c</a>, and <a class="el" href="send_8c-example.html#a45">send.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -933,7 +962,7 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gr
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the transport associated with the event (or NULL) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a68">broker.c</a>, <a class="el" href="direct_8c-example.html#a65">direct.c</a>, <a class="el" href="receive_8c-example.html#a40">receive.c</a>, and <a class="el" href="send_8c-example.html#a50">send.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a67">broker.c</a>, <a class="el" href="direct_8c-example.html#a65">direct.c</a>, <a class="el" href="receive_8c-example.html#a40">receive.c</a>, and <a class="el" href="send_8c-example.html#a50">send.c</a>.</dd>
 </dl>
 </div>
 </div>

@@ -5,6 +5,7 @@ var classproton_1_1messaging__handler =
     [ "on_connection_close", "classproton_1_1messaging__handler.html#a804f0ea9c2754f143624b4078a61f650", null ],
     [ "on_connection_error", "classproton_1_1messaging__handler.html#aafa83dc2f8f477ba1f76e86dc69cd1e9", null ],
     [ "on_connection_open", "classproton_1_1messaging__handler.html#a16ba022e899957b2e25b9561b1f53968", null ],
+    [ "on_connection_wake", "classproton_1_1messaging__handler.html#a29bfba2d26604e5d8d7f3183f1374481", null ],
     [ "on_container_start", "classproton_1_1messaging__handler.html#a4949b0c93402fae0c07492d984688a25", null ],
     [ "on_container_stop", "classproton_1_1messaging__handler.html#ab5bb8195e26c8818c4f57a734566ecfd", null ],
     [ "on_delivery_settle", "classproton_1_1messaging__handler.html#afc96eabc76c471d61627493eadb58ac8", null ],

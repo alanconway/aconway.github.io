@@ -6,7 +6,6 @@ var searchData=
   ['incoming_5fbytes',['incoming_bytes',['../classproton_1_1session.html#afd0c41cf41edfc314d065e76e402fd1b',1,'proton::session']]],
   ['introduction',['Introduction',['../index.html',1,'']]],
   ['inferred',['inferred',['../classproton_1_1message.html#a0952cced87e1a210acf6c603eb1b6895',1,'proton::message::inferred() const'],['../classproton_1_1message.html#a174b1b064de4042d155727e4327b3dd7',1,'proton::message::inferred(bool)']]],
-  ['inject',['inject',['../classproton_1_1event__loop.html#a6551fe8832cda5e511fa19c7d107fb38',1,'proton::event_loop::inject(void_function0 &amp;f)'],['../classproton_1_1event__loop.html#a14a1149c2d26df626c2dae07bed1159e',1,'proton::event_loop::inject(std::function&lt; void()&gt; f)']]],
   ['int',['INT',['../namespaceproton.html#a83c2656d467d69eb49725c18f5aa13a9afd5a5f51ce25953f3db2c7e93eb7864a',1,'proton']]],
   ['io_20integration',['IO integration',['../io_page.html',1,'']]]
 ];

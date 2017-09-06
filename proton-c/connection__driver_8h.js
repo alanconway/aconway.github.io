@@ -6,6 +6,7 @@ var connection__driver_8h =
     [ "pn_connection_driver_init", "group__connection__driver.html#ga2330d329e295da740ef8d126657470c6", null ],
     [ "pn_connection_driver_bind", "group__connection__driver.html#gad2bdef0f5abe7cf593afcee237c6af56", null ],
     [ "pn_connection_driver_destroy", "group__connection__driver.html#ga3e8959d7897cd9415f687981c1d94c96", null ],
+    [ "pn_connection_driver_release_connection", "group__connection__driver.html#ga96a6bf8efc2dd7b76734cb2432441333", null ],
     [ "pn_connection_driver_read_buffer", "group__connection__driver.html#ga0dd152968de6ec06de352e1cbc51c438", null ],
     [ "pn_connection_driver_read_done", "group__connection__driver.html#gaa164510528ce160efddbde2245c438b1", null ],
     [ "pn_connection_driver_read_close", "group__connection__driver.html#ga11b59aec2b54acdefd63dfbce8d09a3f", null ],

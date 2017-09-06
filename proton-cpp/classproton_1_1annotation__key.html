@@ -185,7 +185,7 @@ template&lt;&gt; </td></tr>
 </div><div class="memdoc">
 
 <p>Get the <a class="el" href="classproton_1_1binary.html">binary</a> value or throw <a class="el" href="structproton_1_1conversion__error.html" title="An error converting between AMQP and C++ data. ">conversion_error</a>. </p>
-<p>Coerce the contained value to type T. For example: </p><pre class="fragment">uint64_t i = get&lt;uint64_t&gt;(x)
+<p>Coerce the contained value to type T. For example: </p><pre class="fragment">uint64_t i = coerce&lt;uint64_t&gt;(x)
 </pre><p>This will succeed if x contains any numeric value, but may lose precision if it contains a float or double value.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">

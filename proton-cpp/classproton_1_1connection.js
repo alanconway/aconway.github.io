@@ -20,11 +20,15 @@ var classproton_1_1connection =
     [ "open_sender", "classproton_1_1connection.html#adde43cdef3b6e132d2c4318b6087519a", null ],
     [ "open_session", "classproton_1_1connection.html#a417060fdeea996b1684bd0fecc6c6420", null ],
     [ "open_session", "classproton_1_1connection.html#ae922e54bbff7c2d27373eea9d15e3367", null ],
+    [ "receiver_options", "classproton_1_1connection.html#a099ddaa3cfcd6a8ae14401bbbfb4b660", null ],
     [ "receivers", "classproton_1_1connection.html#a634a0b14e10b9fc50cbb52251c2c8027", null ],
+    [ "sender_options", "classproton_1_1connection.html#ae7bfc8d811be7f6be17be6cf15e35b4a", null ],
     [ "senders", "classproton_1_1connection.html#a2e6d8395032b1d590a9e1586c7de0fb5", null ],
     [ "sessions", "classproton_1_1connection.html#a4e6f7ce08bf29e67c7a9823f1ba69561", null ],
     [ "transport", "classproton_1_1connection.html#a579bcab77cddadcb8ba07d2bc576c3d6", null ],
     [ "uninitialized", "classproton_1_1connection.html#ab51c3843057c4c187574e2d44839f815", null ],
     [ "user", "classproton_1_1connection.html#a9444df7d81bd265e0a8e1726fd12b058", null ],
-    [ "virtual_host", "classproton_1_1connection.html#a58c45cfdcca234c692559be81f206421", null ]
+    [ "virtual_host", "classproton_1_1connection.html#a58c45cfdcca234c692559be81f206421", null ],
+    [ "wake", "classproton_1_1connection.html#a473371542eaeba6f67660582fe6a6074", null ],
+    [ "work_queue", "classproton_1_1connection.html#a7c755d6ac6385e007adb61966598ba63", null ]
 ];

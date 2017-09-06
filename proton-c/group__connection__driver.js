@@ -3,6 +3,7 @@ var group__connection__driver =
     [ "pn_connection_driver_t", "group__connection__driver.html#structpn__connection__driver__t", [
       [ "connection", "group__connection__driver.html#a274eb4e9f62c87e615e8f1d0041a6f61", null ],
       [ "transport", "group__connection__driver.html#aa07ae8b40e8e06ed2e1532c089c4b779", null ],
+      [ "collector", "group__connection__driver.html#a98dc9098e6258677bcb7e87d324858ac", null ],
       [ "batch", "group__connection__driver.html#a68f8277114ef53d411b76ff3a424f4c5", null ]
     ] ],
     [ "PN_TRANSPORT_WRITE_CLOSED", "group__connection__driver.html#ga56e55c7d0343529b7fb3002b930a36b2", null ],
@@ -11,6 +12,7 @@ var group__connection__driver =
     [ "pn_connection_driver_init", "group__connection__driver.html#ga2330d329e295da740ef8d126657470c6", null ],
     [ "pn_connection_driver_bind", "group__connection__driver.html#gad2bdef0f5abe7cf593afcee237c6af56", null ],
     [ "pn_connection_driver_destroy", "group__connection__driver.html#ga3e8959d7897cd9415f687981c1d94c96", null ],
+    [ "pn_connection_driver_release_connection", "group__connection__driver.html#ga96a6bf8efc2dd7b76734cb2432441333", null ],
     [ "pn_connection_driver_read_buffer", "group__connection__driver.html#ga0dd152968de6ec06de352e1cbc51c438", null ],
     [ "pn_connection_driver_read_done", "group__connection__driver.html#gaa164510528ce160efddbde2245c438b1", null ],
     [ "pn_connection_driver_read_close", "group__connection__driver.html#ga11b59aec2b54acdefd63dfbce8d09a3f", null ],

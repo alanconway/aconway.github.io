@@ -126,6 +126,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3e8959d7897cd9415f687981c1d94c96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__connection__driver.html#ga3e8959d7897cd9415f687981c1d94c96">pn_connection_driver_destroy</a> (<a class="el" href="group__connection__driver.html#structpn__connection__driver__t">pn_connection_driver_t</a> *)</td></tr>
 <tr class="memdesc:ga3e8959d7897cd9415f687981c1d94c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unbind, release and free the connection and transport.  <a href="#ga3e8959d7897cd9415f687981c1d94c96">More...</a><br /></td></tr>
 <tr class="separator:ga3e8959d7897cd9415f687981c1d94c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96a6bf8efc2dd7b76734cb2432441333"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__connection.html#ga886351d81ff3a977a284a206526c5aff">pn_connection_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__connection__driver.html#ga96a6bf8efc2dd7b76734cb2432441333">pn_connection_driver_release_connection</a> (<a class="el" href="group__connection__driver.html#structpn__connection__driver__t">pn_connection_driver_t</a> *d)</td></tr>
+<tr class="memdesc:ga96a6bf8efc2dd7b76734cb2432441333"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disassociate the driver's connection from its transport and collector and sets d-&gt;connection = NULL.  <a href="#ga96a6bf8efc2dd7b76734cb2432441333">More...</a><br /></td></tr>
+<tr class="separator:ga96a6bf8efc2dd7b76734cb2432441333"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0dd152968de6ec06de352e1cbc51c438"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__api__types.html#structpn__rwbytes__t">pn_rwbytes_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__connection__driver.html#ga0dd152968de6ec06de352e1cbc51c438">pn_connection_driver_read_buffer</a> (<a class="el" href="group__connection__driver.html#structpn__connection__driver__t">pn_connection_driver_t</a> *)</td></tr>
 <tr class="memdesc:ga0dd152968de6ec06de352e1cbc51c438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the read buffer.  <a href="#ga0dd152968de6ec06de352e1cbc51c438">More...</a><br /></td></tr>
 <tr class="separator:ga0dd152968de6ec06de352e1cbc51c438"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -218,6 +221,12 @@ connection</td>
 <a id="aa07ae8b40e8e06ed2e1532c089c4b779"></a><a class="el" href="group__transport.html#gac26eda05f649bbf0399f3d8d78d12fa8">pn_transport_t</a> *</td>
 <td class="fieldname">
 transport</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a98dc9098e6258677bcb7e87d324858ac"></a><a class="el" href="group__event.html#ga905cdecedb8020bc28e648e43348b5d1">pn_collector_t</a> *</td>
+<td class="fieldname">
+collector</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
@@ -346,6 +355,29 @@ batch</td>
 
 <p>Unbind, release and free the connection and transport. </p>
 <p>Set all pointers to NULL. Does not free the <a class="el" href="group__connection__driver.html#structpn__connection__driver__t">pn_connection_driver_t</a> struct itself. </p>
+
+</div>
+</div>
+<a id="ga96a6bf8efc2dd7b76734cb2432441333"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96a6bf8efc2dd7b76734cb2432441333">&#9670;&nbsp;</a></span>pn_connection_driver_release_connection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__connection.html#ga886351d81ff3a977a284a206526c5aff">pn_connection_t</a>* pn_connection_driver_release_connection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__connection__driver.html#structpn__connection__driver__t">pn_connection_driver_t</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disassociate the driver's connection from its transport and collector and sets d-&gt;connection = NULL. </p>
+<p>Returns the previous value, which must be freed by the caller.</p>
+<p>The transport and collector are still owned by the driver and will be freed by <a class="el" href="group__connection__driver.html#ga3e8959d7897cd9415f687981c1d94c96" title="Unbind, release and free the connection and transport. ">pn_connection_driver_destroy()</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>This has nothing to do with <a class="el" href="group__connection.html#ga7c88b4833cf81d801b27d00b45d137b5" title="Release a connection object. ">pn_connection_release()</a> </dd></dl>
 
 </div>
 </div>

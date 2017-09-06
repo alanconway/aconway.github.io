@@ -7,6 +7,7 @@ var disposition_8h =
     [ "PN_MODIFIED", "group__delivery.html#ga247e3d1ac7c9096cdd28424353582962", null ],
     [ "pn_disposition_t", "group__delivery.html#ga4b28f6cd033babd8a7595fc5d292dca1", null ],
     [ "pn_disposition_type", "group__delivery.html#ga42387f728f4817fdd393cc98315db332", null ],
+    [ "pn_disposition_type_name", "group__delivery.html#ga73aa02fe7f66d07514d4e5e1f74f8947", null ],
     [ "pn_disposition_condition", "group__delivery.html#ga8989de9cdcbbc7d0fadc1bba1f71d991", null ],
     [ "pn_disposition_data", "group__delivery.html#ga9c168eb2b16c68d20b1e46ab904963cb", null ],
     [ "pn_disposition_get_section_number", "group__delivery.html#ga5d0a4239487a90010403007f6cb268f0", null ],

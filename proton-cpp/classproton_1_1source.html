@@ -81,7 +81,6 @@ $(document).ready(function(){initNavTree('classproton_1_1source.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classproton_1_1source-members.html">List of all members</a>  </div>
@@ -104,12 +103,6 @@ Inheritance diagram for source:</div>
 </map>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1source_1_1filter__map.html">filter_map</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Experimental</b> - A map of AMQP symbol keys and filter specifiers.  <a href="classproton_1_1source_1_1filter__map.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ad049690d03cac384636e0c2055726089"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1source.html#ad049690d03cac384636e0c2055726089">distribution_mode</a> { <a class="el" href="classproton_1_1source.html#ad049690d03cac384636e0c2055726089aa876f4fb4e5f7f0c5c48fcf66c9ce7ce">UNSPECIFIED</a>, 
@@ -118,6 +111,9 @@ Public Types</h2></td></tr>
  }<tr class="memdesc:ad049690d03cac384636e0c2055726089"><td class="mdescLeft">&#160;</td><td class="mdescRight">The policy for distributing messages.  <a href="classproton_1_1source.html#ad049690d03cac384636e0c2055726089">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:ad049690d03cac384636e0c2055726089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5af497ef0602d13b06773c910994fd7"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classproton_1_1map.html">map</a>&lt; <a class="el" href="classproton_1_1symbol.html">symbol</a>, <a class="el" href="classproton_1_1value.html">value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1source.html#ad5af497ef0602d13b06773c910994fd7">filter_map</a></td></tr>
+<tr class="memdesc:ad5af497ef0602d13b06773c910994fd7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Unsettled API</b> - A map of AMQP symbol keys and filter specifiers.  <a href="#ad5af497ef0602d13b06773c910994fd7">More...</a><br /></td></tr>
+<tr class="separator:ad5af497ef0602d13b06773c910994fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61db0571ab7d1a29ad77549ff99d6b3d"><td class="memItemLeft" align="right" valign="top"><a id="a61db0571ab7d1a29ad77549ff99d6b3d"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1source.html#a61db0571ab7d1a29ad77549ff99d6b3d">durability_mode</a> <tr class="memdesc:a61db0571ab7d1a29ad77549ff99d6b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The persistence mode of the source or target. <br /></td></tr>
 </td></tr>
 <tr class="separator:a61db0571ab7d1a29ad77549ff99d6b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,10 +135,10 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 enum <a class="el" href="classproton_1_1source.html#ad049690d03cac384636e0c2055726089">distribution_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1source.html#abb1886a3a928bddfaf76dc67e3d15525">distribution_mode</a> () const</td></tr>
 <tr class="memdesc:abb1886a3a928bddfaf76dc67e3d15525"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the distribution mode. <br /></td></tr>
 <tr class="separator:abb1886a3a928bddfaf76dc67e3d15525"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a142194db039efbc7254136a9eef0cb80"><td class="memItemLeft" align="right" valign="top"><a id="a142194db039efbc7254136a9eef0cb80"></a>
-<a class="el" href="classproton_1_1source_1_1filter__map.html">filter_map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1source.html#a142194db039efbc7254136a9eef0cb80">filters</a> () const</td></tr>
-<tr class="memdesc:a142194db039efbc7254136a9eef0cb80"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Experimental</b> - Obtain the set of message filters. <br /></td></tr>
-<tr class="separator:a142194db039efbc7254136a9eef0cb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5872b2a2f80f74a6f4f5b02791861a6d"><td class="memItemLeft" align="right" valign="top"><a id="a5872b2a2f80f74a6f4f5b02791861a6d"></a>
+const <a class="el" href="classproton_1_1source.html#ad5af497ef0602d13b06773c910994fd7">filter_map</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1source.html#a5872b2a2f80f74a6f4f5b02791861a6d">filters</a> () const</td></tr>
+<tr class="memdesc:a5872b2a2f80f74a6f4f5b02791861a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Unsettled API</b> - Obtain the set of message filters. <br /></td></tr>
+<tr class="separator:a5872b2a2f80f74a6f4f5b02791861a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb6439d6ea5d274a59dd8e90d97f31d8"><td class="memItemLeft" align="right" valign="top"><a id="aeb6439d6ea5d274a59dd8e90d97f31d8"></a>
 enum <a class="el" href="classproton_1_1terminus.html#a61db0571ab7d1a29ad77549ff99d6b3d">durability_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1terminus.html#aeb6439d6ea5d274a59dd8e90d97f31d8">durability_mode</a> ()</td></tr>
 <tr class="memdesc:aeb6439d6ea5d274a59dd8e90d97f31d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the durability flag. <br /></td></tr>
@@ -165,8 +161,24 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A point of origin for messages. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classproton_1_1sender.html" title="A channel for sending messages. ">proton::sender</a>, <a class="el" href="classproton_1_1receiver.html" title="A channel for receiving messages. ">proton::receiver</a>, <a class="el" href="classproton_1_1target.html" title="A destination for messages. ">proton::target</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8cpp-example.html#_a5">broker.cpp</a>, and <a class="el" href="broker_8hpp-example.html#_a9">broker.hpp</a>.</dd>
-</dl></div><h2 class="groupheader">Member Enumeration Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ad5af497ef0602d13b06773c910994fd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5af497ef0602d13b06773c910994fd7">&#9670;&nbsp;</a></span>filter_map</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classproton_1_1map.html">map</a>&lt;<a class="el" href="classproton_1_1symbol.html">symbol</a>, <a class="el" href="classproton_1_1value.html">value</a>&gt; <a class="el" href="classproton_1_1source.html#ad5af497ef0602d13b06773c910994fd7">filter_map</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Unsettled API</b> - A map of AMQP symbol keys and filter specifiers. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ad049690d03cac384636e0c2055726089"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad049690d03cac384636e0c2055726089">&#9670;&nbsp;</a></span>distribution_mode</h2>
 

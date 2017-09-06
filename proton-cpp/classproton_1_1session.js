@@ -18,5 +18,6 @@ var classproton_1_1session =
     [ "outgoing_bytes", "classproton_1_1session.html#af3f3aa5f4c2eafcab012920c3a29dae0", null ],
     [ "receivers", "classproton_1_1session.html#a634a0b14e10b9fc50cbb52251c2c8027", null ],
     [ "senders", "classproton_1_1session.html#a2e6d8395032b1d590a9e1586c7de0fb5", null ],
-    [ "uninitialized", "classproton_1_1session.html#ab51c3843057c4c187574e2d44839f815", null ]
+    [ "uninitialized", "classproton_1_1session.html#ab51c3843057c4c187574e2d44839f815", null ],
+    [ "work_queue", "classproton_1_1session.html#a7c755d6ac6385e007adb61966598ba63", null ]
 ];

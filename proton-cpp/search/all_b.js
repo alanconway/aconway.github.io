@@ -1,6 +1,7 @@
 var searchData=
 [
   ['name',['name',['../classproton_1_1error__condition.html#a1d89c28bd42ba9a52da008bb69367171',1,'proton::error_condition::name()'],['../classproton_1_1link.html#a1d89c28bd42ba9a52da008bb69367171',1,'proton::link::name()']]],
+  ['namespaces_2ehpp',['namespaces.hpp',['../namespaces_8hpp.html',1,'']]],
   ['never',['NEVER',['../classproton_1_1terminus.html#a348690a43df146eca928a8c06034a1eba3a267f9424d4d555780a8d26209c8118',1,'proton::terminus']]],
   ['new',['NEW',['../classproton_1_1ssl.html#a0d3f14f27a1e5af0a5f378fc1a8a8de4aec34b0b90541576a22697631105dc847',1,'proton::ssl']]],
   ['next_5ftype',['next_type',['../classproton_1_1codec_1_1decoder.html#af3a00236ce433d05e26c0eb2ed5dfcd0',1,'proton::codec::decoder']]],

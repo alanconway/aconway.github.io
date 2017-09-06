@@ -51,6 +51,7 @@ var group__event =
     [ "pn_collector", "group__event.html#ga7c7754316e257d4ce7660730953000ac", null ],
     [ "pn_collector_free", "group__event.html#ga2312e5cb8fc9e4bff94d7ab9d4b15c08", null ],
     [ "pn_collector_release", "group__event.html#ga04e6edffd24e5c865ac1f6b3529469e4", null ],
+    [ "pn_collector_drain", "group__event.html#gadab22668a28ff1af0d8ef82df516f94f", null ],
     [ "pn_collector_put", "group__event.html#ga1857c64d3f8549209b0b8ec91bf81e89", null ],
     [ "pn_collector_peek", "group__event.html#ga672d5ec725787815cae9b7bc739cd6f9", null ],
     [ "pn_collector_pop", "group__event.html#ga7a4a24eb162059737f44e7520a0c1a54", null ],

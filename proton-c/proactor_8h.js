@@ -1,6 +1,7 @@
 var proactor_8h =
 [
-    [ "pn_proactor_addr_t", "group__proactor.html#ga82ed29e4cce1887f750030c7c376b07f", null ],
+    [ "PN_MAX_ADDR", "group__proactor.html#ga29ae114b42fb797c103dc9883ebcb256", null ],
+    [ "pn_proactor_addr", "group__proactor.html#gaf67a7642c9003b36255b58776b494c96", null ],
     [ "pn_proactor", "group__proactor.html#gac2a925b3de00efd8cd40fa9920169554", null ],
     [ "pn_proactor_free", "group__proactor.html#ga5260c2653d4af5eb2f1c8c6190e9d6cf", null ],
     [ "pn_proactor_connect", "group__proactor.html#ga9a9d1c4138226fa87160f4769b87f8e6", null ],
@@ -16,8 +17,5 @@ var proactor_8h =
     [ "pn_connection_wake", "group__proactor.html#ga0f49c771fe3bff54f58c9d583ca30560", null ],
     [ "pn_connection_proactor", "group__proactor.html#ga4727a4e26f19efcff0d48960cbba2f40", null ],
     [ "pn_event_proactor", "group__proactor.html#gac412771217decd84bd70931acbd0828a", null ],
-    [ "pn_proactor_addr_str", "group__proactor.html#gae44938e8767ab63adea14d6be3a68fe8", null ],
-    [ "pn_proactor_addr_local", "group__proactor.html#gafc6058357f822cf31d50137bff888fff", null ],
-    [ "pn_proactor_addr_remote", "group__proactor.html#gaf5f887f38feef159fa797b1db59b4e20", null ],
-    [ "pn_proactor_addr_sockaddr", "group__proactor.html#gaf5f05991bec4d571ea435920cb4ca4c1", null ]
+    [ "pn_proactor_now", "group__proactor.html#gad45b60b98f2bf385ee6ca5dca7b3f42d", null ]
 ];

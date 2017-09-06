@@ -1,6 +1,7 @@
 var searchData=
 [
   ['data',['data',['../structproton_1_1io_1_1mutable__buffer.html#a91a70b77df95bd8b0830b49a094c2acb',1,'proton::io::mutable_buffer::data()'],['../structproton_1_1io_1_1const__buffer.html#a8f64897c7ccc5c13f276d1d07c4e7095',1,'proton::io::const_buffer::data()']]],
+  ['decimal_2ehpp',['decimal.hpp',['../decimal_8hpp.html',1,'']]],
   ['decimal128',['decimal128',['../classproton_1_1decimal128.html',1,'decimal128'],['../namespaceproton.html#a83c2656d467d69eb49725c18f5aa13a9ac68fb86fda41e4314b0ee0d00e3d5170',1,'proton::DECIMAL128()']]],
   ['decimal32',['decimal32',['../classproton_1_1decimal32.html',1,'decimal32'],['../namespaceproton.html#a83c2656d467d69eb49725c18f5aa13a9a8df764f32f4aeba9ac8c7baccfd73388',1,'proton::DECIMAL32()']]],
   ['decimal64',['decimal64',['../classproton_1_1decimal64.html',1,'decimal64'],['../namespaceproton.html#a83c2656d467d69eb49725c18f5aa13a9a9a82428c8d08720e3134f1243496f7d6',1,'proton::DECIMAL64()']]],
@@ -8,10 +9,14 @@ var searchData=
   ['decoder',['decoder',['../classproton_1_1codec_1_1decoder.html',1,'decoder'],['../classproton_1_1codec_1_1decoder.html#ac9222fed91a5066887b42f471de0be8a',1,'proton::codec::decoder::decoder(const data &amp;d, bool exact=false)'],['../classproton_1_1codec_1_1decoder.html#adaca283b3eeb8861b7f7e8e94f784810',1,'proton::codec::decoder::decoder(const internal::value_base &amp;, bool exact=false)']]],
   ['default_5fpriority',['default_priority',['../classproton_1_1message.html#a2014354e2553f4acc49fc9a921da7e92',1,'proton::message']]],
   ['default_5fsession',['default_session',['../classproton_1_1connection.html#a0e37f5c26858e9fa4399acbbcdbb6462',1,'proton::connection']]],
+  ['delay',['delay',['../classproton_1_1reconnect__options.html#a700d91bfa7a95ee851dd94eda092721b',1,'proton::reconnect_options']]],
+  ['delay_5fmultiplier',['delay_multiplier',['../classproton_1_1reconnect__options.html#a8456389a8174cf6d2ae2550e05e3e650',1,'proton::reconnect_options']]],
   ['delivery',['delivery',['../classproton_1_1delivery.html',1,'proton']]],
-  ['delivery_5fannotations',['delivery_annotations',['../classproton_1_1message.html#adb613430bba5478feb0c458d8a9e7145',1,'proton::message::delivery_annotations()'],['../classproton_1_1message.html#a61a343c78248490a76ea6999e8fccb65',1,'proton::message::delivery_annotations() const']]],
+  ['delivery_2ehpp',['delivery.hpp',['../delivery_8hpp.html',1,'']]],
   ['delivery_5fcount',['delivery_count',['../classproton_1_1message.html#ab8eed6909bec0a2ca6a76abed732a7e2',1,'proton::message::delivery_count() const'],['../classproton_1_1message.html#aaaf044a6b10403eafed371d20d5ba5c1',1,'proton::message::delivery_count(uint32_t)']]],
   ['delivery_5fmode',['delivery_mode',['../structproton_1_1delivery__mode.html',1,'delivery_mode'],['../classproton_1_1receiver__options.html#a582bced77754ed8a85f9597e2e457079',1,'proton::receiver_options::delivery_mode()'],['../classproton_1_1sender__options.html#ab7dc71a7b5737c2ca642058a296292db',1,'proton::sender_options::delivery_mode()']]],
+  ['delivery_5fmode_2ehpp',['delivery_mode.hpp',['../delivery__mode_8hpp.html',1,'']]],
+  ['deque_2ehpp',['deque.hpp',['../deque_8hpp.html',1,'']]],
   ['described',['DESCRIBED',['../namespaceproton.html#a83c2656d467d69eb49725c18f5aa13a9a69c9d854e6a5430635ad44693470612d',1,'proton']]],
   ['description',['description',['../classproton_1_1error__condition.html#a07ffe70037e0a16554c868bcdd8f83b5',1,'proton::error_condition']]],
   ['detach',['detach',['../classproton_1_1link.html#ac295bade8aee589f6718dfa79edc2a34',1,'proton::link']]],
@@ -24,5 +29,6 @@ var searchData=
   ['durability_5fmode',['durability_mode',['../classproton_1_1terminus.html#a61db0571ab7d1a29ad77549ff99d6b3d',1,'proton::terminus::durability_mode()'],['../classproton_1_1source__options.html#a89176218ec0f2754c6499935368627ab',1,'proton::source_options::durability_mode()'],['../classproton_1_1target__options.html#a8ebe0e28560c7873712674314ac9547d',1,'proton::target_options::durability_mode()'],['../classproton_1_1terminus.html#aeb6439d6ea5d274a59dd8e90d97f31d8',1,'proton::terminus::durability_mode()']]],
   ['durable',['durable',['../classproton_1_1message.html#a55c609ea272a8ec55ce723b6bd0325ea',1,'proton::message::durable() const'],['../classproton_1_1message.html#a84f7e28685ffb38fb86e9896743600cd',1,'proton::message::durable(bool)']]],
   ['duration',['duration',['../classproton_1_1duration.html',1,'duration'],['../classproton_1_1duration.html#aa4fb0163afbe72b04236e39e2b6d2dbf',1,'proton::duration::duration()']]],
+  ['duration_2ehpp',['duration.hpp',['../duration_8hpp.html',1,'']]],
   ['dynamic',['dynamic',['../classproton_1_1source__options.html#ab491bddac8a47b9478c748f43ab583d7',1,'proton::source_options::dynamic()'],['../classproton_1_1target__options.html#acc2d56132d2a7a0b644429b78ff00756',1,'proton::target_options::dynamic()'],['../classproton_1_1terminus.html#adcc4ef24adb8478230018c519aa636ec',1,'proton::terminus::dynamic()']]]
 ];

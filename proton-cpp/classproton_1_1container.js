@@ -20,13 +20,12 @@ var classproton_1_1container =
     [ "open_sender", "classproton_1_1container.html#a86afe9e853d5324dd9d01674572c3449", null ],
     [ "open_sender", "classproton_1_1container.html#adde74a2c056d5cad5fb14767b4fd9c75", null ],
     [ "open_sender", "classproton_1_1container.html#a93f1b213827e9ba6a32bf66bff6edb02", null ],
-    [ "receiver_options", "classproton_1_1container.html#adb619b02f3b5725a4b0e9f5adcc16f4d", null ],
     [ "receiver_options", "classproton_1_1container.html#a099ddaa3cfcd6a8ae14401bbbfb4b660", null ],
+    [ "receiver_options", "classproton_1_1container.html#adb619b02f3b5725a4b0e9f5adcc16f4d", null ],
     [ "run", "classproton_1_1container.html#a13a43e6d814de94978c515cb084873b1", null ],
-    [ "schedule", "classproton_1_1container.html#a4be5ea30a5e49d8bef9b8a6459c667c8", null ],
-    [ "schedule", "classproton_1_1container.html#a5539b34d35ab20856b7261961bf2df6b", null ],
-    [ "sender_options", "classproton_1_1container.html#ae7bfc8d811be7f6be17be6cf15e35b4a", null ],
+    [ "schedule", "classproton_1_1container.html#ab3f1870572a4547a197b5b1c5c3ac28b", null ],
     [ "sender_options", "classproton_1_1container.html#a7321836daba07f766f48ba65cec6ca2e", null ],
+    [ "sender_options", "classproton_1_1container.html#ae7bfc8d811be7f6be17be6cf15e35b4a", null ],
     [ "server_connection_options", "classproton_1_1container.html#a0c2d04a8b161f33eeae661b673ac2749", null ],
     [ "server_connection_options", "classproton_1_1container.html#a0e7a536b46ab843775da5390754c9bf6", null ],
     [ "stop", "classproton_1_1container.html#ade42a19caab198f0fd1d28e03cf9ba0e", null ],
@@ -34,5 +33,6 @@ var classproton_1_1container =
     [ "connection_options", "classproton_1_1container.html#aa7a43d870c5b99d019a6eab9c300296f", null ],
     [ "receiver_options", "classproton_1_1container.html#aa7aa12bc6d06f8de10eb34738504e155", null ],
     [ "sender_options", "classproton_1_1container.html#ac98743e39eb07d1cbac557e8b82668c1", null ],
-    [ "session_options", "classproton_1_1container.html#add9e3893ade63dfd20a74b5a3985be2a", null ]
+    [ "session_options", "classproton_1_1container.html#add9e3893ade63dfd20a74b5a3985be2a", null ],
+    [ "work_queue", "classproton_1_1container.html#aca87a5536bfa138b1a6fbfdeb9a54654", null ]
 ];

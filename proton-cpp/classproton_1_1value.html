@@ -112,7 +112,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae7acdea6863a3b5100b7ac9e0b4c73e1"><td class="memTemplParams" colspan="2"><a id="ae7acdea6863a3b5100b7ac9e0b4c73e1"></a>
 template&lt;class T &gt; </td></tr>
 <tr class="memitem:ae7acdea6863a3b5100b7ac9e0b4c73e1"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classproton_1_1value.html#ae7acdea6863a3b5100b7ac9e0b4c73e1">value</a> (const T &amp;x, typename assignable&lt; T &gt;::<a class="el" href="classproton_1_1value.html#a89dd77b1757d854f49d49e379f8f9db8">type</a> *=0)</td></tr>
-<tr class="memdesc:ae7acdea6863a3b5100b7ac9e0b4c73e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from any allowed type T. <br /></td></tr>
+<tr class="memdesc:ae7acdea6863a3b5100b7ac9e0b4c73e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy from any allowed type T. <br /></td></tr>
 <tr class="separator:ae7acdea6863a3b5100b7ac9e0b4c73e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad139f5042c366b09078f123f5621c156"><td class="memTemplParams" colspan="2"><a id="ad139f5042c366b09078f123f5621c156"></a>
 template&lt;class T &gt; </td></tr>
@@ -216,7 +216,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Coerce the contained value to type T. </p>
-<p>For example: </p><pre class="fragment">uint64_t i = get&lt;uint64_t&gt;(x)
+<p>For example: </p><pre class="fragment">uint64_t i = coerce&lt;uint64_t&gt;(x)
 </pre><p>This will succeed if x contains any numeric value, but may lose precision if it contains a float or double value.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -299,7 +299,7 @@ Related Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="service_bus_8cpp-example.html#a17">service_bus.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="service_bus_8cpp-example.html#a18">service_bus.cpp</a>.</dd>
 </dl>
 </div>
 </div>

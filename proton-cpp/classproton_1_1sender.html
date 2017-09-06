@@ -128,7 +128,7 @@ class <a class="el" href="classproton_1_1target.html">target</a>&#160;</td><td c
 <tr class="memdesc:a5f0b815f331997411a6794f8628592ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the target node. <br /></td></tr>
 <tr class="separator:a5f0b815f331997411a6794f8628592ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc4cb5f2f38643abb47c0b221a130bc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1sender.html#abc4cb5f2f38643abb47c0b221a130bc8">return_credit</a> ()</td></tr>
-<tr class="memdesc:abc4cb5f2f38643abb47c0b221a130bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Experimental</b> - Return all unused credit to the receiver in response to a drain request.  <a href="#abc4cb5f2f38643abb47c0b221a130bc8">More...</a><br /></td></tr>
+<tr class="memdesc:abc4cb5f2f38643abb47c0b221a130bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Unsettled API</b> - Return all unused credit to the receiver in response to a drain request.  <a href="#abc4cb5f2f38643abb47c0b221a130bc8">More...</a><br /></td></tr>
 <tr class="separator:abc4cb5f2f38643abb47c0b221a130bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab51c3843057c4c187574e2d44839f815"><td class="memItemLeft" align="right" valign="top"><a id="ab51c3843057c4c187574e2d44839f815"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1link.html#ab51c3843057c4c187574e2d44839f815">uninitialized</a> () const</td></tr>
@@ -160,7 +160,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memdesc:afd27bd11ba72d7df51c44f71b15749eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Credit available on the link. <br /></td></tr>
 <tr class="separator:afd27bd11ba72d7df51c44f71b15749eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19c36a38b50e8080b94a47230a56234f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1link.html#a19c36a38b50e8080b94a47230a56234f">draining</a> ()</td></tr>
-<tr class="memdesc:a19c36a38b50e8080b94a47230a56234f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Experimental</b> - True for a receiver if a drain cycle has been started and the corresponding <code>on_receiver_drain_finish</code> event is still pending.  <a href="#a19c36a38b50e8080b94a47230a56234f">More...</a><br /></td></tr>
+<tr class="memdesc:a19c36a38b50e8080b94a47230a56234f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Unsettled API</b> - True for a receiver if a drain cycle has been started and the corresponding <code>on_receiver_drain_finish</code> event is still pending.  <a href="#a19c36a38b50e8080b94a47230a56234f">More...</a><br /></td></tr>
 <tr class="separator:a19c36a38b50e8080b94a47230a56234f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d89c28bd42ba9a52da008bb69367171"><td class="memItemLeft" align="right" valign="top"><a id="a1d89c28bd42ba9a52da008bb69367171"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1link.html#a1d89c28bd42ba9a52da008bb69367171">name</a> () const</td></tr>
@@ -170,6 +170,10 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 class <a class="el" href="classproton_1_1container.html">container</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1link.html#a2f632b80247e868b8264b8a025b84baf">container</a> () const</td></tr>
 <tr class="memdesc:a2f632b80247e868b8264b8a025b84baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The container for this link. <br /></td></tr>
 <tr class="separator:a2f632b80247e868b8264b8a025b84baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c755d6ac6385e007adb61966598ba63"><td class="memItemLeft" align="right" valign="top"><a id="a7c755d6ac6385e007adb61966598ba63"></a>
+class <a class="el" href="classproton_1_1work__queue.html">work_queue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1link.html#a7c755d6ac6385e007adb61966598ba63">work_queue</a> () const</td></tr>
+<tr class="memdesc:a7c755d6ac6385e007adb61966598ba63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classproton_1_1work__queue.html" title="Unsettled API - A work queue for serial execution. ">work_queue</a> for the link. <br /></td></tr>
+<tr class="separator:a7c755d6ac6385e007adb61966598ba63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff302bb6016f2ae29f01bb4e07389a52"><td class="memItemLeft" align="right" valign="top"><a id="aff302bb6016f2ae29f01bb4e07389a52"></a>
 class <a class="el" href="classproton_1_1connection.html">connection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classproton_1_1link.html#aff302bb6016f2ae29f01bb4e07389a52">connection</a> () const</td></tr>
 <tr class="memdesc:aff302bb6016f2ae29f01bb4e07389a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">The connection that owns this link. <br /></td></tr>
@@ -181,7 +185,7 @@ class <a class="el" href="classproton_1_1session.html">session</a>&#160;</td><td
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A channel for sending messages. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8cpp-example.html#_a0">broker.cpp</a>, <a class="el" href="broker_8hpp-example.html#_a0">broker.hpp</a>, <a class="el" href="client_8cpp-example.html#_a3">client.cpp</a>, <a class="el" href="direct_send_8cpp-example.html#_a6">direct_send.cpp</a>, <a class="el" href="helloworld_8cpp-example.html#_a11">helloworld.cpp</a>, <a class="el" href="helloworld_direct_8cpp-example.html#_a7">helloworld_direct.cpp</a>, <a class="el" href="mt_2broker_8cpp-example.html#_a4">mt/broker.cpp</a>, <a class="el" href="scheduled_send_8cpp-example.html#_a1">scheduled_send.cpp</a>, <a class="el" href="scheduled_send_03_8cpp-example.html#_a1">scheduled_send_03.cpp</a>, <a class="el" href="server_direct_8cpp-example.html#_a5">server_direct.cpp</a>, <a class="el" href="service_bus_8cpp-example.html#_a24">service_bus.cpp</a>, and <a class="el" href="simple_send_8cpp-example.html#_a1">simple_send.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8cpp-example.html#_a1">broker.cpp</a>, <a class="el" href="client_8cpp-example.html#_a3">client.cpp</a>, <a class="el" href="direct_send_8cpp-example.html#_a6">direct_send.cpp</a>, <a class="el" href="helloworld_8cpp-example.html#_a11">helloworld.cpp</a>, <a class="el" href="helloworld_direct_8cpp-example.html#_a7">helloworld_direct.cpp</a>, <a class="el" href="multithreaded_client_8cpp-example.html#_a1">multithreaded_client.cpp</a>, <a class="el" href="multithreaded_client_flow_control_8cpp-example.html#_a1">multithreaded_client_flow_control.cpp</a>, <a class="el" href="scheduled_send_8cpp-example.html#_a1">scheduled_send.cpp</a>, <a class="el" href="scheduled_send_03_8cpp-example.html#_a8">scheduled_send_03.cpp</a>, <a class="el" href="server_direct_8cpp-example.html#_a5">server_direct.cpp</a>, <a class="el" href="service_bus_8cpp-example.html#_a25">service_bus.cpp</a>, and <a class="el" href="simple_send_8cpp-example.html#_a1">simple_send.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5ae591df94fc66ccb85cbb6565368bca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ae591df94fc66ccb85cbb6565368bca">&#9670;&nbsp;</a></span>close() <span class="overload">[1/2]</span></h2>
@@ -210,7 +214,7 @@ class <a class="el" href="classproton_1_1session.html">session</a>&#160;</td><td
 <dl class="section see"><dt>See also</dt><dd>endpoint_lifecycle </dd></dl>
 
 <p>Implements <a class="el" href="classproton_1_1endpoint.html#af6ee7eacbde6b379b68d954e44f6e549">endpoint</a>.</p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8cpp-example.html#a8">broker.cpp</a>, <a class="el" href="direct_recv_8cpp-example.html#a11">direct_recv.cpp</a>, <a class="el" href="helloworld_8cpp-example.html#a14">helloworld.cpp</a>, <a class="el" href="helloworld_direct_8cpp-example.html#a10">helloworld_direct.cpp</a>, <a class="el" href="service_bus_8cpp-example.html#a20">service_bus.cpp</a>, and <a class="el" href="simple_recv_8cpp-example.html#a14">simple_recv.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="direct_recv_8cpp-example.html#a11">direct_recv.cpp</a>, <a class="el" href="helloworld_8cpp-example.html#a14">helloworld.cpp</a>, <a class="el" href="helloworld_direct_8cpp-example.html#a10">helloworld_direct.cpp</a>, <a class="el" href="service_bus_8cpp-example.html#a21">service_bus.cpp</a>, and <a class="el" href="simple_recv_8cpp-example.html#a14">simple_recv.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -296,7 +300,7 @@ class <a class="el" href="classproton_1_1session.html">session</a>&#160;</td><td
 </table>
 </div><div class="memdoc">
 
-<p><b>Experimental</b> - True for a receiver if a drain cycle has been started and the corresponding <code>on_receiver_drain_finish</code> event is still pending. </p>
+<p><b>Unsettled API</b> - True for a receiver if a drain cycle has been started and the corresponding <code>on_receiver_drain_finish</code> event is still pending. </p>
 <p>True for a sender if the receiver has requested a drain of credit and the sender has unused credit.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classproton_1_1receiver.html#af7d01b5776b9d8a0f218aec331ddaeb9">receiver::drain</a>. </dd></dl>
 
@@ -319,7 +323,7 @@ class <a class="el" href="classproton_1_1session.html">session</a>&#160;</td><td
 
 <p>Open the sender. </p>
 <dl class="section see"><dt>See also</dt><dd>endpoint_lifecycle </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8cpp-example.html#a10">broker.cpp</a>, <a class="el" href="broker_8hpp-example.html#a12">broker.hpp</a>, <a class="el" href="mt_2broker_8cpp-example.html#a8">mt/broker.cpp</a>, and <a class="el" href="server_direct_8cpp-example.html#a8">server_direct.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8cpp-example.html#a12">broker.cpp</a>, and <a class="el" href="server_direct_8cpp-example.html#a8">server_direct.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -359,9 +363,9 @@ class <a class="el" href="classproton_1_1session.html">session</a>&#160;</td><td
       </table>
 </div><div class="memdoc">
 
-<p><b>Experimental</b> - Return all unused credit to the receiver in response to a drain request. </p>
+<p><b>Unsettled API</b> - Return all unused credit to the receiver in response to a drain request. </p>
 <p>Has no effect unless there has been a drain request and there is remaining credit to use or return.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classproton_1_1receiver.html#af7d01b5776b9d8a0f218aec331ddaeb9" title="Experimental - Commence a drain cycle. ">receiver::drain</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classproton_1_1receiver.html#af7d01b5776b9d8a0f218aec331ddaeb9" title="Unsettled API - Commence a drain cycle. ">receiver::drain</a> </dd></dl>
 
 </div>
 </div>
