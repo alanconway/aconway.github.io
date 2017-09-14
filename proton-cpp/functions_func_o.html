@@ -19,6 +19,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -32,6 +35,21 @@
    &#160;<span id="projectnumber">0.18.0</span>
    </div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -41,15 +59,6 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -188,12 +197,12 @@ $(document).ready(function(){initNavTree('functions_func_o.html','');});
 </li>
 <li>open_receiver()
 : <a class="el" href="classproton_1_1connection.html#aad60d14592ee9d34caca4c61214ecd27">connection</a>
-, <a class="el" href="classproton_1_1container.html#ac4f8ffaa917c20c8c89106948c2a19c3">container</a>
+, <a class="el" href="classproton_1_1container.html#a15df75d582af4ed83f0ffab9dcce84bf">container</a>
 , <a class="el" href="classproton_1_1session.html#aad60d14592ee9d34caca4c61214ecd27">session</a>
 </li>
 <li>open_sender()
 : <a class="el" href="classproton_1_1connection.html#ae8eece4fd4b9e1a2531ca12d2ab57a32">connection</a>
-, <a class="el" href="classproton_1_1container.html#a93f1b213827e9ba6a32bf66bff6edb02">container</a>
+, <a class="el" href="classproton_1_1container.html#ab868043d49b61929cf852b725816faf9">container</a>
 , <a class="el" href="classproton_1_1session.html#ae8eece4fd4b9e1a2531ca12d2ab57a32">session</a>
 </li>
 <li>open_session()
@@ -213,18 +222,17 @@ $(document).ready(function(){initNavTree('functions_func_o.html','');});
 : <a class="el" href="classproton_1_1error__condition.html#a61efd4196a96540ee018fee8791f3f10">error_condition</a>
 </li>
 <li>operator()()
-: <a class="el" href="classproton_1_1void__function0.html#a324459cde4e05e4de96adba1787c5240">void_function0</a>
-, <a class="el" href="classproton_1_1work.html#a5ccbdeb5350ba8528eab7e4cc49fc68b">work</a>
+: <a class="el" href="classproton_1_1work.html#a5ccbdeb5350ba8528eab7e4cc49fc68b">work</a>
 </li>
 <li>operator&lt;&lt;()
-: <a class="el" href="classproton_1_1codec_1_1encoder.html#ae899d62164114228541da27e80372bc2">encoder</a>
+: <a class="el" href="classproton_1_1codec_1_1encoder.html#a041e90045de495b728fb95bbed97a531">encoder</a>
 </li>
 <li>operator=()
 : <a class="el" href="classproton_1_1binary.html#ac04f4568094b18213b75d4400d8e2477">binary</a>
 , <a class="el" href="classproton_1_1connection__options.html#a2c612e142b60cf61ce50d88582465167">connection_options</a>
 , <a class="el" href="classproton_1_1duration.html#a13ff6465e0979fe301b75ea574ce2304">duration</a>
-, <a class="el" href="classproton_1_1map.html#ada6de583b7cdc95792661bcc0ff8a517">map&lt; K, T &gt;</a>
-, <a class="el" href="classproton_1_1message.html#af7deffda335cb4457af3830b798182f4">message</a>
+, <a class="el" href="classproton_1_1map.html#a16a75d371d4e6287b352f5066643f030">map&lt; K, T &gt;</a>
+, <a class="el" href="classproton_1_1message.html#ac7abf26f9566b75b59af27ca13b2182f">message</a>
 , <a class="el" href="classproton_1_1message__id.html#a0e4798868734cc90ea4e9ed3ca870d3d">message_id</a>
 , <a class="el" href="classproton_1_1receiver__options.html#a815be8018205013b8ff011d4b62b7324">receiver_options</a>
 , <a class="el" href="classproton_1_1reconnect__options.html#aea298c3d006e10b7da6608591949b270">reconnect_options</a>
@@ -238,7 +246,7 @@ $(document).ready(function(){initNavTree('functions_func_o.html','');});
 , <a class="el" href="classproton_1_1value.html#ad139f5042c366b09078f123f5621c156">value</a>
 </li>
 <li>operator&gt;&gt;()
-: <a class="el" href="classproton_1_1codec_1_1decoder.html#ad96e5571bbd7384096ca07a8a9368ffc">decoder</a>
+: <a class="el" href="classproton_1_1codec_1_1decoder.html#a29037b1d70f61e041b2d5be7c67b577d">decoder</a>
 </li>
 <li>outcome()
 : <a class="el" href="classproton_1_1sasl.html#aee5a4997bbfa58f1b8176f936618de00">sasl</a>

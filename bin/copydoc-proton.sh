@@ -1,3 +1,4 @@
 #!/bin/sh
-rsync -arv --delete ./proton-c/docs/api/html/ $HOME/alanconway.github.io/proton-c
-rsync -arv --delete ./proton-c/bindings/cpp/docs/html/ $HOME/alanconway.github.io/proton-cpp
+PROTON=$1
+rsync -arv --delete $PROTON/proton-c/docs/api/html/ proton-c
+rsync -arv --delete $PROTON/proton-c/bindings/cpp/docs/html/ proton-cpp

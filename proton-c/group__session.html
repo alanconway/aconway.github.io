@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Qpid Proton C API: Session</title>
+<title>Qpid Proton C: Session</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -19,6 +19,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,10 +31,25 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Qpid Proton C API
+   <div id="projectname">Qpid Proton C
    &#160;<span id="projectnumber">0.18.0</span>
    </div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -41,15 +59,6 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -203,7 +212,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a pointer to the new session </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="receive_8c-example.html#a18">receive.c</a>, and <a class="el" href="send_8c-example.html#a29">send.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="receive_8c-example.html#a19">receive.c</a>, and <a class="el" href="send_8c-example.html#a29">send.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -250,7 +259,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated:</a></b></dt><dd></dd></dl>
 <p>Get the application context that is associated with a session object.</p>
 <p>The application context for a session may be set using <a class="el" href="group__session.html#ga31f2e4cc76135f79e96453aa72d441b2">pn_session_set_context</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -288,7 +296,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated:</a></b></dt><dd></dd></dl>
 <p>Set a new application context for a session object.</p>
 <p>The application context for a session object may be retrieved using <a class="el" href="group__session.html#ga07da6cda67bdb37511b0aa9c8a04d532">pn_session_get_context</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -370,7 +377,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated:</a></b></dt><dd></dd></dl>
 <p>Get additional error information associated with the session.</p>
 <p>Whenever a session operation fails (i.e. returns an error code), additional error details can be obtained using this function. The error object that is returned may also be used to clear the error condition.</p>
 <p>The pointer returned by this operation is valid until the session object is freed.</p>
@@ -439,7 +445,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the session's remote condition object </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a72">broker.c</a>, <a class="el" href="direct_8c-example.html#a80">direct.c</a>, <a class="el" href="receive_8c-example.html#a44">receive.c</a>, and <a class="el" href="send_8c-example.html#a54">send.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a72">broker.c</a>, <a class="el" href="direct_8c-example.html#a80">direct.c</a>, <a class="el" href="receive_8c-example.html#a45">receive.c</a>, and <a class="el" href="send_8c-example.html#a54">send.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -468,7 +474,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the parent connection object </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a1">broker.c</a>, <a class="el" href="direct_8c-example.html#a47">direct.c</a>, and <a class="el" href="receive_8c-example.html#a37">receive.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a1">broker.c</a>, <a class="el" href="direct_8c-example.html#a47">direct.c</a>, and <a class="el" href="receive_8c-example.html#a38">receive.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -496,7 +502,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a44">broker.c</a>, <a class="el" href="direct_8c-example.html#a72">direct.c</a>, <a class="el" href="receive_8c-example.html#a19">receive.c</a>, and <a class="el" href="send_8c-example.html#a30">send.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a44">broker.c</a>, <a class="el" href="direct_8c-example.html#a72">direct.c</a>, <a class="el" href="receive_8c-example.html#a20">receive.c</a>, and <a class="el" href="send_8c-example.html#a30">send.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -524,7 +530,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a73">broker.c</a>, <a class="el" href="direct_8c-example.html#a46">direct.c</a>, and <a class="el" href="receive_8c-example.html#a36">receive.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="broker_8c-example.html#a73">broker.c</a>, <a class="el" href="direct_8c-example.html#a46">direct.c</a>, and <a class="el" href="receive_8c-example.html#a37">receive.c</a>.</dd>
 </dl>
 </div>
 </div>

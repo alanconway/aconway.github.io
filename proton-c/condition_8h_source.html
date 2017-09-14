@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Qpid Proton C API: proton/condition.h Source File</title>
+<title>Qpid Proton C: proton/condition.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -19,6 +19,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,10 +31,25 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Qpid Proton C API
+   <div id="projectname">Qpid Proton C
    &#160;<span id="projectnumber">0.18.0</span>
    </div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -41,15 +59,6 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -92,7 +101,7 @@ $(document).ready(function(){initNavTree('condition_8h_source.html','');});
 <div class="ttc" id="group__condition_html_gac798dc9acd131cb47a3e7291efffbc02"><div class="ttname"><a href="group__condition.html#gac798dc9acd131cb47a3e7291efffbc02">pn_condition</a></div><div class="ttdeci">pn_condition_t * pn_condition(void)</div><div class="ttdoc">Create a condition object. </div></div>
 <div class="ttc" id="group__condition_html_gaccab52be69f97d7be2d199b4e1f11380"><div class="ttname"><a href="group__condition.html#gaccab52be69f97d7be2d199b4e1f11380">pn_condition_vformat</a></div><div class="ttdeci">int pn_condition_vformat(pn_condition_t *, const char *name, const char *fmt, va_list ap)</div><div class="ttdoc">Set the name and printf-style formatted description. </div></div>
 <div class="ttc" id="group__condition_html_gaefa0da2c1e82f29ddda357e171f5a50a"><div class="ttname"><a href="group__condition.html#gaefa0da2c1e82f29ddda357e171f5a50a">pn_condition_is_redirect</a></div><div class="ttdeci">bool pn_condition_is_redirect(pn_condition_t *condition)</div><div class="ttdoc">Returns true if the condition is a redirect. </div></div>
-<div class="ttc" id="group__data_html_ga5d6cf528776e8b6ad6d67caf095986bf"><div class="ttname"><a href="group__data.html#ga5d6cf528776e8b6ad6d67caf095986bf">pn_data_t</a></div><div class="ttdeci">struct pn_data_t pn_data_t</div><div class="ttdoc">An AMQP Data object. </div><div class="ttdef"><b>Definition:</b> codec.h:365</div></div>
+<div class="ttc" id="group__data_html_ga5d6cf528776e8b6ad6d67caf095986bf"><div class="ttname"><a href="group__data.html#ga5d6cf528776e8b6ad6d67caf095986bf">pn_data_t</a></div><div class="ttdeci">struct pn_data_t pn_data_t</div><div class="ttdoc">An AMQP Data object. </div><div class="ttdef"><b>Definition:</b> codec.h:364</div></div>
 <div class="ttc" id="group__condition_html_ga05b0d374d90f11d9ebbf818662569689"><div class="ttname"><a href="group__condition.html#ga05b0d374d90f11d9ebbf818662569689">pn_condition_get_name</a></div><div class="ttdeci">const char * pn_condition_get_name(pn_condition_t *condition)</div><div class="ttdoc">Returns the name associated with the exceptional condition, or NULL if there is no conditional inform...</div></div>
 <div class="ttc" id="group__condition_html_gaf92a380a12c91d4124c22af62318c2e9"><div class="ttname"><a href="group__condition.html#gaf92a380a12c91d4124c22af62318c2e9">pn_condition_redirect_port</a></div><div class="ttdeci">int pn_condition_redirect_port(pn_condition_t *condition)</div><div class="ttdoc">Retrieves the redirect port from the additional information associated with the condition. </div></div>
 <div class="ttc" id="group__condition_html_gaabebb65bfcf47b6f7d83ab6fb0153bb8"><div class="ttname"><a href="group__condition.html#gaabebb65bfcf47b6f7d83ab6fb0153bb8">pn_condition_get_description</a></div><div class="ttdeci">const char * pn_condition_get_description(pn_condition_t *condition)</div><div class="ttdoc">Gets the description associated with the exceptional condition. </div></div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Qpid Proton C API: proton/delivery.h File Reference</title>
+<title>Qpid Proton C: proton/delivery.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -19,6 +19,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -28,10 +31,25 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Qpid Proton C API
+   <div id="projectname">Qpid Proton C
    &#160;<span id="projectnumber">0.18.0</span>
    </div>
   </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -41,15 +59,6 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
-</script>
-<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -146,6 +155,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga23c7b3c678228ccb21378e7c8ec9a72d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__delivery.html#ga23c7b3c678228ccb21378e7c8ec9a72d">pn_delivery_partial</a> (<a class="el" href="group__delivery.html#gacdfce854066c0a4ff4db9f9a0478f340">pn_delivery_t</a> *delivery)</td></tr>
 <tr class="memdesc:ga23c7b3c678228ccb21378e7c8ec9a72d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a delivery only has partial message data.  <a href="group__delivery.html#ga23c7b3c678228ccb21378e7c8ec9a72d">More...</a><br /></td></tr>
 <tr class="separator:ga23c7b3c678228ccb21378e7c8ec9a72d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga712690e0cc84419d7b7ca7c49a10b776"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__delivery.html#ga712690e0cc84419d7b7ca7c49a10b776">pn_delivery_aborted</a> (<a class="el" href="group__delivery.html#gacdfce854066c0a4ff4db9f9a0478f340">pn_delivery_t</a> *delivery)</td></tr>
+<tr class="memdesc:ga712690e0cc84419d7b7ca7c49a10b776"><td class="mdescLeft">&#160;</td><td class="mdescRight">On the receiving side, check if the delivery has been aborted.  <a href="group__delivery.html#ga712690e0cc84419d7b7ca7c49a10b776">More...</a><br /></td></tr>
+<tr class="separator:ga712690e0cc84419d7b7ca7c49a10b776"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga533bd8dd766786695b6e71f8505252f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__delivery.html#ga533bd8dd766786695b6e71f8505252f1">pn_delivery_writable</a> (<a class="el" href="group__delivery.html#gacdfce854066c0a4ff4db9f9a0478f340">pn_delivery_t</a> *delivery)</td></tr>
 <tr class="memdesc:ga533bd8dd766786695b6e71f8505252f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a delivery is writable.  <a href="group__delivery.html#ga533bd8dd766786695b6e71f8505252f1">More...</a><br /></td></tr>
 <tr class="separator:ga533bd8dd766786695b6e71f8505252f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,6 +176,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga365b3efbdd225a239dcf4746127c5f33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__delivery.html#ga365b3efbdd225a239dcf4746127c5f33">pn_delivery_current</a> (<a class="el" href="group__delivery.html#gacdfce854066c0a4ff4db9f9a0478f340">pn_delivery_t</a> *delivery)</td></tr>
 <tr class="memdesc:ga365b3efbdd225a239dcf4746127c5f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if delivery is the current delivery for its link.  <a href="group__delivery.html#ga365b3efbdd225a239dcf4746127c5f33">More...</a><br /></td></tr>
 <tr class="separator:ga365b3efbdd225a239dcf4746127c5f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga407e51ff91368568d15f938b1771357c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__delivery.html#ga407e51ff91368568d15f938b1771357c">pn_delivery_abort</a> (<a class="el" href="group__delivery.html#gacdfce854066c0a4ff4db9f9a0478f340">pn_delivery_t</a> *delivery)</td></tr>
+<tr class="memdesc:ga407e51ff91368568d15f938b1771357c"><td class="mdescLeft">&#160;</td><td class="mdescRight">On the sending side, abort a delivery.  <a href="group__delivery.html#ga407e51ff91368568d15f938b1771357c">More...</a><br /></td></tr>
+<tr class="separator:ga407e51ff91368568d15f938b1771357c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga98c275fd7158e8b9d7d48d70503d68df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__delivery.html#ga98c275fd7158e8b9d7d48d70503d68df">pn_delivery_settle</a> (<a class="el" href="group__delivery.html#gacdfce854066c0a4ff4db9f9a0478f340">pn_delivery_t</a> *delivery)</td></tr>
 <tr class="memdesc:ga98c275fd7158e8b9d7d48d70503d68df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Settle a delivery.  <a href="group__delivery.html#ga98c275fd7158e8b9d7d48d70503d68df">More...</a><br /></td></tr>
 <tr class="separator:ga98c275fd7158e8b9d7d48d70503d68df"><td class="memSeparator" colspan="2">&#160;</td></tr>
