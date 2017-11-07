@@ -1,0 +1,2694 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Qpid::Proton::Link
+  
+    &mdash; Documentation by YARD 0.9.8
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Qpid::Proton::Link";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (L)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span>
+     &raquo; 
+    <span class="title">Link</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Qpid::Proton::Link
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="Endpoint.html" title="Qpid::Proton::Endpoint (class)">Endpoint</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Endpoint.html" title="Qpid::Proton::Endpoint (class)">Endpoint</a></span></li>
+          
+            <li class="next">Qpid::Proton::Link</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/core/link.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The base for both Sender and Receiver, providing common functionality
+between both ends.</p>
+
+<p>A Link has a single parent Qpid::Proton::Session instance.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span>, <span class='object_link'><a href="Sender.html" title="Qpid::Proton::Sender (class)">Sender</a></span></p>
+</div>
+
+  <h2>Constant Summary</h2>
+  <dl class="constants">
+    
+      <dt id="SND_UNSETTLED-constant" class="">SND_UNSETTLED =
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>The sender will send all deliveries initially unsettled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_SND_UNSETTLED</span></pre></dd>
+    
+      <dt id="SND_SETTLED-constant" class="">SND_SETTLED =
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>The sender will send all deliveries settled to the receiver.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_SND_SETTLED</span></pre></dd>
+    
+      <dt id="SND_MIXED-constant" class="">SND_MIXED =
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>The sender may send a mixture of settled and unsettled deliveries.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_SND_MIXED</span></pre></dd>
+    
+      <dt id="RCV_FIRST-constant" class="">RCV_FIRST =
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>The receiver will settle deliveries regardless of what the sender does.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_RCV_FIRST</span></pre></dd>
+    
+      <dt id="RCV_SECOND-constant" class="">RCV_SECOND =
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>The receiver will only settle deliveries after the sender settles.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_RCV_SECOND</span></pre></dd>
+    
+  </dl>
+
+
+
+  
+  
+  <h3 class="inherited">Constants inherited
+     from <span class='object_link'><a href="Endpoint.html" title="Qpid::Proton::Endpoint (class)">Endpoint</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoint.html#LOCAL_ACTIVE-constant" title="Qpid::Proton::Endpoint::LOCAL_ACTIVE (constant)">Endpoint::LOCAL_ACTIVE</a></span>, <span class='object_link'><a href="Endpoint.html#LOCAL_CLOSED-constant" title="Qpid::Proton::Endpoint::LOCAL_CLOSED (constant)">Endpoint::LOCAL_CLOSED</a></span>, <span class='object_link'><a href="Endpoint.html#LOCAL_MASK-constant" title="Qpid::Proton::Endpoint::LOCAL_MASK (constant)">Endpoint::LOCAL_MASK</a></span>, <span class='object_link'><a href="Endpoint.html#LOCAL_UNINIT-constant" title="Qpid::Proton::Endpoint::LOCAL_UNINIT (constant)">Endpoint::LOCAL_UNINIT</a></span>, <span class='object_link'><a href="Endpoint.html#REMOTE_ACTIVE-constant" title="Qpid::Proton::Endpoint::REMOTE_ACTIVE (constant)">Endpoint::REMOTE_ACTIVE</a></span>, <span class='object_link'><a href="Endpoint.html#REMOTE_CLOSED-constant" title="Qpid::Proton::Endpoint::REMOTE_CLOSED (constant)">Endpoint::REMOTE_CLOSED</a></span>, <span class='object_link'><a href="Endpoint.html#REMOTE_MASK-constant" title="Qpid::Proton::Endpoint::REMOTE_MASK (constant)">Endpoint::REMOTE_MASK</a></span>, <span class='object_link'><a href="Endpoint.html#REMOTE_UNINIT-constant" title="Qpid::Proton::Endpoint::REMOTE_UNINIT (constant)">Endpoint::REMOTE_UNINIT</a></span></p>
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#available-instance_method" title="#available (instance method)">#<strong>available</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the available deliveries hint for a link.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#credit-instance_method" title="#credit (instance method)">#<strong>credit</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the credit balance for a link.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-instance_method" title="#name (instance method)">#<strong>name</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the name of the link.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#queued-instance_method" title="#queued (instance method)">#<strong>queued</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the number of queued deliveries for a link.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#receiver%3F-instance_method" title="#receiver? (instance method)">#<strong>receiver?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns if the link is a receiver.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remote_credit-instance_method" title="#remote_credit (instance method)">#<strong>remote_credit</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the remote view of the credit.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sender%3F-instance_method" title="#sender? (instance method)">#<strong>sender?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns if the link is a sender.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#state-instance_method" title="#state (instance method)">#<strong>state</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the endpoint state flags.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(other)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#advance-instance_method" title="#advance (instance method)">#<strong>advance</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Advance the current delivery to the next on the link.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#close-instance_method" title="#close (instance method)">#<strong>close</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Closes the link.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#connection-instance_method" title="#connection (instance method)">#<strong>connection</strong>  &#x21d2; Connection </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the parent connection.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#current-instance_method" title="#current (instance method)">#<strong>current</strong>  &#x21d2; Delivery </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the current delivery.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delivery-instance_method" title="#delivery (instance method)">#<strong>delivery</strong>(tag)  &#x21d2; Delivery </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the parent delivery.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#detach-instance_method" title="#detach (instance method)">#<strong>detach</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Detaches the link.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#drained-instance_method" title="#drained (instance method)">#<strong>drained</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Drains excess credit.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#error-instance_method" title="#error (instance method)">#<strong>error</strong>  &#x21d2; Error </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns additional error information.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#next-instance_method" title="#next (instance method)">#<strong>next</strong>(state_mask)  &#x21d2; Sender, Receiver </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the next link that matches the given state mask.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#open-instance_method" title="#open (instance method)">#<strong>open</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Opens the link.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rcv_settle_mode-instance_method" title="#rcv_settle_mode (instance method)">#<strong>rcv_settle_mode</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the local receiver settle mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rcv_settle_mode=-instance_method" title="#rcv_settle_mode= (instance method)">#<strong>rcv_settle_mode=</strong>(mode)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the local receiver settle mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remote_source-instance_method" title="#remote_source (instance method)">#<strong>remote_source</strong>  &#x21d2; Terminus </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a representation of the remotely defined source terminus.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remote_target-instance_method" title="#remote_target (instance method)">#<strong>remote_target</strong>  &#x21d2; Terminus </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a representation of the remotely defined target terminus.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#session-instance_method" title="#session (instance method)">#<strong>session</strong>  &#x21d2; Session </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the parent session.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#snd_settle_mode-instance_method" title="#snd_settle_mode (instance method)">#<strong>snd_settle_mode</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the local sender settle mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#snd_settle_mode=-instance_method" title="#snd_settle_mode= (instance method)">#<strong>snd_settle_mode=</strong>(mode)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the local sender settle mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#source-instance_method" title="#source (instance method)">#<strong>source</strong>  &#x21d2; Terminus </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the locally defined source terminus.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#target-instance_method" title="#target (instance method)">#<strong>target</strong>  &#x21d2; Terminus </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the locally defined target terminus.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Endpoint.html" title="Qpid::Proton::Endpoint (class)">Endpoint</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Endpoint.html#closed%3F-instance_method" title="Qpid::Proton::Endpoint#closed? (method)">#closed?</a></span>, <span class='object_link'><a href="Endpoint.html#condition-instance_method" title="Qpid::Proton::Endpoint#condition (method)">#condition</a></span>, <span class='object_link'><a href="Endpoint.html#handler-instance_method" title="Qpid::Proton::Endpoint#handler (method)">#handler</a></span>, <span class='object_link'><a href="Endpoint.html#handler=-instance_method" title="Qpid::Proton::Endpoint#handler= (method)">#handler=</a></span>, <span class='object_link'><a href="Endpoint.html#local_active%3F-instance_method" title="Qpid::Proton::Endpoint#local_active? (method)">#local_active?</a></span>, <span class='object_link'><a href="Endpoint.html#local_closed%3F-instance_method" title="Qpid::Proton::Endpoint#local_closed? (method)">#local_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#local_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#local_uninit? (method)">#local_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#open%3F-instance_method" title="Qpid::Proton::Endpoint#open? (method)">#open?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_active%3F-instance_method" title="Qpid::Proton::Endpoint#remote_active? (method)">#remote_active?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_closed%3F-instance_method" title="Qpid::Proton::Endpoint#remote_closed? (method)">#remote_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#remote_uninit? (method)">#remote_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#transport-instance_method" title="Qpid::Proton::Endpoint#transport (method)">#transport</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="available-instance_method">
+  
+    #<strong>available</strong>  &#x21d2; <tt>Integer</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the available deliveries hint for a link.</p>
+
+<p>The available count for a link provides a hint as to the number of
+deliveries that might be able to be sent if sufficient credit were issued
+by the receiving link endpoint.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The available deliveries hint.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Sender.html#offered-instance_method" title="Qpid::Proton::Sender#offered (method)">Sender#offered</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+149</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 149</span>
+
+<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:available</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="credit-instance_method">
+  
+    #<strong>credit</strong>  &#x21d2; <tt>Integer</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the credit balance for a link.</p>
+
+<p>Links use a credit based flow control scheme. Every receiver maintains a
+credit balance that corresponds to the number of deliveries that the
+receiver can accept at any given moment.</p>
+
+<p>As more capacity becomes available at the receiver, it adds credit to this
+balance and communicates the new balance to the sender. Whenever a delivery
+is sent/received, the credit balance maintained by the link is decremented
+by one.</p>
+
+<p>Once the credit balance at the sender reaches zero, the sender must pause
+sending until more credit is obtained from the receiver.</p>
+
+<p>NOte that a sending link may still be used to send deliveries eve if credit
+reaches zero. However those deliveries will end up being buffer by the link
+until enough credit is obtained from the receiver to send them over the
+wire. In this case the balance reported will go negative.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The credit balance.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>#flow</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+120</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 120</span>
+
+<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:credit</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="name-instance_method">
+  
+    #<strong>name</strong>  &#x21d2; <tt>String</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the name of the link.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+171</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 171</span>
+
+<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:name</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="queued-instance_method">
+  
+    #<strong>queued</strong>  &#x21d2; <tt>Integer</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the number of queued deliveries for a link.</p>
+
+<p>Links may queue deliveries for a number of reasons. For example, there may
+be insufficient credit to send them to the receiver, or they simply may not
+have yet had a chance to be written to the wire.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The number of queued deliveries.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#credit-instance_method" title="Qpid::Proton::Link#credit (method)">#credit</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+163</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 163</span>
+
+<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:queued</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="receiver?-instance_method">
+  
+    #<strong>receiver?</strong>  &#x21d2; <tt>Boolean</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns if the link is a receiver.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>True if the link is a receiver.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+187</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 187</span>
+
+<span class='id identifier rubyid_proton_reader'>proton_reader</span>  <span class='symbol'>:receiver</span><span class='comma'>,</span> <span class='symbol'>:is_or_get</span> <span class='op'>=&gt;</span> <span class='symbol'>:is</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="remote_credit-instance_method">
+  
+    #<strong>remote_credit</strong>  &#x21d2; <tt>Integer</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the remote view of the credit.</p>
+
+<p>The remote view of the credit for a link differs from the local view of
+credit for a link by the number of queued deliveries. In other words,
+remote credit is defined as credit - queued.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The remove view of the credit.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#queued-instance_method" title="Qpid::Proton::Link#queued (method)">#queued</a></span></li>
+    
+      <li><span class='object_link'><a href="#credit-instance_method" title="Qpid::Proton::Link#credit (method)">#credit</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 135</span>
+
+<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:remote_credit</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="sender?-instance_method">
+  
+    #<strong>sender?</strong>  &#x21d2; <tt>Boolean</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns if the link is a sender.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>True if the link is a sender.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+179</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 179</span>
+
+<span class='id identifier rubyid_proton_reader'>proton_reader</span>  <span class='symbol'>:sender</span><span class='comma'>,</span> <span class='symbol'>:is_or_get</span> <span class='op'>=&gt;</span> <span class='symbol'>:is</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="state-instance_method">
+  
+    #<strong>state</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the endpoint state flags.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 51</span>
+
+<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:state</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="==-instance_method">
+  
+    #<strong>==</strong>(other)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+380
+381
+382
+383</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 380</span>
+
+<span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:impl</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span>
+  <span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pni_address_of'>pni_address_of</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_impl'>impl</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pni_address_of'>pni_address_of</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="advance-instance_method">
+  
+    #<strong>advance</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Advance the current delivery to the next on the link.</p>
+
+<p>For sending links, this operation is used to finish sending message data
+for the current outgoing delivery and move on to the next outgoing delivery
+(if any).</p>
+
+<p>For receiving links, this operatoin is used to finish accessing message
+data from the current incoming delivery and move on to the next incoming
+delivery (if any).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>True if the current delivery was changed.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#current-instance_method" title="Qpid::Proton::Link#current (method)">#current</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+91</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 91</span>
+
+<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:advance</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="close-instance_method">
+  
+    #<strong>close</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Closes the link.</p>
+
+<p>Once this operation has completed, the state flag will be set. This may be
+called without first calling #open, which is the equivalent to calling
+#open and then #close.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Endpoint.html#LOCAL_CLOSED-constant" title="Qpid::Proton::Endpoint::LOCAL_CLOSED (constant)">Endpoint::LOCAL_CLOSED</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 70</span>
+
+<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:close</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="connection-instance_method">
+  
+    #<strong>connection</strong>  &#x21d2; <tt><span class='object_link'><a href="Connection.html" title="Qpid::Proton::Connection (class)">Connection</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the parent connection.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Connection.html" title="Qpid::Proton::Connection (class)">Connection</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The connection.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+297
+298
+299</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 297</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_connection'>connection</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_connection'>connection</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="current-instance_method">
+  
+    #<strong>current</strong>  &#x21d2; <tt><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current delivery.</p>
+
+<p>Each link maintains a sequence of deliveries in the order they were
+created, along with a reference to the <strong>current</strong> delivery.
+All send and receive operations on a link take place on the
+<strong>current</strong> delivery. If a link has no current delivery, the
+current delivery is automatically pointed to the <strong>next</strong>
+delivery created on the link.</p>
+
+<p>Once initialized, the current delivery remains the same until it is changed
+by advancing, or until it is settled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The current delivery.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#next-instance_method" title="Qpid::Proton::Link#next (method)">#next</a></span></li>
+    
+      <li><span class='object_link'><a href="Delivery.html#settle-instance_method" title="Qpid::Proton::Delivery#settle (method)">Delivery#settle</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+325
+326
+327</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 325</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_current'>current</span>
+  <span class='const'><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></span><span class='period'>.</span><span class='id identifier rubyid_wrap'>wrap</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_current'>pn_link_current</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delivery-instance_method">
+  
+    #<strong>delivery</strong>(tag)  &#x21d2; <tt><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the parent delivery.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The delivery.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+305
+306
+307</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 305</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delivery'>delivery</span><span class='lparen'>(</span><span class='id identifier rubyid_tag'>tag</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_delivery'>pn_delivery</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_tag'>tag</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="detach-instance_method">
+  
+    #<strong>detach</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Detaches the link.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 75</span>
+
+<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:detach</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="drained-instance_method">
+  
+    #<strong>drained</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Drains excess credit.</p>
+
+<p>When a link is in drain mode, the sender must use all excess credit
+immediately and release any excess credit back to the receiver if there are
+no deliveries available to send.</p>
+
+<p>When invoked on a Sender that is in drain mode, this operation will release
+all excess credit back to the receiver and return the number of credits
+released back to the sender. If the link is not in drain mode, this
+operation is a noop.</p>
+
+<p>When invoked on a Receiver, this operation will return and reset the number
+of credits the sender has released back to it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The number of credits drained.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+208</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 208</span>
+
+<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:drained</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="error-instance_method">
+  
+    #<strong>error</strong>  &#x21d2; <tt><span class='object_link'><a href="Error.html" title="Qpid::Proton::Error (module)">Error</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns additional error information.</p>
+
+<p>Whenever a link operation fails (i.e., returns an error code) additional
+error details can be obtained from this method. Ther error object that is
+returned may also be used to clear the error condition.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Error.html" title="Qpid::Proton::Error (module)">Error</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The error.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+240
+241
+242</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 240</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_error'>error</span>
+  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_error'>pn_link_error</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="next-instance_method">
+  
+    #<strong>next</strong>(state_mask)  &#x21d2; <tt><span class='object_link'><a href="Sender.html" title="Qpid::Proton::Sender (class)">Sender</a></span></tt>, <tt><span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the next link that matches the given state mask.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>state_mask</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The state mask.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Sender.html" title="Qpid::Proton::Sender (class)">Sender</a></span></tt>, <tt><span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The next link.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+250
+251
+252</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 250</span>
+
+<span class='kw'>def</span> <span class='kw'>next</span><span class='lparen'>(</span><span class='id identifier rubyid_state_mask'>state_mask</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='const'><span class='object_link'><a href="" title="Qpid::Proton::Link (class)">Link</a></span></span><span class='period'>.</span><span class='id identifier rubyid_wrap'>wrap</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_next'>pn_link_next</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_state_mask'>state_mask</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="open-instance_method">
+  
+    #<strong>open</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Opens the link. Once this operation has completed, the state flag will be
+set.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Endpoint.html#LOCAL_ACTIVE-constant" title="Qpid::Proton::Endpoint::LOCAL_ACTIVE (constant)">Endpoint::LOCAL_ACTIVE</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 59</span>
+
+<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:open</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rcv_settle_mode-instance_method">
+  
+    #<strong>rcv_settle_mode</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the local receiver settle mode.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The local receiver settle mode.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+366
+367
+368</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 366</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rcv_settle_mode'>rcv_settle_mode</span>
+  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_rcv_settle_mode'>pn_link_rcv_settle_mode</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rcv_settle_mode=-instance_method">
+  
+    #<strong>rcv_settle_mode=</strong>(mode)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the local receiver settle mode.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>mode</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The settle mode.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>#RCV_FIRST</li>
+    
+      <li>#RCV_SECOND</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+358
+359
+360</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 358</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rcv_settle_mode='>rcv_settle_mode=</span><span class='lparen'>(</span><span class='id identifier rubyid_mode'>mode</span><span class='rparen'>)</span>
+  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_set_rcv_settle_mode'>pn_link_set_rcv_settle_mode</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_mode'>mode</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remote_source-instance_method">
+  
+    #<strong>remote_source</strong>  &#x21d2; <tt><span class='object_link'><a href="Terminus.html" title="Qpid::Proton::Terminus (class)">Terminus</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a representation of the remotely defined source terminus.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Terminus.html" title="Qpid::Proton::Terminus (class)">Terminus</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The terminus.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+273
+274
+275</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 273</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remote_source'>remote_source</span>
+  <span class='const'><span class='object_link'><a href="Terminus.html" title="Qpid::Proton::Terminus (class)">Terminus</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_remote_source'>pn_link_remote_source</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remote_target-instance_method">
+  
+    #<strong>remote_target</strong>  &#x21d2; <tt><span class='object_link'><a href="Terminus.html" title="Qpid::Proton::Terminus (class)">Terminus</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a representation of the remotely defined target terminus.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Terminus.html" title="Qpid::Proton::Terminus (class)">Terminus</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The terminus.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+281
+282
+283</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 281</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remote_target'>remote_target</span>
+  <span class='const'><span class='object_link'><a href="Terminus.html" title="Qpid::Proton::Terminus (class)">Terminus</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_remote_target'>pn_link_remote_target</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="session-instance_method">
+  
+    #<strong>session</strong>  &#x21d2; <tt><span class='object_link'><a href="Session.html" title="Qpid::Proton::Session (class)">Session</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the parent session.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Session.html" title="Qpid::Proton::Session (class)">Session</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The session.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+289
+290
+291</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 289</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_session'>session</span>
+  <span class='const'><span class='object_link'><a href="Session.html" title="Qpid::Proton::Session (class)">Session</a></span></span><span class='period'>.</span><span class='id identifier rubyid_wrap'>wrap</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_session'>pn_link_session</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="snd_settle_mode-instance_method">
+  
+    #<strong>snd_settle_mode</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the local sender settle mode.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The local sender settle mode.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#snd_settle_mode-instance_method" title="Qpid::Proton::Link#snd_settle_mode (method)">#snd_settle_mode</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+347
+348
+349</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 347</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_snd_settle_mode'>snd_settle_mode</span>
+  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_snd_settle_mode'>pn_link_snd_settle_mode</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="snd_settle_mode=-instance_method">
+  
+    #<strong>snd_settle_mode=</strong>(mode)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the local sender settle mode.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>mode</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The settle mode.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>#SND_UNSETTLED</li>
+    
+      <li>#SND_SETTLED</li>
+    
+      <li>#SND_MIXED</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+337
+338
+339</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 337</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_snd_settle_mode='>snd_settle_mode=</span><span class='lparen'>(</span><span class='id identifier rubyid_mode'>mode</span><span class='rparen'>)</span>
+  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_set_snd_settle_mode'>pn_link_set_snd_settle_mode</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_mode'>mode</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="source-instance_method">
+  
+    #<strong>source</strong>  &#x21d2; <tt><span class='object_link'><a href="Terminus.html" title="Qpid::Proton::Terminus (class)">Terminus</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the locally defined source terminus.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Terminus.html" title="Qpid::Proton::Terminus (class)">Terminus</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The terminus</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+257
+258
+259</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 257</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_source'>source</span>
+  <span class='const'><span class='object_link'><a href="Terminus.html" title="Qpid::Proton::Terminus (class)">Terminus</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_source'>pn_link_source</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="target-instance_method">
+  
+    #<strong>target</strong>  &#x21d2; <tt><span class='object_link'><a href="Terminus.html" title="Qpid::Proton::Terminus (class)">Terminus</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the locally defined target terminus.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Terminus.html" title="Qpid::Proton::Terminus (class)">Terminus</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The terminus.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+265
+266
+267</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/link.rb', line 265</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_target'>target</span>
+  <span class='const'><span class='object_link'><a href="Terminus.html" title="Qpid::Proton::Terminus (class)">Terminus</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_target'>pn_link_target</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Nov  7 17:09:16 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.8 (ruby-2.4.1).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Qpid::Proton::Reactor::Container
+  
+    &mdash; Documentation by YARD 0.9.8
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Qpid::Proton::Reactor::Container";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../Qpid.html" title="Qpid (module)">Qpid</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Reactor.html" title="Qpid::Proton::Reactor (module)">Reactor</a></span></span>
+     &raquo; 
+    <span class="title">Container</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Qpid::Proton::Reactor::Container
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="Reactor.html" title="Qpid::Proton::Reactor::Reactor (class)">Reactor</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Reactor.html" title="Qpid::Proton::Reactor::Reactor (class)">Reactor</a></span></li>
+          
+            <li class="next">Qpid::Proton::Reactor::Container</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  <dl>
+      <dt>Includes:</dt>
+      <dd><span class='object_link'><a href="../Util/Reactor.html" title="Qpid::Proton::Util::Reactor (module)">Util::Reactor</a></span></dd>
+  </dl>
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/reactor/container.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>A representation of the AMQP concept of a container which, loosely
+speaking, is something that establishes links to or from another container
+on which messages are transferred.</p>
+
+<p>This is an extension to the Reactor classthat adds convenience methods for
+creating instances of Qpid::Proton::Connection, Qpid::Proton::Sender and
+Qpid::Proton::Receiver.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#container_id-instance_method" title="#container_id (instance method)">#<strong>container_id</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute container_id.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#global_handler-instance_method" title="#global_handler (instance method)">#<strong>global_handler</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute global_handler.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+  
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="Reactor.html" title="Qpid::Proton::Reactor::Reactor (class)">Reactor</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Reactor.html#errors-instance_method" title="Qpid::Proton::Reactor::Reactor#errors (method)">#errors</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#connect-instance_method" title="#connect (instance method)">#<strong>connect</strong>(url, opts = {})  &#x21d2; Connection </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initiate an AMQP connection.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#declare_transaction-instance_method" title="#declare_transaction (instance method)">#<strong>declare_transaction</strong>(context, handler = nil, settle_before_discharge = false)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(handlers, opts = {})  &#x21d2; Container </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of Container.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#listen-instance_method" title="#listen (instance method)">#<strong>listen</strong>(url, ssl_domain = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initiates a server socket, accepting incoming AMQP connections on the
+interface and port specified.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#open_receiver-instance_method" title="#open_receiver (instance method)">#<strong>open_receiver</strong>(context, opts = {})  &#x21d2; Receiver </a>
+    
+
+    
+      (also: #create_receiver)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initiates the establishment of a link over which messages can be received.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#open_sender-instance_method" title="#open_sender (instance method)">#<strong>open_sender</strong>(context, opts = {})  &#x21d2; Sender </a>
+    
+
+    
+      (also: #create_sender)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Initiates the establishment of a link over which messages can be sent.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../Util/Reactor.html" title="Qpid::Proton::Util::Reactor (module)">Util::Reactor</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../Util/Reactor.html#create_session-instance_method" title="Qpid::Proton::Util::Reactor#create_session (method)">#create_session</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Reactor.html" title="Qpid::Proton::Reactor::Reactor (class)">Reactor</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Reactor.html#acceptor-instance_method" title="Qpid::Proton::Reactor::Reactor#acceptor (method)">#acceptor</a></span>, <span class='object_link'><a href="Reactor.html#connection-instance_method" title="Qpid::Proton::Reactor::Reactor#connection (method)">#connection</a></span>, <span class='object_link'><a href="Reactor.html#handler-instance_method" title="Qpid::Proton::Reactor::Reactor#handler (method)">#handler</a></span>, <span class='object_link'><a href="Reactor.html#handler=-instance_method" title="Qpid::Proton::Reactor::Reactor#handler= (method)">#handler=</a></span>, <span class='object_link'><a href="Reactor.html#on_error-instance_method" title="Qpid::Proton::Reactor::Reactor#on_error (method)">#on_error</a></span>, <span class='object_link'><a href="Reactor.html#process-instance_method" title="Qpid::Proton::Reactor::Reactor#process (method)">#process</a></span>, <span class='object_link'><a href="Reactor.html#push_event-instance_method" title="Qpid::Proton::Reactor::Reactor#push_event (method)">#push_event</a></span>, <span class='object_link'><a href="Reactor.html#quiesced%3F-instance_method" title="Qpid::Proton::Reactor::Reactor#quiesced? (method)">#quiesced?</a></span>, <span class='object_link'><a href="Reactor.html#run-instance_method" title="Qpid::Proton::Reactor::Reactor#run (method)">#run</a></span>, <span class='object_link'><a href="Reactor.html#schedule-instance_method" title="Qpid::Proton::Reactor::Reactor#schedule (method)">#schedule</a></span>, <span class='object_link'><a href="Reactor.html#selectable-instance_method" title="Qpid::Proton::Reactor::Reactor#selectable (method)">#selectable</a></span>, <span class='object_link'><a href="Reactor.html#timeout-instance_method" title="Qpid::Proton::Reactor::Reactor#timeout (method)">#timeout</a></span>, <span class='object_link'><a href="Reactor.html#timeout=-instance_method" title="Qpid::Proton::Reactor::Reactor#timeout= (method)">#timeout=</a></span>, <span class='object_link'><a href="Reactor.html#update-instance_method" title="Qpid::Proton::Reactor::Reactor#update (method)">#update</a></span>, <span class='object_link'><a href="Reactor.html#wakeup-instance_method" title="Qpid::Proton::Reactor::Reactor#wakeup (method)">#wakeup</a></span>, <span class='object_link'><a href="Reactor.html#wrap-class_method" title="Qpid::Proton::Reactor::Reactor.wrap (method)">wrap</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(handlers, opts = {})  &#x21d2; <tt><span class='object_link'><a href="" title="Qpid::Proton::Reactor::Container (class)">Container</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new instance of Container</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reactor/container.rb', line 53</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_handlers'>handlers</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_handlers'>handlers</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+
+  <span class='comment'># only do the following if we&#39;re creating a new instance
+</span>  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='symbol'>:impl</span><span class='rparen'>)</span>
+    <span class='ivar'>@container_id</span> <span class='op'>=</span> <span class='const'>String</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:container_id</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='const'>SecureRandom</span><span class='period'>.</span><span class='id identifier rubyid_uuid'>uuid</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span>
+    <span class='ivar'>@ssl</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="SSLConfig.html" title="Qpid::Proton::Reactor::SSLConfig (class)">SSLConfig</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SSLConfig.html#initialize-instance_method" title="Qpid::Proton::Reactor::SSLConfig#initialize (method)">new</a></span></span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:global_handler</span><span class='rbracket'>]</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_global_handler'>global_handler</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="GlobalOverrides.html" title="Qpid::Proton::Reactor::GlobalOverrides (class)">GlobalOverrides</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="GlobalOverrides.html#initialize-instance_method" title="Qpid::Proton::Reactor::GlobalOverrides#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:global_handler</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='comment'># very ugly, but using self.global_handler doesn&#39;t work in the constructor
+</span>      <span class='id identifier rubyid_ghandler'>ghandler</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Reactor.html" title="Qpid::Proton::Reactor::Reactor (class)">Reactor</a></span></span><span class='period'>.</span><span class='id identifier rubyid_instance_method'>instance_method</span><span class='lparen'>(</span><span class='symbol'>:global_handler</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_bind'>bind</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span>
+      <span class='id identifier rubyid_ghandler'>ghandler</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="GlobalOverrides.html" title="Qpid::Proton::Reactor::GlobalOverrides (class)">GlobalOverrides</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="GlobalOverrides.html#initialize-instance_method" title="Qpid::Proton::Reactor::GlobalOverrides#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_ghandler'>ghandler</span><span class='rparen'>)</span>
+      <span class='const'><span class='object_link'><a href="Reactor.html" title="Qpid::Proton::Reactor::Reactor (class)">Reactor</a></span></span><span class='period'>.</span><span class='id identifier rubyid_instance_method'>instance_method</span><span class='lparen'>(</span><span class='symbol'>:global_handler=</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_bind'>bind</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_ghandler'>ghandler</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='ivar'>@trigger</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="container_id=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="container_id-instance_method">
+  
+    #<strong>container_id</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute container_id</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reactor/container.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_container_id'>container_id</span>
+  <span class='ivar'>@container_id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="global_handler=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="global_handler-instance_method">
+  
+    #<strong>global_handler</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute global_handler</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reactor/container.rb', line 51</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_global_handler'>global_handler</span>
+  <span class='ivar'>@global_handler</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="connect-instance_method">
+  
+    #<strong>connect</strong>(url, opts = {})  &#x21d2; <tt><span class='object_link'><a href="../Connection.html" title="Qpid::Proton::Connection (class)">Connection</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initiate an AMQP connection.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>url</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Connect to URL host:port, using user:password@ if present</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>Hash</span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Named options For backwards compatibility, can be called with a single
+parameter opts.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:url</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Connect to URL host:port using user:password@ if present.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:user</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>user name for authentication if not given by URL</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:password</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>password for authentication if not given by URL</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:idle_timeout</span>
+          <span class="type">(<tt>Numeric</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>seconds before closing an idle connection, can be a fractional value.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:sasl_enabled</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Enable or disable SASL.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:sasl_allow_insecure_mechs</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Allow mechanisms that disclose clear text passwords, even over an insecure
+connection. By default, such mechanisms are only allowed when SSL is
+enabled.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:sasl_allowed_mechs</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>the allowed SASL mechanisms for use on the connection.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:address</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p><strong>deprecated</strong> use the :url option</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:heartbeat</span>
+          <span class="type">(<tt>Numeric</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>milliseconds before closing an idle connection. <strong>deprecated</strong>
+use :idle_timeout =&gt; heartbeat/1000</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Connection.html" title="Qpid::Proton::Connection (class)">Connection</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the new connection</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reactor/container.rb', line 95</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_connect'>connect</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='comment'># Backwards compatible with old connect(opts)
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Hash</span> <span class='kw'>and</span> <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='id identifier rubyid_url'>url</span>
+    <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_conn'>conn</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_connection'>connection</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:handler</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_connector'>connector</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Connector.html" title="Qpid::Proton::Reactor::Connector (class)">Connector</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Connector.html#initialize-instance_method" title="Qpid::Proton::Reactor::Connector#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_conn'>conn</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_conn'>conn</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="declare_transaction-instance_method">
+  
+    #<strong>declare_transaction</strong>(context, handler = nil, settle_before_discharge = false)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reactor/container.rb', line 165</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_declare_transaction'>declare_transaction</span><span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='comma'>,</span> <span class='id identifier rubyid_handler'>handler</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_settle_before_discharge'>settle_before_discharge</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='symbol'>:txn_ctl</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid___send__'>__send__</span><span class='lparen'>(</span><span class='symbol'>:txn_ctl</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='kw'>class</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_context'>context</span>
+      <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:txn_ctl</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_txn_ctl'>txn_ctl</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_sender'>create_sender</span><span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>txn-ctl</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='const'><span class='object_link'><a href="InternalTransactionHandler.html" title="Qpid::Proton::Reactor::InternalTransactionHandler (class)">InternalTransactionHandler</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InternalTransactionHandler.html#initialize-instance_method" title="Qpid::Proton::Reactor::InternalTransactionHandler#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='const'>Transaction</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_txn_ctl'>txn_ctl</span><span class='comma'>,</span> <span class='id identifier rubyid_handler'>handler</span><span class='comma'>,</span> <span class='id identifier rubyid_settle_before_discharge'>settle_before_discharge</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="listen-instance_method">
+  
+    #<strong>listen</strong>(url, ssl_domain = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initiates a server socket, accepting incoming AMQP connections on the
+interface and port specified.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>url</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><dl class="rdoc-list label-list"><dt>
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ssl_domain</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><dl class="rdoc-list label-list"><dt>
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reactor/container.rb', line 182</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_listen'>listen</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_ssl_domain'>ssl_domain</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../URL.html" title="Qpid::Proton::URL (class)">URL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../URL.html#initialize-instance_method" title="Qpid::Proton::URL#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_acceptor'>acceptor</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_acceptor'>acceptor</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ssl_config'>ssl_config</span> <span class='op'>=</span> <span class='id identifier rubyid_ssl_domain'>ssl_domain</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_ssl_config'>ssl_config</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_scheme'>scheme</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>amqps</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@ssl</span>
+    <span class='id identifier rubyid_ssl_config'>ssl_config</span> <span class='op'>=</span> <span class='ivar'>@ssl</span><span class='period'>.</span><span class='id identifier rubyid_server'>server</span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_ssl_config'>ssl_config</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_acceptor'>acceptor</span><span class='period'>.</span><span class='id identifier rubyid_ssl_domain'>ssl_domain</span><span class='lparen'>(</span><span class='id identifier rubyid_ssl_config'>ssl_config</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_acceptor'>acceptor</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="open_receiver-instance_method">
+  
+    #<strong>open_receiver</strong>(context, opts = {})  &#x21d2; <tt><span class='object_link'><a href="../Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span></tt> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='create_receiver-instance_method'>create_receiver</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initiates the establishment of a link over which messages can be received.</p>
+
+<p>There are two accepted arguments for the context</p>
+
+<pre class="code ruby"><code class="ruby">1. If a Connection is supplied then the link is established using that</code></pre>
+
+<p>object. The source, and optionally the target, address can be supplied</p>
+
+<pre class="code ruby"><code class="ruby">2. If it is a String or a URL then a new Connection is created on which</code></pre>
+
+<p>the link will be attached. If a path is specified, but not the source
+address, then the path of the URL is used as the target address.</p>
+
+<p>The name will be generated for the link if one is not specified.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>context</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Connection.html" title="Qpid::Proton::Connection (class)">Connection</a></span></tt>, <tt><span class='object_link'><a href="../URL.html" title="Qpid::Proton::URL (class)">URL</a></span></tt>, <tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The connection or the connection address.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>Hash</span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Additional opts.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:source</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The source address.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:target</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The target address</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:name</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The link name.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:dynamic</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:handler</span>
+          <span class="type">(<tt>Object</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+152
+153
+154
+155
+156
+157
+158
+159
+160</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reactor/container.rb', line 152</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_open_receiver'>open_receiver</span><span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='op'>::</span><span class='const'>String</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_context'>context</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../URL.html" title="Qpid::Proton::URL (class)">URL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../URL.html#initialize-instance_method" title="Qpid::Proton::URL#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../URL.html" title="Qpid::Proton::URL (class)">URL</a></span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:source</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid__session'>_session</span><span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_open_receiver'>open_receiver</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="open_sender-instance_method">
+  
+    #<strong>open_sender</strong>(context, opts = {})  &#x21d2; <tt><span class='object_link'><a href="../Sender.html" title="Qpid::Proton::Sender (class)">Sender</a></span></tt> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='create_sender-instance_method'>create_sender</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Initiates the establishment of a link over which messages can be sent.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>context</span>
+      
+      
+        <span class='type'>(<tt>String</tt>, <tt><span class='object_link'><a href="../URL.html" title="Qpid::Proton::URL (class)">URL</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The context.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>Hash</span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Additional opts.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>:target The target address.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>:source The source address.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>:dynamic</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>:handler</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Sender.html" title="Qpid::Proton::Sender (class)">Sender</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The sender.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reactor/container.rb', line 117</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_open_sender'>open_sender</span><span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='op'>::</span><span class='const'>String</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_context'>context</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../URL.html" title="Qpid::Proton::URL (class)">URL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../URL.html#initialize-instance_method" title="Qpid::Proton::URL#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../URL.html" title="Qpid::Proton::URL (class)">URL</a></span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:target</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>return</span> <span class='id identifier rubyid__session'>_session</span><span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_open_sender'>open_sender</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Nov  7 17:09:13 2017 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.8 (ruby-2.4.1).
+</div>
+
+    </div>
+  </body>
+</html>

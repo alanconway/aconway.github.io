@@ -1,14 +1,9 @@
 = Alan's stuff =
 
-== C and C++ threading
+link:proton-ruby/index.html[Proton Ruby API (2017-11-07)]
 
-link:proton-c/index.html[C] and link:proton-cpp/index.html[C++] API snapshot from 2017-09-06 
+Note in particular:
 
-Threading overviews:
+- link:proton-ruby/Qpid/Proton/Container.html[]
+- link:proton-ruby/Qpid/Proton/Listener.html[]
 
-- link:proton-cpp/mt_page.html[C++ multi-threading overview] overview for `C++`
-- link:proton-c/group__proactor.html#details[C proactor overview] more succinct explanation for C
-
-== Qpid Dispatch
-link:dispatch-doc/index.html[Qpid Dispatch Doc rendered from asciidoc]
-Code is https://github.com/alanconway/dispatch/tree/asciidoc[available here]
