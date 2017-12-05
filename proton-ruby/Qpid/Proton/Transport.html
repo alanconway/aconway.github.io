@@ -696,7 +696,7 @@ returned indicating the condition.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#condition-instance_method" title="#condition (instance method)">#<strong>condition</strong>  &#x21d2; Object </a>
+      <a href="#condition-instance_method" title="#condition (instance method)">#<strong>condition</strong>  &#x21d2; Condition<sup>?</sup> </a>
     
 
     
@@ -711,7 +711,7 @@ returned indicating the condition.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns additional information about the condition of the transport.</p>
+<p>Transport error condition or nil if there is no error.</p>
 </div></span>
   
 </li>
@@ -735,7 +735,7 @@ returned indicating the condition.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Set the condition of the transport.</p>
+<p>Set the error condition for the transport.</p>
 </div></span>
   
 </li>
@@ -1102,12 +1102,6 @@ server-side authentication for incoming connections.</p>
   
   
   
-  
-  
-  
-  
-  
-  
   <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
@@ -1137,13 +1131,13 @@ server-side authentication for incoming connections.</p>
       <pre class="lines">
 
 
-215
-216
-217
-218</pre>
+211
+212
+213
+214</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 215</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 211</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_impl'>impl</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport'>pn_transport</span><span class='rparen'>)</span>
   <span class='ivar'>@impl</span> <span class='op'>=</span> <span class='id identifier rubyid_impl'>impl</span>
@@ -1214,10 +1208,10 @@ details</p>
       <pre class="lines">
 
 
-136</pre>
+132</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 136</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 132</span>
 
 <span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:capacity</span></pre>
     </td>
@@ -1271,10 +1265,10 @@ details</p>
       <pre class="lines">
 
 
-89</pre>
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 85</span>
 
 <span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:channel_max</span></pre>
     </td>
@@ -1329,10 +1323,10 @@ closed. In other words, when both #capacity &lt; 0 and #pending &lt; 0.</p>
       <pre class="lines">
 
 
-182</pre>
+178</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 182</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 178</span>
 
 <span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:closed?</span></pre>
     </td>
@@ -1386,10 +1380,10 @@ closed. In other words, when both #capacity &lt; 0 and #pending &lt; 0.</p>
       <pre class="lines">
 
 
-194</pre>
+190</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 194</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 190</span>
 
 <span class='id identifier rubyid_proton_reader'>proton_reader</span> <span class='symbol'>:frames_input</span></pre>
     </td>
@@ -1443,10 +1437,10 @@ closed. In other words, when both #capacity &lt; 0 and #pending &lt; 0.</p>
       <pre class="lines">
 
 
-188</pre>
+184</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 188</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 184</span>
 
 <span class='id identifier rubyid_proton_reader'>proton_reader</span> <span class='symbol'>:frames_output</span></pre>
     </td>
@@ -1502,10 +1496,10 @@ closed. In other words, when both #capacity &lt; 0 and #pending &lt; 0.</p>
       <pre class="lines">
 
 
-146</pre>
+142</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 146</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 142</span>
 
 <span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:head</span></pre>
     </td>
@@ -1559,10 +1553,10 @@ closed. In other words, when both #capacity &lt; 0 and #pending &lt; 0.</p>
       <pre class="lines">
 
 
-113</pre>
+109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 109</span>
 
 <span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:idle_timeout</span></pre>
     </td>
@@ -1616,10 +1610,10 @@ closed. In other words, when both #capacity &lt; 0 and #pending &lt; 0.</p>
       <pre class="lines">
 
 
-101</pre>
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 101</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 97</span>
 
 <span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:max_frame_size</span></pre>
     </td>
@@ -1699,10 +1693,10 @@ returned indicating the condition.</p>
       <pre class="lines">
 
 
-173</pre>
+169</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 173</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 169</span>
 
 <span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:pending</span></pre>
     </td>
@@ -1756,10 +1750,10 @@ returned indicating the condition.</p>
       <pre class="lines">
 
 
-95</pre>
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 91</span>
 
 <span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:remote_channel_max</span></pre>
     </td>
@@ -1813,10 +1807,10 @@ returned indicating the condition.</p>
       <pre class="lines">
 
 
-119</pre>
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 119</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 115</span>
 
 <span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:remote_idle_timeout</span></pre>
     </td>
@@ -1870,10 +1864,10 @@ returned indicating the condition.</p>
       <pre class="lines">
 
 
-107</pre>
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 103</span>
 
 <span class='id identifier rubyid_proton_reader'>proton_reader</span> <span class='symbol'>:remote_max_frame_size</span></pre>
     </td>
@@ -1929,10 +1923,10 @@ returned indicating the condition.</p>
       <pre class="lines">
 
 
-156</pre>
+152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 156</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 152</span>
 
 <span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:tail</span></pre>
     </td>
@@ -1993,12 +1987,12 @@ returned indicating the condition.</p>
       <pre class="lines">
 
 
-257
-258
-259</pre>
+243
+244
+245</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 257</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 243</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bind'>bind</span><span class='lparen'>(</span><span class='id identifier rubyid_connection'>connection</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_bind'>pn_transport_bind</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_connection'>connection</span><span class='period'>.</span><span class='id identifier rubyid_impl'>impl</span><span class='rparen'>)</span>
@@ -2054,12 +2048,12 @@ returned indicating the condition.</p>
       <pre class="lines">
 
 
-364
-365
-366</pre>
+350
+351
+352</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 364</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 350</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_close_head'>close_head</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_close_head'>pn_transport_close_head</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2115,12 +2109,12 @@ returned indicating the condition.</p>
       <pre class="lines">
 
 
-330
-331
-332</pre>
+316
+317
+318</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 330</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 316</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_close_tail'>close_tail</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_close_tail'>pn_transport_close_tail</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2133,7 +2127,7 @@ returned indicating the condition.</p>
       <div class="method_details ">
   <h3 class="signature " id="condition-instance_method">
   
-    #<strong>condition</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>condition</strong>  &#x21d2; <tt><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></tt><sup>?</sup> 
   
 
   
@@ -2142,18 +2136,31 @@ returned indicating the condition.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns additional information about the condition of the transport.</p>
-
-<p>When a TRANSPORT_ERROR event occurs, this operaiton can be used to access
-the details of the error condition.</p>
-
-<p>The object returned is valid until the Transport is discarded.</p>
+<p>Returns transport error condition or nil if there is no error.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>transport error condition or nil if there is no error.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -2161,15 +2168,15 @@ the details of the error condition.</p>
       <pre class="lines">
 
 
-239
-240
-241</pre>
+229
+230
+231</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 239</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 229</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_condition'>condition</span>
-  <span class='id identifier rubyid_condition_to_object'>condition_to_object</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_condition'>pn_transport_condition</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></span><span class='period'>.</span><span class='id identifier rubyid_convert'><span class='object_link'><a href="Condition.html#convert-class_method" title="Qpid::Proton::Condition.convert (method)">convert</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_condition'>pn_transport_condition</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2188,10 +2195,7 @@ the details of the error condition.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Set the condition of the transport.</p>
-
-<p>Setting a non-empty condition before closing the transport will cause a
-TRANSPORT_ERROR event.</p>
+<p>Set the error condition for the transport.</p>
 
 
   </div>
@@ -2225,15 +2229,15 @@ TRANSPORT_ERROR event.</p>
       <pre class="lines">
 
 
-249
-250
-251</pre>
+235
+236
+237</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 249</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 235</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_condition='>condition=</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_object_to_condition'>object_to_condition</span> <span class='id identifier rubyid_c'>c</span><span class='comma'>,</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_condition'>pn_transport_condition</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></span><span class='period'>.</span><span class='id identifier rubyid_assign'>assign</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_condition'>pn_transport_condition</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2284,12 +2288,12 @@ TRANSPORT_ERROR event.</p>
       <pre class="lines">
 
 
-284
-285
-286</pre>
+270
+271
+272</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 284</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 270</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connection'>connection</span>
   <span class='const'><span class='object_link'><a href="Connection.html" title="Qpid::Proton::Connection (class)">Connection</a></span></span><span class='period'>.</span><span class='id identifier rubyid_wrap'>wrap</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_connection'>pn_transport_connection</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -2348,12 +2352,12 @@ with the transport&#39;s identifier.</p>
       <pre class="lines">
 
 
-295
-296
-297</pre>
+281
+282
+283</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 295</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 281</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_log'>log</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_log'>pn_transport_log</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
@@ -2445,15 +2449,15 @@ with the transport&#39;s identifier.</p>
       <pre class="lines">
 
 
-342
-343
-344
-345
-346
-347</pre>
+328
+329
+330
+331
+332
+333</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 342</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 328</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_peek'>peek</span><span class='lparen'>(</span><span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_cd'>cd</span><span class='comma'>,</span> <span class='id identifier rubyid_out'>out</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_peek'>pn_transport_peek</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
@@ -2513,12 +2517,12 @@ following the transport&#39;s head pointer.</p>
       <pre class="lines">
 
 
-354
-355
-356</pre>
+340
+341
+342</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 354</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 340</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pop'>pop</span><span class='lparen'>(</span><span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_pop'>pn_transport_pop</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
@@ -2597,12 +2601,12 @@ free space reported by #capacity.</p>
       <pre class="lines">
 
 
-320
-321
-322</pre>
+306
+307
+308</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 320</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 306</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_process'>process</span><span class='lparen'>(</span><span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_process'>pn_transport_process</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
@@ -2676,12 +2680,12 @@ free space reported by #capacity.</p>
       <pre class="lines">
 
 
-305
-306
-307</pre>
+291
+292
+293</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 305</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 291</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_push'>pn_transport_push</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
@@ -2735,12 +2739,12 @@ free space reported by #capacity.</p>
       <pre class="lines">
 
 
-228
-229
-230</pre>
+224
+225
+226</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 228</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 224</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_quiesced?'>quiesced?</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_quiesced'>pn_transport_quiesced</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2794,12 +2798,12 @@ free space reported by #capacity.</p>
       <pre class="lines">
 
 
-389
-390
-391</pre>
+375
+376
+377</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 389</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 375</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sasl'>sasl</span>
   <span class='const'><span class='object_link'><a href="SASL.html" title="Qpid::Proton::SASL (class)">SASL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
@@ -2836,10 +2840,10 @@ server-side authentication for incoming connections</p>
       <pre class="lines">
 
 
-222</pre>
+218</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 222</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 218</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_set_server'>set_server</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_set_server'>pn_transport_set_server</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2931,12 +2935,12 @@ server-side authentication for incoming connections</p>
       <pre class="lines">
 
 
-400
-401
-402</pre>
+386
+387
+388</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 400</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 386</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ssl'>ssl</span><span class='lparen'>(</span><span class='id identifier rubyid_domain'>domain</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_session_details'>session_details</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='ivar'>@ssl</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="SSL.html" title="Qpid::Proton::SSL (class)">SSL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_domain'>domain</span><span class='comma'>,</span> <span class='id identifier rubyid_session_details'>session_details</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@ssl</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -3018,12 +3022,12 @@ this deadline occurs.</p>
       <pre class="lines">
 
 
-383
-384
-385</pre>
+369
+370
+371</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 383</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 369</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tick'>tick</span><span class='lparen'>(</span><span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_tick'>pn_transport_tick</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span>
@@ -3092,12 +3096,12 @@ this deadline occurs.</p>
       <pre class="lines">
 
 
-276
-277
-278</pre>
+262
+263
+264</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 276</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 262</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_trace'>trace</span><span class='lparen'>(</span><span class='id identifier rubyid_level'>level</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_trace'>pn_transport_trace</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_level'>level</span><span class='rparen'>)</span>
@@ -3133,12 +3137,12 @@ this deadline occurs.</p>
       <pre class="lines">
 
 
-263
-264
-265</pre>
+249
+250
+251</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 263</span>
+      <pre class="code"><span class="info file"># File 'lib/core/transport.rb', line 249</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unbind'>unbind</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_unbind'>pn_transport_unbind</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -3153,9 +3157,9 @@ this deadline occurs.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Nov  7 17:09:14 2017 by
+  Generated on Tue Dec  5 15:30:45 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.1).
+  0.9.8 (ruby-2.4.2).
 </div>
 
     </div>

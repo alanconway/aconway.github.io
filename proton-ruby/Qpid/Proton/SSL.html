@@ -409,12 +409,12 @@ nil if SSL is nota ctive.</p>
       <pre class="lines">
 
 
+77
 78
-79
-80</pre>
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/ssl.rb', line 78</span>
+      <pre class="code"><span class="info file"># File 'lib/core/ssl.rb', line 77</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_ssl_present'>pn_ssl_present</span>
@@ -478,14 +478,14 @@ over time due to renegotiation or other changes to the SSL layer.</p>
       <pre class="lines">
 
 
+121
 122
 123
 124
-125
-126</pre>
+125</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/ssl.rb', line 122</span>
+      <pre class="code"><span class="info file"># File 'lib/core/ssl.rb', line 121</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cipher_name'>cipher_name</span>
   <span class='id identifier rubyid_rc'>rc</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_ssl_get_cipher_name'>pn_ssl_get_cipher_name</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='int'>128</span><span class='rparen'>)</span>
@@ -554,14 +554,14 @@ over time due to renegotiation or other changes to the SSL layer.</p>
       <pre class="lines">
 
 
+155
 156
 157
 158
-159
-160</pre>
+159</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/ssl.rb', line 156</span>
+      <pre class="code"><span class="info file"># File 'lib/core/ssl.rb', line 155</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_peer_hostname'>peer_hostname</span>
   <span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_ssl_get_peer_hostname'>pn_ssl_get_peer_hostname</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='int'>1024</span><span class='rparen'>)</span>
@@ -619,14 +619,14 @@ renegotation.</p>
       <pre class="lines">
 
 
+133
 134
 135
 136
-137
-138</pre>
+137</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/ssl.rb', line 134</span>
+      <pre class="code"><span class="info file"># File 'lib/core/ssl.rb', line 133</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_protocol_name'>protocol_name</span>
   <span class='id identifier rubyid_rc'>rc</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_ssl_get_protocol_name'>pn_ssl_get_protocol_name</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='int'>128</span><span class='rparen'>)</span>
@@ -672,12 +672,12 @@ renegotation instead.</p>
       <pre class="lines">
 
 
+148
 149
-150
-151</pre>
+150</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/ssl.rb', line 149</span>
+      <pre class="code"><span class="info file"># File 'lib/core/ssl.rb', line 148</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_resume_status'>resume_status</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_ssl_resume_status'>pn_ssl_resume_status</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -692,9 +692,9 @@ renegotation instead.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Nov  7 17:09:16 2017 by
+  Generated on Tue Dec  5 15:30:47 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.1).
+  0.9.8 (ruby-2.4.2).
 </div>
 
     </div>

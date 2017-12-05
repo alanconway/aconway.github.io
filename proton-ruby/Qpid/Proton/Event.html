@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Module: Qpid::Proton::Event
+  Class: Qpid::Proton::Event
   
     &mdash; Documentation by YARD 0.9.8
   
@@ -59,12 +59,28 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Module: Qpid::Proton::Event
+      <div id="content"><h1>Class: Qpid::Proton::Event
   
   
   
 </h1>
 <div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Qpid::Proton::Event</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
   
 
   
@@ -78,9 +94,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/event/collector.rb<span class="defines">,<br />
-  lib/event/event_base.rb,<br /> lib/event/event_type.rb,<br /> lib/event/event.rb</span>
-</dd>
+    <dd>lib/core/event.rb</dd>
   </dl>
   
 </div>
@@ -88,21 +102,10 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>– Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements.  See the NOTICE file distributed with this
-work for additional information regarding copyright ownership.  The ASF
-licenses this file to you under the Apache License, Version 2.0 (the
-“License”); you may not use this file except in compliance with the
-License.  You may obtain a copy of the License at</p>
+<p>AMQP protocol event.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id identifier rubyid_www'>www</span><span class='period'>.</span><span class='id identifier rubyid_apache'>apache</span><span class='period'>.</span><span class='id identifier rubyid_org'>org</span><span class='op'>/</span><span class='id identifier rubyid_licenses'>licenses</span><span class='op'>/</span><span class='const'>LICENSE</span><span class='op'>-</span><span class='float'>2.0</span>
-</code></pre>
-
-<p>Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-License for the specific language governing permissions and limitations
-under the License. ++</p>
+<p>Includes a method name to call when the event is dispatched, and the
+context objects relevant to the event.</p>
 
 
   </div>
@@ -110,26 +113,16 @@ under the License. ++</p>
 <div class="tags">
   
 
-</div><h2>Defined Under Namespace</h2>
-<p class="children">
-  
-    
-  
-    
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Event/Collector.html" title="Qpid::Proton::Event::Collector (class)">Collector</a></span>, <span class='object_link'><a href="Event/Event.html" title="Qpid::Proton::Event::Event (class)">Event</a></span>, <span class='object_link'><a href="Event/EventBase.html" title="Qpid::Proton::Event::EventBase (class)">EventBase</a></span>, <span class='object_link'><a href="Event/EventType.html" title="Qpid::Proton::Event::EventType (class)">EventType</a></span>
-    
-  
-</p>
-
+</div>
   <h2>Constant Summary</h2>
   <dl class="constants">
     
-      <dt id="NONE-constant" class="">NONE =
+      <dt id="Event-constant" class="deprecated">Event =
         <div class="docstring">
   <div class="discussion">
-    
-<p>Defined as a programming convenience. No even of this type will ever be
-generated.</p>
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
+<p>use <span class='object_link'><a href="" title="Qpid::Proton::Event (class)">Qpid::Proton::Event</a></span></p>
+</div></div>
 
 
   </div>
@@ -139,603 +132,1360 @@ generated.</p>
 
 </div>
       </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_EVENT_NONE</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="REACTOR_INIT-constant" class="">REACTOR_INIT =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A reactor has been started.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_REACTOR_INIT</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="REACTOR_QUIESCED-constant" class="">REACTOR_QUIESCED =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A reactor has no more events to process.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_REACTOR_QUIESCED</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="REACTOR_FINAL-constant" class="">REACTOR_FINAL =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A reactor has been stopred.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_REACTOR_FINAL</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="TIMER_TASK-constant" class="">TIMER_TASK =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A timer event has occurred.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_TIMER_TASK</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="CONNECTION_INIT-constant" class="">CONNECTION_INIT =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A connection has been created. This is the first even that will ever be
-issued for a connection.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_CONNECTION_INIT</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="CONNECTION_BOUND-constant" class="">CONNECTION_BOUND =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A conneciton has been bound toa  transport.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_CONNECTION_BOUND</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="CONNECTION_UNBOUND-constant" class="">CONNECTION_UNBOUND =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A connection has been unbound from its transport.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_CONNECTION_UNBOUND</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="CONNECTION_LOCAL_OPEN-constant" class="">CONNECTION_LOCAL_OPEN =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A local connection endpoint has been opened.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_CONNECTION_LOCAL_OPEN</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="CONNECTION_LOCAL_CLOSE-constant" class="">CONNECTION_LOCAL_CLOSE =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A local connection endpoint has been closed.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_CONNECTION_LOCAL_CLOSE</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="CONNECTION_REMOTE_OPEN-constant" class="">CONNECTION_REMOTE_OPEN =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A remote endpoint has opened its connection.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_CONNECTION_REMOTE_OPEN</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="CONNECTION_REMOTE_CLOSE-constant" class="">CONNECTION_REMOTE_CLOSE =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A remote endpoint has closed its connection.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_CONNECTION_REMOTE_CLOSE</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="CONNECTION_FINAL-constant" class="">CONNECTION_FINAL =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A connection has been freed and any outstanding processing has been
-completed. This is the final event htat will ever be issued for a
-connection</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_CONNECTION_FINAL</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="SESSION_INIT-constant" class="">SESSION_INIT =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A session has been created. This is the first event that will ever be
-issues for a session.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_SESSION_INIT</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="SESSION_LOCAL_OPEN-constant" class="">SESSION_LOCAL_OPEN =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A local session endpoint has been opened.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_SESSION_LOCAL_OPEN</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="SESSION_LOCAL_CLOSE-constant" class="">SESSION_LOCAL_CLOSE =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A local session endpoint has been closed.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_SESSION_LOCAL_CLOSE</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="SESSION_REMOTE_OPEN-constant" class="">SESSION_REMOTE_OPEN =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A remote endpoint has opened its session.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_SESSION_REMOTE_OPEN</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="SESSION_REMOTE_CLOSE-constant" class="">SESSION_REMOTE_CLOSE =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A remote endpoint has closed its session.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_SESSION_REMOTE_CLOSE</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="SESSION_FINAL-constant" class="">SESSION_FINAL =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A session has been freed and any outstanding processing has been completed.
-This is the final event that will ever be issued for a session</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_SESSION_FINAL</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="LINK_INIT-constant" class="">LINK_INIT =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A link has been created. This is the first event that will ever be issued
-for a link.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_LINK_INIT</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="LINK_LOCAL_OPEN-constant" class="">LINK_LOCAL_OPEN =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A local link endpoint has been opened.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_LINK_LOCAL_OPEN</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="LINK_LOCAL_CLOSE-constant" class="">LINK_LOCAL_CLOSE =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A local link endpoint has been closed.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_LINK_LOCAL_CLOSE</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="LINK_LOCAL_DETACH-constant" class="">LINK_LOCAL_DETACH =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A local link endpoint has been detached.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_LINK_LOCAL_DETACH</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="LINK_REMOTE_OPEN-constant" class="">LINK_REMOTE_OPEN =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A remote endpoint has opened its link.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_LINK_REMOTE_OPEN</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="LINK_REMOTE_CLOSE-constant" class="">LINK_REMOTE_CLOSE =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A remote endpoint has closed its link.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_LINK_REMOTE_CLOSE</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="LINK_REMOTE_DETACH-constant" class="">LINK_REMOTE_DETACH =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A remote endpoint has detached its link.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_LINK_REMOTE_DETACH</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="LINK_FLOW-constant" class="">LINK_FLOW =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>The flow control state for a link has changed.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_LINK_FLOW</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="LINK_FINAL-constant" class="">LINK_FINAL =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A link has been freed and any outstanding processing has been completed.
-This is the final event htat will ever be issued for a link.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_LINK_FINAL</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="DELIVERY-constant" class="">DELIVERY =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A delivery has been created or updated.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_DELIVERY</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="TRANSPORT-constant" class="">TRANSPORT =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>A transport has new data to read and/or write.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_TRANSPORT</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="TRANSPORT_ERROR-constant" class="">TRANSPORT_ERROR =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>Indicates that a transport error has occurred.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-  <p class="tag_title">See Also:</p>
-  <ul class="see">
-    
-      <li><span class='object_link'><a href="Transport.html#condition-instance_method" title="Qpid::Proton::Transport#condition (method)">To access the details of the error.</a></span></li>
-    
-  </ul>
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_TRANSPORT_ERROR</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="TRANSPORT_HEAD_CLOSED-constant" class="">TRANSPORT_HEAD_CLOSED =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>Indicates that the head of a transport has been closed. This means the
-transport will never produce more bytes for output to the network.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_TRANSPORT_HEAD_CLOSED</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="TRANSPORT_TAIL_CLOSED-constant" class="">TRANSPORT_TAIL_CLOSED =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>Indicates that the trail of a transport has been closed. This means the
-transport will never be able to process more bytes from the network.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_TRANSPORT_TAIL_CLOSED</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="TRANSPORT_CLOSED-constant" class="">TRANSPORT_CLOSED =
-        <div class="docstring">
-  <div class="discussion">
-    
-<p>Indicates that both the head and tail of a transport are closed.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_TRANSPORT_CLOSED</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="SELECTABLE_INIT-constant" class="">SELECTABLE_INIT =
-        
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_SELECTABLE_INIT</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="SELECTABLE_UPDATED-constant" class="">SELECTABLE_UPDATED =
-        
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_SELECTABLE_UPDATED</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="SELECTABLE_READABLE-constant" class="">SELECTABLE_READABLE =
-        
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_SELECTABLE_READABLE</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="SELECTABLE_WRITABLE-constant" class="">SELECTABLE_WRITABLE =
-        
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_SELECTABLE_WRITABLE</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="SELECTABLE_EXPIRED-constant" class="">SELECTABLE_EXPIRED =
-        
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_SELECTABLE_EXPIRED</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="SELECTABLE_ERROR-constant" class="">SELECTABLE_ERROR =
-        
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_SELECTABLE_ERROR</span><span class='rparen'>)</span></pre></dd>
-    
-      <dt id="SELECTABLE_FINAL-constant" class="">SELECTABLE_FINAL =
-        
-      </dt>
-      <dd><pre class="code"><span class='id identifier rubyid_event_type'>event_type</span><span class='lparen'>(</span><span class='symbol'>:PN_SELECTABLE_FINAL</span><span class='rparen'>)</span></pre></dd>
+      <dd><pre class="code"><span class='kw'>self</span></pre></dd>
     
   </dl>
 
 
 
 
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#method-instance_method" title="#method (instance method)">#<strong>method</strong>  &#x21d2; Symbol </a>
+    
+
+    
+      (also: #type)
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Method name that this event will call in <span class='object_link'><a href="#dispatch-instance_method" title="Qpid::Proton::Event#dispatch (method)">#dispatch</a></span>.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
 
 
 
 
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#condition-instance_method" title="#condition (instance method)">#<strong>condition</strong>  &#x21d2; Condition </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Error condition associated with this event or nil if none.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#connection-instance_method" title="#connection (instance method)">#<strong>connection</strong>  &#x21d2; Connection<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The connection for this event.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#container-instance_method" title="#container (instance method)">#<strong>container</strong>  &#x21d2; Container<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Container for this event.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#context-instance_method" title="#context (instance method)">#<strong>context</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The event context object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delivery-instance_method" title="#delivery (instance method)">#<strong>delivery</strong>  &#x21d2; Delivery<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delivery for this event.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dispatch-instance_method" title="#dispatch (instance method)">#<strong>dispatch</strong>(handler)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Call handler.<span class='object_link'><a href="#method-instance_method" title="Qpid::Proton::Event#method (method)">#method</a></span>(self) if handler.respond_to? <span class='object_link'><a href="#method-instance_method" title="Qpid::Proton::Event#method (method)">#method</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect-instance_method" title="#inspect (instance method)">#<strong>inspect</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#link-instance_method" title="#link (instance method)">#<strong>link</strong>  &#x21d2; Link<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Link for this event.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#message-instance_method" title="#message (instance method)">#<strong>message</strong>  &#x21d2; Message<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Message for this event.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public deprecated">
+  <span class="summary_signature">
+    
+      <a href="#reactor-instance_method" title="#reactor (instance method)">#<strong>reactor</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  <span class="deprecated note title">deprecated</span>
+  
+
+  
+    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
+<p>use <span class='object_link'><a href="#container-instance_method" title="Qpid::Proton::Event#container (method)">#container</a></span></p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#receiver-instance_method" title="#receiver (instance method)">#<strong>receiver</strong>  &#x21d2; Receiver<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Receiver associated with this event.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sender-instance_method" title="#sender (instance method)">#<strong>sender</strong>  &#x21d2; Sender<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sender associated with this event.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#session-instance_method" title="#session (instance method)">#<strong>session</strong>  &#x21d2; Session<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Session for this event.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#tracker-instance_method" title="#tracker (instance method)">#<strong>tracker</strong>  &#x21d2; Tracker<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delivery for this event.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#transport-instance_method" title="#transport (instance method)">#<strong>transport</strong>  &#x21d2; Transport<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Transport for this event.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="method=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="method-instance_method">
+  
+    #<strong>method</strong>  &#x21d2; <tt>Symbol</tt> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='type-instance_method'>type</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns method name that this event will call in <span class='object_link'><a href="#dispatch-instance_method" title="Qpid::Proton::Event#dispatch (method)">#dispatch</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>method name that this event will call in <span class='object_link'><a href="#dispatch-instance_method" title="Qpid::Proton::Event#dispatch (method)">#dispatch</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+99
+100
+101</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 99</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_method'>method</span>
+  <span class='ivar'>@method</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="condition-instance_method">
+  
+    #<strong>condition</strong>  &#x21d2; <tt><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Error condition associated with this event or nil if none.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Error condition associated with this event or nil if none.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+147
+148
+149
+150</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 147</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_condition'>condition</span>
+  <span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_remote_condition'>remote_condition</span> <span class='kw'>if</span> <span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='symbol'>:remote_condition</span><span class='rparen'>)</span> <span class='op'>||</span>
+    <span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_condition'>condition</span> <span class='kw'>if</span> <span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='symbol'>:condition</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="connection-instance_method">
+  
+    #<strong>connection</strong>  &#x21d2; <tt><span class='object_link'><a href="Connection.html" title="Qpid::Proton::Connection (class)">Connection</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the connection for this event</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Connection.html" title="Qpid::Proton::Connection (class)">Connection</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the connection for this event</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+113</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 113</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_connection'>connection</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@connection</span> <span class='op'>||=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Connection.html" title="Qpid::Proton::Connection (class)">Connection</a></span></span><span class='comma'>,</span> <span class='symbol'>:connection</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="container-instance_method">
+  
+    #<strong>container</strong>  &#x21d2; <tt><span class='object_link'><a href="Container.html" title="Qpid::Proton::Container (class)">Container</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns container for this event</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Container.html" title="Qpid::Proton::Container (class)">Container</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>container for this event</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+107</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 107</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_container'>container</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@container</span> <span class='op'>||=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Container.html" title="Qpid::Proton::Container (class)">Container</a></span></span><span class='comma'>,</span> <span class='symbol'>:container</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="context-instance_method">
+  
+    #<strong>context</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the event context object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the event context object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+104</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 104</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_context'>context</span><span class='semicolon'>;</span> <span class='kw'>return</span> <span class='ivar'>@context</span> <span class='op'>||=</span> <span class='id identifier rubyid__context'>_context</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delivery-instance_method">
+  
+    #<strong>delivery</strong>  &#x21d2; <tt><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns delivery for this event</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>delivery for this event</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+128
+129
+130
+131
+132
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 128</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delivery'>delivery</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='ivar'>@delivery</span> <span class='kw'>if</span> <span class='ivar'>@delivery</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_context'>context</span>
+  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></span> <span class='kw'>then</span> <span class='ivar'>@delivery</span> <span class='op'>=</span> <span class='ivar'>@context</span>
+  <span class='comment'># deprecated: for backwards compat allow a Tracker to be treated as a Delivery
+</span>  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="Tracker.html" title="Qpid::Proton::Tracker (class)">Tracker</a></span></span> <span class='kw'>then</span> <span class='ivar'>@delivery</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Tracker.html" title="Qpid::Proton::Tracker (class)">Tracker</a></span></span><span class='period'>.</span><span class='id identifier rubyid_impl'>impl</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="dispatch-instance_method">
+  
+    #<strong>dispatch</strong>(handler)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Call handler.<span class='object_link'><a href="#method-instance_method" title="Qpid::Proton::Event#method (method)">#method</a></span>(self) if handler.respond_to? <span class='object_link'><a href="#method-instance_method" title="Qpid::Proton::Event#method (method)">#method</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if handler responded to the method, nil if not.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+94
+95
+96</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 94</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_dispatch'>dispatch</span><span class='lparen'>(</span><span class='id identifier rubyid_handler'>handler</span><span class='rparen'>)</span>
+  <span class='lparen'>(</span><span class='id identifier rubyid_handler'>handler</span><span class='period'>.</span><span class='id identifier rubyid___send__'>__send__</span><span class='lparen'>(</span><span class='ivar'>@method</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>true</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_handler'>handler</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='ivar'>@method</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inspect-instance_method">
+  
+    #<strong>inspect</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+144</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 144</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'>(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_method'>method</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="link-instance_method">
+  
+    #<strong>link</strong>  &#x21d2; <tt><span class='object_link'><a href="Link.html" title="Qpid::Proton::Link (class)">Link</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns link for this event</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Link.html" title="Qpid::Proton::Link (class)">Link</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>link for this event</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 119</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_link'>link</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@link</span> <span class='op'>||=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Link.html" title="Qpid::Proton::Link (class)">Link</a></span></span><span class='comma'>,</span> <span class='symbol'>:link</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="message-instance_method">
+  
+    #<strong>message</strong>  &#x21d2; <tt><span class='object_link'><a href="Message.html" title="Qpid::Proton::Message (class)">Message</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns message for this event</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Message.html" title="Qpid::Proton::Message (class)">Message</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>message for this event</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+141</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 141</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_message'>message</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@message</span> <span class='op'>||=</span> <span class='id identifier rubyid_delivery'>delivery</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span> <span class='kw'>if</span> <span class='id identifier rubyid_delivery'>delivery</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reactor-instance_method">
+  
+    #<strong>reactor</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
+<p>use <span class='object_link'><a href="#container-instance_method" title="Qpid::Proton::Event#container (method)">#container</a></span></p>
+</div></div>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+153</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 153</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reactor'>reactor</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='period'>.</span><span class='id identifier rubyid_deprecated'>deprecated</span> <span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='symbol'>:container</span><span class='semicolon'>;</span> <span class='id identifier rubyid_container'>container</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="receiver-instance_method">
+  
+    #<strong>receiver</strong>  &#x21d2; <tt><span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns receiver associated with this event</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>receiver associated with this event</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+125</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 125</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_receiver'>receiver</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id identifier rubyid_link'>link</span> <span class='kw'>if</span> <span class='id identifier rubyid_link'>link</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_link'>link</span><span class='period'>.</span><span class='id identifier rubyid_receiver?'>receiver?</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sender-instance_method">
+  
+    #<strong>sender</strong>  &#x21d2; <tt><span class='object_link'><a href="Sender.html" title="Qpid::Proton::Sender (class)">Sender</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns sender associated with this event</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Sender.html" title="Qpid::Proton::Sender (class)">Sender</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>sender associated with this event</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+122</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 122</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sender'>sender</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id identifier rubyid_link'>link</span> <span class='kw'>if</span> <span class='id identifier rubyid_link'>link</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_link'>link</span><span class='period'>.</span><span class='id identifier rubyid_sender?'>sender?</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="session-instance_method">
+  
+    #<strong>session</strong>  &#x21d2; <tt><span class='object_link'><a href="Session.html" title="Qpid::Proton::Session (class)">Session</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns session for this event</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Session.html" title="Qpid::Proton::Session (class)">Session</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>session for this event</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+116</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 116</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_session'>session</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@session</span> <span class='op'>||=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Session.html" title="Qpid::Proton::Session (class)">Session</a></span></span><span class='comma'>,</span> <span class='symbol'>:session</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    #<strong>to_s</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+143</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 143</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'>(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_method'>method</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_context'>context</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="tracker-instance_method">
+  
+    #<strong>tracker</strong>  &#x21d2; <tt><span class='object_link'><a href="Tracker.html" title="Qpid::Proton::Tracker (class)">Tracker</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns delivery for this event</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Tracker.html" title="Qpid::Proton::Tracker (class)">Tracker</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>delivery for this event</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 138</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_tracker'>tracker</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@tracker</span> <span class='op'>||=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Tracker.html" title="Qpid::Proton::Tracker (class)">Tracker</a></span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="transport-instance_method">
+  
+    #<strong>transport</strong>  &#x21d2; <tt><span class='object_link'><a href="Transport.html" title="Qpid::Proton::Transport (class)">Transport</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns transport for this event</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Transport.html" title="Qpid::Proton::Transport (class)">Transport</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>transport for this event</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+110</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 110</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_transport'>transport</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@transport</span> <span class='op'>||=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Transport.html" title="Qpid::Proton::Transport (class)">Transport</a></span></span><span class='comma'>,</span> <span class='symbol'>:transport</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
 </div>
 
       <div id="footer">
-  Generated on Tue Nov  7 17:09:12 2017 by
+  Generated on Tue Dec  5 15:30:46 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.1).
+  0.9.8 (ruby-2.4.2).
 </div>
 
     </div>

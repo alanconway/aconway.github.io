@@ -299,14 +299,8 @@ endpoint.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Endpoint.html" title="Qpid::Proton::Endpoint (class)">Endpoint</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Endpoint.html#closed%3F-instance_method" title="Qpid::Proton::Endpoint#closed? (method)">#closed?</a></span>, <span class='object_link'><a href="Endpoint.html#condition-instance_method" title="Qpid::Proton::Endpoint#condition (method)">#condition</a></span>, <span class='object_link'><a href="Endpoint.html#handler-instance_method" title="Qpid::Proton::Endpoint#handler (method)">#handler</a></span>, <span class='object_link'><a href="Endpoint.html#handler=-instance_method" title="Qpid::Proton::Endpoint#handler= (method)">#handler=</a></span>, <span class='object_link'><a href="Endpoint.html#local_active%3F-instance_method" title="Qpid::Proton::Endpoint#local_active? (method)">#local_active?</a></span>, <span class='object_link'><a href="Endpoint.html#local_closed%3F-instance_method" title="Qpid::Proton::Endpoint#local_closed? (method)">#local_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#local_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#local_uninit? (method)">#local_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#open%3F-instance_method" title="Qpid::Proton::Endpoint#open? (method)">#open?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_active%3F-instance_method" title="Qpid::Proton::Endpoint#remote_active? (method)">#remote_active?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_closed%3F-instance_method" title="Qpid::Proton::Endpoint#remote_closed? (method)">#remote_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#remote_uninit? (method)">#remote_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#transport-instance_method" title="Qpid::Proton::Endpoint#transport (method)">#transport</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Endpoint.html#closed%3F-instance_method" title="Qpid::Proton::Endpoint#closed? (method)">#closed?</a></span>, <span class='object_link'><a href="Endpoint.html#local_closed%3F-instance_method" title="Qpid::Proton::Endpoint#local_closed? (method)">#local_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#local_open%3F-instance_method" title="Qpid::Proton::Endpoint#local_open? (method)">#local_open?</a></span>, <span class='object_link'><a href="Endpoint.html#local_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#local_uninit? (method)">#local_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#open%3F-instance_method" title="Qpid::Proton::Endpoint#open? (method)">#open?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_closed%3F-instance_method" title="Qpid::Proton::Endpoint#remote_closed? (method)">#remote_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_open%3F-instance_method" title="Qpid::Proton::Endpoint#remote_open? (method)">#remote_open?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#remote_uninit? (method)">#remote_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#transport-instance_method" title="Qpid::Proton::Endpoint#transport (method)">#transport</a></span></p>
 
-  
-  
-  
-  
-  
-  
   <div id="instance_attr_details" class="attr_details">
     <h2>Instance Attribute Details</h2>
     
@@ -362,10 +356,10 @@ possible, the excess credit must be returned by invoking #drained.</p>
       <pre class="lines">
 
 
-46</pre>
+45</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/receiver.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'lib/core/receiver.rb', line 45</span>
 
 <span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:drain</span></pre>
     </td>
@@ -422,10 +416,10 @@ sender still has excess credit.</p>
       <pre class="lines">
 
 
-57</pre>
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/receiver.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'lib/core/receiver.rb', line 56</span>
 
 <span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:draining?</span></pre>
     </td>
@@ -486,12 +480,12 @@ sender still has excess credit.</p>
       <pre class="lines">
 
 
+62
 63
-64
-65</pre>
+64</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/receiver.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/core/receiver.rb', line 62</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_flow'>flow</span><span class='lparen'>(</span><span class='id identifier rubyid_n'>n</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_flow'>pn_link_flow</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_n'>n</span><span class='rparen'>)</span>
@@ -523,7 +517,7 @@ because there is no data to read does not imply the message is complete.</p>
 #receive until nil is returned, or verify that #partial? is false and
 Delivery#pending is 0.</p>
 
-<p>the stream was reached.t</p>
+<p>the stream was reached.</p>
 
 
   </div>
@@ -600,15 +594,15 @@ Delivery#pending is 0.</p>
       <pre class="lines">
 
 
+85
 86
 87
 88
 89
-90
-91</pre>
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/receiver.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'lib/core/receiver.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_receive'>receive</span><span class='lparen'>(</span><span class='id identifier rubyid_limit'>limit</span><span class='rparen'>)</span>
   <span class='lparen'>(</span><span class='id identifier rubyid_n'>n</span><span class='comma'>,</span> <span class='id identifier rubyid_bytes'>bytes</span><span class='rparen'>)</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_recv'>pn_link_recv</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_limit'>limit</span><span class='rparen'>)</span>
@@ -626,9 +620,9 @@ Delivery#pending is 0.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Nov  7 17:09:14 2017 by
+  Generated on Tue Dec  5 15:30:45 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.1).
+  0.9.8 (ruby-2.4.2).
 </div>
 
     </div>

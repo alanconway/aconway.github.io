@@ -104,7 +104,9 @@
     
 <p>A listener for incoming connections.</p>
 
-<p>Create with <span class='object_link'><a href="Container.html#listen-instance_method" title="Qpid::Proton::Container#listen (method)">Container#listen</a></span> or  Container#listen_with</p>
+<p>Create with <span class='object_link'><a href="Container.html#listen-instance_method" title="Qpid::Proton::Container#listen (method)">Container#listen</a></span> or  <span class='object_link'><a href="Container.html#listen_io-instance_method" title="Qpid::Proton::Container#listen_io (method)">Container#listen_io</a></span>. To control the
+handler and connection options applied to incoming connections, pass a
+ListenerHandler on creation.</p>
 
 
   </div>
@@ -112,7 +114,21 @@
 <div class="tags">
   
 
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="Container/ListenTask.html" title="Qpid::Proton::Container::ListenTask (class)">Container::ListenTask</a></span></p>
 </div>
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Listener/Handler.html" title="Qpid::Proton::Listener::Handler (class)">Handler</a></span>
+    
+  
+</p>
+
 
 
 
@@ -122,7 +138,36 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#container-instance_method" title="#container (instance method)">#<strong>container</strong>  &#x21d2; Object </a>
+      <a href="#condition-instance_method" title="#condition (instance method)">#<strong>condition</strong>  &#x21d2; Condition </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The error condition if there is one.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#container-instance_method" title="#container (instance method)">#<strong>container</strong>  &#x21d2; Container </a>
     
 
     
@@ -219,9 +264,9 @@
       
       <span id=""></span>
       <div class="method_details first">
-  <h3 class="signature first" id="container-instance_method">
+  <h3 class="signature first" id="condition-instance_method">
   
-    #<strong>container</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+    #<strong>condition</strong>  &#x21d2; <tt><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -230,13 +275,31 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The listener&#39;s container</p>
+<p>Returns The error condition if there is one</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The error condition if there is one</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -244,12 +307,73 @@
       <pre class="lines">
 
 
-26
-27
-28</pre>
+61
+62
+63</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 26</span>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 61</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_condition'>condition</span>
+  <span class='ivar'>@condition</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="container-instance_method">
+  
+    #<strong>container</strong>  &#x21d2; <tt><span class='object_link'><a href="Container.html" title="Qpid::Proton::Container (class)">Container</a></span></tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns The listener&#39;s container</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Container.html" title="Qpid::Proton::Container (class)">Container</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The listener&#39;s container</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_container'>container</span>
   <span class='ivar'>@container</span>
@@ -314,18 +438,22 @@
       <pre class="lines">
 
 
-30
-31
-32
-33</pre>
+65
+66
+67
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 65</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_close'>close</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='ivar'>@closed</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></span><span class='period'>.</span><span class='id identifier rubyid_make'><span class='object_link'><a href="Condition.html#make-class_method" title="Qpid::Proton::Condition.make (method)">make</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='kw'>true</span>
+  <span class='ivar'>@closing</span> <span class='op'>=</span> <span class='kw'>true</span>
+  <span class='ivar'>@condition</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></span><span class='period'>.</span><span class='id identifier rubyid_convert'><span class='object_link'><a href="Condition.html#convert-class_method" title="Qpid::Proton::Condition.convert (method)">convert</a></span></span> <span class='id identifier rubyid_error'>error</span>
   <span class='ivar'>@io</span><span class='period'>.</span><span class='id identifier rubyid_close_read'>close_read</span> <span class='kw'>rescue</span> <span class='kw'>nil</span> <span class='comment'># Cause listener to wake out of IO.select
-</span><span class='kw'>end</span></pre>
+</span>  <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -357,10 +485,10 @@
       <pre class="lines">
 
 
-36</pre>
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 73</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_io'>to_io</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@io</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -373,9 +501,9 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Nov  7 17:09:14 2017 by
+  Generated on Tue Dec  5 15:30:45 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.1).
+  0.9.8 (ruby-2.4.2).
 </div>
 
     </div>

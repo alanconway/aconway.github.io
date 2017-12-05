@@ -153,7 +153,7 @@
 
     <ul class="summary">
       
-        <li class="public ">
+        <li class="public deprecated">
   <span class="summary_signature">
     
       <a href="#delivery_tag-instance_method" title="#delivery_tag (instance method)">#<strong>delivery_tag</strong>  &#x21d2; Object </a>
@@ -166,11 +166,13 @@
   
   
   
-  
+  <span class="deprecated note title">deprecated</span>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
+<p>internal use only</p>
+</div></span>
   
 </li>
 
@@ -193,7 +195,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Signals the availability of deliveries.</p>
+<p>Hint to the remote receiver about the number of messages available.</p>
 </div></span>
   
 </li>
@@ -202,7 +204,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#send-instance_method" title="#send (instance method)">#<strong>send</strong>(object, tag = nil)  &#x21d2; Integer </a>
+      <a href="#send-instance_method" title="#send (instance method)">#<strong>send</strong>(message)  &#x21d2; Tracker </a>
     
 
     
@@ -217,16 +219,16 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Sends the specified data to the remote endpoint.</p>
+<p>Send a message.</p>
 </div></span>
   
 </li>
 
       
-        <li class="public ">
+        <li class="public deprecated">
   <span class="summary_signature">
     
-      <a href="#stream-instance_method" title="#stream (instance method)">#<strong>stream</strong>(bytes)  &#x21d2; Integer </a>
+      <a href="#stream-instance_method" title="#stream (instance method)">#<strong>stream</strong>(bytes)  &#x21d2; Object </a>
     
 
     
@@ -236,12 +238,12 @@
   
   
   
-  
+  <span class="deprecated note title">deprecated</span>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Send the specified bytes as part of the current delivery.</p>
+    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
+<p>internal use only</p>
 </div></span>
   
 </li>
@@ -289,14 +291,8 @@
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Endpoint.html" title="Qpid::Proton::Endpoint (class)">Endpoint</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Endpoint.html#closed%3F-instance_method" title="Qpid::Proton::Endpoint#closed? (method)">#closed?</a></span>, <span class='object_link'><a href="Endpoint.html#condition-instance_method" title="Qpid::Proton::Endpoint#condition (method)">#condition</a></span>, <span class='object_link'><a href="Endpoint.html#handler-instance_method" title="Qpid::Proton::Endpoint#handler (method)">#handler</a></span>, <span class='object_link'><a href="Endpoint.html#handler=-instance_method" title="Qpid::Proton::Endpoint#handler= (method)">#handler=</a></span>, <span class='object_link'><a href="Endpoint.html#local_active%3F-instance_method" title="Qpid::Proton::Endpoint#local_active? (method)">#local_active?</a></span>, <span class='object_link'><a href="Endpoint.html#local_closed%3F-instance_method" title="Qpid::Proton::Endpoint#local_closed? (method)">#local_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#local_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#local_uninit? (method)">#local_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#open%3F-instance_method" title="Qpid::Proton::Endpoint#open? (method)">#open?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_active%3F-instance_method" title="Qpid::Proton::Endpoint#remote_active? (method)">#remote_active?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_closed%3F-instance_method" title="Qpid::Proton::Endpoint#remote_closed? (method)">#remote_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#remote_uninit? (method)">#remote_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#transport-instance_method" title="Qpid::Proton::Endpoint#transport (method)">#transport</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Endpoint.html#closed%3F-instance_method" title="Qpid::Proton::Endpoint#closed? (method)">#closed?</a></span>, <span class='object_link'><a href="Endpoint.html#local_closed%3F-instance_method" title="Qpid::Proton::Endpoint#local_closed? (method)">#local_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#local_open%3F-instance_method" title="Qpid::Proton::Endpoint#local_open? (method)">#local_open?</a></span>, <span class='object_link'><a href="Endpoint.html#local_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#local_uninit? (method)">#local_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#open%3F-instance_method" title="Qpid::Proton::Endpoint#open? (method)">#open?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_closed%3F-instance_method" title="Qpid::Proton::Endpoint#remote_closed? (method)">#remote_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_open%3F-instance_method" title="Qpid::Proton::Endpoint#remote_open? (method)">#remote_open?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#remote_uninit? (method)">#remote_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#transport-instance_method" title="Qpid::Proton::Endpoint#transport (method)">#transport</a></span></p>
 
-  
-  
-  
-  
-  
-  
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -311,7 +307,19 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
+<p>internal use only</p>
+</div></div>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
@@ -331,8 +339,8 @@
   <span class='ivar'>@tag_count</span> <span class='op'>||=</span> <span class='int'>0</span>
   <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='ivar'>@tag_count</span><span class='period'>.</span><span class='id identifier rubyid_succ'>succ</span>
   <span class='ivar'>@tag_count</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span>
-  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_result'>result</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-<span class='kw'>end</span></pre>
+  <span class='kw'>return</span> <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>32</span><span class='rparen'>)</span> <span class='comment'># Base 32 compactness
+</span><span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -350,7 +358,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Signals the availability of deliveries.</p>
+<p>Hint to the remote receiver about the number of messages available. The
+receiver may use this to optimize credit flow, or may ignore it.</p>
 
 
   </div>
@@ -384,12 +393,12 @@
       <pre class="lines">
 
 
-38
-39
-40</pre>
+36
+37
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/sender.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'lib/core/sender.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_offered'>offered</span><span class='lparen'>(</span><span class='id identifier rubyid_n'>n</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_offered'>pn_link_offered</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_n'>n</span><span class='rparen'>)</span>
@@ -402,7 +411,7 @@
       <div class="method_details ">
   <h3 class="signature " id="send-instance_method">
   
-    #<strong>send</strong>(object, tag = nil)  &#x21d2; <tt>Integer</tt> 
+    #<strong>send</strong>(message)  &#x21d2; <tt><span class='object_link'><a href="Tracker.html" title="Qpid::Proton::Tracker (class)">Tracker</a></span></tt> 
   
 
   
@@ -411,7 +420,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Sends the specified data to the remote endpoint.</p>
+<p>Send a message.</p>
 
 
   </div>
@@ -422,34 +431,16 @@
   
     <li>
       
-        <span class='name'>object</span>
+        <span class='name'>message</span>
       
       
-        <span class='type'>(<tt>Object</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Message.html" title="Qpid::Proton::Message (class)">Message</a></span></tt>)</span>
       
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The content to send.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>tag</span>
-      
-      
-        <span class='type'>(<tt>Object</tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>nil</tt>)</em>
       
       
         &mdash;
         <div class='inline'>
-<p>The tag</p>
+<p>The message to send.</p>
 </div>
       
     </li>
@@ -462,13 +453,13 @@
     <li>
       
       
-        <span class='type'>(<tt>Integer</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Tracker.html" title="Qpid::Proton::Tracker (class)">Tracker</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>The number of bytes sent.</p>
+<p>Tracks the outcome of the message.</p>
 </div>
       
     </li>
@@ -481,23 +472,37 @@
       <pre class="lines">
 
 
+46
+47
+48
 49
 50
 51
 52
 53
 54
-55</pre>
+55
+56
+57
+58
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/sender.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/core/sender.rb', line 46</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_object'>object</span><span class='comma'>,</span> <span class='id identifier rubyid_tag'>tag</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_object'>object</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='symbol'>:proton_send</span>
-    <span class='id identifier rubyid_object'>object</span><span class='period'>.</span><span class='id identifier rubyid_proton_send'>proton_send</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_tag'>tag</span><span class='rparen'>)</span>
-  <span class='kw'>else</span>
-    <span class='id identifier rubyid_stream'>stream</span><span class='lparen'>(</span><span class='id identifier rubyid_object'>object</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_tag'>tag</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>0</span>
+    <span class='comment'># deprecated: allow tag in args[0] for backwards compat
+</span>    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ArgumentError.html" title="Qpid::Proton::ArgumentError (class)">ArgumentError</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>too many arguments</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>1</span>
+    <span class='id identifier rubyid_tag'>tag</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
   <span class='kw'>end</span>
+  <span class='id identifier rubyid_tag'>tag</span> <span class='op'>||=</span> <span class='id identifier rubyid_delivery_tag'>delivery_tag</span>
+  <span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Tracker.html" title="Qpid::Proton::Tracker (class)">Tracker</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_delivery'>pn_delivery</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_tag'>tag</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_send'>pn_link_send</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_message'>message</span><span class='period'>.</span><span class='id identifier rubyid_encode'>encode</span><span class='rparen'>)</span>
+  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_advance'>pn_link_advance</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_settle'>settle</span> <span class='kw'>if</span> <span class='id identifier rubyid_snd_settle_mode'>snd_settle_mode</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="Link.html#SND_SETTLED-constant" title="Qpid::Proton::Link::SND_SETTLED (constant)">SND_SETTLED</a></span></span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_t'>t</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -507,7 +512,7 @@
       <div class="method_details ">
   <h3 class="signature " id="stream-instance_method">
   
-    #<strong>stream</strong>(bytes)  &#x21d2; <tt>Integer</tt> 
+    #<strong>stream</strong>(bytes)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -515,52 +520,15 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Send the specified bytes as part of the current delivery.</p>
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
+<p>internal use only</p>
+</div></div>
 
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>bytes</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'>Array</span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The bytes to send.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The number of bytes sent.</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><table class="source_code">
   <tr>
@@ -568,12 +536,12 @@
       <pre class="lines">
 
 
+62
 63
-64
-65</pre>
+64</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/sender.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/core/sender.rb', line 62</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stream'>stream</span><span class='lparen'>(</span><span class='id identifier rubyid_bytes'>bytes</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_link_send'>pn_link_send</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_bytes'>bytes</span><span class='rparen'>)</span>
@@ -588,9 +556,9 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Nov  7 17:09:15 2017 by
+  Generated on Tue Dec  5 15:30:46 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.1).
+  0.9.8 (ruby-2.4.2).
 </div>
 
     </div>

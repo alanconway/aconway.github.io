@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Qpid::Proton::Condition
+  Exception: Qpid::Proton::Condition
   
     &mdash; Documentation by YARD 0.9.8
   
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Qpid::Proton::Condition
+      <div id="content"><h1>Exception: Qpid::Proton::Condition
   
   
   
@@ -69,10 +69,14 @@
   <dl>
     <dt>Inherits:</dt>
     <dd>
-      <span class="inheritName">Object</span>
+      <span class="inheritName"><span class='object_link'><a href="ProtonError.html" title="Qpid::Proton::ProtonError (class)">ProtonError</a></span></span>
       
         <ul class="fullTree">
           <li>Object</li>
+          
+            <li class="next">RuntimeError</li>
+          
+            <li class="next"><span class='object_link'><a href="ProtonError.html" title="Qpid::Proton::ProtonError (class)">ProtonError</a></span></li>
           
             <li class="next">Qpid::Proton::Condition</li>
           
@@ -94,12 +98,29 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/util/condition.rb</dd>
+    <dd>lib/core/condition.rb</dd>
   </dl>
   
 </div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>An AMQP error condition.</p>
 
+<p>An error sent across an AMQP connection has a name, description and
+optional extra info. The Connectin, <span class='object_link'><a href="Session.html" title="Qpid::Proton::Session (class)">Session</a></span> and <span class='object_link'><a href="Link.html" title="Qpid::Proton::Link (class)">Link</a></span> endpoint classes
+all have a #condition method to check for errors.</p>
+
+<p><span class='object_link'><a href="" title="Qpid::Proton::Condition (class)">Condition</a></span> can also be raised as an exception.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
 
 
 
@@ -209,7 +230,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#make-class_method" title="make (class method)">.<strong>make</strong>(obj, default_name = &quot;proton&quot;)  &#x21d2; Object </a>
+      <a href="#convert-class_method" title="convert (class method)">.<strong>convert</strong>(obj, default_name = &quot;error&quot;)  &#x21d2; Condition </a>
     
 
     
@@ -224,7 +245,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Make a condition.</p>
+<p>Convert an object to a condition.</p>
 </div></span>
   
 </li>
@@ -334,7 +355,14 @@
     </ul>
   
 
-<div id="constructor_details" class="method_details_list">
+
+  
+  
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
     <div class="method_details first">
@@ -363,19 +391,21 @@
       <pre class="lines">
 
 
-26
-27
-28
-29
-30</pre>
+33
+34
+35
+36
+37
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/util/condition.rb', line 26</span>
+      <pre class="code"><span class="info file"># File 'lib/core/condition.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_info'>info</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='ivar'>@name</span> <span class='op'>=</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@description</span> <span class='op'>=</span> <span class='id identifier rubyid_description'>description</span>
   <span class='ivar'>@info</span> <span class='op'>=</span> <span class='id identifier rubyid_info'>info</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -415,12 +445,12 @@
       <pre class="lines">
 
 
-24
-25
-26</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/util/condition.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/core/condition.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_description'>description</span>
   <span class='ivar'>@description</span>
@@ -458,12 +488,12 @@
       <pre class="lines">
 
 
-24
-25
-26</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/util/condition.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/core/condition.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_info'>info</span>
   <span class='ivar'>@info</span>
@@ -501,12 +531,12 @@
       <pre class="lines">
 
 
-24
-25
-26</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/util/condition.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/core/condition.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
@@ -524,9 +554,9 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="make-class_method">
+  <h3 class="signature first" id="convert-class_method">
   
-    .<strong>make</strong>(obj, default_name = &quot;proton&quot;)  &#x21d2; <tt>Object</tt> 
+    .<strong>convert</strong>(obj, default_name = &quot;error&quot;)  &#x21d2; <tt><span class='object_link'><a href="" title="Qpid::Proton::Condition (class)">Condition</a></span></tt> 
   
 
   
@@ -535,18 +565,16 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Make a condition.</p>
+<p>Convert an object to a condition.</p>
 <ul><li>
-<p>when Condition return obj unchanged</p>
+<p>Condition: return obj</p>
 </li><li>
-<p>when Exception return Condition(obj.class.name, obj.to_s)</p>
+<p>Exception: return Condition(obj.class.name, obj.to_s)</p>
 </li><li>
-<p>when nil then nil</p>
+<p>String-like: return String.try_convert(obj)</p>
 </li><li>
-<p>else return Condition(default_name, obj.to_s)</p>
+<p>nil: return nil</p>
 </li></ul>
-
-<p>If objey</p>
 
 
   </div>
@@ -579,12 +607,12 @@
         <span class='type'></span>
       
       
-        <em class="default">(defaults to: <tt>&quot;proton&quot;</tt>)</em>
+        <em class="default">(defaults to: <tt>&quot;error&quot;</tt>)</em>
       
       
         &mdash;
         <div class='inline'>
-<p>condition name to use if obj does not imply a name</p>
+<p>name to use if obj does not imply a name</p>
 </div>
       
     </li>
@@ -597,9 +625,32 @@
     <li>
       
       
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Qpid::Proton::Condition (class)">Condition</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Conversion depends on the type of obj</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
         <span class='type'></span>
       
       
+      
+        
+        <div class='inline'>
+<p>::ArgumentError if obj is not convertible to <span class='object_link'><a href="" title="Qpid::Proton::Condition (class)">Qpid::Proton::Condition</a></span></p>
+</div>
       
     </li>
   
@@ -611,24 +662,40 @@
       <pre class="lines">
 
 
-54
-55
-56
-57
-58
-59
 60
-61</pre>
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/util/condition.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'lib/core/condition.rb', line 60</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_make'>make</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='comma'>,</span> <span class='id identifier rubyid_default_name'>default_name</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>proton</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_convert'>convert</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='comma'>,</span> <span class='id identifier rubyid_default_name'>default_name</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>error</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_obj'>obj</span>
+  <span class='kw'>when</span> <span class='kw'>nil</span> <span class='kw'>then</span> <span class='kw'>nil</span>
   <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="" title="Qpid::Proton::Condition (class)">Condition</a></span></span> <span class='kw'>then</span> <span class='id identifier rubyid_obj'>obj</span>
   <span class='kw'>when</span> <span class='const'>Exception</span> <span class='kw'>then</span> <span class='const'><span class='object_link'><a href="" title="Qpid::Proton::Condition (class)">Condition</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Qpid::Proton::Condition#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
-  <span class='kw'>when</span> <span class='kw'>nil</span> <span class='kw'>then</span> <span class='kw'>nil</span>
-  <span class='kw'>else</span> <span class='const'><span class='object_link'><a href="" title="Qpid::Proton::Condition (class)">Condition</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Qpid::Proton::Condition#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_default_name'>default_name</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'>SWIG</span><span class='op'>::</span><span class='const'>TYPE_p_pn_condition_t</span>
+    <span class='kw'>if</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_condition_is_set'>pn_condition_is_set</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
+      <span class='const'><span class='object_link'><a href="" title="Qpid::Proton::Condition (class)">Condition</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Qpid::Proton::Condition#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_condition_get_name'>pn_condition_get_name</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span><span class='comma'>,</span>
+                    <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_condition_get_description'>pn_condition_get_description</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span><span class='comma'>,</span>
+                    <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec/Data.html" title="Qpid::Proton::Codec::Data (class)">Data</a></span></span><span class='period'>.</span><span class='id identifier rubyid_to_object'>to_object</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_condition_info'>pn_condition_info</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='op'>::</span><span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>can&#39;t convert </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> to </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='symbol'>:to_str</span>
+    <span class='const'><span class='object_link'><a href="" title="Qpid::Proton::Condition (class)">Condition</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Qpid::Proton::Condition#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_default_name'>default_name</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_to_str'>to_str</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -657,19 +724,19 @@
       <pre class="lines">
 
 
-38
-39
-40
-41
-42
-43</pre>
+44
+45
+46
+47
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/util/condition.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'lib/core/condition.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
   <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'><span class='object_link'><a href="" title="Qpid::Proton::Condition (class)">Condition</a></span></span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span>
-   <span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>==</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> 
+   <span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>==</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span>
    <span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span> <span class='op'>==</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span>
    <span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='op'>==</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
@@ -693,10 +760,10 @@
       <pre class="lines">
 
 
-36</pre>
+42</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/util/condition.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/core/condition.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>(</span><span class='embexpr_beg'>#{</span><span class='ivar'>@name</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='ivar'>@description</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='ivar'>@info</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -719,16 +786,12 @@
       <pre class="lines">
 
 
-32
-33
-34</pre>
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/util/condition.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/core/condition.rb', line 40</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@name</span><span class='embexpr_end'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@description</span>
-    <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@name</span><span class='embexpr_end'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@description</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span> <span class='kw'>end</span>
-<span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@name</span><span class='embexpr_end'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@description</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -739,9 +802,9 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Nov  7 17:09:14 2017 by
+  Generated on Tue Dec  5 15:30:45 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.1).
+  0.9.8 (ruby-2.4.2).
 </div>
 
     </div>

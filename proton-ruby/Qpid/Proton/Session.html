@@ -258,7 +258,7 @@ data the session will buffer.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#close-instance_method" title="#close (instance method)">#<strong>close</strong>  &#x21d2; Object </a>
+      <a href="#close-instance_method" title="#close (instance method)">#<strong>close</strong>(error = nil)  &#x21d2; Object </a>
     
 
     
@@ -273,7 +273,7 @@ data the session will buffer.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Closed the session.</p>
+<p>Close the local end of the session.</p>
 </div></span>
   
 </li>
@@ -355,7 +355,7 @@ specified state mask.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#open_receiver-instance_method" title="#open_receiver (instance method)">#<strong>open_receiver</strong>(options = {})  &#x21d2; Object </a>
+      <a href="#open_receiver-instance_method" title="#open_receiver (instance method)">#<strong>open_receiver</strong>(opts = nil)  &#x21d2; Object </a>
     
 
     
@@ -380,7 +380,7 @@ to Link.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#open_sender-instance_method" title="#open_sender (instance method)">#<strong>open_sender</strong>(options = {})  &#x21d2; Object </a>
+      <a href="#open_sender-instance_method" title="#open_sender (instance method)">#<strong>open_sender</strong>(opts = nil)  &#x21d2; Object </a>
     
 
     
@@ -395,7 +395,8 @@ to Link.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>TODO aconway 2016-01-04: doc options or target param.</p>
+<p>TODO aconway 2016-01-04: doc opts or target param, connection and
+containers.</p>
 </div></span>
   
 </li>
@@ -474,14 +475,8 @@ to Link.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Endpoint.html" title="Qpid::Proton::Endpoint (class)">Endpoint</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Endpoint.html#closed%3F-instance_method" title="Qpid::Proton::Endpoint#closed? (method)">#closed?</a></span>, <span class='object_link'><a href="Endpoint.html#condition-instance_method" title="Qpid::Proton::Endpoint#condition (method)">#condition</a></span>, <span class='object_link'><a href="Endpoint.html#handler-instance_method" title="Qpid::Proton::Endpoint#handler (method)">#handler</a></span>, <span class='object_link'><a href="Endpoint.html#handler=-instance_method" title="Qpid::Proton::Endpoint#handler= (method)">#handler=</a></span>, <span class='object_link'><a href="Endpoint.html#local_active%3F-instance_method" title="Qpid::Proton::Endpoint#local_active? (method)">#local_active?</a></span>, <span class='object_link'><a href="Endpoint.html#local_closed%3F-instance_method" title="Qpid::Proton::Endpoint#local_closed? (method)">#local_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#local_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#local_uninit? (method)">#local_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#open%3F-instance_method" title="Qpid::Proton::Endpoint#open? (method)">#open?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_active%3F-instance_method" title="Qpid::Proton::Endpoint#remote_active? (method)">#remote_active?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_closed%3F-instance_method" title="Qpid::Proton::Endpoint#remote_closed? (method)">#remote_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#remote_uninit? (method)">#remote_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#transport-instance_method" title="Qpid::Proton::Endpoint#transport (method)">#transport</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Endpoint.html#closed%3F-instance_method" title="Qpid::Proton::Endpoint#closed? (method)">#closed?</a></span>, <span class='object_link'><a href="Endpoint.html#local_closed%3F-instance_method" title="Qpid::Proton::Endpoint#local_closed? (method)">#local_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#local_open%3F-instance_method" title="Qpid::Proton::Endpoint#local_open? (method)">#local_open?</a></span>, <span class='object_link'><a href="Endpoint.html#local_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#local_uninit? (method)">#local_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#open%3F-instance_method" title="Qpid::Proton::Endpoint#open? (method)">#open?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_closed%3F-instance_method" title="Qpid::Proton::Endpoint#remote_closed? (method)">#remote_closed?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_open%3F-instance_method" title="Qpid::Proton::Endpoint#remote_open? (method)">#remote_open?</a></span>, <span class='object_link'><a href="Endpoint.html#remote_uninit%3F-instance_method" title="Qpid::Proton::Endpoint#remote_uninit? (method)">#remote_uninit?</a></span>, <span class='object_link'><a href="Endpoint.html#transport-instance_method" title="Qpid::Proton::Endpoint#transport (method)">#transport</a></span></p>
 
-  
-  
-  
-  
-  
-  
   <div id="instance_attr_details" class="attr_details">
     <h2>Instance Attribute Details</h2>
     
@@ -531,10 +526,10 @@ to Link.</p>
       <pre class="lines">
 
 
-61</pre>
+60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 60</span>
 
 <span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:incoming_bytes</span></pre>
     </td>
@@ -591,10 +586,10 @@ frame.</p>
       <pre class="lines">
 
 
-46</pre>
+45</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 45</span>
 
 <span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:incoming_capacity</span></pre>
     </td>
@@ -648,10 +643,10 @@ frame.</p>
       <pre class="lines">
 
 
-55</pre>
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 54</span>
 
 <span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:outgoing_bytes</span></pre>
     </td>
@@ -705,10 +700,10 @@ frame.</p>
       <pre class="lines">
 
 
-76</pre>
+75</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 75</span>
 
 <span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:state</span></pre>
     </td>
@@ -726,7 +721,7 @@ frame.</p>
       <div class="method_details first">
   <h3 class="signature first" id="close-instance_method">
   
-    #<strong>close</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>close</strong>(error = nil)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -735,17 +730,36 @@ frame.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Closed the session.</p>
-
-<p>Once this operation has completed, the state flag will be set. This may be
-called without calling #open, in which case it is the equivalence of
-calling #open and then close immediately.</p>
+<p>Close the local end of the session. The remote end may or may not be
+closed.</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>error</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Optional error condition to send with the close.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
 
 </div><table class="source_code">
   <tr>
@@ -753,16 +767,16 @@ calling #open and then close immediately.</p>
       <pre class="lines">
 
 
-96
-97
-98
-99</pre>
+91
+92
+93
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 96</span>
+      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 91</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_close'>close</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid__update_condition'>_update_condition</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_close'>close</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></span><span class='period'>.</span><span class='id identifier rubyid_assign'>assign</span><span class='lparen'>(</span><span class='id identifier rubyid__local_condition'>_local_condition</span><span class='comma'>,</span> <span class='id identifier rubyid_error'>error</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_session_close'>pn_session_close</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -814,12 +828,12 @@ calling #open and then close immediately.</p>
       <pre class="lines">
 
 
-119
-120
-121</pre>
+114
+115
+116</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 119</span>
+      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 114</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connection'>connection</span>
   <span class='const'><span class='object_link'><a href="Connection.html" title="Qpid::Proton::Connection (class)">Connection</a></span></span><span class='period'>.</span><span class='id identifier rubyid_wrap'>wrap</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_session_connection'>pn_session_connection</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -897,12 +911,12 @@ session son the connection that match the given state.</p>
       <pre class="lines">
 
 
-111
-112
-113</pre>
+106
+107
+108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 106</span>
 
 <span class='kw'>def</span> <span class='kw'>next</span><span class='lparen'>(</span><span class='id identifier rubyid_state_mask'>state_mask</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="" title="Qpid::Proton::Session (class)">Session</a></span></span><span class='period'>.</span><span class='id identifier rubyid_wrap'>wrap</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_session_next'>pn_session_next</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_state_mask'>state_mask</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -947,10 +961,10 @@ session son the connection that match the given state.</p>
       <pre class="lines">
 
 
-70</pre>
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 69</span>
 
 <span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:open</span></pre>
     </td>
@@ -961,7 +975,7 @@ session son the connection that match the given state.</p>
       <div class="method_details ">
   <h3 class="signature " id="open_receiver-instance_method">
   
-    #<strong>open_receiver</strong>(options = {})  &#x21d2; <tt>Object</tt> 
+    #<strong>open_receiver</strong>(opts = nil)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -985,27 +999,29 @@ to Link.</p>
       <pre class="lines">
 
 
+125
+126
+127
+128
+129
 130
 131
 132
 133
 134
-135
-136
-137
-138
-139</pre>
+135</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 130</span>
+      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 125</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_open_receiver'>open_receiver</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:source</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_options'>options</span> <span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>String</span>
-  <span class='id identifier rubyid_receiver'>receiver</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_receiver'>pn_receiver</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_connection'>connection</span><span class='period'>.</span><span class='id identifier rubyid_link_name'>link_name</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_receiver'>receiver</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_address'>address</span> <span class='op'>||=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:source</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_receiver'>receiver</span><span class='period'>.</span><span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_address'>address</span> <span class='op'>||=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:target</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_receiver'>receiver</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_dynamic'>dynamic</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:dynamic</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_receiver'>receiver</span><span class='period'>.</span><span class='id identifier rubyid_handler'>handler</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:handler</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:handler</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_open_receiver'>open_receiver</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:source</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_opts'>opts</span> <span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>String</span>
+  <span class='id identifier rubyid_opts'>opts</span> <span class='op'>||=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_receiver'>receiver</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_receiver'>pn_receiver</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_connection'>connection</span><span class='period'>.</span><span class='id identifier rubyid_link_name'>link_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_receiver'>receiver</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_address'>address</span> <span class='op'>||=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:source</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_receiver'>receiver</span><span class='period'>.</span><span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_address'>address</span> <span class='op'>||=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:target</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_receiver'>receiver</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_dynamic'>dynamic</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:dynamic</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_receiver'>receiver</span><span class='period'>.</span><span class='id identifier rubyid_handler'>handler</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:handler</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:handler</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
   <span class='id identifier rubyid_receiver'>receiver</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_receiver'>receiver</span>
 <span class='kw'>end</span></pre>
@@ -1017,7 +1033,7 @@ to Link.</p>
       <div class="method_details ">
   <h3 class="signature " id="open_sender-instance_method">
   
-    #<strong>open_sender</strong>(options = {})  &#x21d2; <tt>Object</tt> 
+    #<strong>open_sender</strong>(opts = nil)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1026,7 +1042,8 @@ to Link.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>TODO aconway 2016-01-04: doc options or target param</p>
+<p>TODO aconway 2016-01-04: doc opts or target param, connection and
+containers</p>
 
 
   </div>
@@ -1040,27 +1057,29 @@ to Link.</p>
       <pre class="lines">
 
 
+138
+139
+140
+141
 142
 143
 144
 145
 146
 147
-148
-149
-150
-151</pre>
+148</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 142</span>
+      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 138</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_open_sender'>open_sender</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:target</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_options'>options</span> <span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>String</span>
-  <span class='id identifier rubyid_sender'>sender</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sender.html" title="Qpid::Proton::Sender (class)">Sender</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_sender'>pn_sender</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_connection'>connection</span><span class='period'>.</span><span class='id identifier rubyid_link_name'>link_name</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_sender'>sender</span><span class='period'>.</span><span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_address'>address</span> <span class='op'>||=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:target</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_sender'>sender</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_address'>address</span> <span class='op'>||=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:source</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_sender'>sender</span><span class='period'>.</span><span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_dynamic'>dynamic</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:dynamic</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_sender'>sender</span><span class='period'>.</span><span class='id identifier rubyid_handler'>handler</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:handler</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:handler</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_open_sender'>open_sender</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:target</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_opts'>opts</span> <span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>String</span>
+  <span class='id identifier rubyid_opts'>opts</span> <span class='op'>||=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_sender'>sender</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sender.html" title="Qpid::Proton::Sender (class)">Sender</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_sender'>pn_sender</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_connection'>connection</span><span class='period'>.</span><span class='id identifier rubyid_link_name'>link_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_sender'>sender</span><span class='period'>.</span><span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_address'>address</span> <span class='op'>||=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:target</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_sender'>sender</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_address'>address</span> <span class='op'>||=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:source</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_sender'>sender</span><span class='period'>.</span><span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_dynamic'>dynamic</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:dynamic</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_sender'>sender</span><span class='period'>.</span><span class='id identifier rubyid_handler'>handler</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:handler</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:handler</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
   <span class='id identifier rubyid_sender'>sender</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_sender'>sender</span>
 <span class='kw'>end</span></pre>
@@ -1096,10 +1115,10 @@ to Link.</p>
       <pre class="lines">
 
 
-127</pre>
+122</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 122</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_receiver'>receiver</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='const'><span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_receiver'>pn_receiver</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1134,10 +1153,10 @@ to Link.</p>
       <pre class="lines">
 
 
-124</pre>
+119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 124</span>
+      <pre class="code"><span class="info file"># File 'lib/core/session.rb', line 119</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sender'>sender</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='const'><span class='object_link'><a href="Sender.html" title="Qpid::Proton::Sender (class)">Sender</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_sender'>pn_sender</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1150,9 +1169,9 @@ to Link.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Nov  7 17:09:15 2017 by
+  Generated on Tue Dec  5 15:30:44 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.1).
+  0.9.8 (ruby-2.4.2).
 </div>
 
     </div>

@@ -346,12 +346,12 @@ disabled by default: only clients using SSL/TLS are accepted by default.</p>
       <pre class="lines">
 
 
+149
 150
-151
-152</pre>
+151</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 150</span>
+      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 149</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_allow_unsecured_client'>allow_unsecured_client</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_ssl_domain_allow_unsecured_client'>pn_ssl_domain_allow_unsecured_client</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='semicolon'>;</span>
@@ -474,13 +474,13 @@ not protected.</p>
       <pre class="lines">
 
 
+84
 85
 86
-87
-88</pre>
+87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 85</span>
+      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 84</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_credentials'>credentials</span><span class='lparen'>(</span><span class='id identifier rubyid_cert_file'>cert_file</span><span class='comma'>,</span> <span class='id identifier rubyid_key_file'>key_file</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_ssl_domain_set_credentials'>pn_ssl_domain_set_credentials</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span>
@@ -600,13 +600,13 @@ peer client if the server has been configured to verify its peer.</p>
       <pre class="lines">
 
 
+136
 137
 138
-139
-140</pre>
+139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 137</span>
+      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 136</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_peer_authentication'>peer_authentication</span><span class='lparen'>(</span><span class='id identifier rubyid_verify_mode'>verify_mode</span><span class='comma'>,</span> <span class='id identifier rubyid_trusted_CAs'>trusted_CAs</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_ssl_domain_set_peer_authentication'>pn_ssl_domain_set_peer_authentication</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span>
@@ -691,12 +691,12 @@ invoking this method will use the domain&#39;s previous setting.</p>
       <pre class="lines">
 
 
+106
 107
-108
-109</pre>
+108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 106</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_trusted_ca_db'>trusted_ca_db</span><span class='lparen'>(</span><span class='id identifier rubyid_certificate_db'>certificate_db</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_ssl_domain_set_trusted_ca_db'>pn_ssl_domain_set_trusted_ca_db</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_certificate_db'>certificate_db</span><span class='rparen'>)</span>
@@ -711,9 +711,9 @@ invoking this method will use the domain&#39;s previous setting.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Nov  7 17:09:13 2017 by
+  Generated on Tue Dec  5 15:30:46 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.1).
+  0.9.8 (ruby-2.4.2).
 </div>
 
     </div>

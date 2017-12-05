@@ -69,10 +69,12 @@
   <dl>
     <dt>Inherits:</dt>
     <dd>
-      <span class="inheritName">Object</span>
+      <span class="inheritName"><span class='object_link'><a href="Transfer.html" title="Qpid::Proton::Transfer (class)">Transfer</a></span></span>
       
         <ul class="fullTree">
           <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Transfer.html" title="Qpid::Proton::Transfer (class)">Transfer</a></span></li>
           
             <li class="next">Qpid::Proton::Delivery</li>
           
@@ -102,277 +104,24 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>A Delivery maintains detail on the delivery of data to an endpoint.</p>
-
-<p>A Delivery has a single parent Qpid::Proton::Link</p>
+<p>Allow a <span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span> to indicate the status of a received message to the
+<span class='object_link'><a href="Sender.html" title="Qpid::Proton::Sender (class)">Sender</a></span></p>
 
 
   </div>
 </div>
 <div class="tags">
   
-  <div class="examples">
-    <p class="tag_title">Examples:</p>
-    
-      
-      <pre class="example code"><code>
-<span class='comment'># SCENARIO: An event comes in notifying that data has been delivered to
-</span><span class='comment'>#           the local endpoint. A Delivery object can be used to check
-</span><span class='comment'>#           the details of the delivery.
-</span>
-<span class='id identifier rubyid_delivery'>delivery</span> <span class='op'>=</span> <span class='ivar'>@event</span><span class='period'>.</span><span class='id identifier rubyid_delivery'>delivery</span>
-<span class='kw'>if</span> <span class='id identifier rubyid_delivery'>delivery</span><span class='period'>.</span><span class='id identifier rubyid_readable?'>readable?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_delivery'>delivery</span><span class='period'>.</span><span class='id identifier rubyid_partial?'>partial?</span>
-  <span class='comment'># decode the incoming message
-</span>  <span class='id identifier rubyid_msg'>msg</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Message.html" title="Qpid::Proton::Message (class)">Message</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Message.html#initialize-instance_method" title="Qpid::Proton::Message#initialize (method)">new</a></span></span>
-  <span class='id identifier rubyid_msg'>msg</span><span class='period'>.</span><span class='id identifier rubyid_decode'>decode</span><span class='lparen'>(</span><span class='id identifier rubyid_link'>link</span><span class='period'>.</span><span class='id identifier rubyid_receive'>receive</span><span class='lparen'>(</span><span class='id identifier rubyid_delivery'>delivery</span><span class='period'>.</span><span class='id identifier rubyid_pending'>pending</span><span class='rparen'>)</span><span class='rparen'>)</span>
-<span class='kw'>end</span></code></pre>
-    
-  </div>
-
 
 </div>
 
 
+  <h2>Constant Summary</h2>
+  
+  <h3 class="inherited">Constants included
+     from <span class='object_link'><a href="Transfer/State.html" title="Qpid::Proton::Transfer::State (module)">Transfer::State</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Transfer/State.html#ACCEPTED-constant" title="Qpid::Proton::Transfer::State::ACCEPTED (constant)">Transfer::State::ACCEPTED</a></span>, <span class='object_link'><a href="Transfer/State.html#MODIFIED-constant" title="Qpid::Proton::Transfer::State::MODIFIED (constant)">Transfer::State::MODIFIED</a></span>, <span class='object_link'><a href="Transfer/State.html#RECEIVED-constant" title="Qpid::Proton::Transfer::State::RECEIVED (constant)">Transfer::State::RECEIVED</a></span>, <span class='object_link'><a href="Transfer/State.html#REJECTED-constant" title="Qpid::Proton::Transfer::State::REJECTED (constant)">Transfer::State::REJECTED</a></span>, <span class='object_link'><a href="Transfer/State.html#RELEASED-constant" title="Qpid::Proton::Transfer::State::RELEASED (constant)">Transfer::State::RELEASED</a></span></p>
 
-  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
-  <ul class="summary">
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#buffered%3F-instance_method" title="#buffered? (instance method)">#<strong>buffered?</strong>  &#x21d2; Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>A delivery that is buffered has not yet been written to the wire.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#partial%3F-instance_method" title="#partial? (instance method)">#<strong>partial?</strong>  &#x21d2; Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns if the delivery has only partial message data.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#pending-instance_method" title="#pending (instance method)">#<strong>pending</strong>  &#x21d2; Integer </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>delivery.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#readable%3F-instance_method" title="#readable? (instance method)">#<strong>readable?</strong>  &#x21d2; Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>A delivery is considered readable if it is the current delivery on an
-incoming link.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#settled%3F-instance_method" title="#settled? (instance method)">#<strong>settled?</strong>  &#x21d2; Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns if the delivery is remotely settled.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#tag-instance_method" title="#tag (instance method)">#<strong>tag</strong>  &#x21d2; String </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>The tag for the delivery.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#updated%3F-instance_method" title="#updated? (instance method)">#<strong>updated?</strong>  &#x21d2; Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>A delivery is considered updated whenever the peer communicates a new
-disposition for the dlievery.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#writable%3F-instance_method" title="#writable? (instance method)">#<strong>writable?</strong>  &#x21d2; Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>A delivery is considered writable if it is the current delivery on an
-outgoing link, and the link has positive credit.</p>
-</div></span>
-  
-</li>
-
-    
-  </ul>
 
 
 
@@ -388,7 +137,7 @@ outgoing link, and the link has positive credit.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#clear-instance_method" title="#clear (instance method)">#<strong>clear</strong>  &#x21d2; Object </a>
+      <a href="#aborted%3F-instance_method" title="#aborted? (instance method)">#<strong>aborted?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -403,7 +152,7 @@ outgoing link, and the link has positive credit.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Clear the updated flag for a delivery.</p>
+<p>True if the transfer was aborted by the sender.</p>
 </div></span>
   
 </li>
@@ -412,7 +161,7 @@ outgoing link, and the link has positive credit.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#connection-instance_method" title="#connection (instance method)">#<strong>connection</strong>  &#x21d2; Connection </a>
+      <a href="#accept-instance_method" title="#accept (instance method)">#<strong>accept</strong>  &#x21d2; Object </a>
     
 
     
@@ -427,7 +176,7 @@ outgoing link, and the link has positive credit.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the parent connection.</p>
+<p>Accept the receiveed message.</p>
 </div></span>
   
 </li>
@@ -436,7 +185,7 @@ outgoing link, and the link has positive credit.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#dump-instance_method" title="#dump (instance method)">#<strong>dump</strong>  &#x21d2; Object </a>
+      <a href="#complete%3F-instance_method" title="#complete? (instance method)">#<strong>complete?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -451,7 +200,7 @@ outgoing link, and the link has positive credit.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Utility function for printing details of a delivery.</p>
+<p>True if the incoming message is complete, call <span class='object_link'><a href="#message-instance_method" title="Qpid::Proton::Delivery#message (method)">#message</a></span> to retrieve it.</p>
 </div></span>
   
 </li>
@@ -460,7 +209,7 @@ outgoing link, and the link has positive credit.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#link-instance_method" title="#link (instance method)">#<strong>link</strong>  &#x21d2; Link </a>
+      <a href="#message-instance_method" title="#message (instance method)">#<strong>message</strong>  &#x21d2; Object </a>
     
 
     
@@ -475,7 +224,31 @@ outgoing link, and the link has positive credit.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the parent link.</p>
+<p>Get the message from the delivery.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public deprecated">
+  <span class="summary_signature">
+    
+      <a href="#modify-instance_method" title="#modify (instance method)">#<strong>modify</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  <span class="deprecated note title">deprecated</span>
+  
+
+  
+    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
+<p>use <span class='object_link'><a href="#release-instance_method" title="Qpid::Proton::Delivery#release (method)">#release</a></span> with modification options</p>
 </div></span>
   
 </li>
@@ -484,7 +257,7 @@ outgoing link, and the link has positive credit.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#local_state-instance_method" title="#local_state (instance method)">#<strong>local_state</strong>  &#x21d2; Disposition </a>
+      <a href="#receiver-instance_method" title="#receiver (instance method)">#<strong>receiver</strong>  &#x21d2; Receiver </a>
     
 
     
@@ -499,7 +272,7 @@ outgoing link, and the link has positive credit.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the local disposition state for the delivery.</p>
+<p>The parent <span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span> link.</p>
 </div></span>
   
 </li>
@@ -508,7 +281,7 @@ outgoing link, and the link has positive credit.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#remote_state-instance_method" title="#remote_state (instance method)">#<strong>remote_state</strong>  &#x21d2; Disposition </a>
+      <a href="#reject-instance_method" title="#reject (instance method)">#<strong>reject</strong>  &#x21d2; Object </a>
     
 
     
@@ -523,7 +296,8 @@ outgoing link, and the link has positive credit.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the remote disposition state for the delivery.</p>
+<p>Reject a received message that is considered invalid and should never be
+delivered again to this or any other receiver.</p>
 </div></span>
   
 </li>
@@ -532,7 +306,7 @@ outgoing link, and the link has positive credit.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#session-instance_method" title="#session (instance method)">#<strong>session</strong>  &#x21d2; Session </a>
+      <a href="#release-instance_method" title="#release (instance method)">#<strong>release</strong>(opts)  &#x21d2; Object </a>
     
 
     
@@ -547,101 +321,7 @@ outgoing link, and the link has positive credit.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the parent session.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#settle-instance_method" title="#settle (instance method)">#<strong>settle</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Settles a delivery.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#transport-instance_method" title="#transport (instance method)">#<strong>transport</strong>  &#x21d2; Transport </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the parent transport.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#update-instance_method" title="#update (instance method)">#<strong>update</strong>(state)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#work_next-instance_method" title="#work_next (instance method)">#<strong>work_next</strong>  &#x21d2; Delivery<sup>?</sup> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the next delivery on the connection that has pending operations.</p>
+<p>Release a received message.</p>
 </div></span>
   
 </li>
@@ -659,538 +339,36 @@ outgoing link, and the link has positive credit.</p>
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <div id="instance_attr_details" class="attr_details">
-    <h2>Instance Attribute Details</h2>
-    
-      
-      <span id=""></span>
-      <div class="method_details first">
-  <h3 class="signature first" id="buffered?-instance_method">
-  
-    #<strong>buffered?</strong>  &#x21d2; <tt>Boolean</tt>  <span class="extras">(readonly)</span>
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>A delivery that is buffered has not yet been written to the wire.</p>
-
-<p>Note that returning false does not imply that a delivery was definitely
-written to the wire. If false is returned, it is not known whether the
-delivery was actually written to the wire or not.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Returns if the delivery is buffered.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Transfer.html" title="Qpid::Proton::Transfer (class)">Transfer</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Transfer.html#connection-instance_method" title="Qpid::Proton::Transfer#connection (method)">#connection</a></span>, <span class='object_link'><a href="Transfer.html#id-instance_method" title="Qpid::Proton::Transfer#id (method)">#id</a></span>, <span class='object_link'><a href="Transfer.html#link-instance_method" title="Qpid::Proton::Transfer#link (method)">#link</a></span>, <span class='object_link'><a href="Transfer.html#local_state-instance_method" title="Qpid::Proton::Transfer#local_state (method)">#local_state</a></span>, <span class='object_link'><a href="Transfer.html#remote_state-instance_method" title="Qpid::Proton::Transfer#remote_state (method)">#remote_state</a></span>, <span class='object_link'><a href="Transfer.html#session-instance_method" title="Qpid::Proton::Transfer#session (method)">#session</a></span>, <span class='object_link'><a href="Transfer.html#settle-instance_method" title="Qpid::Proton::Transfer#settle (method)">#settle</a></span>, <span class='object_link'><a href="Transfer.html#settled%3F-instance_method" title="Qpid::Proton::Transfer#settled? (method)">#settled?</a></span>, <span class='object_link'><a href="Transfer.html#state-instance_method" title="Qpid::Proton::Transfer#state (method)">#state</a></span>, <span class='object_link'><a href="Transfer.html#to_s-instance_method" title="Qpid::Proton::Transfer#to_s (method)">#to_s</a></span>, <span class='object_link'><a href="Transfer.html#transport-instance_method" title="Qpid::Proton::Transfer#transport (method)">#transport</a></span>, <span class='object_link'><a href="Transfer.html#update-instance_method" title="Qpid::Proton::Transfer#update (method)">#update</a></span></p>
 
-
-149</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 149</span>
-
-<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:buffered?</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="partial?-instance_method">
-  
-    #<strong>partial?</strong>  &#x21d2; <tt>Boolean</tt>  <span class="extras">(readonly)</span>
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns if the delivery has only partial message data.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Returns if the delivery has only partial message data.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-116</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 116</span>
-
-<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:partial?</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="pending-instance_method">
-  
-    #<strong>pending</strong>  &#x21d2; <tt>Integer</tt>  <span class="extras">(readonly)</span>
   
-
   
-
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>delivery.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Return the amount of pending message data for the</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-110</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 110</span>
-
-<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:pending</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="readable?-instance_method">
-  
-    #<strong>readable?</strong>  &#x21d2; <tt>Boolean</tt>  <span class="extras">(readonly)</span>
   
-
   
-
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>A delivery is considered readable if it is the current delivery on an
-incoming link.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Returns if a delivery is readable.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-86</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 86</span>
-
-<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:readable?</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="settled?-instance_method">
-  
-    #<strong>settled?</strong>  &#x21d2; <tt>Boolean</tt>  <span class="extras">(readonly)</span>
   
-
   
-
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns if the delivery is remotely settled.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Returns if the delivery is remotely settled.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-122</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 122</span>
-
-<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:settled?</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="tag-instance_method">
-  
-    #<strong>tag</strong>  &#x21d2; <tt>String</tt>  <span class="extras">(readonly)</span>
   
-
   
-
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns The tag for the delivery.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The tag for the delivery.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-68</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 68</span>
-
-<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:tag</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="updated?-instance_method">
-  
-    #<strong>updated?</strong>  &#x21d2; <tt>Boolean</tt>  <span class="extras">(readonly)</span>
   
-
   
-
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>A delivery is considered updated whenever the peer communicates a new
-disposition for the dlievery. Once a delivery becomes updated, it will
-remain so until cleared.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Returns if a delivery is updated.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-  <p class="tag_title">See Also:</p>
-  <ul class="see">
-    
-      <li><span class='object_link'><a href="#clear-instance_method" title="Qpid::Proton::Delivery#clear (method)">#clear</a></span></li>
-    
-  </ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-97</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 97</span>
-
-<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:updated?</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="writable?-instance_method">
-  
-    #<strong>writable?</strong>  &#x21d2; <tt>Boolean</tt>  <span class="extras">(readonly)</span>
   
-
   
-
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>A delivery is considered writable if it is the current delivery on an
-outgoing link, and the link has positive credit.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Returns if a delivery is writable.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-77</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 77</span>
-
-<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:writable?</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="clear-instance_method">
+  <h3 class="signature first" id="aborted?-instance_method">
   
-    #<strong>clear</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Clear the updated flag for a delivery.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-103</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 103</span>
-
-<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:clear</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="connection-instance_method">
-  
-    #<strong>connection</strong>  &#x21d2; <tt><span class='object_link'><a href="Connection.html" title="Qpid::Proton::Connection (class)">Connection</a></span></tt> 
+    #<strong>aborted?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1199,7 +377,7 @@ outgoing link, and the link has positive credit.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the parent connection.</p>
+<p>Returns True if the transfer was aborted by the sender.</p>
 
 
   </div>
@@ -1212,13 +390,13 @@ outgoing link, and the link has positive credit.</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Connection.html" title="Qpid::Proton::Connection (class)">Connection</a></span></tt>)</span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>The connection.</p>
+<p>True if the transfer was aborted by the sender.</p>
 </div>
       
     </li>
@@ -1231,25 +409,21 @@ outgoing link, and the link has positive credit.</p>
       <pre class="lines">
 
 
-207
-208
-209</pre>
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 207</span>
+      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 69</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_connection'>connection</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_connection'>connection</span>
-<span class='kw'>end</span></pre>
+<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:aborted?</span></pre>
     </td>
   </tr>
 </table>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="dump-instance_method">
+  <h3 class="signature " id="accept-instance_method">
   
-    #<strong>dump</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>accept</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1258,7 +432,7 @@ outgoing link, and the link has positive credit.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Utility function for printing details of a delivery.</p>
+<p>Accept the receiveed message.</p>
 
 
   </div>
@@ -1272,21 +446,21 @@ outgoing link, and the link has positive credit.</p>
       <pre class="lines">
 
 
-137</pre>
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 137</span>
+      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 25</span>
 
-<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:dump</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_accept'>accept</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id identifier rubyid_settle'>settle</span> <span class='const'><span class='object_link'><a href="Transfer/State.html#ACCEPTED-constant" title="Qpid::Proton::Transfer::State::ACCEPTED (constant)">ACCEPTED</a></span></span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="link-instance_method">
+  <h3 class="signature " id="complete?-instance_method">
   
-    #<strong>link</strong>  &#x21d2; <tt><span class='object_link'><a href="Link.html" title="Qpid::Proton::Link (class)">Link</a></span></tt> 
+    #<strong>complete?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1295,7 +469,8 @@ outgoing link, and the link has positive credit.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the parent link.</p>
+<p>Returns true if the incoming message is complete, call <span class='object_link'><a href="#message-instance_method" title="Qpid::Proton::Delivery#message (method)">#message</a></span> to
+retrieve it.</p>
 
 
   </div>
@@ -1308,13 +483,13 @@ outgoing link, and the link has positive credit.</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Link.html" title="Qpid::Proton::Link (class)">Link</a></span></tt>)</span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>The parent link.</p>
+<p>true if the incoming message is complete, call <span class='object_link'><a href="#message-instance_method" title="Qpid::Proton::Delivery#message (method)">#message</a></span> to retrieve it.</p>
 </div>
       
     </li>
@@ -1327,25 +502,21 @@ outgoing link, and the link has positive credit.</p>
       <pre class="lines">
 
 
-191
-192
-193</pre>
+72</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 191</span>
+      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 72</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_link'>link</span>
-  <span class='const'><span class='object_link'><a href="Link.html" title="Qpid::Proton::Link (class)">Link</a></span></span><span class='period'>.</span><span class='id identifier rubyid_wrap'>wrap</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_delivery_link'>pn_delivery_link</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_complete?'>complete?</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id identifier rubyid_readable?'>readable?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_aborted?'>aborted?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_partial?'>partial?</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="local_state-instance_method">
+  <h3 class="signature " id="message-instance_method">
   
-    #<strong>local_state</strong>  &#x21d2; <tt><span class='object_link'><a href="Disposition.html" title="Qpid::Proton::Disposition (class)">Disposition</a></span></tt> 
+    #<strong>message</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1354,7 +525,124 @@ outgoing link, and the link has positive credit.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the local disposition state for the delivery.</p>
+<p>Get the message from the delivery. error decoding the message.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ProtonError.html" title="Qpid::Proton::ProtonError (class)">ProtonError</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the message is not <span class='object_link'><a href="#complete%3F-instance_method" title="Qpid::Proton::Delivery#complete? (method)">#complete?</a></span> or there is an</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 77</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_message'>message</span>
+  <span class='kw'>return</span> <span class='ivar'>@message</span> <span class='kw'>if</span> <span class='ivar'>@message</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ProtonError.html" title="Qpid::Proton::ProtonError (class)">ProtonError</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>message aborted by sender</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_aborted?'>aborted?</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ProtonError.html" title="Qpid::Proton::ProtonError (class)">ProtonError</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>incoming message incomplete</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_partial?'>partial?</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ProtonError.html" title="Qpid::Proton::ProtonError (class)">ProtonError</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>no incoming message</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_readable?'>readable?</span>
+  <span class='ivar'>@message</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Message.html" title="Qpid::Proton::Message (class)">Message</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Message.html#initialize-instance_method" title="Qpid::Proton::Message#initialize (method)">new</a></span></span>
+  <span class='ivar'>@message</span><span class='period'>.</span><span class='id identifier rubyid_decode'>decode</span><span class='lparen'>(</span><span class='id identifier rubyid_link'>link</span><span class='period'>.</span><span class='id identifier rubyid_receive'>receive</span><span class='lparen'>(</span><span class='id identifier rubyid_pending'>pending</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_link'>link</span><span class='period'>.</span><span class='id identifier rubyid_advance'>advance</span>
+  <span class='ivar'>@message</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="modify-instance_method">
+  
+    #<strong>modify</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
+<p>use <span class='object_link'><a href="#release-instance_method" title="Qpid::Proton::Delivery#release (method)">#release</a></span> with modification options</p>
+</div></div>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 63</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_modify'>modify</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='period'>.</span><span class='id identifier rubyid_deprecated'>deprecated</span> <span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#release</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_release'>release</span> <span class='id identifier rubyid_failed'>failed</span><span class='op'>=&gt;</span><span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="receiver-instance_method">
+  
+    #<strong>receiver</strong>  &#x21d2; <tt><span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns The parent <span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span> link.</p>
 
 
   </div>
@@ -1367,13 +655,13 @@ outgoing link, and the link has positive credit.</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Disposition.html" title="Qpid::Proton::Disposition (class)">Disposition</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>The local disposition state.</p>
+<p>The parent <span class='object_link'><a href="Receiver.html" title="Qpid::Proton::Receiver (class)">Receiver</a></span> link.</p>
 </div>
       
     </li>
@@ -1386,25 +674,21 @@ outgoing link, and the link has positive credit.</p>
       <pre class="lines">
 
 
-165
-166
-167</pre>
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 165</span>
+      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 22</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_local_state'>local_state</span>
-  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_delivery_local_state'>pn_delivery_local_state</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_receiver'>receiver</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id identifier rubyid_link'>link</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="remote_state-instance_method">
+  <h3 class="signature " id="reject-instance_method">
   
-    #<strong>remote_state</strong>  &#x21d2; <tt><span class='object_link'><a href="Disposition.html" title="Qpid::Proton::Disposition (class)">Disposition</a></span></tt> 
+    #<strong>reject</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1413,133 +697,136 @@ outgoing link, and the link has positive credit.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the remote disposition state for the delivery.</p>
+<p>Reject a received message that is considered invalid and should never be
+delivered again to this or any other receiver.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reject'>reject</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id identifier rubyid_settle'>settle</span> <span class='const'><span class='object_link'><a href="Transfer/State.html#REJECTED-constant" title="Qpid::Proton::Transfer::State::REJECTED (constant)">REJECTED</a></span></span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="release-instance_method">
+  
+    #<strong>release</strong>(opts)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Release a received message. It may be delivered again to this or another
+receiver.</p>
+
+<p><span class='object_link'><a href="Message.html#delivery_count-instance_method" title="Qpid::Proton::Message#delivery_count (method)">Message#delivery_count</a></span> will be increased so future receivers will know
+there was a failed delivery. If false, <span class='object_link'><a href="Message.html#delivery_count-instance_method" title="Qpid::Proton::Message#delivery_count (method)">Message#delivery_count</a></span> will not be
+increased.</p>
+
+<p>will not be re-delivered to this receiver. It may be delivered tbo other
+receivers.</p>
+
+<p><span class='object_link'><a href="Message.html#annotations-instance_method" title="Qpid::Proton::Message#annotations (method)">Message#annotations</a></span> before re-delivery. Entries with the same key replace
+existing entries in <span class='object_link'><a href="Message.html#annotations-instance_method" title="Qpid::Proton::Message#annotations (method)">Message#annotations</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
     <li>
       
+        <span class='name'>opts</span>
       
-        <span class='type'>(<tt><span class='object_link'><a href="Disposition.html" title="Qpid::Proton::Disposition (class)">Disposition</a></span></tt>)</span>
+      
+        <span class='type'>(<tt><span class='object_link'>Hash</span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>The remote disposition state.</p>
+<p>a customizable set of options</p>
 </div>
       
     </li>
   
 </ul>
 
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-173
-174
-175</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 173</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_remote_state'>remote_state</span>
-  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_delivery_remote_state'>pn_delivery_remote_state</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
+  
     
-      <div class="method_details ">
-  <h3 class="signature " id="session-instance_method">
-  
-    #<strong>session</strong>  &#x21d2; <tt><span class='object_link'><a href="Session.html" title="Qpid::Proton::Session (class)">Session</a></span></tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
     
-<p>Returns the parent session.</p>
-
-
-  </div>
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:failed</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>default true</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>If true</p>
 </div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
+          
+        </li>
       
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Session.html" title="Qpid::Proton::Session (class)">Session</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The session.</p>
+        <li>
+          <span class="name">:undeliverable</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>default false</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>If true the message</p>
 </div>
+          
+        </li>
       
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-199
-200
-201</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 199</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_session'>session</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_link'>link</span><span class='period'>.</span><span class='id identifier rubyid_session'>session</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
+        <li>
+          <span class="name">:annotations</span>
+          <span class="type">(<tt><span class='object_link'>Hash</span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Annotations to be added to</p>
 </div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="settle-instance_method">
-  
-    #<strong>settle</strong>  &#x21d2; <tt>Object</tt> 
-  
-
+          
+        </li>
+      
+    </ul>
   
 
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Settles a delivery.</p>
-
-<pre class="code ruby"><code class="ruby">A settled delivery can never be used again.</code></pre>
-
-
-  </div>
-</div>
-<div class="tags">
-  
 
 </div><table class="source_code">
   <tr>
@@ -1547,174 +834,39 @@ outgoing link, and the link has positive credit.</p>
       <pre class="lines">
 
 
-131</pre>
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 131</span>
+      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 46</span>
 
-<span class='id identifier rubyid_proton_caller'>proton_caller</span> <span class='symbol'>:settle</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="transport-instance_method">
-  
-    #<strong>transport</strong>  &#x21d2; <tt><span class='object_link'><a href="Transport.html" title="Qpid::Proton::Transport (class)">Transport</a></span></tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns the parent transport.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Transport.html" title="Qpid::Proton::Transport (class)">Transport</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The transport.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-215
-216
-217</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 215</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_transport'>transport</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_connection'>connection</span><span class='period'>.</span><span class='id identifier rubyid_transport'>transport</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="update-instance_method">
-  
-    #<strong>update</strong>(state)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-153
-154
-155
-156
-157
-158
-159</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 153</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_impl'>impl</span> <span class='op'>=</span> <span class='ivar'>@local</span><span class='period'>.</span><span class='id identifier rubyid_impl'>impl</span>
-  <span class='id identifier rubyid_object_to_data'>object_to_data</span><span class='lparen'>(</span><span class='ivar'>@local</span><span class='period'>.</span><span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_disposition_data'>pn_disposition_data</span><span class='lparen'>(</span><span class='id identifier rubyid_impl'>impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_object_to_data'>object_to_data</span><span class='lparen'>(</span><span class='ivar'>@local</span><span class='period'>.</span><span class='id identifier rubyid_annotations'>annotations</span><span class='comma'>,</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_disposition_annotations'>pn_disposition_annotations</span><span class='lparen'>(</span><span class='id identifier rubyid_impl'>impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_object_to_data'>object_to_data</span><span class='lparen'>(</span><span class='ivar'>@local</span><span class='period'>.</span><span class='id identifier rubyid_condition'>condition</span><span class='comma'>,</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_disposition_condition'>pn_disposition_condition</span><span class='lparen'>(</span><span class='id identifier rubyid_impl'>impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_delivery_update'>pn_delivery_update</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_state'>state</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="work_next-instance_method">
-  
-    #<strong>work_next</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Qpid::Proton::Delivery (class)">Delivery</a></span></tt><sup>?</sup> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns the next delivery on the connection that has pending operations.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Qpid::Proton::Delivery (class)">Delivery</a></span></tt>, <tt>nil</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The next delivery, or nil if there are none.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-  <p class="tag_title">See Also:</p>
-  <ul class="see">
-    
-      <li><span class='object_link'><a href="Connection.html#work_head-instance_method" title="Qpid::Proton::Connection#work_head (method)">Connection#work_head</a></span></li>
-    
-  </ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-183
-184
-185</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/delivery.rb', line 183</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_work_next'>work_next</span>
-  <span class='const'><span class='object_link'><a href="" title="Qpid::Proton::Delivery (class)">Delivery</a></span></span><span class='period'>.</span><span class='id identifier rubyid_wrap'>wrap</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_work_next'>pn_work_next</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_release'>release</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:failed</span> <span class='op'>=&gt;</span> <span class='kw'>true</span> <span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>==</span> <span class='kw'>true</span> <span class='comment'># Backwards compatibility
+</span>  <span class='id identifier rubyid_failed'>failed</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>?</span> <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='symbol'>:failed</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>true</span>
+  <span class='id identifier rubyid_undeliverable'>undeliverable</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:undeliverable</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_annotations'>annotations</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:annotations</span><span class='rbracket'>]</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_failed'>failed</span> <span class='op'>||</span> <span class='id identifier rubyid_undeliverable'>undeliverable</span> <span class='op'>||</span> <span class='id identifier rubyid_annotations'>annotations</span>
+    <span class='id identifier rubyid_d'>d</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_delivery_local'>pn_delivery_local</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
+    <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_disposition_set_failed'>pn_disposition_set_failed</span><span class='lparen'>(</span><span class='id identifier rubyid_d'>d</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_failed'>failed</span>
+    <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_disposition_set_undeliverable'>pn_disposition_set_undeliverable</span><span class='lparen'>(</span><span class='id identifier rubyid_d'>d</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_undeliverable'>undeliverable</span>
+    <span class='const'>Data</span><span class='period'>.</span><span class='id identifier rubyid_from_object'>from_object</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_disposition_annotations'>pn_disposition_annotations</span><span class='lparen'>(</span><span class='id identifier rubyid_d'>d</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_annotations'>annotations</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_annotations'>annotations</span>
+    <span class='id identifier rubyid_settle'>settle</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Transfer/State.html#MODIFIED-constant" title="Qpid::Proton::Transfer::State::MODIFIED (constant)">MODIFIED</a></span></span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_settle'>settle</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Transfer/State.html#RELEASED-constant" title="Qpid::Proton::Transfer::State::RELEASED (constant)">RELEASED</a></span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1726,9 +878,9 @@ outgoing link, and the link has positive credit.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Nov  7 17:09:15 2017 by
+  Generated on Tue Dec  5 15:30:44 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.1).
+  0.9.8 (ruby-2.4.2).
 </div>
 
     </div>

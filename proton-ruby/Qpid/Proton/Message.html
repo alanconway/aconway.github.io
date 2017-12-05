@@ -102,32 +102,36 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>A Message represents an addressable quantity of data.</p>
+<p>Messsage data and headers that can sent or received on a <span class='object_link'><a href="Link.html" title="Qpid::Proton::Link (class)">Link</a></span></p>
 
-<h4 id="label-Message+Body">Message Body</h4>
-
-<p>The message body can be set using the #body= method. The message will then
-attempt to determine how exactly to encode the content.</p>
-
-<h4 id="label-Examples">Examples</h4>
-
-<p>To create a message for sending:</p>
-
-<pre class="code ruby"><code class="ruby"><span class='comment'># send a simple text message
-</span><span class='id identifier rubyid_msg'>msg</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'>Message</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Qpid::Proton::Message#initialize (method)">new</a></span></span>
-<span class='id identifier rubyid_msg'>msg</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>STATE: update</span><span class='tstring_end'>&quot;</span></span>
-
-<span class='comment'># send a binary chunk of data
-</span><span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_binread'>binread</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/home/qpid/binfile.tar.gz</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_msg'>msg</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'>Message</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Qpid::Proton::Message#initialize (method)">new</a></span></span>
-<span class='id identifier rubyid_msg'>msg</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'>BinaryString</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
-</code></pre>
+<p><span class='object_link'><a href="#body-instance_method" title="Qpid::Proton::Message#body (method)">#body</a></span> is the main message content. <span class='object_link'><a href="#properties-instance_method" title="Qpid::Proton::Message#properties (method)">#properties</a></span> is a <span class='object_link'>Hash</span> of extra
+properties that can be attached to the message.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Create a message containing a Unicode string</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_msg'>msg</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'>Message</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Qpid::Proton::Message#initialize (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>this is a string</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Create a message containing binary data</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_msg'>msg</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'>Message</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Qpid::Proton::Message#initialize (method)">new</a></span></span>
+<span class='id identifier rubyid_msg'>msg</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'>BinaryString</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_binread'>binread</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/home/qpid/binfile.tar.gz</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
 
 </div>
 
@@ -652,8 +656,7 @@ message implementation.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Decodes a message from supplied AMQP data and returns the number of bytes
-consumed.</p>
+<p>Decodes a message from AMQP binary data.</p>
 </div></span>
   
 </li>
@@ -1351,7 +1354,7 @@ consumed.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Replaces the entire set of properties with the specified hash.</p>
+<p>Use <code>properties</code> as the message properties.</p>
 </div></span>
   
 </li>
@@ -1690,23 +1693,23 @@ settings</p>
       <pre class="lines">
 
 
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147</pre>
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 134</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 110</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_settings'>settings</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='ivar'>@impl</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message'>pn_message</span>
@@ -1761,14 +1764,14 @@ message implementation.</p>
       <pre class="lines">
 
 
-159
-160
-161
-162
-163</pre>
+135
+136
+137
+138
+139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 159</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 135</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_finalize!'>finalize!</span><span class='lparen'>(</span><span class='id identifier rubyid_impl'>impl</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_proc'>proc</span> <span class='lbrace'>{</span>
@@ -1813,12 +1816,12 @@ returns nil.</p>
       <pre class="lines">
 
 
-571
-572
-573</pre>
+547
+548
+549</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 571</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 547</span>
 
 <span class='kw'>def</span> <span class='op'>[]</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='ivar'>@properties</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span>
@@ -1861,12 +1864,12 @@ returns nil.</p>
       <pre class="lines">
 
 
-564
-565
-566</pre>
+540
+541
+542</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 564</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 540</span>
 
 <span class='kw'>def</span> <span class='op'>[]=</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='ivar'>@properties</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span>
@@ -1902,12 +1905,12 @@ returns nil.</p>
       <pre class="lines">
 
 
-350
-351
-352</pre>
+326
+327
+328</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 350</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 326</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_address'>address</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_address'>pn_message_get_address</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -1948,12 +1951,12 @@ returns nil.</p>
       <pre class="lines">
 
 
-344
-345
-346</pre>
+320
+321
+322</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 344</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 320</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_address='>address=</span><span class='lparen'>(</span><span class='id identifier rubyid_address'>address</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_address'>pn_message_set_address</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_address'>address</span><span class='rparen'>)</span>
@@ -1989,12 +1992,12 @@ returns nil.</p>
       <pre class="lines">
 
 
-595
-596
-597</pre>
+571
+572
+573</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 595</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 571</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_annotations'>annotations</span>
   <span class='ivar'>@annotations</span>
@@ -2030,12 +2033,12 @@ returns nil.</p>
       <pre class="lines">
 
 
-601
-602
-603</pre>
+577
+578
+579</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 601</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 577</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_annotations='>annotations=</span><span class='lparen'>(</span><span class='id identifier rubyid_annotations'>annotations</span><span class='rparen'>)</span>
   <span class='ivar'>@annotations</span> <span class='op'>=</span> <span class='id identifier rubyid_annotations'>annotations</span>
@@ -2071,12 +2074,12 @@ returns nil.</p>
       <pre class="lines">
 
 
-607
-608
-609</pre>
+583
+584
+585</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 607</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 583</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_body'>body</span>
   <span class='ivar'>@body</span>
@@ -2112,12 +2115,12 @@ returns nil.</p>
       <pre class="lines">
 
 
-613
-614
-615</pre>
+589
+590
+591</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 613</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 589</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_body='>body=</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span>
   <span class='ivar'>@body</span> <span class='op'>=</span> <span class='id identifier rubyid_body'>body</span>
@@ -2154,16 +2157,16 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-173
-174
-175
-176
-177
-178
-179</pre>
+149
+150
+151
+152
+153
+154
+155</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 173</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 149</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear'>clear</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_clear'>pn_message_clear</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2204,23 +2207,23 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-424
-425
-426
-427
-428
-429
-430
-431
-432
-433
-434
-435
-436
-437</pre>
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 424</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 400</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content'>content</span>
   <span class='id identifier rubyid_size'>size</span> <span class='op'>=</span> <span class='int'>16</span>
@@ -2268,12 +2271,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-419
-420
-421</pre>
+395
+396
+397</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 419</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 395</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content='>content=</span><span class='lparen'>(</span><span class='id identifier rubyid_content'>content</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_load'>pn_message_load</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_content'>content</span><span class='rparen'>)</span>
@@ -2309,12 +2312,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-451
-452
-453</pre>
+427
+428
+429</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 451</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 427</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_encoding'>content_encoding</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_content_encoding'>pn_message_get_content_encoding</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2355,12 +2358,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-445
-446
-447</pre>
+421
+422
+423</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 445</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 421</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_encoding='>content_encoding=</span><span class='lparen'>(</span><span class='id identifier rubyid_encoding'>encoding</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_content_encoding'>pn_message_set_content_encoding</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_encoding'>encoding</span><span class='rparen'>)</span>
@@ -2396,12 +2399,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-414
-415
-416</pre>
+390
+391
+392</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 414</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 390</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_type'>content_type</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_content_type'>pn_message_get_content_type</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2442,12 +2445,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-408
-409
-410</pre>
+384
+385
+386</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 408</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 384</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_type='>content_type=</span><span class='lparen'>(</span><span class='id identifier rubyid_content_type'>content_type</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_content_type'>pn_message_set_content_type</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_content_type'>content_type</span><span class='rparen'>)</span>
@@ -2483,12 +2486,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-398
-399
-400</pre>
+374
+375
+376</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 398</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 374</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_correlation_id'>correlation_id</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_correlation_id'>pn_message_get_correlation_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2529,12 +2532,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-392
-393
-394</pre>
+368
+369
+370</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 392</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 368</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_correlation_id='>correlation_id=</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_correlation_id'>pn_message_set_correlation_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -2570,12 +2573,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-487
-488
-489</pre>
+463
+464
+465</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 487</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 463</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_creation_time'>creation_time</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_creation_time'>pn_message_get_creation_time</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2629,14 +2632,14 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-479
-480
-481
-482
-483</pre>
+455
+456
+457
+458
+459</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 479</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 455</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_creation_time='>creation_time=</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid time: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_time'>time</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -2660,19 +2663,34 @@ of <code>Message</code> to be reused.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Decodes a message from supplied AMQP data and returns the number of bytes
-consumed.</p>
-
-<h4 id="label-Options">Options</h4>
-<ul><li>
-<p>encoded - the encoded data</p>
-</li></ul>
+<p>Decodes a message from AMQP binary data. @<a href="Integer">return</a> the
+number of bytes consumed</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>encoded</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the encoded bytes</p>
+</div>
+      
+    </li>
+  
+</ul>
+
 
 </div><table class="source_code">
   <tr>
@@ -2680,18 +2698,16 @@ consumed.</p>
       <pre class="lines">
 
 
-61
-62
-63
-64
-65</pre>
+38
+39
+40
+41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_decode'>decode</span><span class='lparen'>(</span><span class='id identifier rubyid_encoded'>encoded</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_check'>check</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_decode'>pn_message_decode</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_encoded'>encoded</span><span class='comma'>,</span> <span class='id identifier rubyid_encoded'>encoded</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span><span class='rparen'>)</span>
-
   <span class='id identifier rubyid_post_decode'>post_decode</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -2725,12 +2741,12 @@ consumed.</p>
       <pre class="lines">
 
 
-577
-578
-579</pre>
+553
+554
+555</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 577</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 553</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete_property'>delete_property</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='ivar'>@properties</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -2768,12 +2784,12 @@ consumed.</p>
       <pre class="lines">
 
 
-295
-296
-297</pre>
+271
+272
+273</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 295</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 271</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delivery_count'>delivery_count</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_delivery_count'>pn_message_get_delivery_count</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2829,14 +2845,14 @@ consumed.</p>
       <pre class="lines">
 
 
-285
-286
-287
-288
-289</pre>
+261
+262
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 285</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 261</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delivery_count='>delivery_count=</span><span class='lparen'>(</span><span class='id identifier rubyid_count'>count</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='op'>::</span><span class='const'>ArgumentError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid count: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_count'>count</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_count'>count</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Numeric</span><span class='rparen'>)</span>
@@ -2883,12 +2899,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-222
-223
-224</pre>
+198
+199
+200</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 222</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 198</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_durable'>durable</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_is_durable'>pn_message_is_durable</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2944,13 +2960,13 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-207
-208
-209
-210</pre>
+183
+184
+185
+186</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 207</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 183</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_durable='>durable=</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>state cannot be nil</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -2987,22 +3003,22 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104</pre>
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 92</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_encode'>encode</span>
   <span class='id identifier rubyid_pre_encode'>pre_encode</span>
@@ -3048,12 +3064,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-183
-184
-185</pre>
+159
+160
+161</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 183</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 159</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_errno'>errno</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_errno'>pn_message_errno</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -3089,12 +3105,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-189
-190
-191</pre>
+165
+166
+167</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 189</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 165</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_error'>error</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_error_text'>pn_error_text</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_error'>pn_message_error</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -3143,12 +3159,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-195
-196
-197</pre>
+171
+172
+173</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 195</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 171</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_error?'>error?</span>
   <span class='op'>!</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_errno'>pn_message_errno</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_zero?'>zero?</span>
@@ -3184,12 +3200,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-469
-470
-471</pre>
+445
+446
+447</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 469</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 445</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_expires'>expires</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_expiry_time'>pn_message_get_expiry_time</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -3243,14 +3259,14 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-461
-462
-463
-464
-465</pre>
+437
+438
+439
+440
+441</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 461</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 437</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_expires='>expires=</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid expiry time: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_time'>time</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -3308,13 +3324,13 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-272
-273
-274
-275</pre>
+248
+249
+250
+251</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 272</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 248</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_first_acquirer='>first_acquirer=</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid state: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_state'>state</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='op'>!</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='const'>TrueClass</span><span class='comma'>,</span> <span class='const'>FalseClass</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -3364,12 +3380,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-302
-303
-304</pre>
+278
+279
+280</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 302</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 278</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_first_acquirer?'>first_acquirer?</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_is_first_acquirer'>pn_message_is_first_acquirer</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -3405,12 +3421,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-503
-504
-505</pre>
+479
+480
+481</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 503</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 479</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_group_id'>group_id</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_group_id'>pn_message_get_group_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -3451,12 +3467,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-497
-498
-499</pre>
+473
+474
+475</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 497</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 473</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_group_id='>group_id=</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_group_id'>pn_message_set_group_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -3492,12 +3508,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-520
-521
-522</pre>
+496
+497
+498</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 520</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 496</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_group_sequence'>group_sequence</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_group_sequence'>pn_message_get_group_sequence</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -3551,13 +3567,13 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-513
-514
-515
-516</pre>
+489
+490
+491
+492</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 513</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 489</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_group_sequence='>group_sequence=</span><span class='lparen'>(</span><span class='id identifier rubyid_seq'>seq</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid seq: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_seq'>seq</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_seq'>seq</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -3594,12 +3610,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-318
-319
-320</pre>
+294
+295
+296</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 318</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 294</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_id'>pn_message_get_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -3640,12 +3656,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-312
-313
-314</pre>
+288
+289
+290</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 312</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 288</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_id='>id=</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_id'>pn_message_set_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -3681,12 +3697,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-166
-167
-168</pre>
+142
+143
+144</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 166</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 142</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_impl'>impl</span> <span class='comment'># :nodoc:
 </span>  <span class='ivar'>@impl</span>
@@ -3722,12 +3738,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-583
-584
-585</pre>
+559
+560
+561</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 583</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 559</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_instructions'>instructions</span>
   <span class='ivar'>@instructions</span>
@@ -3763,12 +3779,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-589
-590
-591</pre>
+565
+566
+567</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 589</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 565</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_instructions='>instructions=</span><span class='lparen'>(</span><span class='id identifier rubyid_instr'>instr</span><span class='rparen'>)</span>
   <span class='ivar'>@instructions</span> <span class='op'>=</span> <span class='id identifier rubyid_instr'>instr</span>
@@ -3804,32 +3820,32 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89</pre>
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 43</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_post_decode'>post_decode</span> <span class='comment'># :nodoc:
 </span>  <span class='comment'># decode elements from the message
@@ -3885,33 +3901,33 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129</pre>
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 106</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 82</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pre_encode'>pre_encode</span> <span class='comment'># :nodoc:
 </span>  <span class='comment'># encode elements from the message
@@ -3968,12 +3984,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-242
-243
-244</pre>
+218
+219
+220</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 242</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 218</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_priority'>priority</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_priority'>pn_message_get_priority</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -4029,14 +4045,14 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-234
-235
-236
-237
-238</pre>
+210
+211
+212
+213
+214</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 234</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 210</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_priority='>priority=</span><span class='lparen'>(</span><span class='id identifier rubyid_priority'>priority</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid priority: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_priority'>priority</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_priority'>priority</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Numeric</span><span class='rparen'>)</span>
@@ -4080,12 +4096,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-547
-548
-549</pre>
+523
+524
+525</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 547</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 523</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_properties'>properties</span>
   <span class='ivar'>@properties</span>
@@ -4107,13 +4123,33 @@ any intermediaries taking responsibility for the message.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Replaces the entire set of properties with the specified hash.</p>
+<p>Use <code>properties</code> as the message properties.</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>properties</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>Hash</span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>new properties</p>
+</div>
+      
+    </li>
+  
+</ul>
+
 
 </div><table class="source_code">
   <tr>
@@ -4121,12 +4157,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-553
-554
-555</pre>
+529
+530
+531</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 553</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 529</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_properties='>properties=</span><span class='lparen'>(</span><span class='id identifier rubyid_properties'>properties</span><span class='rparen'>)</span>
   <span class='ivar'>@properties</span> <span class='op'>=</span> <span class='id identifier rubyid_properties'>properties</span>
@@ -4162,12 +4198,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-382
-383
-384</pre>
+358
+359
+360</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 382</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 358</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reply_to'>reply_to</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_reply_to'>pn_message_get_reply_to</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -4208,12 +4244,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-376
-377
-378</pre>
+352
+353
+354</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 376</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 352</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reply_to='>reply_to=</span><span class='lparen'>(</span><span class='id identifier rubyid_address'>address</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_reply_to'>pn_message_set_reply_to</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_address'>address</span><span class='rparen'>)</span>
@@ -4249,12 +4285,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-536
-537
-538</pre>
+512
+513
+514</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 536</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 512</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reply_to_group_id'>reply_to_group_id</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_reply_to_group_id'>pn_message_get_reply_to_group_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -4295,12 +4331,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-530
-531
-532</pre>
+506
+507
+508</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 530</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 506</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reply_to_group_id='>reply_to_group_id=</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_reply_to_group_id'>pn_message_set_reply_to_group_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -4336,12 +4372,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-366
-367
-368</pre>
+342
+343
+344</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 366</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 342</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_subject'>subject</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_subject'>pn_message_get_subject</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -4382,12 +4418,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-360
-361
-362</pre>
+336
+337
+338</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 360</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 336</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_subject='>subject=</span><span class='lparen'>(</span><span class='id identifier rubyid_subject'>subject</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_subject'>pn_message_set_subject</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_subject'>subject</span><span class='rparen'>)</span>
@@ -4412,16 +4448,16 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-149
-150
-151
-152
-153
-154
-155</pre>
+125
+126
+127
+128
+129
+130
+131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 149</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 125</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='id identifier rubyid_tmp'>tmp</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_string'>pn_string</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -4461,12 +4497,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-260
-261
-262</pre>
+236
+237
+238</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 236</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ttl'>ttl</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_ttl'>pn_message_get_ttl</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -4520,14 +4556,14 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-252
-253
-254
-255
-256</pre>
+228
+229
+230
+231
+232</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 252</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 228</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ttl='>ttl=</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid ttl: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_time'>time</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Numeric</span><span class='rparen'>)</span>
@@ -4565,12 +4601,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-334
-335
-336</pre>
+310
+311
+312</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 334</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 310</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_user_id'>user_id</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_user_id'>pn_message_get_user_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -4611,12 +4647,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-328
-329
-330</pre>
+304
+305
+306</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 328</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 304</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_user_id='>user_id=</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_user_id'>pn_message_set_user_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -4631,9 +4667,9 @@ any intermediaries taking responsibility for the message.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Nov  7 17:09:15 2017 by
+  Generated on Tue Dec  5 15:30:44 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.1).
+  0.9.8 (ruby-2.4.2).
 </div>
 
     </div>

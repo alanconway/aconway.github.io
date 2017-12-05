@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Qpid::Proton::Types::UTFString
+  Exception: Qpid::Proton::Container::StoppedError
   
     &mdash; Documentation by YARD 0.9.8
   
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
-  pathId = "Qpid::Proton::Types::UTFString";
+  pathId = "Qpid::Proton::Container::StoppedError";
   relpath = '../../../';
 </script>
 
@@ -36,10 +36,10 @@
       <div id="header">
         <div id="menu">
   
-    <a href="../../../_index.html">Index (U)</a> &raquo;
-    <span class='title'><span class='object_link'><a href="../../../Qpid.html" title="Qpid (module)">Qpid</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Types.html" title="Qpid::Proton::Types (module)">Types</a></span></span>
+    <a href="../../../_index.html">Index (S)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../Qpid.html" title="Qpid (module)">Qpid</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Container.html" title="Qpid::Proton::Container (class)">Container</a></span></span>
      &raquo; 
-    <span class="title">UTFString</span>
+    <span class="title">StoppedError</span>
   
 </div>
 
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Qpid::Proton::Types::UTFString
+      <div id="content"><h1>Exception: Qpid::Proton::Container::StoppedError
   
   
   
@@ -69,14 +69,14 @@
   <dl>
     <dt>Inherits:</dt>
     <dd>
-      <span class="inheritName">String</span>
+      <span class="inheritName">RuntimeError</span>
       
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next">String</li>
+            <li class="next">RuntimeError</li>
           
-            <li class="next">Qpid::Proton::Types::UTFString</li>
+            <li class="next">Qpid::Proton::Container::StoppedError</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -96,7 +96,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/types/strings.rb</dd>
+    <dd>lib/core/container.rb</dd>
   </dl>
   
 </div>
@@ -104,8 +104,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>UTFString lets an application explicitly state that a string of characters
-is to be UTF-8 encoded.</p>
+<p>Error raised if the container is used after <span class='object_link'><a href="../Container.html#stop-instance_method" title="Qpid::Proton::Container#stop (method)">#stop</a></span> has been called.</p>
 
 
   </div>
@@ -131,7 +130,7 @@ is to be UTF-8 encoded.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(value)  &#x21d2; UTFString </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(*args)  &#x21d2; StoppedError </a>
     
 
     
@@ -148,7 +147,7 @@ is to be UTF-8 encoded.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>A new instance of UTFString.</p>
+<p>A new instance of StoppedError.</p>
 </div></span>
   
 </li>
@@ -164,7 +163,7 @@ is to be UTF-8 encoded.</p>
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(value)  &#x21d2; <tt><span class='object_link'><a href="" title="Qpid::Proton::Types::UTFString (class)">UTFString</a></span></tt> 
+    #<strong>initialize</strong>(*args)  &#x21d2; <tt><span class='object_link'><a href="" title="Qpid::Proton::Container::StoppedError (class)">StoppedError</a></span></tt> 
   
 
   
@@ -173,7 +172,7 @@ is to be UTF-8 encoded.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a new instance of UTFString</p>
+<p>Returns a new instance of StoppedError</p>
 
 
   </div>
@@ -187,24 +186,12 @@ is to be UTF-8 encoded.</p>
       <pre class="lines">
 
 
-46
-47
-48
-49
-50
-51
-52</pre>
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/types/strings.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 89</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='op'>!</span><span class='const'><span class='object_link'><a href="../../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Types.html" title="Qpid::Proton::Types (module)">Types</a></span></span><span class='period'>.</span><span class='id identifier rubyid_is_valid_utf?'>is_valid_utf?</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid UTF string</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-
-  <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span> <span class='kw'>super</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>container has been stopped</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
