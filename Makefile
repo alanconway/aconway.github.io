@@ -1,11 +1,18 @@
-all: index.html proton-ruby
-	git add --all
-
-RUBY=~/proton/rubydev/proton-c/bindings/ruby/doc
-
-proton-ruby: index.html $(RUBY)/*
-	rsync -arv --delete $(RUBY)/ proton-ruby
-	touch proton-ruby
+all: index.html proton-ruby proton-c proton-cpp
 
 index.html: index.adoc
-	asciidoc $<
+	asciidoctor $<
+
+SRC = ~/proton
+BLD = ~/proton/bld-doc
+
+$(BLD):
+	mkdir $(BLD) && cd $(BLD) && my-cmake
+
+force::
+
+proton-%: $(BLD) force
+	( cd $(BLD) && make docs-$*; )
+	mkdir -p proton-$*
+	rsync -ar $(dir $(shell find $(BLD)/$*/doc* -name index.html)) $(PWD)/proton-$*/
+	touch $@

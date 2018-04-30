@@ -2,7 +2,8 @@ var NAVTREE =
 [
   [ "Qpid Proton C", "index.html", [
     [ "Introduction", "index.html", null ],
-    [ "IO integration", "io_page.html", null ],
+    [ "Advanced topics", "md__home_aconway_proton_c_docs_advanced.html", "md__home_aconway_proton_c_docs_advanced" ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -29,12 +30,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__connection.html#gabf25d7b763951b4a9c856536d6db0600",
-"group__delivery.html#ga13364206124b653b90f5ee3ddae9ff35",
-"group__event.html#gga4876e2eed24a4d4e4c52b99842103cdaa98facd13835b4a1d8e878d6f13c10a51",
-"group__message.html#gac8a1e35c70d625b69e0d1769d9c898d2",
-"group__sasl.html#gac53ad15ee429b7ce9d0c598d1e347243",
-"group__transport.html#ga3ef8b0032b2a012c697e853e363338ea"
+"group__connection.html#gabc8d505108a850837a0d2fb204875390",
+"group__delivery.html#ga0dbbc51564aea5b181d161ee7add1ddb",
+"group__event.html#gga4876e2eed24a4d4e4c52b99842103cdaa838b909cce908f5769d043ba3e73e73e",
+"group__message.html#gaa9a53e784afb72ea8a4d2033f99ce313",
+"group__proactor.html#gade60ff2292b74841766f953b906285c0",
+"group__transport.html#ga09a0d15514ca9a14eb40f12425a52797"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

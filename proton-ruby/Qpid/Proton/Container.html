@@ -126,7 +126,7 @@ and connections will be dispatched in the <span class='object_link'><a href="#ru
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Container/ConnectionTask.html" title="Qpid::Proton::Container::ConnectionTask (class)">ConnectionTask</a></span>, <span class='object_link'><a href="Container/ListenTask.html" title="Qpid::Proton::Container::ListenTask (class)">ListenTask</a></span>, <span class='object_link'><a href="Container/StoppedError.html" title="Qpid::Proton::Container::StoppedError (class)">StoppedError</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Container/ConnectionTask.html" title="Qpid::Proton::Container::ConnectionTask (class)">ConnectionTask</a></span>, <span class='object_link'><a href="Container/ListenTask.html" title="Qpid::Proton::Container::ListenTask (class)">ListenTask</a></span>, <span class='object_link'><a href="Container/SelectWaker.html" title="Qpid::Proton::Container::SelectWaker (class)">SelectWaker</a></span>, <span class='object_link'><a href="Container/StoppedError.html" title="Qpid::Proton::Container::StoppedError (class)">StoppedError</a></span>
     
   
 </p>
@@ -289,7 +289,7 @@ and connections will be dispatched in the <span class='object_link'><a href="#ru
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#connect_io-instance_method" title="#connect_io (instance method)">#<strong>connect_io</strong>(io, opts = nil)  &#x21d2; Object </a>
+      <a href="#connect_io-instance_method" title="#connect_io (instance method)">#<strong>connect_io</strong>(io, opts = nil)  </a>
     
 
     
@@ -313,7 +313,7 @@ and connections will be dispatched in the <span class='object_link'><a href="#ru
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(handler = nil, id = nil)  &#x21d2; Container </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(*args)  &#x21d2; Container </a>
     
 
     
@@ -332,6 +332,28 @@ and connections will be dispatched in the <span class='object_link'><a href="#ru
     <span class="summary_desc"><div class='inline'>
 <p>Create a new Container.</p>
 </div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect-instance_method" title="#inspect (instance method)">#<strong>inspect</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -363,7 +385,7 @@ and connections will be dispatched in the <span class='object_link'><a href="#ru
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#listen_io-instance_method" title="#listen_io (instance method)">#<strong>listen_io</strong>(io, handler = Listener::Handler.new)  &#x21d2; Object </a>
+      <a href="#listen_io-instance_method" title="#listen_io (instance method)">#<strong>listen_io</strong>(io, handler = Listener::Handler.new)  </a>
     
 
     
@@ -387,7 +409,7 @@ and connections will be dispatched in the <span class='object_link'><a href="#ru
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#run-instance_method" title="#run (instance method)">#<strong>run</strong>  &#x21d2; Object </a>
+      <a href="#run-instance_method" title="#run (instance method)">#<strong>run</strong>  </a>
     
 
     
@@ -435,7 +457,7 @@ and connections will be dispatched in the <span class='object_link'><a href="#ru
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#stop-instance_method" title="#stop (instance method)">#<strong>stop</strong>(error = nil)  &#x21d2; Object </a>
+      <a href="#stop-instance_method" title="#stop (instance method)">#<strong>stop</strong>(error = nil, panic = nil)  </a>
     
 
     
@@ -456,10 +478,63 @@ and connections will be dispatched in the <span class='object_link'><a href="#ru
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#work_queue-instance_method" title="#work_queue (instance method)">#<strong>work_queue</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the <span class='object_link'><a href="WorkQueue.html" title="Qpid::Proton::WorkQueue (class)">WorkQueue</a></span> that can be used to schedule code to be run by the
+container.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
-<div id="constructor_details" class="method_details_list">
+
+  
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
     <div class="method_details first">
@@ -506,7 +581,7 @@ and connections will be dispatched in the <span class='object_link'><a href="#ru
         <span class='name'>id</span>
       
       
-        <span class='type'>(<tt>String</tt>)</span>
+        <span class='type'>(<tt>String</tt>, <tt>Symbol</tt>)</span>
       
       
         <em class="default">(defaults to: <tt>nil</tt>)</em>
@@ -543,7 +618,7 @@ and connections will be dispatched in the <span class='object_link'><a href="#ru
         <span class='name'>id</span>
       
       
-        <span class='type'>(<tt>String</tt>)</span>
+        <span class='type'>(<tt>String</tt>, <tt>Symbol</tt>)</span>
       
       
         <em class="default">(defaults to: <tt>nil</tt>)</em>
@@ -594,57 +669,62 @@ called concurrently.</p>
       <pre class="lines">
 
 
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132</pre>
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 105</span>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 55</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_handler'>handler</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='comment'># Allow ID as sole argument
-</span>  <span class='lparen'>(</span><span class='id identifier rubyid_handler'>handler</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_handler'>handler</span><span class='period'>.</span><span class='id identifier rubyid_to_str'>to_str</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_handler'>handler</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:to_str</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='comment'># Allow multiple handlers for backwards compatibility
-</span>  <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_handler'>handler</span><span class='rparen'>)</span>
-  <span class='ivar'>@handler</span> <span class='op'>=</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>1</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="MessagingHandlers.html" title="Qpid::Proton::MessagingHandlers (class)">MessagingHandlers</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="MessagingHandlers.html#initialize-instance_method" title="Qpid::Proton::MessagingHandlers#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_handler'>handler</span>
-  <span class='ivar'>@id</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='const'>SecureRandom</span><span class='period'>.</span><span class='id identifier rubyid_uuid'>uuid</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='ivar'>@handler</span><span class='comma'>,</span> <span class='ivar'>@id</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+  <span class='kw'>when</span> <span class='int'>2</span> <span class='kw'>then</span> <span class='ivar'>@handler</span><span class='comma'>,</span> <span class='ivar'>@id</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span>
+  <span class='kw'>when</span> <span class='int'>1</span> <span class='kw'>then</span>
+    <span class='ivar'>@id</span> <span class='op'>=</span> <span class='const'>String</span><span class='period'>.</span><span class='id identifier rubyid_try_convert'>try_convert</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Symbol</span><span class='rparen'>)</span>
+    <span class='ivar'>@handler</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='kw'>unless</span> <span class='ivar'>@id</span>
+  <span class='kw'>when</span> <span class='int'>0</span> <span class='kw'>then</span>
+  <span class='kw'>else</span> <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ArgumentError.html" title="Qpid::Proton::ArgumentError (class)">ArgumentError</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wrong number of arguments (given </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='embexpr_end'>}</span><span class='tstring_content'>, expected 0..2</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='comment'># Use an empty messaging adapter to give default behaviour if there&#39;s no global handler.
+</span>  <span class='ivar'>@adapter</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Handler.html" title="Qpid::Proton::Handler (module)">Handler</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Handler/Adapter.html" title="Qpid::Proton::Handler::Adapter (class)">Adapter</a></span></span><span class='period'>.</span><span class='id identifier rubyid_adapt'><span class='object_link'><a href="Handler/Adapter.html#adapt-class_method" title="Qpid::Proton::Handler::Adapter.adapt (method)">adapt</a></span></span><span class='lparen'>(</span><span class='ivar'>@handler</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='const'><span class='object_link'><a href="Handler.html" title="Qpid::Proton::Handler (module)">Handler</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Handler/MessagingAdapter.html" title="Qpid::Proton::Handler::MessagingAdapter (class)">MessagingAdapter</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Handler/Adapter.html#initialize-instance_method" title="Qpid::Proton::Handler::Adapter#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='ivar'>@id</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='ivar'>@id</span> <span class='op'>||</span> <span class='const'>SecureRandom</span><span class='period'>.</span><span class='id identifier rubyid_uuid'>uuid</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span>
 
-  <span class='comment'># Implementation note:
-</span>  <span class='comment'>#
-</span>  <span class='comment'># - #run threads take work from @work
-</span>  <span class='comment'># - Each driver and the Container itself is processed by at most one #run thread at a time
-</span>  <span class='comment'># - The Container thread does IO.select
-</span>  <span class='comment'># - nil on the @work queue makes a #run thread exit
-</span>
-  <span class='ivar'>@work</span> <span class='op'>=</span> <span class='const'>Queue</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-  <span class='ivar'>@work</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:on_start</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span> <span class='comment'># Issue on_start and start start selecting
-</span>  <span class='ivar'>@wake</span> <span class='op'>=</span> <span class='const'>IO</span><span class='period'>.</span><span class='id identifier rubyid_pipe'>pipe</span>           <span class='comment'># Wakes #run thread in IO.select
+  <span class='comment'># Threading and implementation notes: see comment on #run_one
+</span>  <span class='ivar'>@work</span> <span class='op'>=</span> <span class='const'>Queue</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='ivar'>@work</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:start</span>
+  <span class='ivar'>@work</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:select</span>
+  <span class='ivar'>@wake</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Container/SelectWaker.html" title="Qpid::Proton::Container::SelectWaker (class)">SelectWaker</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Container/SelectWaker.html#initialize-instance_method" title="Qpid::Proton::Container::SelectWaker#initialize (method)">new</a></span></span>   <span class='comment'># Wakes #run thread in IO.select
 </span>  <span class='ivar'>@auto_stop</span> <span class='op'>=</span> <span class='kw'>true</span>         <span class='comment'># Stop when @active drops to 0
+</span>  <span class='ivar'>@work_queue</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="WorkQueue.html" title="Qpid::Proton::WorkQueue (class)">WorkQueue</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>  <span class='comment'># work scheduled by other threads for :select context
 </span>
   <span class='comment'># Following instance variables protected by lock
 </span>  <span class='ivar'>@lock</span> <span class='op'>=</span> <span class='const'>Mutex</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -653,6 +733,7 @@ called concurrently.</p>
 </span>  <span class='ivar'>@running</span> <span class='op'>=</span> <span class='int'>0</span>              <span class='comment'># Count of #run threads
 </span>  <span class='ivar'>@stopped</span> <span class='op'>=</span> <span class='kw'>false</span>          <span class='comment'># #stop called
 </span>  <span class='ivar'>@stop_err</span> <span class='op'>=</span> <span class='kw'>nil</span>           <span class='comment'># Optional error to pass to tasks, from #stop
+</span>  <span class='ivar'>@panic</span> <span class='op'>=</span> <span class='kw'>nil</span>              <span class='comment'># Exception caught in a run thread, to be raised by all run threads
 </span><span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -715,12 +796,12 @@ called concurrently.</p>
       <pre class="lines">
 
 
-148
-149
-150</pre>
+104
+105
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 148</span>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 104</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_auto_stop'>auto_stop</span>
   <span class='ivar'>@auto_stop</span>
@@ -776,12 +857,12 @@ called concurrently.</p>
       <pre class="lines">
 
 
-135
-136
-137</pre>
+88
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 135</span>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 88</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handler'>handler</span>
   <span class='ivar'>@handler</span>
@@ -837,12 +918,12 @@ called concurrently.</p>
       <pre class="lines">
 
 
-138
-139
-140</pre>
+91
+92
+93</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 138</span>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 91</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span>
   <span class='ivar'>@id</span>
@@ -898,12 +979,12 @@ called concurrently.</p>
       <pre class="lines">
 
 
-152
-153
-154</pre>
+108
+109
+110</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 152</span>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stopped'>stopped</span>
   <span class='ivar'>@stopped</span>
@@ -950,7 +1031,7 @@ href=":password">opts</a> are nil</p>
         <span class='name'>url</span>
       
       
-        <span class='type'>(<tt>String</tt>, <tt><span class='object_link'><a href="../../URI.html" title="URI (module)">URI</a></span></tt>)</span>
+        <span class='type'>(<tt>String</tt>, <tt><span class='object_link'>URI</span></tt>)</span>
       
       
       
@@ -992,7 +1073,7 @@ href=":password">opts</a> are nil</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>user-name for authentication.</p>
+<p>User name for authentication</p>
 </div>
           
         </li>
@@ -1005,7 +1086,75 @@ href=":password">opts</a> are nil</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>password for authentication.</p>
+<p>Authentication secret</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:virtual_host</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Virtual host name</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:container_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>provided by {Container}</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>override advertised container-id</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:properties</span>
+          <span class="type">(<tt><span class='object_link'>Hash</span>&lt;Symbol=&gt;Object&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Application-defined properties</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:offered_capabilities</span>
+          <span class="type">(<tt><span class='object_link'>Array</span>&lt;Symbol&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Extensions the endpoint supports</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:desired_capabilities</span>
+          <span class="type">(<tt><span class='object_link'>Array</span>&lt;Symbol&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Extensions the endpoint can use</p>
 </div>
           
         </li>
@@ -1018,7 +1167,33 @@ href=":password">opts</a> are nil</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>seconds before closing an idle connection</p>
+<p>Seconds before closing an idle connection</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:max_sessions</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Limit the number of active sessions</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:max_frame_size</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Limit the size of AMQP frames</p>
 </div>
           
         </li>
@@ -1027,6 +1202,9 @@ href=":password">opts</a> are nil</p>
           <span class="name">:sasl_enabled</span>
           <span class="type">(<tt>Boolean</tt>)</span>
           <span class="default">
+            
+              &mdash; default:
+              <tt>false</tt>
             
           </span>
           
@@ -1041,11 +1219,13 @@ href=":password">opts</a> are nil</p>
           <span class="type">(<tt>Boolean</tt>)</span>
           <span class="default">
             
+              &mdash; default:
+              <tt>false</tt>
+            
           </span>
           
             &mdash; <div class='inline'>
-<p>Allow mechanisms that disclose clear text passwords, even over an insecure
-connection.</p>
+<p>Allow mechanisms send secrets in clear text</p>
 </div>
           
         </li>
@@ -1058,20 +1238,20 @@ connection.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>the allowed SASL mechanisms for use on the connection.</p>
+<p>SASL mechanisms allowed by this end of the connection</p>
 </div>
           
         </li>
       
         <li>
-          <span class="name">:container_id</span>
-          <span class="type">(<tt>String</tt>)</span>
+          <span class="name">:ssl_domain</span>
+          <span class="type">(<tt><span class='object_link'><a href="SSLDomain.html" title="Qpid::Proton::SSLDomain (class)">SSLDomain</a></span></tt>)</span>
           <span class="default">
             
           </span>
           
             &mdash; <div class='inline'>
-<p>AMQP container ID, normally provided by <span class='object_link'><a href="" title="Qpid::Proton::Container (class)">Qpid::Proton::Container</a></span></p>
+<p>SSL configuration domain.</p>
 </div>
           
         </li>
@@ -1104,31 +1284,31 @@ connection.</p>
       <pre class="lines">
 
 
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175</pre>
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 165</span>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 121</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connect'>connect</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_not_stopped'>not_stopped</span>
   <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='id identifier rubyid_uri'><span class='object_link'><a href="../Proton.html#uri-class_method" title="Qpid::Proton.uri (method)">uri</a></span></span> <span class='id identifier rubyid_url'>url</span>
+  <span class='id identifier rubyid_opts'>opts</span> <span class='op'>||=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_user'>user</span> <span class='op'>||</span>  <span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_password'>password</span>
-    <span class='id identifier rubyid_opts'>opts</span> <span class='op'>||=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
     <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:user</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_user'>user</span>
     <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:password</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_password'>password</span>
   <span class='kw'>end</span>
-  <span class='comment'># TODO aconway 2017-10-26: Use SSL for amqps URLs
-</span>  <span class='id identifier rubyid_connect_io'>connect_io</span><span class='lparen'>(</span><span class='const'>TCPSocket</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:ssl_domain</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="SSLDomain.html" title="Qpid::Proton::SSLDomain (class)">SSLDomain</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="SSLDomain.html" title="Qpid::Proton::SSLDomain (class)">SSLDomain</a></span></span><span class='op'>::</span><span class='const'>MODE_CLIENT</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_scheme'>scheme</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>amqps</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_connect_io'>connect_io</span><span class='lparen'>(</span><span class='const'>TCPSocket</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1138,7 +1318,7 @@ connection.</p>
       <div class="method_details ">
   <h3 class="signature " id="connect_io-instance_method">
   
-    #<strong>connect_io</strong>(io, opts = nil)  &#x21d2; <tt>Object</tt> 
+    #<strong>connect_io</strong>(io, opts = nil)  
   
 
   
@@ -1203,7 +1383,7 @@ connection.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>user-name for authentication.</p>
+<p>User name for authentication</p>
 </div>
           
         </li>
@@ -1216,7 +1396,75 @@ connection.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>password for authentication.</p>
+<p>Authentication secret</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:virtual_host</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Virtual host name</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:container_id</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>provided by {Container}</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>override advertised container-id</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:properties</span>
+          <span class="type">(<tt><span class='object_link'>Hash</span>&lt;Symbol=&gt;Object&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Application-defined properties</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:offered_capabilities</span>
+          <span class="type">(<tt><span class='object_link'>Array</span>&lt;Symbol&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Extensions the endpoint supports</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:desired_capabilities</span>
+          <span class="type">(<tt><span class='object_link'>Array</span>&lt;Symbol&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Extensions the endpoint can use</p>
 </div>
           
         </li>
@@ -1229,7 +1477,33 @@ connection.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>seconds before closing an idle connection</p>
+<p>Seconds before closing an idle connection</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:max_sessions</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Limit the number of active sessions</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:max_frame_size</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Limit the size of AMQP frames</p>
 </div>
           
         </li>
@@ -1238,6 +1512,9 @@ connection.</p>
           <span class="name">:sasl_enabled</span>
           <span class="type">(<tt>Boolean</tt>)</span>
           <span class="default">
+            
+              &mdash; default:
+              <tt>false</tt>
             
           </span>
           
@@ -1252,11 +1529,13 @@ connection.</p>
           <span class="type">(<tt>Boolean</tt>)</span>
           <span class="default">
             
+              &mdash; default:
+              <tt>false</tt>
+            
           </span>
           
             &mdash; <div class='inline'>
-<p>Allow mechanisms that disclose clear text passwords, even over an insecure
-connection.</p>
+<p>Allow mechanisms send secrets in clear text</p>
 </div>
           
         </li>
@@ -1269,20 +1548,20 @@ connection.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>the allowed SASL mechanisms for use on the connection.</p>
+<p>SASL mechanisms allowed by this end of the connection</p>
 </div>
           
         </li>
       
         <li>
-          <span class="name">:container_id</span>
-          <span class="type">(<tt>String</tt>)</span>
+          <span class="name">:ssl_domain</span>
+          <span class="type">(<tt><span class='object_link'><a href="SSLDomain.html" title="Qpid::Proton::SSLDomain (class)">SSLDomain</a></span></tt>)</span>
           <span class="default">
             
           </span>
           
             &mdash; <div class='inline'>
-<p>AMQP container ID, normally provided by <span class='object_link'><a href="" title="Qpid::Proton::Container (class)">Qpid::Proton::Container</a></span></p>
+<p>SSL configuration domain.</p>
 </div>
           
         </li>
@@ -1297,16 +1576,16 @@ connection.</p>
       <pre class="lines">
 
 
-180
-181
-182
-183
-184
-185
-186</pre>
+136
+137
+138
+139
+140
+141
+142</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 180</span>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 136</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connect_io'>connect_io</span><span class='lparen'>(</span><span class='id identifier rubyid_io'>io</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_not_stopped'>not_stopped</span>
@@ -1315,6 +1594,41 @@ connection.</p>
   <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_cd'>cd</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_cd'>cd</span><span class='period'>.</span><span class='id identifier rubyid_connection'>connection</span>
 <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inspect-instance_method">
+  
+    #<strong>inspect</strong>  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+94</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 94</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id identifier rubyid_to_s'>to_s</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1349,7 +1663,7 @@ each one.</p>
         <span class='name'>url</span>
       
       
-        <span class='type'>(<tt>String</tt>, <tt><span class='object_link'><a href="../../URI.html" title="URI (module)">URI</a></span></tt>)</span>
+        <span class='type'>(<tt>String</tt>, <tt><span class='object_link'>URI</span></tt>)</span>
       
       
       
@@ -1405,15 +1719,15 @@ each one.</p>
       <pre class="lines">
 
 
-195
-196
-197
-198
-199
-200</pre>
+151
+152
+153
+154
+155
+156</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 195</span>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 151</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_listen'>listen</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_handler'>handler</span><span class='op'>=</span><span class='const'>Listener</span><span class='op'>::</span><span class='const'>Handler</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_not_stopped'>not_stopped</span>
@@ -1429,7 +1743,7 @@ each one.</p>
       <div class="method_details ">
   <h3 class="signature " id="listen_io-instance_method">
   
-    #<strong>listen_io</strong>(io, handler = Listener::Handler.new)  &#x21d2; <tt>Object</tt> 
+    #<strong>listen_io</strong>(io, handler = Listener::Handler.new)  
   
 
   
@@ -1490,21 +1804,21 @@ each one.</p>
       <pre class="lines">
 
 
-206
-207
-208
-209
-210
-211</pre>
+162
+163
+164
+165
+166
+167</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 206</span>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 162</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_listen_io'>listen_io</span><span class='lparen'>(</span><span class='id identifier rubyid_io'>io</span><span class='comma'>,</span> <span class='id identifier rubyid_handler'>handler</span><span class='op'>=</span><span class='const'>Listener</span><span class='op'>::</span><span class='const'>Handler</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_not_stopped'>not_stopped</span>
   <span class='id identifier rubyid_l'>l</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Container/ListenTask.html" title="Qpid::Proton::Container::ListenTask (class)">ListenTask</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Container/ListenTask.html#initialize-instance_method" title="Qpid::Proton::Container::ListenTask#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_io'>io</span><span class='comma'>,</span> <span class='id identifier rubyid_handler'>handler</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_l'>l</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_l'>l</span>
+  <span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_listener'>listener</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1514,7 +1828,7 @@ each one.</p>
       <div class="method_details ">
   <h3 class="signature " id="run-instance_method">
   
-    #<strong>run</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>run</strong>  
   
 
   
@@ -1522,19 +1836,60 @@ each one.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
+    <p class="note returns_void">This method returns an undefined value.</p>
 <p>Run the container: wait for IO activity, dispatch events to handlers.</p>
 
-<p>More than one thread can call <span class='object_link'><a href="#run-instance_method" title="Qpid::Proton::Container#run (method)">#run</a></span> concurrently, the container will use
-all the <span class='object_link'><a href="#run-instance_method" title="Qpid::Proton::Container#run (method)">#run</a></span> threads as a thread pool. Calls to
-<span class='object_link'>Handler::MessagingHandler</span> methods are serialized for each connection or
-listener, even if the container has multiple threads.</p>
+<p><strong>Multi-threaading</strong> : More than one thread can call <span class='object_link'><a href="#run-instance_method" title="Qpid::Proton::Container#run (method)">#run</a></span>
+concurrently, the container will use all <span class='object_link'><a href="#run-instance_method" title="Qpid::Proton::Container#run (method)">#run</a></span> threads as a thread pool.
+Calls to <span class='object_link'><a href="MessagingHandler.html" title="Qpid::Proton::MessagingHandler (class)">MessagingHandler</a></span> or <span class='object_link'><a href="Listener/Handler.html" title="Qpid::Proton::Listener::Handler (class)">Listener::Handler</a></span> methods are serialized
+for each connection or listener. See <span class='object_link'><a href="WorkQueue.html" title="Qpid::Proton::WorkQueue (class)">WorkQueue</a></span> for coordinating with
+other threads.</p>
+
+<p><strong>Exceptions</strong>: If any handler method raises an exception it
+will stop the container, and the exception will be raised by all calls to
+<span class='object_link'><a href="#run-instance_method" title="Qpid::Proton::Container#run (method)">#run</a></span>. For single threaded code this is often desirable. Multi-threaded
+server applications should normally rescue exceptions in the handler and
+deal with them in another way: logging, closing the connection with an
+error condition, signalling another thread etc.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Container/StoppedError.html" title="Qpid::Proton::Container::StoppedError (class)">StoppedError</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If the container has already been stopped when <span class='object_link'><a href="#run-instance_method" title="Qpid::Proton::Container#run (method)">#run</a></span> was called.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Exception</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If any <span class='object_link'><a href="MessagingHandler.html" title="Qpid::Proton::MessagingHandler (class)">MessagingHandler</a></span> or <span class='object_link'><a href="Listener/Handler.html" title="Qpid::Proton::Listener::Handler (class)">Listener::Handler</a></span> managed by the container
+raises an exception, that exception will be raised by <span class='object_link'><a href="#run-instance_method" title="Qpid::Proton::Container#run (method)">#run</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1542,61 +1897,28 @@ listener, even if the container has multiple threads.</p>
       <pre class="lines">
 
 
-220
-221
-222
-223
-224
-225
-226
-227
-228
-229
-230
-231
-232
-233
-234
-235
-236
-237
-238
-239
-240
-241
-242
-243
-244
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259
-260
-261
-262
-263
-264
-265
-266
-267
-268
-269
-270
-271</pre>
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 220</span>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 191</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span>
   <span class='ivar'>@lock</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='kw'>do</span>
@@ -1604,51 +1926,18 @@ listener, even if the container has multiple threads.</p>
 </span>    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="Container/StoppedError.html" title="Qpid::Proton::Container::StoppedError (class)">StoppedError</a></span></span> <span class='kw'>if</span> <span class='ivar'>@stopped</span>
   <span class='kw'>end</span>
   <span class='kw'>while</span> <span class='id identifier rubyid_task'>task</span> <span class='op'>=</span> <span class='ivar'>@work</span><span class='period'>.</span><span class='id identifier rubyid_pop'>pop</span>
-    <span class='kw'>case</span> <span class='id identifier rubyid_task'>task</span>
-
-    <span class='kw'>when</span> <span class='symbol'>:on_start</span>
-      <span class='id identifier rubyid_event'>event</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Event.html" title="Qpid::Proton::Event (class)">Event</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='symbol'>:on_start</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
-      <span class='ivar'>@handler</span><span class='period'>.</span><span class='id identifier rubyid_on_start'>on_start</span><span class='lparen'>(</span><span class='id identifier rubyid_event'>event</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@handler</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='symbol'>:on_start</span>
-
-    <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="" title="Qpid::Proton::Container (class)">Container</a></span></span>
-      <span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='id identifier rubyid_w'>w</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='ivar'>@wake</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
-      <span class='ivar'>@lock</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='kw'>do</span>
-        <span class='ivar'>@selectable</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span>
-          <span class='id identifier rubyid_r'>r</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_s'>s</span> <span class='kw'>if</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span> <span class='symbol'>:can_read?</span>
-          <span class='id identifier rubyid_w'>w</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_s'>s</span> <span class='kw'>if</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span> <span class='symbol'>:can_write?</span>
-        <span class='kw'>end</span>
-      <span class='kw'>end</span>
-      <span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='id identifier rubyid_w'>w</span> <span class='op'>=</span> <span class='const'>IO</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span><span class='lparen'>(</span><span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='id identifier rubyid_w'>w</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_selected'>selected</span> <span class='op'>=</span> <span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_r'>r</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_w'>w</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_drain_wake'>drain_wake</span> <span class='kw'>if</span> <span class='id identifier rubyid_selected'>selected</span><span class='period'>.</span><span class='id identifier rubyid_delete?'>delete?</span><span class='lparen'>(</span><span class='ivar'>@wake</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_stop_select'>stop_select</span> <span class='op'>=</span> <span class='kw'>nil</span>
-      <span class='ivar'>@lock</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='kw'>do</span>
-        <span class='kw'>if</span> <span class='id identifier rubyid_stop_select'>stop_select</span> <span class='op'>=</span> <span class='ivar'>@stopped</span> <span class='comment'># close everything
-</span>          <span class='id identifier rubyid_selected'>selected</span> <span class='op'>+=</span> <span class='ivar'>@selectable</span>
-          <span class='id identifier rubyid_selected'>selected</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span> <span class='ivar'>@stop_err</span> <span class='rbrace'>}</span>
-          <span class='ivar'>@wake</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_fd'>fd</span><span class='op'>|</span> <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-        <span class='kw'>end</span>
-        <span class='ivar'>@selectable</span> <span class='op'>-=</span> <span class='id identifier rubyid_selected'>selected</span> <span class='comment'># Remove selected tasks
-</span>      <span class='kw'>end</span>
-      <span class='id identifier rubyid_selected'>selected</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span> <span class='ivar'>@work</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_s'>s</span> <span class='rbrace'>}</span> <span class='comment'># Queue up tasks needing #process
-</span>      <span class='ivar'>@work</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span> <span class='kw'>unless</span> <span class='id identifier rubyid_stop_select'>stop_select</span>
-
-    <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="Container/ConnectionTask.html" title="Qpid::Proton::Container::ConnectionTask (class)">ConnectionTask</a></span></span> <span class='kw'>then</span>
-      <span class='id identifier rubyid_task'>task</span><span class='period'>.</span><span class='id identifier rubyid_process'>process</span>
-      <span class='id identifier rubyid_rearm'>rearm</span> <span class='id identifier rubyid_task'>task</span>
-
-    <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="Container/ListenTask.html" title="Qpid::Proton::Container::ListenTask (class)">ListenTask</a></span></span> <span class='kw'>then</span>
-      <span class='id identifier rubyid_io'>io</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='id identifier rubyid_task'>task</span><span class='period'>.</span><span class='id identifier rubyid_process'>process</span>
-      <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_connection_driver'>connection_driver</span><span class='lparen'>(</span><span class='id identifier rubyid_io'>io</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_io'>io</span>
-      <span class='id identifier rubyid_rearm'>rearm</span> <span class='id identifier rubyid_task'>task</span>
-    <span class='kw'>end</span>
-    <span class='comment'># TODO aconway 2017-10-26: scheduled tasks, heartbeats
-</span>  <span class='kw'>end</span>
+    <span class='id identifier rubyid_run_one'>run_one</span><span class='lparen'>(</span><span class='id identifier rubyid_task'>task</span><span class='comma'>,</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@lock</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_raise'>raise</span> <span class='ivar'>@panic</span> <span class='kw'>if</span> <span class='ivar'>@panic</span> <span class='rbrace'>}</span>
 <span class='kw'>ensure</span>
   <span class='ivar'>@lock</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='kw'>do</span>
-    <span class='ivar'>@running</span> <span class='op'>-=</span> <span class='int'>1</span>
-    <span class='id identifier rubyid_work_wake'>work_wake</span> <span class='kw'>nil</span> <span class='kw'>if</span> <span class='ivar'>@running</span> <span class='op'>&gt;</span> <span class='int'>0</span>         <span class='comment'># Tell the next thread to exit
-</span>  <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='lparen'>(</span><span class='ivar'>@running</span> <span class='op'>-=</span> <span class='int'>1</span><span class='rparen'>)</span> <span class='op'>&gt;</span> <span class='int'>0</span>
+      <span class='id identifier rubyid_work_wake'>work_wake</span> <span class='kw'>nil</span>         <span class='comment'># Signal the next thread
+</span>    <span class='kw'>else</span>
+      <span class='comment'># This is the last thread, no need to do maybe_panic around this final handler call.
+</span>      <span class='ivar'>@adapter</span><span class='period'>.</span><span class='id identifier rubyid_on_container_stop'>on_container_stop</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@adapter</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='symbol'>:on_container_stop</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1699,12 +1988,12 @@ listener, even if the container has multiple threads.</p>
       <pre class="lines">
 
 
-156</pre>
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 156</span>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 112</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_running'>running</span><span class='semicolon'>;</span> <span class='ivar'>@lock</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='lbrace'>{</span> <span class='ivar'>@running</span> <span class='rbrace'>}</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_running'>running</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@lock</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='lbrace'>{</span> <span class='ivar'>@running</span> <span class='rbrace'>}</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1713,7 +2002,7 @@ listener, even if the container has multiple threads.</p>
       <div class="method_details ">
   <h3 class="signature " id="stop-instance_method">
   
-    #<strong>stop</strong>(error = nil)  &#x21d2; <tt>Object</tt> 
+    #<strong>stop</strong>(error = nil, panic = nil)  
   
 
   
@@ -1731,8 +2020,7 @@ close.</p>
 is finished.</p>
 
 <p>The container can no longer be used, using a stopped container raises
-<span class='object_link'><a href="Container/StoppedError.html" title="Qpid::Proton::Container::StoppedError (class)">StoppedError</a></span> on attempting.  Create a new container if you want to resume
-activity.</p>
+<span class='object_link'><a href="Container/StoppedError.html" title="Qpid::Proton::Container::StoppedError (class)">StoppedError</a></span>.  Create a new container if you want to resume activity.</p>
 
 
   </div>
@@ -1754,7 +2042,26 @@ activity.</p>
       
         &mdash;
         <div class='inline'>
-<p>Optional transport/listener error condition</p>
+<p>Optional error condition passed to <span class='object_link'>MessagingHandler#on_transport_error</span>
+for each connection and Listener::Handler::on_error for each listener.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>panic</span>
+      
+      
+        <span class='type'>(<tt>Exception</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Optional exception to raise from all calls to run()</p>
 </div>
       
     </li>
@@ -1768,28 +2075,30 @@ activity.</p>
       <pre class="lines">
 
 
-286
-287
-288
-289
-290
-291
-292
-293
-294
-295
-296
-297
-298</pre>
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 286</span>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 227</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_stop'>stop</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_stop'>stop</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_panic'>panic</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='ivar'>@lock</span><span class='period'>.</span><span class='id identifier rubyid_synchronize'>synchronize</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="Container/StoppedError.html" title="Qpid::Proton::Container::StoppedError (class)">StoppedError</a></span></span> <span class='kw'>if</span> <span class='ivar'>@stopped</span>
-    <span class='ivar'>@stopped</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='kw'>return</span> <span class='kw'>if</span> <span class='ivar'>@stopped</span>
     <span class='ivar'>@stop_err</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></span><span class='period'>.</span><span class='id identifier rubyid_convert'><span class='object_link'><a href="Condition.html#convert-class_method" title="Qpid::Proton::Condition.convert (method)">convert</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='rparen'>)</span>
+    <span class='ivar'>@panic</span> <span class='op'>=</span> <span class='id identifier rubyid_panic'>panic</span>
+    <span class='ivar'>@stopped</span> <span class='op'>=</span> <span class='kw'>true</span>
     <span class='id identifier rubyid_check_stop_lh'>check_stop_lh</span>
     <span class='comment'># NOTE: @stopped =&gt;
 </span>    <span class='comment'># - no new run threads can join
@@ -1803,14 +2112,90 @@ activity.</p>
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    #<strong>to_s</strong>  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#&lt;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'> id=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>&gt;</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="work_queue-instance_method">
+  
+    #<strong>work_queue</strong>  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the <span class='object_link'><a href="WorkQueue.html" title="Qpid::Proton::WorkQueue (class)">WorkQueue</a></span> that can be used to schedule code to be run by the
+container.</p>
+
+<p>Note: to run code that affects a <span class='object_link'><a href="Connection.html" title="Qpid::Proton::Connection (class)">Qpid::Proton::Connection</a></span> or it&#39;s associated
+objects, use <span class='object_link'><a href="Connection.html#work_queue-instance_method" title="Qpid::Proton::Connection#work_queue (method)">Qpid::Proton::Connection#work_queue</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+246</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/container.rb', line 246</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_work_queue'>work_queue</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@work_queue</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Tue Dec  5 15:30:45 2017 by
+  Generated on Mon Apr 30 16:10:45 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.2).
+  0.9.8 (ruby-2.4.3).
 </div>
 
     </div>

@@ -181,67 +181,6 @@ received credentials.</p>
 
 
 
-  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
-  <ul class="summary">
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#allow_insecure_mechs-instance_method" title="#allow_insecure_mechs (instance method)">#<strong>allow_insecure_mechs</strong>  &#x21d2; Bool </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>True if clear text authentication is allowed on insecure connections.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#user-instance_method" title="#user (instance method)">#<strong>user</strong>  &#x21d2; String </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>The authenticated user name.</p>
-</div></span>
-  
-</li>
-
-    
-  </ul>
-
 
 
 
@@ -253,34 +192,10 @@ received credentials.</p>
 
     <ul class="summary">
       
-        <li class="public deprecated">
-  <span class="summary_signature">
-    
-      <a href="#config_name-class_method" title="config_name (class method)">.<strong>config_name</strong>(name)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  <span class="deprecated note title">deprecated</span>
-  
-
-  
-    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
-<p>use <span class='object_link'><a href="#config_name=-class_method" title="Qpid::Proton::SASL.config_name= (method)">SASL.config_name=</a></span></p>
-</div></span>
-  
-</li>
-
-      
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#config_name=-class_method" title="config_name= (class method)">.<strong>config_name=</strong>(name)  &#x21d2; Object </a>
+      <a href="#config_name=-class_method" title="config_name= (class method)">.<strong>config_name=</strong>(name)  </a>
     
 
     
@@ -301,34 +216,10 @@ received credentials.</p>
 </li>
 
       
-        <li class="public deprecated">
-  <span class="summary_signature">
-    
-      <a href="#config_path-class_method" title="config_path (class method)">.<strong>config_path</strong>(path)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  <span class="deprecated note title">deprecated</span>
-  
-
-  
-    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
-<p>use <span class='object_link'><a href="#config_path=-class_method" title="Qpid::Proton::SASL.config_path= (method)">SASL.config_path=</a></span></p>
-</div></span>
-  
-</li>
-
-      
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#config_path=-class_method" title="config_path= (class method)">.<strong>config_path=</strong>(path)  &#x21d2; Object </a>
+      <a href="#config_path=-class_method" title="config_path= (class method)">.<strong>config_path=</strong>(path)  </a>
     
 
     
@@ -385,7 +276,7 @@ received credentials.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#allowed_mechs=-instance_method" title="#allowed_mechs= (instance method)">#<strong>allowed_mechs=</strong>(mechanisms)  &#x21d2; Object </a>
+      <a href="#allowed_mechs=-instance_method" title="#allowed_mechs= (instance method)">#<strong>allowed_mechs=</strong>(mechanisms)  </a>
     
 
     
@@ -406,30 +297,6 @@ received credentials.</p>
 </li>
 
       
-        <li class="public deprecated">
-  <span class="summary_signature">
-    
-      <a href="#mechanisms-instance_method" title="#mechanisms (instance method)">#<strong>mechanisms</strong>(m)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  <span class="deprecated note title">deprecated</span>
-  
-
-  
-    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
-<p>use <span class='object_link'><a href="#allowed_mechs=-instance_method" title="Qpid::Proton::SASL#allowed_mechs= (method)">#allowed_mechs=</a></span></p>
-</div></span>
-  
-</li>
-
-      
     </ul>
   
 
@@ -440,177 +307,21 @@ received credentials.</p>
   
   
   
-  <div id="instance_attr_details" class="attr_details">
-    <h2>Instance Attribute Details</h2>
-    
-      
-      <span id="allow_insecure_mechs=-instance_method"></span>
-      <div class="method_details first">
-  <h3 class="signature first" id="allow_insecure_mechs-instance_method">
   
-    #<strong>allow_insecure_mechs</strong>  &#x21d2; <tt>Bool</tt> 
   
-
   
-
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns true if clear text authentication is allowed on insecure
-connections.</p>
-
-
-  </div>
-</div>
-<div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
   
-    <li>
-      
-      
-        <span class='type'>(<tt>Bool</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>true if clear text authentication is allowed on insecure connections.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-55</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/sasl.rb', line 55</span>
-
-<span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:allow_insecure_mechs</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="user-instance_method">
-  
-    #<strong>user</strong>  &#x21d2; <tt>String</tt>  <span class="extras">(readonly)</span>
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns the authenticated user name</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the authenticated user name</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-59</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/sasl.rb', line 59</span>
-
-<span class='id identifier rubyid_proton_reader'>proton_reader</span> <span class='symbol'>:user</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
 
   <div id="class_method_details" class="method_details_list">
     <h2>Class Method Details</h2>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="config_name-class_method">
+  <h3 class="signature first" id="config_name=-class_method">
   
-    .<strong>config_name</strong>(name)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
-<p>use <span class='object_link'><a href="#config_name=-class_method" title="Qpid::Proton::SASL.config_name= (method)">config_name=</a></span></p>
-</div></div>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-121
-122
-123</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/sasl.rb', line 121</span>
-
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_config_name'>config_name</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_config_name'>config_name</span> <span class='op'>=</span> <span class='id identifier rubyid_name'>name</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="config_name=-class_method">
-  
-    .<strong>config_name=</strong>(name)  &#x21d2; <tt>Object</tt> 
+    .<strong>config_name=</strong>(name)  
   
 
   
@@ -658,57 +369,15 @@ respectively.</p>
       <pre class="lines">
 
 
-116
-117
-118</pre>
+113
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/sasl.rb', line 116</span>
+      <pre class="code"><span class="info file"># File 'lib/core/sasl.rb', line 113</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_config_name='>config_name=</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_config_name='>config_name=</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_sasl_config_name'>pn_sasl_config_name</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="config_path-class_method">
-  
-    .<strong>config_path</strong>(path)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
-<p>use <span class='object_link'><a href="#config_path=-class_method" title="Qpid::Proton::SASL.config_path= (method)">config_path=</a></span></p>
-</div></div>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-103
-104
-105</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/sasl.rb', line 103</span>
-
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_config_path'>config_path</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_config_path'>config_path</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -718,7 +387,7 @@ respectively.</p>
       <div class="method_details ">
   <h3 class="signature " id="config_path=-class_method">
   
-    .<strong>config_path=</strong>(path)  &#x21d2; <tt>Object</tt> 
+    .<strong>config_path=</strong>(path)  
   
 
   
@@ -770,15 +439,15 @@ take precedence.</p>
       <pre class="lines">
 
 
-97
-98
 99
-100</pre>
+100
+101
+102</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/sasl.rb', line 97</span>
+      <pre class="code"><span class="info file"># File 'lib/core/sasl.rb', line 99</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_config_path='>config_path=</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_config_path='>config_path=</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_sasl_config_path'>pn_sasl_config_path</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_path'>path</span>
 <span class='kw'>end</span></pre>
@@ -837,12 +506,12 @@ support other mechanisms.</p>
       <pre class="lines">
 
 
+80
 81
-82
-83</pre>
+82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/sasl.rb', line 81</span>
+      <pre class="code"><span class="info file"># File 'lib/core/sasl.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_extended?'>extended?</span><span class='lparen'>(</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_sasl_extended'>pn_sasl_extended</span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -861,7 +530,7 @@ support other mechanisms.</p>
       <div class="method_details first">
   <h3 class="signature first" id="allowed_mechs=-instance_method">
   
-    #<strong>allowed_mechs=</strong>(mechanisms)  &#x21d2; <tt>Object</tt> 
+    #<strong>allowed_mechs=</strong>(mechanisms)  
   
 
   
@@ -904,57 +573,15 @@ support other mechanisms.</p>
       <pre class="lines">
 
 
-63
 64
-65</pre>
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/sasl.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/core/sasl.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_allowed_mechs='>allowed_mechs=</span><span class='lparen'>(</span><span class='id identifier rubyid_mechanisms'>mechanisms</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_sasl_allowed_mechs'>pn_sasl_allowed_mechs</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_mechanisms'>mechanisms</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="mechanisms-instance_method">
-  
-    #<strong>mechanisms</strong>(m)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
-<p>use <span class='object_link'><a href="#allowed_mechs=-instance_method" title="Qpid::Proton::SASL#allowed_mechs= (method)">#allowed_mechs=</a></span></p>
-</div></div>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-68
-69
-70</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/sasl.rb', line 68</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_mechanisms'>mechanisms</span><span class='lparen'>(</span><span class='id identifier rubyid_m'>m</span><span class='rparen'>)</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_allowed_mechs'>allowed_mechs</span> <span class='op'>=</span> <span class='id identifier rubyid_m'>m</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -966,9 +593,9 @@ support other mechanisms.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Dec  5 15:30:47 2017 by
+  Generated on Mon Apr 30 16:10:46 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.2).
+  0.9.8 (ruby-2.4.3).
 </div>
 
     </div>

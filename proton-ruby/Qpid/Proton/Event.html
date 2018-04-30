@@ -61,7 +61,7 @@
 
       <div id="content"><h1>Class: Qpid::Proton::Event
   
-  
+  <span class="deprecated note title">Deprecated</span>
   
 </h1>
 <div class="box_info">
@@ -101,27 +101,8 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>AMQP protocol event.</p>
-
-<p>Includes a method name to call when the event is dispatched, and the
-context objects relevant to the event.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-  <h2>Constant Summary</h2>
-  <dl class="constants">
-    
-      <dt id="Event-constant" class="deprecated">Event =
-        <div class="docstring">
-  <div class="discussion">
     <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
-<p>use <span class='object_link'><a href="" title="Qpid::Proton::Event (class)">Qpid::Proton::Event</a></span></p>
+<p>Only used with the deprecated <span class='object_link'><a href="Handler/MessagingHandler.html" title="Qpid::Proton::Handler::MessagingHandler (class)">Handler::MessagingHandler</a></span> API.</p>
 </div></div>
 
 
@@ -131,11 +112,6 @@ context objects relevant to the event.</p>
   
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='kw'>self</span></pre></dd>
-    
-  </dl>
-
 
 
 
@@ -331,7 +307,7 @@ context objects relevant to the event.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#inspect-instance_method" title="#inspect (instance method)">#<strong>inspect</strong>  &#x21d2; Object </a>
+      <a href="#inspect-instance_method" title="#inspect (instance method)">#<strong>inspect</strong>  </a>
     
 
     
@@ -393,30 +369,6 @@ context objects relevant to the event.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Message for this event.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public deprecated">
-  <span class="summary_signature">
-    
-      <a href="#reactor-instance_method" title="#reactor (instance method)">#<strong>reactor</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  <span class="deprecated note title">deprecated</span>
-  
-
-  
-    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
-<p>use <span class='object_link'><a href="#container-instance_method" title="Qpid::Proton::Event#container (method)">#container</a></span></p>
 </div></span>
   
 </li>
@@ -497,7 +449,7 @@ context objects relevant to the event.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; Object </a>
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  </a>
     
 
     
@@ -574,6 +526,12 @@ context objects relevant to the event.</p>
   
   
   
+  
+  
+  
+  
+  
+  
   <div id="instance_attr_details" class="attr_details">
     <h2>Instance Attribute Details</h2>
     
@@ -627,12 +585,12 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
+98
 99
-100
-101</pre>
+100</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 99</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 98</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_method'>method</span>
   <span class='ivar'>@method</span>
@@ -693,13 +651,13 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
+145
+146
 147
-148
-149
-150</pre>
+148</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 147</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 145</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_condition'>condition</span>
   <span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_remote_condition'>remote_condition</span> <span class='kw'>if</span> <span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='symbol'>:remote_condition</span><span class='rparen'>)</span> <span class='op'>||</span>
@@ -754,10 +712,10 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
-113</pre>
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 112</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connection'>connection</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@connection</span> <span class='op'>||=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Connection.html" title="Qpid::Proton::Connection (class)">Connection</a></span></span><span class='comma'>,</span> <span class='symbol'>:connection</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -809,10 +767,10 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
-107</pre>
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 106</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_container'>container</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@container</span> <span class='op'>||=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Container.html" title="Qpid::Proton::Container (class)">Container</a></span></span><span class='comma'>,</span> <span class='symbol'>:container</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -864,10 +822,10 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
-104</pre>
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 104</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 103</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_context'>context</span><span class='semicolon'>;</span> <span class='kw'>return</span> <span class='ivar'>@context</span> <span class='op'>||=</span> <span class='id identifier rubyid__context'>_context</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -919,25 +877,23 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
+127
 128
 129
 130
 131
 132
-133
-134
-135</pre>
+133</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 128</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 127</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delivery'>delivery</span><span class='lparen'>(</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='ivar'>@delivery</span> <span class='kw'>if</span> <span class='ivar'>@delivery</span>
-  <span class='kw'>case</span> <span class='id identifier rubyid_context'>context</span>
-  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></span> <span class='kw'>then</span> <span class='ivar'>@delivery</span> <span class='op'>=</span> <span class='ivar'>@context</span>
-  <span class='comment'># deprecated: for backwards compat allow a Tracker to be treated as a Delivery
-</span>  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="Tracker.html" title="Qpid::Proton::Tracker (class)">Tracker</a></span></span> <span class='kw'>then</span> <span class='ivar'>@delivery</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Tracker.html" title="Qpid::Proton::Tracker (class)">Tracker</a></span></span><span class='period'>.</span><span class='id identifier rubyid_impl'>impl</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
+  <span class='ivar'>@delivery</span> <span class='op'>||=</span> <span class='kw'>case</span> <span class='id identifier rubyid_context'>context</span>
+                <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></span> <span class='kw'>then</span> <span class='ivar'>@delivery</span> <span class='op'>=</span> <span class='ivar'>@context</span>
+                  <span class='comment'># deprecated: for backwards compat allow a Tracker to be treated as a Delivery
+</span>                <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="Tracker.html" title="Qpid::Proton::Tracker (class)">Tracker</a></span></span> <span class='kw'>then</span> <span class='ivar'>@delivery</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Delivery.html" title="Qpid::Proton::Delivery (class)">Delivery</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Delivery.html#initialize-instance_method" title="Qpid::Proton::Delivery#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_impl'>impl</span><span class='rparen'>)</span>
+                <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -988,12 +944,12 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
+93
 94
-95
-96</pre>
+95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 94</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dispatch'>dispatch</span><span class='lparen'>(</span><span class='id identifier rubyid_handler'>handler</span><span class='rparen'>)</span>
   <span class='lparen'>(</span><span class='id identifier rubyid_handler'>handler</span><span class='period'>.</span><span class='id identifier rubyid___send__'>__send__</span><span class='lparen'>(</span><span class='ivar'>@method</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>true</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_handler'>handler</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='ivar'>@method</span>
@@ -1006,22 +962,31 @@ context objects relevant to the event.</p>
       <div class="method_details ">
   <h3 class="signature " id="inspect-instance_method">
   
-    #<strong>inspect</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>inspect</strong>  
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-144</pre>
+142</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 144</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 142</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'>(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_method'>method</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_context'>context</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1073,10 +1038,10 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
-119</pre>
+118</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 119</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 118</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_link'>link</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@link</span> <span class='op'>||=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Link.html" title="Qpid::Proton::Link (class)">Link</a></span></span><span class='comma'>,</span> <span class='symbol'>:link</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1128,50 +1093,12 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
-141</pre>
+139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 141</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 139</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_message'>message</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@message</span> <span class='op'>||=</span> <span class='id identifier rubyid_delivery'>delivery</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span> <span class='kw'>if</span> <span class='id identifier rubyid_delivery'>delivery</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="reactor-instance_method">
-  
-    #<strong>reactor</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
-<p>use <span class='object_link'><a href="#container-instance_method" title="Qpid::Proton::Event#container (method)">#container</a></span></p>
-</div></div>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-153</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 153</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_reactor'>reactor</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='period'>.</span><span class='id identifier rubyid_deprecated'>deprecated</span> <span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='symbol'>:container</span><span class='semicolon'>;</span> <span class='id identifier rubyid_container'>container</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1221,10 +1148,10 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
-125</pre>
+124</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 125</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_receiver'>receiver</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id identifier rubyid_link'>link</span> <span class='kw'>if</span> <span class='id identifier rubyid_link'>link</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_link'>link</span><span class='period'>.</span><span class='id identifier rubyid_receiver?'>receiver?</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1276,10 +1203,10 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
-122</pre>
+121</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 122</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 121</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sender'>sender</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id identifier rubyid_link'>link</span> <span class='kw'>if</span> <span class='id identifier rubyid_link'>link</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_link'>link</span><span class='period'>.</span><span class='id identifier rubyid_sender?'>sender?</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1331,10 +1258,10 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
-116</pre>
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 116</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 115</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_session'>session</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@session</span> <span class='op'>||=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Session.html" title="Qpid::Proton::Session (class)">Session</a></span></span><span class='comma'>,</span> <span class='symbol'>:session</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1345,22 +1272,31 @@ context objects relevant to the event.</p>
       <div class="method_details ">
   <h3 class="signature " id="to_s-instance_method">
   
-    #<strong>to_s</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>to_s</strong>  
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-143</pre>
+141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 143</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 141</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'>(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_method'>method</span><span class='embexpr_end'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_context'>context</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1412,10 +1348,10 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
-138</pre>
+136</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 138</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 136</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tracker'>tracker</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@tracker</span> <span class='op'>||=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Tracker.html" title="Qpid::Proton::Tracker (class)">Tracker</a></span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1467,10 +1403,10 @@ context objects relevant to the event.</p>
       <pre class="lines">
 
 
-110</pre>
+109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 110</span>
+      <pre class="code"><span class="info file"># File 'lib/core/event.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_transport'>transport</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@transport</span> <span class='op'>||=</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Transport.html" title="Qpid::Proton::Transport (class)">Transport</a></span></span><span class='comma'>,</span> <span class='symbol'>:transport</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1483,9 +1419,9 @@ context objects relevant to the event.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Dec  5 15:30:46 2017 by
+  Generated on Mon Apr 30 16:10:46 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.2).
+  0.9.8 (ruby-2.4.3).
 </div>
 
     </div>

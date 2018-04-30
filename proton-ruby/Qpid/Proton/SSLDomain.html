@@ -189,7 +189,7 @@ sessions.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#allow_unsecured_client-instance_method" title="#allow_unsecured_client (instance method)">#<strong>allow_unsecured_client</strong>  &#x21d2; Object </a>
+      <a href="#allow_unsecured_client-instance_method" title="#allow_unsecured_client (instance method)">#<strong>allow_unsecured_client</strong>  </a>
     
 
     
@@ -213,7 +213,7 @@ sessions.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#credentials-instance_method" title="#credentials (instance method)">#<strong>credentials</strong>(cert_file, key_file, password)  &#x21d2; Object </a>
+      <a href="#credentials-instance_method" title="#credentials (instance method)">#<strong>credentials</strong>(cert_file, key_file, password)  </a>
     
 
     
@@ -237,7 +237,7 @@ sessions.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#peer_authentication-instance_method" title="#peer_authentication (instance method)">#<strong>peer_authentication</strong>(verify_mode, trusted_CAs = nil)  &#x21d2; Object </a>
+      <a href="#peer_authentication-instance_method" title="#peer_authentication (instance method)">#<strong>peer_authentication</strong>(verify_mode, trusted_CAs = nil)  </a>
     
 
     
@@ -261,7 +261,7 @@ sessions.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#trusted_ca_db-instance_method" title="#trusted_ca_db (instance method)">#<strong>trusted_ca_db</strong>(certificate_db)  &#x21d2; Object </a>
+      <a href="#trusted_ca_db-instance_method" title="#trusted_ca_db (instance method)">#<strong>trusted_ca_db</strong>(certificate_db)  </a>
     
 
     
@@ -301,7 +301,7 @@ peers.</p>
       <div class="method_details first">
   <h3 class="signature first" id="allow_unsecured_client-instance_method">
   
-    #<strong>allow_unsecured_client</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>allow_unsecured_client</strong>  
   
 
   
@@ -346,12 +346,12 @@ disabled by default: only clients using SSL/TLS are accepted by default.</p>
       <pre class="lines">
 
 
-149
-150
-151</pre>
+144
+145
+146</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 149</span>
+      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 144</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_allow_unsecured_client'>allow_unsecured_client</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_ssl_domain_allow_unsecured_client'>pn_ssl_domain_allow_unsecured_client</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='semicolon'>;</span>
@@ -364,7 +364,7 @@ disabled by default: only clients using SSL/TLS are accepted by default.</p>
       <div class="method_details ">
   <h3 class="signature " id="credentials-instance_method">
   
-    #<strong>credentials</strong>(cert_file, key_file, password)  &#x21d2; <tt>Object</tt> 
+    #<strong>credentials</strong>(cert_file, key_file, password)  
   
 
   
@@ -474,13 +474,13 @@ not protected.</p>
       <pre class="lines">
 
 
-84
-85
-86
-87</pre>
+79
+80
+81
+82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_credentials'>credentials</span><span class='lparen'>(</span><span class='id identifier rubyid_cert_file'>cert_file</span><span class='comma'>,</span> <span class='id identifier rubyid_key_file'>key_file</span><span class='comma'>,</span> <span class='id identifier rubyid_password'>password</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_ssl_domain_set_credentials'>pn_ssl_domain_set_credentials</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span>
@@ -494,7 +494,7 @@ not protected.</p>
       <div class="method_details ">
   <h3 class="signature " id="peer_authentication-instance_method">
   
-    #<strong>peer_authentication</strong>(verify_mode, trusted_CAs = nil)  &#x21d2; <tt>Object</tt> 
+    #<strong>peer_authentication</strong>(verify_mode, trusted_CAs = nil)  
   
 
   
@@ -600,13 +600,13 @@ peer client if the server has been configured to verify its peer.</p>
       <pre class="lines">
 
 
-136
-137
-138
-139</pre>
+131
+132
+133
+134</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 136</span>
+      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 131</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_peer_authentication'>peer_authentication</span><span class='lparen'>(</span><span class='id identifier rubyid_verify_mode'>verify_mode</span><span class='comma'>,</span> <span class='id identifier rubyid_trusted_CAs'>trusted_CAs</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_ssl_domain_set_peer_authentication'>pn_ssl_domain_set_peer_authentication</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span>
@@ -620,7 +620,7 @@ peer client if the server has been configured to verify its peer.</p>
       <div class="method_details ">
   <h3 class="signature " id="trusted_ca_db-instance_method">
   
-    #<strong>trusted_ca_db</strong>(certificate_db)  &#x21d2; <tt>Object</tt> 
+    #<strong>trusted_ca_db</strong>(certificate_db)  
   
 
   
@@ -691,12 +691,12 @@ invoking this method will use the domain&#39;s previous setting.</p>
       <pre class="lines">
 
 
-106
-107
-108</pre>
+101
+102
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 106</span>
+      <pre class="code"><span class="info file"># File 'lib/core/ssl_domain.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_trusted_ca_db'>trusted_ca_db</span><span class='lparen'>(</span><span class='id identifier rubyid_certificate_db'>certificate_db</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_ssl_domain_set_trusted_ca_db'>pn_ssl_domain_set_trusted_ca_db</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_certificate_db'>certificate_db</span><span class='rparen'>)</span>
@@ -711,9 +711,9 @@ invoking this method will use the domain&#39;s previous setting.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Dec  5 15:30:46 2017 by
+  Generated on Mon Apr 30 16:10:45 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.2).
+  0.9.8 (ruby-2.4.3).
 </div>
 
     </div>

@@ -89,7 +89,7 @@ build from source:</p>
 
 <p>This produces a Gem file at:</p>
 
-<pre class="code ruby"><code class="ruby">${CMAKE_BUILD_DIR}/proton-c/bindings/ruby/qpid_proton-${PN_VERSION}.gem</code></pre>
+<pre class="code ruby"><code class="ruby">${CMAKE_BUILD_DIR}/ruby/qpid_proton-${PN_VERSION}.gem</code></pre>
 
 <p>You can install the gem with <tt>gem install</tt></p>
 
@@ -134,7 +134,7 @@ server uses <span class='object_link'><a href="Qpid/Proton/Container.html#listen
 
 <p>Proton is an event-driven library. You implement one or more
 <em>handlers</em> which subclass <span class='object_link'><a href="Qpid/Proton/MessagingHandler.html" title="Qpid::Proton::MessagingHandler (class)">MessagingHandler</a></span> and override functions to handle AMQP events, such as
-#on_message. Each connection is
+<span class='object_link'>#on_message</span>. Each connection is
 associated with a handler for its events. <span class='object_link'><a href="Qpid/Proton/Container.html#run-instance_method" title="Qpid::Proton::Container#run (method)">Qpid::Proton::Container#run</a></span>
 polls all connections and listeners and calls the event handling functions
 on your handlers.</p>
@@ -190,12 +190,38 @@ delivered (provided the connection and link can be reestablished) but it is
 possible for multiple copies of the same message are delivered, so the
 receiver must be aware of that. This is known as <em>at_least_once</em>
 reliability.</p>
+
+<h2 id="label-Multi-threaded+applications">Multi-threaded applications</h2>
+
+<p><span class='object_link'><a href="Qpid/Proton/Container.html#run-instance_method" title="Qpid::Proton::Container#run (method)">Qpid::Proton::Container#run</a></span> can be called by multiple threads
+concurrently, giving the container a thread-pool to execute handler methods
+in parallel.</p>
+
+<p>Instances of <span class='object_link'><a href="Qpid/Proton/Connection.html" title="Qpid::Proton::Connection (class)">Qpid::Proton::Connection</a></span> and objects associated with it
+(<span class='object_link'><a href="Qpid/Proton/Session.html" title="Qpid::Proton::Session (class)">Qpid::Proton::Session</a></span>, <span class='object_link'><a href="Qpid/Proton/Sender.html" title="Qpid::Proton::Sender (class)">Qpid::Proton::Sender</a></span>, <span class='object_link'><a href="Qpid/Proton/Receiver.html" title="Qpid::Proton::Receiver (class)">Qpid::Proton::Receiver</a></span>,
+<span class='object_link'><a href="Qpid/Proton/Delivery.html" title="Qpid::Proton::Delivery (class)">Qpid::Proton::Delivery</a></span>, <span class='object_link'><a href="Qpid/Proton/Tracker.html" title="Qpid::Proton::Tracker (class)">Qpid::Proton::Tracker</a></span>) are not thread-safe and
+must be used correctly when multiple threads call
+<span class='object_link'><a href="Qpid/Proton/Container.html#run-instance_method" title="Qpid::Proton::Container#run (method)">Qpid::Proton::Container#run</a></span></p>
+
+<p>Calls to <span class='object_link'><a href="Qpid/Proton/MessagingHandler.html" title="Qpid::Proton::MessagingHandler (class)">Qpid::Proton::MessagingHandler</a></span> and
+<span class='object_link'><a href="Qpid/Proton/Listener/Handler.html" title="Qpid::Proton::Listener::Handler (class)">Qpid::Proton::Listener::Handler</a></span> methods by the <span class='object_link'><a href="Qpid/Proton/Container.html" title="Qpid::Proton::Container (class)">Qpid::Proton::Container</a></span>
+are automatically serialized for each connection instance.</p>
+
+<p>Other threads may have code similarly serialized by adding it to the
+<span class='object_link'><a href="Qpid/Proton/Connection.html#work_queue-instance_method" title="Qpid::Proton::Connection#work_queue (method)">Qpid::Proton::Connection#work_queue</a></span> for the connection.  Each object
+related to a <span class='object_link'><a href="Qpid/Proton/Connection.html" title="Qpid::Proton::Connection (class)">Qpid::Proton::Connection</a></span> also provides a
+<code>work_queue</code> method.</p>
+
+<p>You also need to use the <span class='object_link'><a href="Qpid/Proton/WorkQueue.html" title="Qpid::Proton::WorkQueue (class)">Qpid::Proton::WorkQueue</a></span> to communicate between a
+<span class='object_link'><a href="Qpid/Proton/MessagingHandler.html" title="Qpid::Proton::MessagingHandler (class)">Qpid::Proton::MessagingHandler</a></span> method call for one connection instance,
+and a different <span class='object_link'><a href="Qpid/Proton/Connection.html" title="Qpid::Proton::Connection (class)">Qpid::Proton::Connection</a></span> instance in the same container,
+as separate connections can be processed in parallel.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Tue Dec  5 15:30:44 2017 by
+  Generated on Mon Apr 30 16:10:43 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.2).
+  0.9.8 (ruby-2.4.3).
 </div>
 
     </div>

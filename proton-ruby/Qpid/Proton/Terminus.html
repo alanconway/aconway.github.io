@@ -352,200 +352,6 @@ delivery states.</p>
 
 
 
-  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
-  <ul class="summary">
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#address-instance_method" title="#address (instance method)">#<strong>address</strong>  &#x21d2; String </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>The terminus address.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#distribution_mode-instance_method" title="#distribution_mode (instance method)">#<strong>distribution_mode</strong>  &#x21d2; Integer </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>The distribution mode.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#durability-instance_method" title="#durability (instance method)">#<strong>durability</strong>  &#x21d2; Integer </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>The durability mode of the terminus.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#dynamic%3F-instance_method" title="#dynamic? (instance method)">#<strong>dynamic?</strong>  &#x21d2; Boolean </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>True if the terminus is dynamic.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#expiry_policy-instance_method" title="#expiry_policy (instance method)">#<strong>expiry_policy</strong>  &#x21d2; Integer </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>The expiry policy.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#timeout-instance_method" title="#timeout (instance method)">#<strong>timeout</strong>  &#x21d2; Integer </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>The timeout period.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#type-instance_method" title="#type (instance method)">#<strong>type</strong>  &#x21d2; Integer </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>The terminus type.</p>
-</div></span>
-  
-</li>
-
-    
-  </ul>
-
 
 
 
@@ -556,6 +362,30 @@ delivery states.</p>
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#apply-instance_method" title="#apply (instance method)">#<strong>apply</strong>(opts = nil)  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Apply options to this terminus.</p>
+</div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -584,30 +414,6 @@ delivery states.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#copy-instance_method" title="#copy (instance method)">#<strong>copy</strong>(source)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Copy another Terminus into this instance.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#filter-instance_method" title="#filter (instance method)">#<strong>filter</strong>  &#x21d2; Data </a>
     
 
@@ -623,8 +429,30 @@ delivery states.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Access and modify the AMQP filter set for the Terminus.</p>
+<p>Access and modify the AMQP filter set for a source terminus.</p>
 </div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect-instance_method" title="#inspect (instance method)">#<strong>inspect</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -677,6 +505,52 @@ delivery states.</p>
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#replace-instance_method" title="#replace (instance method)">#<strong>replace</strong>(other)  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Replace the data in this Terminus with the contents of <code>other</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -693,463 +567,231 @@ delivery states.</p>
   
   
   
-  <div id="instance_attr_details" class="attr_details">
-    <h2>Instance Attribute Details</h2>
-    
-      
-      <span id="address=-instance_method"></span>
-      <div class="method_details first">
-  <h3 class="signature first" id="address-instance_method">
   
-    #<strong>address</strong>  &#x21d2; <tt>String</tt> 
   
-
   
-
   
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns The terminus address.</p>
-
-
-  </div>
-</div>
-<div class="tags">
   
-<p class="tag_title">Returns:</p>
-<ul class="return">
   
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The terminus address.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-87</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 87</span>
-
-<span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:address</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="distribution_mode=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="distribution_mode-instance_method">
-  
-    #<strong>distribution_mode</strong>  &#x21d2; <tt>Integer</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns The distribution mode.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The distribution mode.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-  <p class="tag_title">See Also:</p>
-  <ul class="see">
-    
-      <li><span class='object_link'><a href="#DIST_MODE_UNSPECIFIED-constant" title="Qpid::Proton::Terminus::DIST_MODE_UNSPECIFIED (constant)">DIST_MODE_UNSPECIFIED</a></span></li>
-    
-      <li><span class='object_link'><a href="#DIST_MODE_COPY-constant" title="Qpid::Proton::Terminus::DIST_MODE_COPY (constant)">DIST_MODE_COPY</a></span></li>
-    
-      <li><span class='object_link'><a href="#DIST_MODE_MOVE-constant" title="Qpid::Proton::Terminus::DIST_MODE_MOVE (constant)">DIST_MODE_MOVE</a></span></li>
-    
-  </ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-130</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 130</span>
-
-<span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:distribution_mode</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="durability=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="durability-instance_method">
-  
-    #<strong>durability</strong>  &#x21d2; <tt>Integer</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns The durability mode of the terminus.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The durability mode of the terminus.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-  <p class="tag_title">See Also:</p>
-  <ul class="see">
-    
-      <li><span class='object_link'><a href="#NONDURABLE-constant" title="Qpid::Proton::Terminus::NONDURABLE (constant)">NONDURABLE</a></span></li>
-    
-      <li><span class='object_link'><a href="#CONFIGURATION-constant" title="Qpid::Proton::Terminus::CONFIGURATION (constant)">CONFIGURATION</a></span></li>
-    
-      <li><span class='object_link'><a href="#DELIVERIES-constant" title="Qpid::Proton::Terminus::DELIVERIES (constant)">DELIVERIES</a></span></li>
-    
-  </ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-97</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 97</span>
-
-<span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:durability</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="dynamic?=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="dynamic?-instance_method">
-  
-    #<strong>dynamic?</strong>  &#x21d2; <tt>Boolean</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns True if the terminus is dynamic.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>True if the terminus is dynamic.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-120</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 120</span>
-
-<span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:dynamic</span><span class='comma'>,</span> <span class='symbol'>:is_or_get</span> <span class='op'>=&gt;</span> <span class='symbol'>:is</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="expiry_policy=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="expiry_policy-instance_method">
-  
-    #<strong>expiry_policy</strong>  &#x21d2; <tt>Integer</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns The expiry policy.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The expiry policy.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-  <p class="tag_title">See Also:</p>
-  <ul class="see">
-    
-      <li><span class='object_link'><a href="#EXPIRE_WITH_LINK-constant" title="Qpid::Proton::Terminus::EXPIRE_WITH_LINK (constant)">EXPIRE_WITH_LINK</a></span></li>
-    
-      <li><span class='object_link'><a href="#EXPIRE_WITH_SESSION-constant" title="Qpid::Proton::Terminus::EXPIRE_WITH_SESSION (constant)">EXPIRE_WITH_SESSION</a></span></li>
-    
-      <li><span class='object_link'><a href="#EXPIRE_WITH_CONNECTION-constant" title="Qpid::Proton::Terminus::EXPIRE_WITH_CONNECTION (constant)">EXPIRE_WITH_CONNECTION</a></span></li>
-    
-      <li><span class='object_link'><a href="#EXPIRE_NEVER-constant" title="Qpid::Proton::Terminus::EXPIRE_NEVER (constant)">EXPIRE_NEVER</a></span></li>
-    
-  </ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-108</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 108</span>
-
-<span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:expiry_policy</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="timeout=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="timeout-instance_method">
-  
-    #<strong>timeout</strong>  &#x21d2; <tt>Integer</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns The timeout period.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The timeout period.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-114</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 114</span>
-
-<span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:timeout</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="type=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="type-instance_method">
-  
-    #<strong>type</strong>  &#x21d2; <tt>Integer</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns The terminus type.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The terminus type.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-  <p class="tag_title">See Also:</p>
-  <ul class="see">
-    
-      <li><span class='object_link'><a href="#SOURCE-constant" title="Qpid::Proton::Terminus::SOURCE (constant)">SOURCE</a></span></li>
-    
-      <li><span class='object_link'><a href="#TARGET-constant" title="Qpid::Proton::Terminus::TARGET (constant)">TARGET</a></span></li>
-    
-      <li><span class='object_link'><a href="#COORDINATOR-constant" title="Qpid::Proton::Terminus::COORDINATOR (constant)">COORDINATOR</a></span></li>
-    
-  </ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-81</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 81</span>
-
-<span class='id identifier rubyid_proton_accessor'>proton_accessor</span> <span class='symbol'>:type</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="capabilities-instance_method">
+  <h3 class="signature first" id="apply-instance_method">
+  
+    #<strong>apply</strong>(opts = nil)  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Apply options to this terminus.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>Hash</span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a customizable set of options</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:address</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>the node address</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:dynamic</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>false</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>if true, request a new node with a unique address to be created.
+<code>:address</code> is ignored.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:distribution_mode</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>see <span class='object_link'>#distribution_mode</span>, only for source nodes</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:durability_mode</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>see <span class='object_link'>#durability_mode</span></p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:timeout</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>see <span class='object_link'>#timeout</span></p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:expiry_policy</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>see <span class='object_link'>#expiry_policy</span></p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:filter</span>
+          <span class="type">(<tt><span class='object_link'>Hash</span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>see <span class='object_link'><a href="#filter-instance_method" title="Qpid::Proton::Terminus#filter (method)">#filter</a></span>, only for source nodes</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:capabilities</span>
+          <span class="type">(<tt><span class='object_link'>Hash</span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>see <span class='object_link'><a href="#capabilities-instance_method" title="Qpid::Proton::Terminus#capabilities (method)">#capabilities</a></span></p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 226</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_apply'>apply</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_opts'>opts</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>String</span>      <span class='comment'># Shorthand for address
+</span>    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_address'>address</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_each_pair'>each_pair</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
+      <span class='kw'>case</span> <span class='id identifier rubyid_k'>k</span>
+      <span class='kw'>when</span> <span class='symbol'>:address</span> <span class='kw'>then</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_address'>address</span> <span class='op'>=</span> <span class='id identifier rubyid_v'>v</span>
+      <span class='kw'>when</span> <span class='symbol'>:dynamic</span> <span class='kw'>then</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_dynamic'>dynamic</span> <span class='op'>=</span> <span class='op'>!</span><span class='op'>!</span><span class='id identifier rubyid_v'>v</span>
+      <span class='kw'>when</span> <span class='symbol'>:distribution_mode</span> <span class='kw'>then</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_distribution_mode'>distribution_mode</span> <span class='op'>=</span> <span class='id identifier rubyid_v'>v</span>
+      <span class='kw'>when</span> <span class='symbol'>:durability_mode</span> <span class='kw'>then</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_durability_mode'>durability_mode</span> <span class='op'>=</span> <span class='id identifier rubyid_v'>v</span>
+      <span class='kw'>when</span> <span class='symbol'>:timeout</span> <span class='kw'>then</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_timeout'>timeout</span> <span class='op'>=</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span> <span class='comment'># Should be integer seconds
+</span>      <span class='kw'>when</span> <span class='symbol'>:expiry_policy</span> <span class='kw'>then</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_expiry_policy'>expiry_policy</span> <span class='op'>=</span> <span class='id identifier rubyid_v'>v</span>
+      <span class='kw'>when</span> <span class='symbol'>:filter</span> <span class='kw'>then</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_filter'>filter</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_v'>v</span>
+      <span class='kw'>when</span> <span class='symbol'>:capabilities</span> <span class='kw'>then</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_capabilities'>capabilities</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_v'>v</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="capabilities-instance_method">
   
     #<strong>capabilities</strong>  &#x21d2; <tt>Data</tt> 
   
@@ -1207,68 +849,7 @@ instance.</p>
       <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 173</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_capabilities'>capabilities</span>
-  <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec/Data.html" title="Qpid::Proton::Codec::Data (class)">Data</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Codec/Data.html#initialize-instance_method" title="Qpid::Proton::Codec::Data#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_terminus_capabilities'>pn_terminus_capabilities</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="copy-instance_method">
-  
-    #<strong>copy</strong>(source)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Copy another Terminus into this instance.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>source</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Qpid::Proton::Terminus (class)">Terminus</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The source instance.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-211
-212
-213</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 211</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_copy'>copy</span><span class='lparen'>(</span><span class='id identifier rubyid_source'>source</span><span class='rparen'>)</span>
-  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_terminus_copy'>pn_terminus_copy</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_impl'>impl</span><span class='rparen'>)</span>
+  <span class='const'>Codec</span><span class='op'>::</span><span class='const'>Data</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_terminus_capabilities'>pn_terminus_capabilities</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1287,7 +868,8 @@ instance.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Access and modify the AMQP filter set for the Terminus.</p>
+<p>Access and modify the AMQP filter set for a source terminus. Only relevant
+for a message source.</p>
 
 <p>This operation will return an instance of Data that is valid until the
 Terminus is freed due to its parent being freed. Any data contained in the
@@ -1326,15 +908,54 @@ instance.</p>
       <pre class="lines">
 
 
-203
 204
-205</pre>
+205
+206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 203</span>
+      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 204</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_filter'>filter</span>
-  <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec/Data.html" title="Qpid::Proton::Codec::Data (class)">Data</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Codec/Data.html#initialize-instance_method" title="Qpid::Proton::Codec::Data#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_terminus_filter'>pn_terminus_filter</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='const'>Codec</span><span class='op'>::</span><span class='const'>Data</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_terminus_filter'>pn_terminus_filter</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inspect-instance_method">
+  
+    #<strong>inspect</strong>  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+246
+247
+248</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 246</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\#&lt;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'>: address=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_address'>address</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'> dynamic?=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dynamic?'>dynamic?</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>&gt;</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1400,7 +1021,7 @@ instance.</p>
       <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 188</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_outcomes'>outcomes</span>
-  <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec/Data.html" title="Qpid::Proton::Codec::Data (class)">Data</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Codec/Data.html#initialize-instance_method" title="Qpid::Proton::Codec::Data#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_terminus_outcomes'>pn_terminus_outcomes</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='const'>Codec</span><span class='op'>::</span><span class='const'>Data</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_terminus_outcomes'>pn_terminus_outcomes</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1466,8 +1087,106 @@ instance.</p>
       <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 158</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_properties'>properties</span>
-  <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec/Data.html" title="Qpid::Proton::Codec::Data (class)">Data</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Codec/Data.html#initialize-instance_method" title="Qpid::Proton::Codec::Data#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_terminus_properties'>pn_terminus_properties</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='const'>Codec</span><span class='op'>::</span><span class='const'>Data</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_terminus_properties'>pn_terminus_properties</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="replace-instance_method">
+  
+    #<strong>replace</strong>(other)  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Replace the data in this Terminus with the contents of <code>other</code></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Qpid::Proton::Terminus (class)">Terminus</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The other instance.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+210
+211
+212
+213</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 210</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_replace'>replace</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
+  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_terminus_copy'>pn_terminus_copy</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_impl'>impl</span><span class='rparen'>)</span>
+  <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    #<strong>to_s</strong>  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+250</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/terminus.rb', line 250</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id identifier rubyid_inspect'>inspect</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1478,9 +1197,9 @@ instance.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Dec  5 15:30:45 2017 by
+  Generated on Mon Apr 30 16:10:44 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.2).
+  0.9.8 (ruby-2.4.3).
 </div>
 
     </div>

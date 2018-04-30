@@ -209,7 +209,7 @@ ListenerHandler on creation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#close-instance_method" title="#close (instance method)">#<strong>close</strong>(error = nil)  &#x21d2; Object </a>
+      <a href="#close-instance_method" title="#close (instance method)">#<strong>close</strong>(error = nil)  </a>
     
 
     
@@ -224,7 +224,7 @@ ListenerHandler on creation.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Close the listener.</p>
+<p>Initiate closing the the listener.</p>
 </div></span>
   
 </li>
@@ -233,7 +233,55 @@ ListenerHandler on creation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_io-instance_method" title="#to_io (instance method)">#<strong>to_io</strong>  &#x21d2; Object </a>
+      <a href="#closed%3F-instance_method" title="#closed? (instance method)">#<strong>closed?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>True if the listening socket is fully closed.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#port-instance_method" title="#port (instance method)">#<strong>port</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the IP port used by the listener.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_io-instance_method" title="#to_io (instance method)">#<strong>to_io</strong>  </a>
     
 
     
@@ -307,12 +355,12 @@ ListenerHandler on creation.</p>
       <pre class="lines">
 
 
-61
-62
-63</pre>
+64
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_condition'>condition</span>
   <span class='ivar'>@condition</span>
@@ -368,12 +416,12 @@ ListenerHandler on creation.</p>
       <pre class="lines">
 
 
-58
-59
-60</pre>
+61
+62
+63</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 61</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_container'>container</span>
   <span class='ivar'>@container</span>
@@ -393,7 +441,7 @@ ListenerHandler on creation.</p>
       <div class="method_details first">
   <h3 class="signature first" id="close-instance_method">
   
-    #<strong>close</strong>(error = nil)  &#x21d2; <tt>Object</tt> 
+    #<strong>close</strong>(error = nil)  
   
 
   
@@ -402,7 +450,8 @@ ListenerHandler on creation.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Close the listener</p>
+<p>Initiate closing the the listener. It will not be fully <span class='object_link'><a href="#closed%3F-instance_method" title="Qpid::Proton::Listener#closed? (method)">#closed?</a></span> until
+its <span class='object_link'><a href="Listener/Handler.html#on_close-instance_method" title="Qpid::Proton::Listener::Handler#on_close (method)">Qpid::Proton::Listener::Handler#on_close</a></span> is called by the <span class='object_link'><a href="Container.html" title="Qpid::Proton::Container (class)">Container</a></span></p>
 
 
   </div>
@@ -438,20 +487,22 @@ ListenerHandler on creation.</p>
       <pre class="lines">
 
 
-65
-66
-67
-68
 69
-70</pre>
+70
+71
+72
+73
+74
+75</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_close'>close</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_closed?'>closed?</span> <span class='op'>||</span> <span class='ivar'>@closing</span>
   <span class='ivar'>@closing</span> <span class='op'>=</span> <span class='kw'>true</span>
   <span class='ivar'>@condition</span> <span class='op'>||=</span> <span class='const'><span class='object_link'><a href="Condition.html" title="Qpid::Proton::Condition (class)">Condition</a></span></span><span class='period'>.</span><span class='id identifier rubyid_convert'><span class='object_link'><a href="Condition.html#convert-class_method" title="Qpid::Proton::Condition.convert (method)">convert</a></span></span> <span class='id identifier rubyid_error'>error</span>
-  <span class='ivar'>@io</span><span class='period'>.</span><span class='id identifier rubyid_close_read'>close_read</span> <span class='kw'>rescue</span> <span class='kw'>nil</span> <span class='comment'># Cause listener to wake out of IO.select
+  <span class='ivar'>@io</span><span class='period'>.</span><span class='id identifier rubyid_close_read'>close_read</span> <span class='kw'>rescue</span> <span class='kw'>nil</span> <span class='comment'># Force Container IO.select to wake with listener readable.
 </span>  <span class='kw'>nil</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -460,9 +511,96 @@ ListenerHandler on creation.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="closed?-instance_method">
+  
+    #<strong>closed?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>True if the listening socket is fully closed</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+84</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 84</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_closed?'>closed?</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@io</span><span class='period'>.</span><span class='id identifier rubyid_closed?'>closed?</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="port-instance_method">
+  
+    #<strong>port</strong>  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the IP port used by the listener</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 81</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_port'>port</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id identifier rubyid_to_io'>to_io</span><span class='period'>.</span><span class='id identifier rubyid_addr'>addr</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="to_io-instance_method">
   
-    #<strong>to_io</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>to_io</strong>  
   
 
   
@@ -485,10 +623,10 @@ ListenerHandler on creation.</p>
       <pre class="lines">
 
 
-73</pre>
+78</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 78</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_io'>to_io</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='ivar'>@io</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -501,9 +639,9 @@ ListenerHandler on creation.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Dec  5 15:30:45 2017 by
+  Generated on Mon Apr 30 16:10:44 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.2).
+  0.9.8 (ruby-2.4.3).
 </div>
 
     </div>

@@ -1,10 +1,7 @@
 = Alan's stuff =
+:nofooter:
 
-link:proton-ruby/index.html[Proton Ruby API]
+Proposed "Advanced Topics" for proton-C documentation:
 
-Note in particular:
-
-- link:proton-ruby/Qpid/Proton/Tracker.html[]
-- link:proton-ruby/Qpid/Proton/Container.html[]
-- link:proton-ruby/Qpid/Proton/Listener.html[]
-
+- link:proton-c/threads.html[Multi-threading]
+- link:proton-c/buffering.html[Buffering]

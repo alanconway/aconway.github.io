@@ -79,18 +79,15 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/types/array.rb<span class="defines">,<br />
-  lib/types/strings.rb,<br /> lib/types/described.rb</span>
+  lib/types/strings.rb,<br /> lib/types/described.rb,<br /> lib/types/type.rb</span>
 </dd>
   </dl>
   
 </div>
 
-<h2>Overview</h2><div class="docstring">
+<div class="docstring">
   <div class="discussion">
     
-<p>– Patch the Array class to provide methods for adding its contents to a
-Qpid::Proton::Data instance. ++</p>
-
 
   </div>
 </div>
@@ -103,10 +100,365 @@ Qpid::Proton::Data instance. ++</p>
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Types/BinaryString.html" title="Qpid::Proton::Types::BinaryString (class)">BinaryString</a></span>, <span class='object_link'><a href="Types/UTFString.html" title="Qpid::Proton::Types::UTFString (class)">UTFString</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Types/ArrayHeader.html" title="Qpid::Proton::Types::ArrayHeader (class)">ArrayHeader</a></span>, <span class='object_link'><a href="Types/BinaryString.html" title="Qpid::Proton::Types::BinaryString (class)">BinaryString</a></span>, <span class='object_link'><a href="Types/Described.html" title="Qpid::Proton::Types::Described (class)">Described</a></span>, <span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span>, <span class='object_link'><a href="Types/UTFString.html" title="Qpid::Proton::Types::UTFString (class)">UTFString</a></span>, <span class='object_link'><a href="Types/UniformArray.html" title="Qpid::Proton::Types::UniformArray (class)">UniformArray</a></span>
     
   
 </p>
+
+  <h2>Constant Summary</h2>
+  <dl class="constants">
+    
+      <dt id="NULL-constant" class="">NULL =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_NULL</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="BOOL-constant" class="">BOOL =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_BOOL</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="UBYTE-constant" class="">UBYTE =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_UBYTE</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="BYTE-constant" class="">BYTE =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_BYTE</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="USHORT-constant" class="">USHORT =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_USHORT</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="SHORT-constant" class="">SHORT =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_SHORT</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="UINT-constant" class="">UINT =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_UINT</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="INT-constant" class="">INT =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_INT</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="CHAR-constant" class="">CHAR =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_CHAR</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ULONG-constant" class="">ULONG =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_ULONG</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="LONG-constant" class="">LONG =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_LONG</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="TIMESTAMP-constant" class="">TIMESTAMP =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_TIMESTAMP</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="FLOAT-constant" class="">FLOAT =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_FLOAT</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="DOUBLE-constant" class="">DOUBLE =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_DOUBLE</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="DECIMAL32-constant" class="">DECIMAL32 =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_DECIMAL32</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="DECIMAL64-constant" class="">DECIMAL64 =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_DECIMAL64</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="DECIMAL128-constant" class="">DECIMAL128 =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_DECIMAL128</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="UUID-constant" class="">UUID =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_UUID</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="BINARY-constant" class="">BINARY =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_BINARY</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="STRING-constant" class="">STRING =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_STRING</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="SYMBOL-constant" class="">SYMBOL =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_SYMBOL</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="DESCRIBED-constant" class="">DESCRIBED =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_DESCRIBED</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="ARRAY-constant" class="">ARRAY =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_ARRAY</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="LIST-constant" class="">LIST =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_LIST</span><span class='rparen'>)</span></pre></dd>
+    
+      <dt id="MAP-constant" class="">MAP =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='const'><span class='object_link'><a href="Types/Type.html" title="Qpid::Proton::Types::Type (class)">Type</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='const'>PN_MAP</span><span class='rparen'>)</span></pre></dd>
+    
+  </dl>
 
 
 
@@ -119,9 +471,9 @@ Qpid::Proton::Data instance. ++</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Dec  5 15:30:44 2017 by
+  Generated on Mon Apr 30 16:10:44 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.2).
+  0.9.8 (ruby-2.4.3).
 </div>
 
     </div>

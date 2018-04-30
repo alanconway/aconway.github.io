@@ -137,6 +137,119 @@ properties that can be attached to the message.</p>
 
 
 
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#annotations-instance_method" title="#annotations (instance method)">#<strong>annotations</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delivery annotations for this message.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#body-instance_method" title="#body (instance method)">#<strong>body</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Body of the message.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#instructions-instance_method" title="#instructions (instance method)">#<strong>instructions</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Delivery instructions for this message.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#properties-instance_method" title="#properties (instance method)">#<strong>properties</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Application properties for the message.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
 
 
 
@@ -151,7 +264,7 @@ properties that can be attached to the message.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#finalize!-class_method" title="finalize! (class method)">.<strong>finalize!</strong>(impl)  &#x21d2; Object </a>
+      <a href="#finalize!-class_method" title="finalize! (class method)">.<strong>finalize!</strong>(impl)  </a>
     
 
     
@@ -185,7 +298,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(name)  &#x21d2; Object </a>
+      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(name)  </a>
     
 
     
@@ -200,7 +313,7 @@ message implementation.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Retrieves the value for the specified property name.</p>
+<p>Equivalent to <tt><a href="name">#properties</a></tt>.</p>
 </div></span>
   
 </li>
@@ -209,7 +322,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#[]=-instance_method" title="#[]= (instance method)">#<strong>[]=</strong>(name, value)  &#x21d2; Object </a>
+      <a href="#[]=-instance_method" title="#[]= (instance method)">#<strong>[]=</strong>(name, value)  </a>
     
 
     
@@ -224,7 +337,7 @@ message implementation.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Assigns the value given to the named property.</p>
+<p>Equivalent to <tt><a href="name">#properties</a> = value</tt>.</p>
 </div></span>
   
 </li>
@@ -233,7 +346,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#address-instance_method" title="#address (instance method)">#<strong>address</strong>  &#x21d2; Object </a>
+      <a href="#address-instance_method" title="#address (instance method)">#<strong>address</strong>  </a>
     
 
     
@@ -257,7 +370,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#address=-instance_method" title="#address= (instance method)">#<strong>address=</strong>(address)  &#x21d2; Object </a>
+      <a href="#address=-instance_method" title="#address= (instance method)">#<strong>address=</strong>(address)  </a>
     
 
     
@@ -281,103 +394,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#annotations-instance_method" title="#annotations (instance method)">#<strong>annotations</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the annotations for this message.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#annotations=-instance_method" title="#annotations= (instance method)">#<strong>annotations=</strong>(annotations)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Assigns annotations to this message.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#body-instance_method" title="#body (instance method)">#<strong>body</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the body property of the message.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#body=-instance_method" title="#body= (instance method)">#<strong>body=</strong>(body)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Assigns a new value to the body of the message.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#clear-instance_method" title="#clear (instance method)">#<strong>clear</strong>  &#x21d2; Object </a>
+      <a href="#clear-instance_method" title="#clear (instance method)">#<strong>clear</strong>  </a>
     
 
     
@@ -401,7 +418,7 @@ message implementation.</p>
         <li class="public deprecated">
   <span class="summary_signature">
     
-      <a href="#content-instance_method" title="#content (instance method)">#<strong>content</strong>  &#x21d2; Object </a>
+      <a href="#content-instance_method" title="#content (instance method)">#<strong>content</strong>  </a>
     
 
     
@@ -425,7 +442,7 @@ message implementation.</p>
         <li class="public deprecated">
   <span class="summary_signature">
     
-      <a href="#content=-instance_method" title="#content= (instance method)">#<strong>content=</strong>(content)  &#x21d2; Object </a>
+      <a href="#content=-instance_method" title="#content= (instance method)">#<strong>content=</strong>(content)  </a>
     
 
     
@@ -449,7 +466,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#content_encoding-instance_method" title="#content_encoding (instance method)">#<strong>content_encoding</strong>  &#x21d2; Object </a>
+      <a href="#content_encoding-instance_method" title="#content_encoding (instance method)">#<strong>content_encoding</strong>  </a>
     
 
     
@@ -473,7 +490,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#content_encoding=-instance_method" title="#content_encoding= (instance method)">#<strong>content_encoding=</strong>(encoding)  &#x21d2; Object </a>
+      <a href="#content_encoding=-instance_method" title="#content_encoding= (instance method)">#<strong>content_encoding=</strong>(encoding)  </a>
     
 
     
@@ -497,7 +514,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#content_type-instance_method" title="#content_type (instance method)">#<strong>content_type</strong>  &#x21d2; Object </a>
+      <a href="#content_type-instance_method" title="#content_type (instance method)">#<strong>content_type</strong>  </a>
     
 
     
@@ -521,7 +538,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#content_type=-instance_method" title="#content_type= (instance method)">#<strong>content_type=</strong>(content_type)  &#x21d2; Object </a>
+      <a href="#content_type=-instance_method" title="#content_type= (instance method)">#<strong>content_type=</strong>(content_type)  </a>
     
 
     
@@ -545,7 +562,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#correlation_id-instance_method" title="#correlation_id (instance method)">#<strong>correlation_id</strong>  &#x21d2; Object </a>
+      <a href="#correlation_id-instance_method" title="#correlation_id (instance method)">#<strong>correlation_id</strong>  </a>
     
 
     
@@ -569,7 +586,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#correlation_id=-instance_method" title="#correlation_id= (instance method)">#<strong>correlation_id=</strong>(id)  &#x21d2; Object </a>
+      <a href="#correlation_id=-instance_method" title="#correlation_id= (instance method)">#<strong>correlation_id=</strong>(id)  </a>
     
 
     
@@ -593,7 +610,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#creation_time-instance_method" title="#creation_time (instance method)">#<strong>creation_time</strong>  &#x21d2; Object </a>
+      <a href="#creation_time-instance_method" title="#creation_time (instance method)">#<strong>creation_time</strong>  </a>
     
 
     
@@ -617,7 +634,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#creation_time=-instance_method" title="#creation_time= (instance method)">#<strong>creation_time=</strong>(time)  &#x21d2; Object </a>
+      <a href="#creation_time=-instance_method" title="#creation_time= (instance method)">#<strong>creation_time=</strong>(time)  </a>
     
 
     
@@ -641,7 +658,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#decode-instance_method" title="#decode (instance method)">#<strong>decode</strong>(encoded)  &#x21d2; Object </a>
+      <a href="#decode-instance_method" title="#decode (instance method)">#<strong>decode</strong>(encoded)  </a>
     
 
     
@@ -665,7 +682,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#delete_property-instance_method" title="#delete_property (instance method)">#<strong>delete_property</strong>(name)  &#x21d2; Object </a>
+      <a href="#delete_property-instance_method" title="#delete_property (instance method)">#<strong>delete_property</strong>(name)  </a>
     
 
     
@@ -680,7 +697,7 @@ message implementation.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Deletes the named property.</p>
+<p>Equivalent to <tt>{#properties}.delete(name)</tt>.</p>
 </div></span>
   
 </li>
@@ -689,7 +706,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#delivery_count-instance_method" title="#delivery_count (instance method)">#<strong>delivery_count</strong>  &#x21d2; Object </a>
+      <a href="#delivery_count-instance_method" title="#delivery_count (instance method)">#<strong>delivery_count</strong>  </a>
     
 
     
@@ -713,7 +730,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#delivery_count=-instance_method" title="#delivery_count= (instance method)">#<strong>delivery_count=</strong>(count)  &#x21d2; Object </a>
+      <a href="#delivery_count=-instance_method" title="#delivery_count= (instance method)">#<strong>delivery_count=</strong>(count)  </a>
     
 
     
@@ -737,7 +754,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#durable-instance_method" title="#durable (instance method)">#<strong>durable</strong>  &#x21d2; Object </a>
+      <a href="#durable-instance_method" title="#durable (instance method)">#<strong>durable</strong>  </a>
     
 
     
@@ -761,7 +778,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#durable=-instance_method" title="#durable= (instance method)">#<strong>durable=</strong>(state)  &#x21d2; Object </a>
+      <a href="#durable=-instance_method" title="#durable= (instance method)">#<strong>durable=</strong>(state)  </a>
     
 
     
@@ -785,7 +802,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#encode-instance_method" title="#encode (instance method)">#<strong>encode</strong>  &#x21d2; Object </a>
+      <a href="#encode-instance_method" title="#encode (instance method)">#<strong>encode</strong>  </a>
     
 
     
@@ -809,7 +826,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#errno-instance_method" title="#errno (instance method)">#<strong>errno</strong>  &#x21d2; Object </a>
+      <a href="#errno-instance_method" title="#errno (instance method)">#<strong>errno</strong>  </a>
     
 
     
@@ -833,7 +850,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#error-instance_method" title="#error (instance method)">#<strong>error</strong>  &#x21d2; Object </a>
+      <a href="#error-instance_method" title="#error (instance method)">#<strong>error</strong>  </a>
     
 
     
@@ -881,7 +898,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#expires-instance_method" title="#expires (instance method)">#<strong>expires</strong>  &#x21d2; Object </a>
+      <a href="#expires-instance_method" title="#expires (instance method)">#<strong>expires</strong>  </a>
     
 
     
@@ -905,7 +922,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#expires=-instance_method" title="#expires= (instance method)">#<strong>expires=</strong>(time)  &#x21d2; Object </a>
+      <a href="#expires=-instance_method" title="#expires= (instance method)">#<strong>expires=</strong>(time)  </a>
     
 
     
@@ -929,7 +946,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#first_acquirer=-instance_method" title="#first_acquirer= (instance method)">#<strong>first_acquirer=</strong>(state)  &#x21d2; Object </a>
+      <a href="#first_acquirer=-instance_method" title="#first_acquirer= (instance method)">#<strong>first_acquirer=</strong>(state)  </a>
     
 
     
@@ -977,7 +994,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#group_id-instance_method" title="#group_id (instance method)">#<strong>group_id</strong>  &#x21d2; Object </a>
+      <a href="#group_id-instance_method" title="#group_id (instance method)">#<strong>group_id</strong>  </a>
     
 
     
@@ -1001,7 +1018,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#group_id=-instance_method" title="#group_id= (instance method)">#<strong>group_id=</strong>(id)  &#x21d2; Object </a>
+      <a href="#group_id=-instance_method" title="#group_id= (instance method)">#<strong>group_id=</strong>(id)  </a>
     
 
     
@@ -1025,7 +1042,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#group_sequence-instance_method" title="#group_sequence (instance method)">#<strong>group_sequence</strong>  &#x21d2; Object </a>
+      <a href="#group_sequence-instance_method" title="#group_sequence (instance method)">#<strong>group_sequence</strong>  </a>
     
 
     
@@ -1049,7 +1066,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#group_sequence=-instance_method" title="#group_sequence= (instance method)">#<strong>group_sequence=</strong>(seq)  &#x21d2; Object </a>
+      <a href="#group_sequence=-instance_method" title="#group_sequence= (instance method)">#<strong>group_sequence=</strong>(seq)  </a>
     
 
     
@@ -1073,7 +1090,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#id-instance_method" title="#id (instance method)">#<strong>id</strong>  &#x21d2; Object </a>
+      <a href="#id-instance_method" title="#id (instance method)">#<strong>id</strong>  </a>
     
 
     
@@ -1097,7 +1114,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#id=-instance_method" title="#id= (instance method)">#<strong>id=</strong>(id)  &#x21d2; Object </a>
+      <a href="#id=-instance_method" title="#id= (instance method)">#<strong>id=</strong>(id)  </a>
     
 
     
@@ -1121,7 +1138,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#impl-instance_method" title="#impl (instance method)">#<strong>impl</strong>  &#x21d2; Object </a>
+      <a href="#impl-instance_method" title="#impl (instance method)">#<strong>impl</strong>  </a>
     
 
     
@@ -1145,7 +1162,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(body = nil, settings = {})  &#x21d2; Message </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(body = nil, opts = {})  &#x21d2; Message </a>
     
 
     
@@ -1171,7 +1188,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#instructions-instance_method" title="#instructions (instance method)">#<strong>instructions</strong>  &#x21d2; Object </a>
+      <a href="#inspect-instance_method" title="#inspect (instance method)">#<strong>inspect</strong>  </a>
     
 
     
@@ -1185,9 +1202,7 @@ message implementation.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the instructions for this message.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -1195,79 +1210,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#instructions=-instance_method" title="#instructions= (instance method)">#<strong>instructions=</strong>(instr)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Assigns instructions to this message.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#post_decode-instance_method" title="#post_decode (instance method)">#<strong>post_decode</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>:nodoc:.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#pre_encode-instance_method" title="#pre_encode (instance method)">#<strong>pre_encode</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>:nodoc:.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#priority-instance_method" title="#priority (instance method)">#<strong>priority</strong>  &#x21d2; Object </a>
+      <a href="#priority-instance_method" title="#priority (instance method)">#<strong>priority</strong>  </a>
     
 
     
@@ -1291,7 +1234,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#priority=-instance_method" title="#priority= (instance method)">#<strong>priority=</strong>(priority)  &#x21d2; Object </a>
+      <a href="#priority=-instance_method" title="#priority= (instance method)">#<strong>priority=</strong>(priority)  </a>
     
 
     
@@ -1315,55 +1258,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#properties-instance_method" title="#properties (instance method)">#<strong>properties</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the list of property names for associated with this message.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#properties=-instance_method" title="#properties= (instance method)">#<strong>properties=</strong>(properties)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Use <code>properties</code> as the message properties.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#reply_to-instance_method" title="#reply_to (instance method)">#<strong>reply_to</strong>  &#x21d2; Object </a>
+      <a href="#reply_to-instance_method" title="#reply_to (instance method)">#<strong>reply_to</strong>  </a>
     
 
     
@@ -1387,7 +1282,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#reply_to=-instance_method" title="#reply_to= (instance method)">#<strong>reply_to=</strong>(address)  &#x21d2; Object </a>
+      <a href="#reply_to=-instance_method" title="#reply_to= (instance method)">#<strong>reply_to=</strong>(address)  </a>
     
 
     
@@ -1411,7 +1306,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#reply_to_group_id-instance_method" title="#reply_to_group_id (instance method)">#<strong>reply_to_group_id</strong>  &#x21d2; Object </a>
+      <a href="#reply_to_group_id-instance_method" title="#reply_to_group_id (instance method)">#<strong>reply_to_group_id</strong>  </a>
     
 
     
@@ -1435,7 +1330,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#reply_to_group_id=-instance_method" title="#reply_to_group_id= (instance method)">#<strong>reply_to_group_id=</strong>(id)  &#x21d2; Object </a>
+      <a href="#reply_to_group_id=-instance_method" title="#reply_to_group_id= (instance method)">#<strong>reply_to_group_id=</strong>(id)  </a>
     
 
     
@@ -1459,7 +1354,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#subject-instance_method" title="#subject (instance method)">#<strong>subject</strong>  &#x21d2; Object </a>
+      <a href="#subject-instance_method" title="#subject (instance method)">#<strong>subject</strong>  </a>
     
 
     
@@ -1483,7 +1378,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#subject=-instance_method" title="#subject= (instance method)">#<strong>subject=</strong>(subject)  &#x21d2; Object </a>
+      <a href="#subject=-instance_method" title="#subject= (instance method)">#<strong>subject=</strong>(subject)  </a>
     
 
     
@@ -1507,29 +1402,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#ttl-instance_method" title="#ttl (instance method)">#<strong>ttl</strong>  &#x21d2; Object </a>
+      <a href="#ttl-instance_method" title="#ttl (instance method)">#<strong>ttl</strong>  </a>
     
 
     
@@ -1553,7 +1426,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ttl=-instance_method" title="#ttl= (instance method)">#<strong>ttl=</strong>(time)  &#x21d2; Object </a>
+      <a href="#ttl=-instance_method" title="#ttl= (instance method)">#<strong>ttl=</strong>(time)  </a>
     
 
     
@@ -1577,7 +1450,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#user_id-instance_method" title="#user_id (instance method)">#<strong>user_id</strong>  &#x21d2; Object </a>
+      <a href="#user_id-instance_method" title="#user_id (instance method)">#<strong>user_id</strong>  </a>
     
 
     
@@ -1601,7 +1474,7 @@ message implementation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#user_id=-instance_method" title="#user_id= (instance method)">#<strong>user_id=</strong>(id)  &#x21d2; Object </a>
+      <a href="#user_id=-instance_method" title="#user_id= (instance method)">#<strong>user_id=</strong>(id)  </a>
     
 
     
@@ -1625,13 +1498,25 @@ message implementation.</p>
     </ul>
   
 
-<div id="constructor_details" class="method_details_list">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(body = nil, settings = {})  &#x21d2; <tt><span class='object_link'><a href="" title="Qpid::Proton::Message (class)">Message</a></span></tt> 
+    #<strong>initialize</strong>(body = nil, opts = {})  &#x21d2; <tt><span class='object_link'><a href="" title="Qpid::Proton::Message (class)">Message</a></span></tt> 
   
 
   
@@ -1669,17 +1554,19 @@ message implementation.</p>
   
     <li>
       
-        <span class='name'>set</span>
+        <span class='name'>opts</span>
       
       
         <span class='type'>(<tt><span class='object_link'>Hash</span></tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
         <div class='inline'>
-<p>additional settings, equivalent to m.key=value for each key=&gt;value in
-settings</p>
+<p>additional options, equivalent to <tt>Message#key=value</tt> for each
+<tt>key=&gt;value</tt></p>
 </div>
       
     </li>
@@ -1693,33 +1580,35 @@ settings</p>
       <pre class="lines">
 
 
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123</pre>
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 110</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 85</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_settings'>settings</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='ivar'>@impl</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message'>pn_message</span>
   <span class='const'>ObjectSpace</span><span class='period'>.</span><span class='id identifier rubyid_define_finalizer'>define_finalizer</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_finalize!'>finalize!</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
   <span class='ivar'>@properties</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
   <span class='ivar'>@instructions</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
   <span class='ivar'>@annotations</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='ivar'>@body</span> <span class='op'>=</span> <span class='kw'>nil</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='id identifier rubyid_body'>body</span> <span class='kw'>unless</span> <span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_settings'>settings</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>then</span>
-    <span class='id identifier rubyid_settings'>settings</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>then</span>
+    <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
       <span class='id identifier rubyid_setter'>setter</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_k'>k</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>=</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='lparen'>(</span><span class='rparen'>)</span>
       <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span> <span class='id identifier rubyid_setter'>setter</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span>
     <span class='kw'>end</span>
@@ -1732,6 +1621,255 @@ settings</p>
   
 </div>
 
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="annotations=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="annotations-instance_method">
+  
+    #<strong>annotations</strong>  &#x21d2; <tt><span class='object_link'>Hash</span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Delivery annotations for this message.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>Hash</span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Delivery annotations for this message.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+502
+503
+504</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 502</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_annotations'>annotations</span>
+  <span class='ivar'>@annotations</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="body=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="body-instance_method">
+  
+    #<strong>body</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns body of the message.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>body of the message.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+505
+506
+507</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 505</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_body'>body</span>
+  <span class='ivar'>@body</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="instructions=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="instructions-instance_method">
+  
+    #<strong>instructions</strong>  &#x21d2; <tt><span class='object_link'>Hash</span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Delivery instructions for this message.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>Hash</span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Delivery instructions for this message.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+499
+500
+501</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 499</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_instructions'>instructions</span>
+  <span class='ivar'>@instructions</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="properties=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="properties-instance_method">
+  
+    #<strong>properties</strong>  &#x21d2; <tt><span class='object_link'>Hash</span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Application properties for the message</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>Hash</span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Application properties for the message</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+487
+488
+489</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 487</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_properties'>properties</span>
+  <span class='ivar'>@properties</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
 
   <div id="class_method_details" class="method_details_list">
     <h2>Class Method Details</h2>
@@ -1740,7 +1878,7 @@ settings</p>
       <div class="method_details first">
   <h3 class="signature first" id="finalize!-class_method">
   
-    .<strong>finalize!</strong>(impl)  &#x21d2; <tt>Object</tt> 
+    .<strong>finalize!</strong>(impl)  
   
 
   
@@ -1764,14 +1902,14 @@ message implementation.</p>
       <pre class="lines">
 
 
-135
-136
-137
-138
-139</pre>
+103
+104
+105
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 135</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 103</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_finalize!'>finalize!</span><span class='lparen'>(</span><span class='id identifier rubyid_impl'>impl</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_proc'>proc</span> <span class='lbrace'>{</span>
@@ -1792,7 +1930,7 @@ message implementation.</p>
       <div class="method_details first">
   <h3 class="signature first" id="[]-instance_method">
   
-    #<strong>[]</strong>(name)  &#x21d2; <tt>Object</tt> 
+    #<strong>[]</strong>(name)  
   
 
   
@@ -1801,8 +1939,7 @@ message implementation.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Retrieves the value for the specified property name. If not found, then it
-returns nil.</p>
+<p>Equivalent to <tt><a href="name">#properties</a></tt></p>
 
 
   </div>
@@ -1816,16 +1953,12 @@ returns nil.</p>
       <pre class="lines">
 
 
-547
-548
-549</pre>
+493</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 547</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 493</span>
 
-<span class='kw'>def</span> <span class='op'>[]</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
-  <span class='ivar'>@properties</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span>
-<span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='op'>[]</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='ivar'>@properties</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1834,7 +1967,7 @@ returns nil.</p>
       <div class="method_details ">
   <h3 class="signature " id="[]=-instance_method">
   
-    #<strong>[]=</strong>(name, value)  &#x21d2; <tt>Object</tt> 
+    #<strong>[]=</strong>(name, value)  
   
 
   
@@ -1843,14 +1976,7 @@ returns nil.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Assigns the value given to the named property.</p>
-
-<h4 id="label-Arguments">Arguments</h4>
-<ul><li>
-<p>name - the property name</p>
-</li><li>
-<p>value - the property value</p>
-</li></ul>
+<p>Equivalent to <tt><a href="name">#properties</a> = value</tt></p>
 
 
   </div>
@@ -1864,16 +1990,12 @@ returns nil.</p>
       <pre class="lines">
 
 
-540
-541
-542</pre>
+490</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 540</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 490</span>
 
-<span class='kw'>def</span> <span class='op'>[]=</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
-  <span class='ivar'>@properties</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span>
-<span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='op'>[]=</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span> <span class='ivar'>@properties</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1882,7 +2004,7 @@ returns nil.</p>
       <div class="method_details ">
   <h3 class="signature " id="address-instance_method">
   
-    #<strong>address</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>address</strong>  
   
 
   
@@ -1905,12 +2027,12 @@ returns nil.</p>
       <pre class="lines">
 
 
-326
-327
-328</pre>
+294
+295
+296</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 326</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 294</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_address'>address</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_address'>pn_message_get_address</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -1923,7 +2045,7 @@ returns nil.</p>
       <div class="method_details ">
   <h3 class="signature " id="address=-instance_method">
   
-    #<strong>address=</strong>(address)  &#x21d2; <tt>Object</tt> 
+    #<strong>address=</strong>(address)  
   
 
   
@@ -1951,12 +2073,12 @@ returns nil.</p>
       <pre class="lines">
 
 
-320
-321
-322</pre>
+288
+289
+290</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 320</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 288</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_address='>address=</span><span class='lparen'>(</span><span class='id identifier rubyid_address'>address</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_address'>pn_message_set_address</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_address'>address</span><span class='rparen'>)</span>
@@ -1967,173 +2089,9 @@ returns nil.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="annotations-instance_method">
-  
-    #<strong>annotations</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns the annotations for this message.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-571
-572
-573</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 571</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_annotations'>annotations</span>
-  <span class='ivar'>@annotations</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="annotations=-instance_method">
-  
-    #<strong>annotations=</strong>(annotations)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Assigns annotations to this message.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-577
-578
-579</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 577</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_annotations='>annotations=</span><span class='lparen'>(</span><span class='id identifier rubyid_annotations'>annotations</span><span class='rparen'>)</span>
-  <span class='ivar'>@annotations</span> <span class='op'>=</span> <span class='id identifier rubyid_annotations'>annotations</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="body-instance_method">
-  
-    #<strong>body</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns the body property of the message.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-583
-584
-585</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 583</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_body'>body</span>
-  <span class='ivar'>@body</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="body=-instance_method">
-  
-    #<strong>body=</strong>(body)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Assigns a new value to the body of the message.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-589
-590
-591</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 589</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_body='>body=</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span>
-  <span class='ivar'>@body</span> <span class='op'>=</span> <span class='id identifier rubyid_body'>body</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="clear-instance_method">
   
-    #<strong>clear</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>clear</strong>  
   
 
   
@@ -2157,16 +2115,16 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-149
-150
-151
-152
-153
-154
-155</pre>
+117
+118
+119
+120
+121
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 149</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 117</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear'>clear</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_clear'>pn_message_clear</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2183,7 +2141,7 @@ of <code>Message</code> to be reused.</p>
       <div class="method_details ">
   <h3 class="signature " id="content-instance_method">
   
-    #<strong>content</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>content</strong>  
   
 
   
@@ -2207,31 +2165,33 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-400
-401
-402
-403
-404
-405
-406
-407
-408
-409
-410
-411
-412
-413</pre>
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 400</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 369</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content'>content</span>
+  <span class='id identifier rubyid_deprecated'>deprecated</span> <span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>body</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_size'>size</span> <span class='op'>=</span> <span class='int'>16</span>
   <span class='id identifier rubyid_loop'>loop</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_save'>pn_message_save</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_error'>error</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
-    <span class='kw'>if</span> <span class='id identifier rubyid_error'>error</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Error.html" title="Qpid::Proton::Error (module)">Error</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Error.html#OVERFLOW-constant" title="Qpid::Proton::Error::OVERFLOW (constant)">OVERFLOW</a></span></span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_error'>error</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'>Error</span><span class='op'>::</span><span class='const'>OVERFLOW</span>
       <span class='id identifier rubyid_size'>size</span> <span class='op'>=</span> <span class='id identifier rubyid_size'>size</span> <span class='op'>*</span> <span class='int'>2</span>
     <span class='kw'>else</span>
       <span class='id identifier rubyid_check'>check</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='rparen'>)</span>
@@ -2247,7 +2207,7 @@ of <code>Message</code> to be reused.</p>
       <div class="method_details ">
   <h3 class="signature " id="content=-instance_method">
   
-    #<strong>content=</strong>(content)  &#x21d2; <tt>Object</tt> 
+    #<strong>content=</strong>(content)  
   
 
   
@@ -2271,14 +2231,16 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-395
-396
-397</pre>
+363
+364
+365
+366</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 395</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 363</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content='>content=</span><span class='lparen'>(</span><span class='id identifier rubyid_content'>content</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_deprecated'>deprecated</span> <span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>body=</span><span class='tstring_end'>&quot;</span></span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_load'>pn_message_load</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_content'>content</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -2289,7 +2251,7 @@ of <code>Message</code> to be reused.</p>
       <div class="method_details ">
   <h3 class="signature " id="content_encoding-instance_method">
   
-    #<strong>content_encoding</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>content_encoding</strong>  
   
 
   
@@ -2312,12 +2274,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-427
-428
-429</pre>
+397
+398
+399</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 427</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 397</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_encoding'>content_encoding</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_content_encoding'>pn_message_get_content_encoding</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2330,7 +2292,7 @@ of <code>Message</code> to be reused.</p>
       <div class="method_details ">
   <h3 class="signature " id="content_encoding=-instance_method">
   
-    #<strong>content_encoding=</strong>(encoding)  &#x21d2; <tt>Object</tt> 
+    #<strong>content_encoding=</strong>(encoding)  
   
 
   
@@ -2358,12 +2320,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-421
-422
-423</pre>
+391
+392
+393</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 421</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 391</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_encoding='>content_encoding=</span><span class='lparen'>(</span><span class='id identifier rubyid_encoding'>encoding</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_content_encoding'>pn_message_set_content_encoding</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_encoding'>encoding</span><span class='rparen'>)</span>
@@ -2376,7 +2338,7 @@ of <code>Message</code> to be reused.</p>
       <div class="method_details ">
   <h3 class="signature " id="content_type-instance_method">
   
-    #<strong>content_type</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>content_type</strong>  
   
 
   
@@ -2399,12 +2361,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-390
-391
-392</pre>
+358
+359
+360</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 390</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 358</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_type'>content_type</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_content_type'>pn_message_get_content_type</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2417,7 +2379,7 @@ of <code>Message</code> to be reused.</p>
       <div class="method_details ">
   <h3 class="signature " id="content_type=-instance_method">
   
-    #<strong>content_type=</strong>(content_type)  &#x21d2; <tt>Object</tt> 
+    #<strong>content_type=</strong>(content_type)  
   
 
   
@@ -2445,12 +2407,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-384
-385
-386</pre>
+352
+353
+354</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 384</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 352</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_type='>content_type=</span><span class='lparen'>(</span><span class='id identifier rubyid_content_type'>content_type</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_content_type'>pn_message_set_content_type</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_content_type'>content_type</span><span class='rparen'>)</span>
@@ -2463,7 +2425,7 @@ of <code>Message</code> to be reused.</p>
       <div class="method_details ">
   <h3 class="signature " id="correlation_id-instance_method">
   
-    #<strong>correlation_id</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>correlation_id</strong>  
   
 
   
@@ -2486,12 +2448,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-374
-375
-376</pre>
+342
+343
+344</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 374</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 342</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_correlation_id'>correlation_id</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_correlation_id'>pn_message_get_correlation_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2504,7 +2466,7 @@ of <code>Message</code> to be reused.</p>
       <div class="method_details ">
   <h3 class="signature " id="correlation_id=-instance_method">
   
-    #<strong>correlation_id=</strong>(id)  &#x21d2; <tt>Object</tt> 
+    #<strong>correlation_id=</strong>(id)  
   
 
   
@@ -2532,12 +2494,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-368
-369
-370</pre>
+336
+337
+338</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 368</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 336</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_correlation_id='>correlation_id=</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_correlation_id'>pn_message_set_correlation_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -2550,7 +2512,7 @@ of <code>Message</code> to be reused.</p>
       <div class="method_details ">
   <h3 class="signature " id="creation_time-instance_method">
   
-    #<strong>creation_time</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>creation_time</strong>  
   
 
   
@@ -2573,12 +2535,12 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-463
-464
-465</pre>
+433
+434
+435</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 463</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 433</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_creation_time'>creation_time</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_creation_time'>pn_message_get_creation_time</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2591,7 +2553,7 @@ of <code>Message</code> to be reused.</p>
       <div class="method_details ">
   <h3 class="signature " id="creation_time=-instance_method">
   
-    #<strong>creation_time=</strong>(time)  &#x21d2; <tt>Object</tt> 
+    #<strong>creation_time=</strong>(time)  
   
 
   
@@ -2632,14 +2594,14 @@ of <code>Message</code> to be reused.</p>
       <pre class="lines">
 
 
-455
-456
-457
-458
-459</pre>
+425
+426
+427
+428
+429</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 455</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 425</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_creation_time='>creation_time=</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid time: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_time'>time</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -2654,7 +2616,7 @@ of <code>Message</code> to be reused.</p>
       <div class="method_details ">
   <h3 class="signature " id="decode-instance_method">
   
-    #<strong>decode</strong>(encoded)  &#x21d2; <tt>Object</tt> 
+    #<strong>decode</strong>(encoded)  
   
 
   
@@ -2698,13 +2660,13 @@ number of bytes consumed</p>
       <pre class="lines">
 
 
-38
-39
-40
-41</pre>
+44
+45
+46
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_decode'>decode</span><span class='lparen'>(</span><span class='id identifier rubyid_encoded'>encoded</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_check'>check</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_decode'>pn_message_decode</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_encoded'>encoded</span><span class='comma'>,</span> <span class='id identifier rubyid_encoded'>encoded</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -2718,7 +2680,7 @@ number of bytes consumed</p>
       <div class="method_details ">
   <h3 class="signature " id="delete_property-instance_method">
   
-    #<strong>delete_property</strong>(name)  &#x21d2; <tt>Object</tt> 
+    #<strong>delete_property</strong>(name)  
   
 
   
@@ -2727,7 +2689,7 @@ number of bytes consumed</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Deletes the named property.</p>
+<p>Equivalent to <tt>{#properties}.delete(name)</tt></p>
 
 
   </div>
@@ -2741,16 +2703,12 @@ number of bytes consumed</p>
       <pre class="lines">
 
 
-553
-554
-555</pre>
+496</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 553</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 496</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_delete_property'>delete_property</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
-  <span class='ivar'>@properties</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_delete_property'>delete_property</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='ivar'>@properties</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -2759,7 +2717,7 @@ number of bytes consumed</p>
       <div class="method_details ">
   <h3 class="signature " id="delivery_count-instance_method">
   
-    #<strong>delivery_count</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>delivery_count</strong>  
   
 
   
@@ -2784,12 +2742,12 @@ number of bytes consumed</p>
       <pre class="lines">
 
 
-271
-272
-273</pre>
+239
+240
+241</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 271</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 239</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delivery_count'>delivery_count</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_delivery_count'>pn_message_get_delivery_count</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2802,7 +2760,7 @@ number of bytes consumed</p>
       <div class="method_details ">
   <h3 class="signature " id="delivery_count=-instance_method">
   
-    #<strong>delivery_count=</strong>(count)  &#x21d2; <tt>Object</tt> 
+    #<strong>delivery_count=</strong>(count)  
   
 
   
@@ -2845,14 +2803,14 @@ number of bytes consumed</p>
       <pre class="lines">
 
 
-261
-262
-263
-264
-265</pre>
+229
+230
+231
+232
+233</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 261</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 229</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delivery_count='>delivery_count=</span><span class='lparen'>(</span><span class='id identifier rubyid_count'>count</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='op'>::</span><span class='const'>ArgumentError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid count: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_count'>count</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_count'>count</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Numeric</span><span class='rparen'>)</span>
@@ -2867,7 +2825,7 @@ number of bytes consumed</p>
       <div class="method_details ">
   <h3 class="signature " id="durable-instance_method">
   
-    #<strong>durable</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>durable</strong>  
   
 
   
@@ -2899,12 +2857,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-198
-199
-200</pre>
+166
+167
+168</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 198</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 166</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_durable'>durable</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_is_durable'>pn_message_is_durable</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -2917,7 +2875,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="durable=-instance_method">
   
-    #<strong>durable=</strong>(state)  &#x21d2; <tt>Object</tt> 
+    #<strong>durable=</strong>(state)  
   
 
   
@@ -2960,13 +2918,13 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-183
-184
-185
-186</pre>
+151
+152
+153
+154</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 183</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 151</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_durable='>durable=</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>state cannot be nil</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -2980,7 +2938,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="encode-instance_method">
   
-    #<strong>encode</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>encode</strong>  
   
 
   
@@ -3003,29 +2961,29 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
+59
+60
+61
+62
+63
+64
+65
+66
+67
 68
 69
 70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80</pre>
+71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 68</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_encode'>encode</span>
   <span class='id identifier rubyid_pre_encode'>pre_encode</span>
   <span class='id identifier rubyid_size'>size</span> <span class='op'>=</span> <span class='int'>16</span>
   <span class='id identifier rubyid_loop'>loop</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_error'>error</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='op'>::</span><span class='id identifier rubyid_pn_message_encode'>pn_message_encode</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
-    <span class='kw'>if</span> <span class='id identifier rubyid_error'>error</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Error.html" title="Qpid::Proton::Error (module)">Error</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Error.html#OVERFLOW-constant" title="Qpid::Proton::Error::OVERFLOW (constant)">OVERFLOW</a></span></span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_error'>error</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../../Qpid.html" title="Qpid (module)">Qpid</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Proton.html" title="Qpid::Proton (module)">Proton</a></span></span><span class='op'>::</span><span class='const'>Error</span><span class='op'>::</span><span class='const'>OVERFLOW</span>
       <span class='id identifier rubyid_size'>size</span> <span class='op'>*=</span> <span class='int'>2</span>
     <span class='kw'>else</span>
       <span class='id identifier rubyid_check'>check</span><span class='lparen'>(</span><span class='id identifier rubyid_error'>error</span><span class='rparen'>)</span>
@@ -3041,7 +2999,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="errno-instance_method">
   
-    #<strong>errno</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>errno</strong>  
   
 
   
@@ -3064,12 +3022,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-159
-160
-161</pre>
+127
+128
+129</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 159</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 127</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_errno'>errno</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_errno'>pn_message_errno</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -3082,7 +3040,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="error-instance_method">
   
-    #<strong>error</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>error</strong>  
   
 
   
@@ -3105,12 +3063,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-165
-166
-167</pre>
+133
+134
+135</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 165</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 133</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_error'>error</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_error_text'>pn_error_text</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_error'>pn_message_error</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -3159,12 +3117,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-171
-172
-173</pre>
+139
+140
+141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 171</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 139</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_error?'>error?</span>
   <span class='op'>!</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_errno'>pn_message_errno</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_zero?'>zero?</span>
@@ -3177,7 +3135,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="expires-instance_method">
   
-    #<strong>expires</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>expires</strong>  
   
 
   
@@ -3200,12 +3158,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-445
-446
-447</pre>
+415
+416
+417</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 445</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 415</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_expires'>expires</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_expiry_time'>pn_message_get_expiry_time</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -3218,7 +3176,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="expires=-instance_method">
   
-    #<strong>expires=</strong>(time)  &#x21d2; <tt>Object</tt> 
+    #<strong>expires=</strong>(time)  
   
 
   
@@ -3259,14 +3217,14 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-437
-438
-439
-440
-441</pre>
+407
+408
+409
+410
+411</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 437</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 407</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_expires='>expires=</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid expiry time: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_time'>time</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -3281,7 +3239,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="first_acquirer=-instance_method">
   
-    #<strong>first_acquirer=</strong>(state)  &#x21d2; <tt>Object</tt> 
+    #<strong>first_acquirer=</strong>(state)  
   
 
   
@@ -3324,13 +3282,13 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-248
-249
-250
-251</pre>
+216
+217
+218
+219</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 248</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 216</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_first_acquirer='>first_acquirer=</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid state: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_state'>state</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='op'>!</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='const'>TrueClass</span><span class='comma'>,</span> <span class='const'>FalseClass</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -3380,12 +3338,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-278
-279
-280</pre>
+246
+247
+248</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 278</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 246</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_first_acquirer?'>first_acquirer?</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_is_first_acquirer'>pn_message_is_first_acquirer</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -3398,7 +3356,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="group_id-instance_method">
   
-    #<strong>group_id</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>group_id</strong>  
   
 
   
@@ -3421,12 +3379,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-479
-480
-481</pre>
+449
+450
+451</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 479</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 449</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_group_id'>group_id</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_group_id'>pn_message_get_group_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -3439,7 +3397,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="group_id=-instance_method">
   
-    #<strong>group_id=</strong>(id)  &#x21d2; <tt>Object</tt> 
+    #<strong>group_id=</strong>(id)  
   
 
   
@@ -3467,12 +3425,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-473
-474
-475</pre>
+443
+444
+445</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 473</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 443</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_group_id='>group_id=</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_group_id'>pn_message_set_group_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -3485,7 +3443,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="group_sequence-instance_method">
   
-    #<strong>group_sequence</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>group_sequence</strong>  
   
 
   
@@ -3508,12 +3466,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-496
-497
-498</pre>
+466
+467
+468</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 496</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 466</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_group_sequence'>group_sequence</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_group_sequence'>pn_message_get_group_sequence</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -3526,7 +3484,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="group_sequence=-instance_method">
   
-    #<strong>group_sequence=</strong>(seq)  &#x21d2; <tt>Object</tt> 
+    #<strong>group_sequence=</strong>(seq)  
   
 
   
@@ -3567,13 +3525,13 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-489
-490
-491
-492</pre>
+459
+460
+461
+462</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 489</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 459</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_group_sequence='>group_sequence=</span><span class='lparen'>(</span><span class='id identifier rubyid_seq'>seq</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid seq: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_seq'>seq</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_seq'>seq</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -3587,7 +3545,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="id-instance_method">
   
-    #<strong>id</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>id</strong>  
   
 
   
@@ -3610,12 +3568,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-294
-295
-296</pre>
+262
+263
+264</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 294</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 262</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_id'>pn_message_get_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -3628,7 +3586,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="id=-instance_method">
   
-    #<strong>id=</strong>(id)  &#x21d2; <tt>Object</tt> 
+    #<strong>id=</strong>(id)  
   
 
   
@@ -3656,12 +3614,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-288
-289
-290</pre>
+256
+257
+258</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 288</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 256</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_id='>id=</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_id'>pn_message_set_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -3674,7 +3632,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="impl-instance_method">
   
-    #<strong>impl</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>impl</strong>  
   
 
   
@@ -3697,12 +3655,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-142
-143
-144</pre>
+110
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 142</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 110</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_impl'>impl</span> <span class='comment'># :nodoc:
 </span>  <span class='ivar'>@impl</span>
@@ -3713,9 +3671,9 @@ any intermediaries taking responsibility for the message.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="instructions-instance_method">
+  <h3 class="signature " id="inspect-instance_method">
   
-    #<strong>instructions</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>inspect</strong>  
   
 
   
@@ -3724,8 +3682,6 @@ any intermediaries taking responsibility for the message.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the instructions for this message.</p>
-
 
   </div>
 </div>
@@ -3738,221 +3694,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-559
-560
-561</pre>
+507</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 559</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 507</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_instructions'>instructions</span>
-  <span class='ivar'>@instructions</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="instructions=-instance_method">
-  
-    #<strong>instructions=</strong>(instr)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Assigns instructions to this message.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-565
-566
-567</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 565</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_instructions='>instructions=</span><span class='lparen'>(</span><span class='id identifier rubyid_instr'>instr</span><span class='rparen'>)</span>
-  <span class='ivar'>@instructions</span> <span class='op'>=</span> <span class='id identifier rubyid_instr'>instr</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="post_decode-instance_method">
-  
-    #<strong>post_decode</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>:nodoc:</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 43</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_post_decode'>post_decode</span> <span class='comment'># :nodoc:
-</span>  <span class='comment'># decode elements from the message
-</span>  <span class='ivar'>@properties</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
-  <span class='id identifier rubyid_props'>props</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec/Data.html" title="Qpid::Proton::Codec::Data (class)">Data</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Codec/Data.html#initialize-instance_method" title="Qpid::Proton::Codec::Data#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='id identifier rubyid_pn_message_properties'>pn_message_properties</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_props'>props</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span>
-    <span class='ivar'>@properties</span> <span class='op'>=</span> <span class='id identifier rubyid_props'>props</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_props'>props</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-  <span class='ivar'>@instructions</span> <span class='op'>=</span> <span class='kw'>nil</span>
-  <span class='id identifier rubyid_insts'>insts</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec/Data.html" title="Qpid::Proton::Codec::Data (class)">Data</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Codec/Data.html#initialize-instance_method" title="Qpid::Proton::Codec::Data#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='id identifier rubyid_pn_message_instructions'>pn_message_instructions</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_insts'>insts</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span>
-    <span class='ivar'>@instructions</span> <span class='op'>=</span> <span class='id identifier rubyid_insts'>insts</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_insts'>insts</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-  <span class='ivar'>@annotations</span> <span class='op'>=</span> <span class='kw'>nil</span>
-  <span class='id identifier rubyid_annts'>annts</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec/Data.html" title="Qpid::Proton::Codec::Data (class)">Data</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Codec/Data.html#initialize-instance_method" title="Qpid::Proton::Codec::Data#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='id identifier rubyid_pn_message_annotations'>pn_message_annotations</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_annts'>annts</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span>
-    <span class='ivar'>@annotations</span> <span class='op'>=</span> <span class='id identifier rubyid_annts'>annts</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_annts'>annts</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-  <span class='ivar'>@body</span> <span class='op'>=</span> <span class='kw'>nil</span>
-  <span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec/Data.html" title="Qpid::Proton::Codec::Data (class)">Data</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Codec/Data.html#initialize-instance_method" title="Qpid::Proton::Codec::Data#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='id identifier rubyid_pn_message_body'>pn_message_body</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span>
-    <span class='ivar'>@body</span> <span class='op'>=</span> <span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="pre_encode-instance_method">
-  
-    #<strong>pre_encode</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>:nodoc:</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 82</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_pre_encode'>pre_encode</span> <span class='comment'># :nodoc:
-</span>  <span class='comment'># encode elements from the message
-</span>  <span class='id identifier rubyid_props'>props</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec/Data.html" title="Qpid::Proton::Codec::Data (class)">Data</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Codec/Data.html#initialize-instance_method" title="Qpid::Proton::Codec::Data#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='id identifier rubyid_pn_message_properties'>pn_message_properties</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_props'>props</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
-  <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'>Mapping</span><span class='period'>.</span><span class='id identifier rubyid_for_class'>for_class</span><span class='lparen'>(</span><span class='ivar'>@properties</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='id identifier rubyid_props'>props</span><span class='comma'>,</span> <span class='ivar'>@properties</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@properties</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
-  <span class='id identifier rubyid_insts'>insts</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec/Data.html" title="Qpid::Proton::Codec::Data (class)">Data</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Codec/Data.html#initialize-instance_method" title="Qpid::Proton::Codec::Data#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='id identifier rubyid_pn_message_instructions'>pn_message_instructions</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_insts'>insts</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
-  <span class='kw'>if</span> <span class='op'>!</span><span class='ivar'>@instructions</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-    <span class='id identifier rubyid_mapping'>mapping</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'>Mapping</span><span class='period'>.</span><span class='id identifier rubyid_for_class'>for_class</span><span class='lparen'>(</span><span class='ivar'>@instructions</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_mapping'>mapping</span><span class='period'>.</span><span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='id identifier rubyid_insts'>insts</span><span class='comma'>,</span> <span class='ivar'>@instructions</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-  <span class='id identifier rubyid_annts'>annts</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec/Data.html" title="Qpid::Proton::Codec::Data (class)">Data</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Codec/Data.html#initialize-instance_method" title="Qpid::Proton::Codec::Data#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='id identifier rubyid_pn_message_annotations'>pn_message_annotations</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_annts'>annts</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
-  <span class='kw'>if</span> <span class='op'>!</span><span class='ivar'>@annotations</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-    <span class='id identifier rubyid_mapping'>mapping</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'>Mapping</span><span class='period'>.</span><span class='id identifier rubyid_for_class'>for_class</span><span class='lparen'>(</span><span class='ivar'>@annotations</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_mapping'>mapping</span><span class='period'>.</span><span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='id identifier rubyid_annts'>annts</span><span class='comma'>,</span> <span class='ivar'>@annotations</span><span class='comma'>,</span> <span class='symbol'>:keys</span> <span class='op'>=&gt;</span> <span class='symbol'>:SYMBOL</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-  <span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Codec/Data.html" title="Qpid::Proton::Codec::Data (class)">Data</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Codec/Data.html#initialize-instance_method" title="Qpid::Proton::Codec::Data#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='op'>::</span><span class='id identifier rubyid_pn_message_body'>pn_message_body</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
-  <span class='kw'>if</span> <span class='op'>!</span><span class='ivar'>@body</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-    <span class='id identifier rubyid_mapping'>mapping</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Codec.html" title="Qpid::Proton::Codec (module)">Codec</a></span></span><span class='op'>::</span><span class='const'>Mapping</span><span class='period'>.</span><span class='id identifier rubyid_for_class'>for_class</span><span class='lparen'>(</span><span class='ivar'>@body</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_mapping'>mapping</span><span class='period'>.</span><span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='ivar'>@body</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id identifier rubyid_pre_encode'>pre_encode</span><span class='semicolon'>;</span> <span class='kw'>super</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -3961,7 +3708,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="priority-instance_method">
   
-    #<strong>priority</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>priority</strong>  
   
 
   
@@ -3984,12 +3731,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-218
-219
-220</pre>
+186
+187
+188</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 218</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 186</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_priority'>priority</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_priority'>pn_message_get_priority</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -4002,7 +3749,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="priority=-instance_method">
   
-    #<strong>priority=</strong>(priority)  &#x21d2; <tt>Object</tt> 
+    #<strong>priority=</strong>(priority)  
   
 
   
@@ -4045,14 +3792,14 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-210
-211
-212
-213
-214</pre>
+178
+179
+180
+181
+182</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 210</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 178</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_priority='>priority=</span><span class='lparen'>(</span><span class='id identifier rubyid_priority'>priority</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid priority: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_priority'>priority</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_priority'>priority</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Numeric</span><span class='rparen'>)</span>
@@ -4065,117 +3812,9 @@ any intermediaries taking responsibility for the message.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="properties-instance_method">
-  
-    #<strong>properties</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns the list of property names for associated with this message.</p>
-
-<h4 id="label-Examples">Examples</h4>
-
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_msg'>msg</span><span class='period'>.</span><span class='id identifier rubyid_properties'>properties</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='op'>|</span>
-<span class='kw'>end</span>
-</code></pre>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-523
-524
-525</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 523</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_properties'>properties</span>
-  <span class='ivar'>@properties</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="properties=-instance_method">
-  
-    #<strong>properties=</strong>(properties)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Use <code>properties</code> as the message properties.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>properties</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'>Hash</span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>new properties</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-529
-530
-531</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 529</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_properties='>properties=</span><span class='lparen'>(</span><span class='id identifier rubyid_properties'>properties</span><span class='rparen'>)</span>
-  <span class='ivar'>@properties</span> <span class='op'>=</span> <span class='id identifier rubyid_properties'>properties</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="reply_to-instance_method">
   
-    #<strong>reply_to</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>reply_to</strong>  
   
 
   
@@ -4198,12 +3837,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-358
-359
-360</pre>
+326
+327
+328</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 358</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 326</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reply_to'>reply_to</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_reply_to'>pn_message_get_reply_to</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -4216,7 +3855,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="reply_to=-instance_method">
   
-    #<strong>reply_to=</strong>(address)  &#x21d2; <tt>Object</tt> 
+    #<strong>reply_to=</strong>(address)  
   
 
   
@@ -4244,12 +3883,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-352
-353
-354</pre>
+320
+321
+322</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 352</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 320</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reply_to='>reply_to=</span><span class='lparen'>(</span><span class='id identifier rubyid_address'>address</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_reply_to'>pn_message_set_reply_to</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_address'>address</span><span class='rparen'>)</span>
@@ -4262,7 +3901,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="reply_to_group_id-instance_method">
   
-    #<strong>reply_to_group_id</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>reply_to_group_id</strong>  
   
 
   
@@ -4285,12 +3924,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-512
-513
-514</pre>
+482
+483
+484</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 512</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 482</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reply_to_group_id'>reply_to_group_id</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_reply_to_group_id'>pn_message_get_reply_to_group_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -4303,7 +3942,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="reply_to_group_id=-instance_method">
   
-    #<strong>reply_to_group_id=</strong>(id)  &#x21d2; <tt>Object</tt> 
+    #<strong>reply_to_group_id=</strong>(id)  
   
 
   
@@ -4331,12 +3970,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-506
-507
-508</pre>
+476
+477
+478</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 506</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 476</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reply_to_group_id='>reply_to_group_id=</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_reply_to_group_id'>pn_message_set_reply_to_group_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -4349,7 +3988,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="subject-instance_method">
   
-    #<strong>subject</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>subject</strong>  
   
 
   
@@ -4372,12 +4011,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-342
-343
-344</pre>
+310
+311
+312</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 342</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 310</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_subject'>subject</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_subject'>pn_message_get_subject</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -4390,7 +4029,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="subject=-instance_method">
   
-    #<strong>subject=</strong>(subject)  &#x21d2; <tt>Object</tt> 
+    #<strong>subject=</strong>(subject)  
   
 
   
@@ -4418,12 +4057,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-336
-337
-338</pre>
+304
+305
+306</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 336</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 304</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_subject='>subject=</span><span class='lparen'>(</span><span class='id identifier rubyid_subject'>subject</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_subject'>pn_message_set_subject</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_subject'>subject</span><span class='rparen'>)</span>
@@ -4434,47 +4073,9 @@ any intermediaries taking responsibility for the message.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="to_s-instance_method">
-  
-    #<strong>to_s</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-125
-126
-127
-128
-129
-130
-131</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 125</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
-  <span class='id identifier rubyid_tmp'>tmp</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_string'>pn_string</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_inspect'>pn_inspect</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_tmp'>tmp</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_string_get'>pn_string_get</span><span class='lparen'>(</span><span class='id identifier rubyid_tmp'>tmp</span><span class='rparen'>)</span>
-  <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_free'>pn_free</span><span class='lparen'>(</span><span class='id identifier rubyid_tmp'>tmp</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_result'>result</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="ttl-instance_method">
   
-    #<strong>ttl</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>ttl</strong>  
   
 
   
@@ -4497,12 +4098,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-236
-237
-238</pre>
+204
+205
+206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 236</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 204</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ttl'>ttl</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_ttl'>pn_message_get_ttl</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -4515,7 +4116,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="ttl=-instance_method">
   
-    #<strong>ttl=</strong>(time)  &#x21d2; <tt>Object</tt> 
+    #<strong>ttl=</strong>(time)  
   
 
   
@@ -4556,14 +4157,14 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-228
-229
-230
-231
-232</pre>
+196
+197
+198
+199
+200</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 228</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 196</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ttl='>ttl=</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>TypeError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid ttl: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_time'>time</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Numeric</span><span class='rparen'>)</span>
@@ -4578,7 +4179,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="user_id-instance_method">
   
-    #<strong>user_id</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>user_id</strong>  
   
 
   
@@ -4601,12 +4202,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-310
-311
-312</pre>
+278
+279
+280</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 310</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 278</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_user_id'>user_id</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_get_user_id'>pn_message_get_user_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
@@ -4619,7 +4220,7 @@ any intermediaries taking responsibility for the message.</p>
       <div class="method_details ">
   <h3 class="signature " id="user_id=-instance_method">
   
-    #<strong>user_id=</strong>(id)  &#x21d2; <tt>Object</tt> 
+    #<strong>user_id=</strong>(id)  
   
 
   
@@ -4647,12 +4248,12 @@ any intermediaries taking responsibility for the message.</p>
       <pre class="lines">
 
 
-304
-305
-306</pre>
+272
+273
+274</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 304</span>
+      <pre class="code"><span class="info file"># File 'lib/core/message.rb', line 272</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_user_id='>user_id=</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_message_set_user_id'>pn_message_set_user_id</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -4667,9 +4268,9 @@ any intermediaries taking responsibility for the message.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Dec  5 15:30:44 2017 by
+  Generated on Mon Apr 30 16:10:44 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.2).
+  0.9.8 (ruby-2.4.3).
 </div>
 
     </div>

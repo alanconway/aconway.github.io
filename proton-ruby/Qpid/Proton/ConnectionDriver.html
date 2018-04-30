@@ -108,7 +108,7 @@
 </li><li>
 <p><span class='object_link'><a href="#tick-instance_method" title="Qpid::Proton::ConnectionDriver#tick (method)">#tick</a></span> generates timing-related events</p>
 </li><li>
-<p><span class='object_link'><a href="#event-instance_method" title="Qpid::Proton::ConnectionDriver#event (method)">#event</a></span> gets events to be dispatched to <span class='object_link'>Handler::MessagingHandler</span>s</p>
+<p><span class='object_link'><a href="#event-instance_method" title="Qpid::Proton::ConnectionDriver#event (method)">#event</a></span> gets events to be dispatched to <span class='object_link'><a href="Handler/MessagingHandler.html" title="Qpid::Proton::Handler::MessagingHandler (class)">Handler::MessagingHandler</a></span>s</p>
 </li><li>
 <p><span class='object_link'><a href="#write-instance_method" title="Qpid::Proton::ConnectionDriver#write (method)">#write</a></span> writes AMQP binary data to the IO</p>
 </li></ul>
@@ -130,6 +130,38 @@ handles multiple connections concurrently in multiple threads.</p>
 
 
 
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#next_tick-instance_method" title="#next_tick (instance method)">#<strong>next_tick</strong>  </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Time returned by the last call to <span class='object_link'><a href="#tick-instance_method" title="Qpid::Proton::ConnectionDriver#tick (method)">#tick</a></span>.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
 
 
 
@@ -193,7 +225,7 @@ handles multiple connections concurrently in multiple threads.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#close-instance_method" title="#close (instance method)">#<strong>close</strong>(error = nil)  &#x21d2; Object </a>
+      <a href="#close-instance_method" title="#close (instance method)">#<strong>close</strong>(error = nil)  </a>
     
 
     
@@ -218,7 +250,7 @@ frames.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#close_read-instance_method" title="#close_read (instance method)">#<strong>close_read</strong>(error = nil)  &#x21d2; Object </a>
+      <a href="#close_read-instance_method" title="#close_read (instance method)">#<strong>close_read</strong>(error = nil)  </a>
     
 
     
@@ -243,7 +275,7 @@ close frame.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#close_write-instance_method" title="#close_write (instance method)">#<strong>close_write</strong>(error = nil)  &#x21d2; Object </a>
+      <a href="#close_write-instance_method" title="#close_write (instance method)">#<strong>close_write</strong>(error = nil)  </a>
     
 
     
@@ -290,7 +322,7 @@ sending an AMQP close frame.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#each_event-instance_method" title="#each_event (instance method)">#<strong>each_event</strong>  &#x21d2; Object </a>
+      <a href="#each_event-instance_method" title="#each_event (instance method)">#<strong>each_event</strong>  </a>
     
 
     
@@ -314,7 +346,7 @@ sending an AMQP close frame.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#event-instance_method" title="#event (instance method)">#<strong>event</strong>  &#x21d2; Object </a>
+      <a href="#event-instance_method" title="#event (instance method)">#<strong>event</strong>  </a>
     
 
     
@@ -413,7 +445,7 @@ transport are closed and there are no events to dispatch.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#read-instance_method" title="#read (instance method)">#<strong>read</strong>  &#x21d2; Object </a>
+      <a href="#read-instance_method" title="#read (instance method)">#<strong>read</strong>  </a>
     
 
     
@@ -532,7 +564,7 @@ returned as transport errors by <span class='object_link'><a href="#event-instan
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#write-instance_method" title="#write (instance method)">#<strong>write</strong>  &#x21d2; Object </a>
+      <a href="#write-instance_method" title="#write (instance method)">#<strong>write</strong>  </a>
     
 
     
@@ -652,6 +684,54 @@ IO#write_nonblock</p>
   
 </div>
 
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="next_tick=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="next_tick-instance_method">
+  
+    #<strong>next_tick</strong>  
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Time returned by the last call to <span class='object_link'><a href="#tick-instance_method" title="Qpid::Proton::ConnectionDriver#tick (method)">#tick</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+130
+131
+132</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 130</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_next_tick'>next_tick</span>
+  <span class='ivar'>@next_tick</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -770,7 +850,7 @@ IO#write_nonblock</p>
       <div class="method_details ">
   <h3 class="signature " id="close-instance_method">
   
-    #<strong>close</strong>(error = nil)  &#x21d2; <tt>Object</tt> 
+    #<strong>close</strong>(error = nil)  
   
 
   
@@ -794,13 +874,13 @@ frames. See comments on <span class='object_link'><a href="#close_write-instance
       <pre class="lines">
 
 
-148
-149
-150
-151</pre>
+158
+159
+160
+161</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 148</span>
+      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 158</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_close'>close</span> <span class='id identifier rubyid_error'>error</span><span class='op'>=</span><span class='kw'>nil</span>
   <span class='id identifier rubyid_close_write'>close_write</span> <span class='id identifier rubyid_error'>error</span>
@@ -814,7 +894,7 @@ frames. See comments on <span class='object_link'><a href="#close_write-instance
       <div class="method_details ">
   <h3 class="signature " id="close_read-instance_method">
   
-    #<strong>close_read</strong>(error = nil)  &#x21d2; <tt>Object</tt> 
+    #<strong>close_read</strong>(error = nil)  
   
 
   
@@ -838,14 +918,14 @@ close frame. See comments on <span class='object_link'><a href="#close_write-ins
       <pre class="lines">
 
 
-140
-141
-142
-143
-144</pre>
+150
+151
+152
+153
+154</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 140</span>
+      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 150</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_close_read'>close_read</span> <span class='id identifier rubyid_error'>error</span><span class='op'>=</span><span class='kw'>nil</span>
   <span class='id identifier rubyid_set_error'>set_error</span> <span class='id identifier rubyid_error'>error</span>
@@ -860,7 +940,7 @@ close frame. See comments on <span class='object_link'><a href="#close_write-ins
       <div class="method_details ">
   <h3 class="signature " id="close_write-instance_method">
   
-    #<strong>close_write</strong>(error = nil)  &#x21d2; <tt>Object</tt> 
+    #<strong>close_write</strong>(error = nil)  
   
 
   
@@ -886,14 +966,14 @@ is complete.</p>
       <pre class="lines">
 
 
-126
-127
-128
-129
-130</pre>
+136
+137
+138
+139
+140</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 126</span>
+      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 136</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_close_write'>close_write</span> <span class='id identifier rubyid_error'>error</span><span class='op'>=</span><span class='kw'>nil</span>
   <span class='id identifier rubyid_set_error'>set_error</span> <span class='id identifier rubyid_error'>error</span>
@@ -960,7 +1040,7 @@ is complete.</p>
       <div class="method_details ">
   <h3 class="signature " id="each_event-instance_method">
   
-    #<strong>each_event</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>each_event</strong>  
   
 
   
@@ -1005,7 +1085,7 @@ is complete.</p>
       <div class="method_details ">
   <h3 class="signature " id="event-instance_method">
   
-    #<strong>event</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>event</strong>  
   
 
   
@@ -1149,7 +1229,7 @@ transport are closed and there are no events to dispatch.</p>
       <div class="method_details ">
   <h3 class="signature " id="read-instance_method">
   
-    #<strong>read</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>read</strong>  
   
 
   
@@ -1245,10 +1325,10 @@ returned as transport errors by <span class='object_link'><a href="#event-instan
       <pre class="lines">
 
 
-133</pre>
+143</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 133</span>
+      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 143</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_read_closed?'>read_closed?</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_connection_driver_read_closed'>pn_connection_driver_read_closed</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1326,19 +1406,29 @@ time.</p>
       <pre class="lines">
 
 
-116
-117
 118
 119
-120</pre>
+120
+121
+122
+123
+124
+125
+126
+127</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 116</span>
+      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 118</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tick'>tick</span><span class='lparen'>(</span><span class='id identifier rubyid_now'>now</span><span class='op'>=</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_transport'>transport</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pni_connection_driver_transport'>pni_connection_driver_transport</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_ms'>ms</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_tick'>pn_transport_tick</span><span class='lparen'>(</span><span class='id identifier rubyid_transport'>transport</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_to_r'>to_r</span> <span class='op'>*</span> <span class='int'>1000</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_ms'>ms</span><span class='period'>.</span><span class='id identifier rubyid_zero?'>zero?</span> <span class='op'>?</span> <span class='kw'>nil</span> <span class='op'>:</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_at'>at</span><span class='lparen'>(</span><span class='id identifier rubyid_ms'>ms</span><span class='period'>.</span><span class='id identifier rubyid_to_r'>to_r</span> <span class='op'>/</span> <span class='int'>1000</span><span class='rparen'>)</span><span class='semicolon'>;</span>
+  <span class='ivar'>@next_tick</span> <span class='op'>=</span> <span class='id identifier rubyid_ms'>ms</span><span class='period'>.</span><span class='id identifier rubyid_zero?'>zero?</span> <span class='op'>?</span> <span class='kw'>nil</span> <span class='op'>:</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_at'>at</span><span class='lparen'>(</span><span class='id identifier rubyid_ms'>ms</span><span class='period'>.</span><span class='id identifier rubyid_to_r'>to_r</span> <span class='op'>/</span> <span class='int'>1000</span><span class='rparen'>)</span><span class='semicolon'>;</span>
+  <span class='kw'>unless</span> <span class='ivar'>@next_tick</span>
+    <span class='id identifier rubyid_idle'>idle</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_transport_get_idle_timeout'>pn_transport_get_idle_timeout</span><span class='lparen'>(</span><span class='id identifier rubyid_transport'>transport</span><span class='rparen'>)</span><span class='semicolon'>;</span>
+    <span class='ivar'>@next_tick</span> <span class='op'>=</span> <span class='id identifier rubyid_now'>now</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_idle'>idle</span><span class='period'>.</span><span class='id identifier rubyid_to_r'>to_r</span> <span class='op'>/</span> <span class='int'>1000</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_idle'>idle</span><span class='period'>.</span><span class='id identifier rubyid_zero?'>zero?</span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@next_tick</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1455,7 +1545,7 @@ time.</p>
       <div class="method_details ">
   <h3 class="signature " id="write-instance_method">
   
-    #<strong>write</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>write</strong>  
   
 
   
@@ -1486,13 +1576,17 @@ time.</p>
 103
 104
 105
-106</pre>
+106
+107
+108</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write'>write</span>
-  <span class='id identifier rubyid_n'>n</span> <span class='op'>=</span> <span class='ivar'>@io</span><span class='period'>.</span><span class='id identifier rubyid_write_nonblock'>write_nonblock</span><span class='lparen'>(</span><span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_connection_driver_write_buffer'>pn_connection_driver_write_buffer</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_connection_driver_write_buffer'>pn_connection_driver_write_buffer</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_data'>data</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>0</span>
+  <span class='id identifier rubyid_n'>n</span> <span class='op'>=</span> <span class='ivar'>@io</span><span class='period'>.</span><span class='id identifier rubyid_write_nonblock'>write_nonblock</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
   <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_connection_driver_write_done'>pn_connection_driver_write_done</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='comma'>,</span> <span class='id identifier rubyid_n'>n</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_n'>n</span> <span class='op'>&gt;</span> <span class='int'>0</span>
 <span class='kw'>rescue</span> <span class='const'>Errno</span><span class='op'>::</span><span class='const'>EWOULDBLOCK</span><span class='comma'>,</span> <span class='const'>Errno</span><span class='op'>::</span><span class='const'>EAGAIN</span><span class='comma'>,</span> <span class='const'>Errno</span><span class='op'>::</span><span class='const'>EINTR</span>
   <span class='comment'># Try again later.
@@ -1543,10 +1637,10 @@ time.</p>
       <pre class="lines">
 
 
-136</pre>
+146</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 136</span>
+      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 146</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_closed?'>write_closed?</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='const'>Cproton</span><span class='period'>.</span><span class='id identifier rubyid_pn_connection_driver_read_closed'>pn_connection_driver_read_closed</span><span class='lparen'>(</span><span class='ivar'>@impl</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1559,9 +1653,9 @@ time.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Dec  5 15:30:46 2017 by
+  Generated on Mon Apr 30 16:10:46 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.2).
+  0.9.8 (ruby-2.4.3).
 </div>
 
     </div>

@@ -104,7 +104,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>A <span class='object_link'><a href="ConnectionDriver.html" title="Qpid::Proton::ConnectionDriver (class)">ConnectionDriver</a></span> that feeds events to a <span class='object_link'>Qpid::Proton::Handler::MessagingHandler</span></p>
+<p>A <span class='object_link'><a href="ConnectionDriver.html" title="Qpid::Proton::ConnectionDriver (class)">ConnectionDriver</a></span> that feeds raw proton events to a handler.</p>
 
 
   </div>
@@ -156,6 +156,11 @@
 
 
 
+  
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="ConnectionDriver.html" title="Qpid::Proton::ConnectionDriver (class)">ConnectionDriver</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ConnectionDriver.html#next_tick-instance_method" title="Qpid::Proton::ConnectionDriver#next_tick (method)">#next_tick</a></span></p>
+
 
   
     <h2>
@@ -168,7 +173,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#dispatch-instance_method" title="#dispatch (instance method)">#<strong>dispatch</strong>  &#x21d2; Object </a>
+      <a href="#dispatch-instance_method" title="#dispatch (instance method)">#<strong>dispatch</strong>  </a>
     
 
     
@@ -183,7 +188,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Dispatch all events available from <span class='object_link'><a href="ConnectionDriver.html#event-instance_method" title="Qpid::Proton::ConnectionDriver#event (method)">ConnectionDriver#event</a></span> to <span class='object_link'><a href="#handler-instance_method" title="Qpid::Proton::HandlerDriver#handler (method)">#handler</a></span>.</p>
+<p>Dispatch all available raw proton events from <span class='object_link'><a href="ConnectionDriver.html#event-instance_method" title="Qpid::Proton::ConnectionDriver#event (method)">ConnectionDriver#event</a></span> to <span class='object_link'><a href="#handler-instance_method" title="Qpid::Proton::HandlerDriver#handler (method)">#handler</a></span>.</p>
 </div></span>
   
 </li>
@@ -209,8 +214,8 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Combine an IO with a <span class='object_link'>Qpid::Proton::Handler::MessagingHandler</span> and provide a simplified
-way to run the driver via <span class='object_link'><a href="#process-instance_method" title="Qpid::Proton::HandlerDriver#process (method)">#process</a></span>.</p>
+<p>Combine an IO with a handler and provide a simplified way to run the
+driver via <span class='object_link'><a href="#process-instance_method" title="Qpid::Proton::HandlerDriver#process (method)">#process</a></span>.</p>
 </div></span>
   
 </li>
@@ -269,8 +274,8 @@ way to run the driver via <span class='object_link'><a href="#process-instance_m
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Combine an IO with a <span class='object_link'>Qpid::Proton::Handler::MessagingHandler</span> and provide a simplified
-way to run the driver via <span class='object_link'><a href="#process-instance_method" title="Qpid::Proton::HandlerDriver#process (method)">#process</a></span></p>
+<p>Combine an IO with a handler and provide a simplified way to run the
+driver via <span class='object_link'><a href="#process-instance_method" title="Qpid::Proton::HandlerDriver#process (method)">#process</a></span></p>
 
 
   </div>
@@ -295,13 +300,13 @@ way to run the driver via <span class='object_link'><a href="#process-instance_m
         <span class='name'>handler</span>
       
       
-        <span class='type'>(<tt><span class='object_link'>Handler::MessagingHandler</span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Handler/MessagingHandler.html" title="Qpid::Proton::Handler::MessagingHandler (class)">Handler::MessagingHandler</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>to receive events in <span class='object_link'><a href="#dispatch-instance_method" title="Qpid::Proton::HandlerDriver#dispatch (method)">#dispatch</a></span> and <span class='object_link'><a href="#process-instance_method" title="Qpid::Proton::HandlerDriver#process (method)">#process</a></span></p>
+<p>to receive raw events in  <span class='object_link'><a href="#dispatch-instance_method" title="Qpid::Proton::HandlerDriver#dispatch (method)">#dispatch</a></span> and <span class='object_link'><a href="#process-instance_method" title="Qpid::Proton::HandlerDriver#process (method)">#process</a></span></p>
 </div>
       
     </li>
@@ -315,23 +320,19 @@ way to run the driver via <span class='object_link'><a href="#process-instance_m
       <pre class="lines">
 
 
-168
-169
-170
-171
-172
-173
-174</pre>
+177
+178
+179
+180
+181</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 168</span>
+      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 177</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_io'>io</span><span class='comma'>,</span> <span class='id identifier rubyid_handler'>handler</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_io'>io</span><span class='rparen'>)</span>
-  <span class='comment'># Allow multiple handlers for backwards compatibility
-</span>  <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id identifier rubyid_handler'>handler</span><span class='rparen'>)</span>
-  <span class='ivar'>@handler</span> <span class='op'>=</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>1</span> <span class='op'>?</span> <span class='const'><span class='object_link'><a href="MessagingHandlers.html" title="Qpid::Proton::MessagingHandlers (class)">MessagingHandlers</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="MessagingHandlers.html#initialize-instance_method" title="Qpid::Proton::MessagingHandlers#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_handler'>handler</span>
-  <span class='ivar'>@adapter</span> <span class='op'>=</span> <span class='const'>Handler</span><span class='op'>::</span><span class='const'>Adapter</span><span class='period'>.</span><span class='id identifier rubyid_try_convert'>try_convert</span><span class='lparen'>(</span><span class='id identifier rubyid_handler'>handler</span><span class='rparen'>)</span>
+  <span class='ivar'>@handler</span> <span class='op'>=</span> <span class='id identifier rubyid_handler'>handler</span>
+  <span class='ivar'>@adapter</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Handler.html" title="Qpid::Proton::Handler (module)">Handler</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Handler/Adapter.html" title="Qpid::Proton::Handler::Adapter (class)">Adapter</a></span></span><span class='period'>.</span><span class='id identifier rubyid_adapt'><span class='object_link'><a href="Handler/Adapter.html#adapt-class_method" title="Qpid::Proton::Handler::Adapter.adapt (method)">adapt</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_handler'>handler</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -389,12 +390,12 @@ way to run the driver via <span class='object_link'><a href="#process-instance_m
       <pre class="lines">
 
 
-177
-178
-179</pre>
+184
+185
+186</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 177</span>
+      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 184</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handler'>handler</span>
   <span class='ivar'>@handler</span>
@@ -414,7 +415,7 @@ way to run the driver via <span class='object_link'><a href="#process-instance_m
       <div class="method_details first">
   <h3 class="signature first" id="dispatch-instance_method">
   
-    #<strong>dispatch</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>dispatch</strong>  
   
 
   
@@ -423,7 +424,7 @@ way to run the driver via <span class='object_link'><a href="#process-instance_m
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Dispatch all events available from <span class='object_link'><a href="ConnectionDriver.html#event-instance_method" title="Qpid::Proton::ConnectionDriver#event (method)">ConnectionDriver#event</a></span> to <span class='object_link'><a href="#handler-instance_method" title="Qpid::Proton::HandlerDriver#handler (method)">#handler</a></span></p>
+<p>Dispatch all available raw proton events from <span class='object_link'><a href="ConnectionDriver.html#event-instance_method" title="Qpid::Proton::ConnectionDriver#event (method)">ConnectionDriver#event</a></span> to <span class='object_link'><a href="#handler-instance_method" title="Qpid::Proton::HandlerDriver#handler (method)">#handler</a></span></p>
 
 
   </div>
@@ -437,18 +438,28 @@ way to run the driver via <span class='object_link'><a href="#process-instance_m
       <pre class="lines">
 
 
-180
-181
-182
-183
-184</pre>
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 180</span>
+      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 187</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_dispatch'>dispatch</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id identifier rubyid_each_event'>each_event</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_e'>e</span><span class='op'>|</span>
-    <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_dispatch'>dispatch</span> <span class='kw'>self</span>       <span class='comment'># See private on_transport_ methods below
-</span>    <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_dispatch'>dispatch</span> <span class='ivar'>@adapter</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_dispatch'>dispatch</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_each_event'>each_event</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_e'>e</span><span class='op'>|</span>
+    <span class='kw'>case</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_method'>method</span>           <span class='comment'># Events that affect the driver
+</span>    <span class='kw'>when</span> <span class='symbol'>:on_transport_tail_closed</span> <span class='kw'>then</span> <span class='id identifier rubyid_close_read'>close_read</span>
+    <span class='kw'>when</span> <span class='symbol'>:on_transport_head_closed</span> <span class='kw'>then</span> <span class='id identifier rubyid_close_write'>close_write</span>
+    <span class='kw'>when</span> <span class='symbol'>:on_transport_closed</span> <span class='kw'>then</span> <span class='ivar'>@io</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span> <span class='kw'>rescue</span> <span class='kw'>nil</span> <span class='comment'># Allow double-close
+</span>    <span class='kw'>end</span>
+    <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_dispatch'>dispatch</span> <span class='ivar'>@adapter</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -523,25 +534,27 @@ are no scheduled events</p>
       <pre class="lines">
 
 
-190
-191
-192
-193
-194
-195
-196
-197</pre>
+202
+203
+204
+205
+206
+207
+208
+209
+210</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 190</span>
+      <pre class="code"><span class="info file"># File 'lib/core/connection_driver.rb', line 202</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_process'>process</span><span class='lparen'>(</span><span class='id identifier rubyid_now'>now</span><span class='op'>=</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_read'>read</span>
+  <span class='id identifier rubyid_dispatch'>dispatch</span>
   <span class='id identifier rubyid_next_tick'>next_tick</span> <span class='op'>=</span> <span class='id identifier rubyid_tick'>tick</span><span class='lparen'>(</span><span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_dispatch'>dispatch</span>                <span class='comment'># Generate data for write
-</span>  <span class='id identifier rubyid_write'>write</span>
-  <span class='id identifier rubyid_dispatch'>dispatch</span>                <span class='comment'># Consume all events
-</span>  <span class='kw'>return</span> <span class='id identifier rubyid_next_tick'>next_tick</span>
+  <span class='id identifier rubyid_dispatch'>dispatch</span>
+  <span class='id identifier rubyid_write'>write</span>
+  <span class='id identifier rubyid_dispatch'>dispatch</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_next_tick'>next_tick</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -553,9 +566,9 @@ are no scheduled events</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Dec  5 15:30:46 2017 by
+  Generated on Mon Apr 30 16:10:46 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.2).
+  0.9.8 (ruby-2.4.3).
 </div>
 
     </div>

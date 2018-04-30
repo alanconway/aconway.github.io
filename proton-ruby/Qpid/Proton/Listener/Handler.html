@@ -107,6 +107,9 @@ connections. This class simply returns a fixed set of options for every
 connection accepted, but you can subclass and override all of the on_
 methods to provide more interesting behaviour.</p>
 
+<p><strong>Note</strong>: If a <span class='object_link'><a href="../Listener.html" title="Qpid::Proton::Listener (class)">Qpid::Proton::Listener</a></span> method raises an exception, it will
+stop the <span class='object_link'><a href="../Container.html" title="Qpid::Proton::Container (class)">Container</a></span> that the handler is running in. See <span class='object_link'><a href="../Container.html#run-instance_method" title="Qpid::Proton::Container#run (method)">Container#run</a></span></p>
+
 
   </div>
 </div>
@@ -181,7 +184,7 @@ methods to provide more interesting behaviour.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#on_close-instance_method" title="#on_close (instance method)">#<strong>on_close</strong>(listener)  &#x21d2; Object </a>
+      <a href="#on_close-instance_method" title="#on_close (instance method)">#<strong>on_close</strong>(listener)  </a>
     
 
     
@@ -205,7 +208,7 @@ methods to provide more interesting behaviour.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#on_error-instance_method" title="#on_error (instance method)">#<strong>on_error</strong>(listener, what)  &#x21d2; Object </a>
+      <a href="#on_error-instance_method" title="#on_error (instance method)">#<strong>on_error</strong>(listener, what)  </a>
     
 
     
@@ -229,7 +232,7 @@ methods to provide more interesting behaviour.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#on_open-instance_method" title="#on_open (instance method)">#<strong>on_open</strong>(listener)  &#x21d2; Object </a>
+      <a href="#on_open-instance_method" title="#on_open (instance method)">#<strong>on_open</strong>(listener)  </a>
     
 
     
@@ -304,10 +307,10 @@ methods to provide more interesting behaviour.</p>
       <pre class="lines">
 
 
-34</pre>
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span> <span class='ivar'>@opts</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -386,10 +389,10 @@ methods to provide more interesting behaviour.</p>
       <pre class="lines">
 
 
-50</pre>
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 50</span>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_accept'>on_accept</span><span class='lparen'>(</span><span class='id identifier rubyid_listener'>listener</span><span class='rparen'>)</span> <span class='ivar'>@opts</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -400,7 +403,7 @@ methods to provide more interesting behaviour.</p>
       <div class="method_details ">
   <h3 class="signature " id="on_close-instance_method">
   
-    #<strong>on_close</strong>(listener)  &#x21d2; <tt>Object</tt> 
+    #<strong>on_close</strong>(listener)  
   
 
   
@@ -443,10 +446,10 @@ methods to provide more interesting behaviour.</p>
       <pre class="lines">
 
 
-54</pre>
+57</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_close'>on_close</span><span class='lparen'>(</span><span class='id identifier rubyid_listener'>listener</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
     </td>
@@ -457,7 +460,7 @@ methods to provide more interesting behaviour.</p>
       <div class="method_details ">
   <h3 class="signature " id="on_error-instance_method">
   
-    #<strong>on_error</strong>(listener, what)  &#x21d2; <tt>Object</tt> 
+    #<strong>on_error</strong>(listener, what)  
   
 
   
@@ -512,10 +515,10 @@ this method is called and <span class='object_link'><a href="#on_open-instance_m
       <pre class="lines">
 
 
-45</pre>
+48</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 45</span>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_error'>on_error</span><span class='lparen'>(</span><span class='id identifier rubyid_listener'>listener</span><span class='comma'>,</span> <span class='id identifier rubyid_what'>what</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
     </td>
@@ -526,7 +529,7 @@ this method is called and <span class='object_link'><a href="#on_open-instance_m
       <div class="method_details ">
   <h3 class="signature " id="on_open-instance_method">
   
-    #<strong>on_open</strong>(listener)  &#x21d2; <tt>Object</tt> 
+    #<strong>on_open</strong>(listener)  
   
 
   
@@ -569,10 +572,10 @@ this method is called and <span class='object_link'><a href="#on_open-instance_m
       <pre class="lines">
 
 
-38</pre>
+41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'lib/core/listener.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_open'>on_open</span><span class='lparen'>(</span><span class='id identifier rubyid_listener'>listener</span><span class='rparen'>)</span> <span class='kw'>end</span></pre>
     </td>
@@ -585,9 +588,9 @@ this method is called and <span class='object_link'><a href="#on_open-instance_m
 </div>
 
       <div id="footer">
-  Generated on Tue Dec  5 15:30:45 2017 by
+  Generated on Mon Apr 30 16:10:44 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.2).
+  0.9.8 (ruby-2.4.3).
 </div>
 
     </div>

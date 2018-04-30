@@ -91,7 +91,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>States of a transfer</p>
+<p>AMQP Delivery States describing the outcome of a message transfer</p>
 
 
   </div>
@@ -156,8 +156,9 @@ acceptable if re-delivered to another receiver</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Like <span class='object_link'><a href="#RELEASED-constant" title="Qpid::Proton::Transfer::State::RELEASED (constant)">RELEASED</a></span>, but <span class='object_link'><a href="../Tracker.html#modified-instance_method" title="Qpid::Proton::Tracker#modified (method)">Qpid::Proton::Tracker#modified</a></span> has modifications to be made to the
-message before re-delivery</p>
+<p>Like <span class='object_link'><a href="#RELEASED-constant" title="Qpid::Proton::Transfer::State::RELEASED (constant)">RELEASED</a></span>, but there are modifications (see <span class='object_link'><a href="../Tracker.html#modifications-instance_method" title="Qpid::Proton::Tracker#modifications (method)">Qpid::Proton::Tracker#modifications</a></span>)
+that must be applied to the message by the <span class='object_link'><a href="../Sender.html" title="Qpid::Proton::Sender (class)">Sender</a></span> before re-delivering
+it.</p>
 
 
   </div>
@@ -198,9 +199,9 @@ message before re-delivery</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Dec  5 15:30:44 2017 by
+  Generated on Mon Apr 30 16:10:44 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.8 (ruby-2.4.2).
+  0.9.8 (ruby-2.4.3).
 </div>
 
     </div>
