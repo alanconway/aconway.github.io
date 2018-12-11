@@ -1,6 +1,6 @@
-all: index.html proton-ruby proton-c proton-cpp
+all: index.html cloudevents.html proton-ruby proton-c proton-cpp
 
-index.html: index.adoc
+%.html: %.adoc
 	asciidoctor $<
 
 SRC = ~/proton

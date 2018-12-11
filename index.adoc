@@ -1,6 +1,8 @@
 = Alan's stuff =
 :nofooter:
 
+- link:cloudevents.html[Cloud Events]
+
 Proposed "Advanced Topics" for proton-C documentation:
 
 - link:proton-c/threads.html[Multi-threading]

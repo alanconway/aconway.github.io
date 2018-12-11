@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
-<title>Alan&#8217;s stuff</title>
+<title>Summary of CloudEvents specification</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -432,28 +432,161 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Alan&#8217;s stuff</h1>
+<h1>Summary of CloudEvents specification</h1>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a very non-authoritative summary of some of the <a href="https://github.com/cloudevents/spec/blob/master/README.md">CloudEvents</a> specification, made for my education and the amusement of others.</p>
+</div>
+<div class="paragraph">
+<p><strong>Abstract Types</strong> (no encoding implied)</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="cloudevents.html">Cloud Events</a></p>
+<p><strong>Integer</strong>(32 bit, signed)</p>
+</li>
+<li>
+<p><strong>String</strong> (Unicode)</p>
+</li>
+<li>
+<p><strong>Binary</strong> (bytes)</p>
+</li>
+<li>
+<p><strong>Map</strong>([String]&#8594;Any)</p>
+</li>
+<li>
+<p><strong>Any</strong> (Integer|String|Binary|Map)</p>
+</li>
+<li>
+<p><strong>Time</strong>(RFC 3339)</p>
+</li>
+<li>
+<p><strong>URI</strong>(RFC 3986)</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Proposed "Advanced Topics" for proton-C documentation:</p>
+<p>An <strong>event</strong> is a collection of named attributes, the standard <em>Context attributes</em> are:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="proton-c/threads.html">Multi-threading</a></p>
+<p>Required: <strong>type</strong>(String), <strong>specversion</strong>(String), <strong>source</strong>(URI), <strong>id</strong>(String)</p>
 </li>
 <li>
-<p><a href="proton-c/buffering.html">Buffering</a></p>
+<p>Optional: <strong>time</strong>(Time), <strong>schemaurl</strong>(URI), <strong>contenttype</strong>(String), <strong>data</strong>(Any)</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Custom extension attributes are also allowed.</p>
+</div>
+<div class="paragraph">
+<p>The Event model is abstract; <em>formats</em> and <em>transport bindings</em> define how they can be serialized and transmitted.</p>
+</div>
+<div class="paragraph">
+<p>Implementations MUST support the format <code>application/cloudevents+json</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_formats_and_bindings">Formats and Bindings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Formats</strong> serialize an event as a text or binary sequence: e.g. JSON, Protocol buffers etc.</p>
+</div>
+<div class="paragraph">
+<p><strong>Transport bindings</strong> map events to "messages" in some messaging system, e.g. AMQP, MQTT. Bindings are described in terms of the transport&#8217;s abstractions rather than direct character or byte sequences.</p>
+</div>
+<div class="paragraph">
+<p>Attributes <em>contenttype</em> and <em>data</em> play a special role in transport bindings.
+Other context meta-data attributes and user attributes are also mapped, but don&#8217;t have a special role.</p>
+</div>
+<div class="paragraph">
+<p>There are two <strong>modes</strong> for transport bindings:</p>
+</div>
+<div class="paragraph">
+<p><strong>Structured</strong>: The entire event is serialized in a known <em>format</em> (e.g <code>application/cloudevents+json</code>) and placed in the transport message body or payload.</p>
+</div>
+<div class="paragraph">
+<p><strong>Binary</strong>: The <em>data</em> attribute is stored as the transport body/payload, all other attributes are mapped to transport meta-data.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mqtt_3_1_1_transport_binding">MQTT 3.1.1 transport binding</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Structured only. MQTT PUBLISH message payload is a JSON-formatted CloudEvent. That&#8217;s it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mqtt_5_0_transport_binding">MQTT 5.0 transport binding</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Structured</strong>: MQTT <code>Content Type</code> indicates event format, missing <code>Content Type</code> means JSON (MQTT 3.1.1 compatible)</p>
+</div>
+<div class="paragraph">
+<p><strong>Binary</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>event <em>contenttype</em>== MQTT <code>Content Type</code></p>
+</li>
+<li>
+<p>event <em>data</em> == MQTT payload</p>
+</li>
+<li>
+<p>other event attributes == MQTT <em>user properties</em> with the same names</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_amqp_message_mapping">AMQP Message mapping</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Structured: MQTT <code>Content Type</code> indicates cloud event format</p>
+</div>
+<div class="paragraph">
+<p>Binary:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>event <em>contenttype</em> == AMQP <code>content-type</code></p>
+</li>
+<li>
+<p>event <em>data</em> == AMQP data section</p>
+</li>
+<li>
+<p>other event attributes == AMQP <code>application-properties</code>, names prefixed with <code>cloudEvents:</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_spec_questions">Spec Questions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Why are event attribute names prefixed with "cloudEvents:" when mapped to AMQP but not to MQTT?</p>
+</div>
+<div class="paragraph">
+<p>AMQP spec doesn&#8217;t explicitly say that no AMQP <code>content-type</code> implies JSON. Is it intended to, or is no-content-type intended to be illegal?</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2018-12-10 19:52:24 -0500
 </div>
 </div>
 </body>

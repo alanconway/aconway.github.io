@@ -1,0 +1,70 @@
+= Summary of CloudEvents specification
+
+This is a very non-authoritative summary of some of the https://github.com/cloudevents/spec/blob/master/README.md[CloudEvents] specification, made for my education and the amusement of others.
+
+*Abstract Types* (no encoding implied)
+
+- *Integer*(32 bit, signed)
+- *String* (Unicode)
+- *Binary* (bytes)
+- *Map*([String]->Any)
+- *Any* (Integer|String|Binary|Map)
+- *Time*(RFC 3339)
+- *URI*(RFC 3986)
+
+An *event* is a collection of named attributes, the standard _Context attributes_ are:
+
+- Required: *type*(String), *specversion*(String), *source*(URI), *id*(String)
+- Optional: *time*(Time), *schemaurl*(URI), *contenttype*(String), *data*(Any)
+
+Custom extension attributes are also allowed.
+
+The Event model is abstract; _formats_ and _transport bindings_ define how they can be serialized and transmitted.
+
+Implementations MUST support the format `application/cloudevents+json`
+
+== Formats and Bindings
+
+*Formats* serialize an event as a text or binary sequence: e.g. JSON, Protocol buffers etc.
+
+*Transport bindings* map events to "messages" in some messaging system, e.g. AMQP, MQTT. Bindings are described in terms of the transport's abstractions rather than direct character or byte sequences.
+
+Attributes _contenttype_ and _data_ play a special role in transport bindings.
+Other context meta-data attributes and user attributes are also mapped, but don't have a special role.
+
+There are two *modes* for transport bindings:
+
+*Structured*: The entire event is serialized in a known _format_ (e.g `application/cloudevents+json`) and placed in the transport message body or payload.
+
+*Binary*: The _data_ attribute is stored as the transport body/payload, all other attributes are mapped to transport meta-data.
+
+== MQTT 3.1.1 transport binding
+
+Structured only. MQTT PUBLISH message payload is a JSON-formatted CloudEvent. That's it.
+
+== MQTT 5.0 transport binding
+
+*Structured*: MQTT `Content Type` indicates event format, missing `Content Type` means JSON (MQTT 3.1.1 compatible)
+
+*Binary*:
+
+- event _contenttype_== MQTT `Content Type`
+- event _data_ == MQTT payload
+- other event attributes == MQTT _user properties_ with the same names
+
+== AMQP Message mapping
+
+Structured: MQTT `Content Type` indicates cloud event format
+
+Binary:
+
+- event _contenttype_ == AMQP `content-type`
+- event _data_ == AMQP data section
+- other event attributes == AMQP `application-properties`, names prefixed with `cloudEvents:`
+
+
+== Spec Questions
+
+Why are event attribute names prefixed with "cloudEvents:" when mapped to AMQP but not to MQTT?
+
+AMQP spec doesn't explicitly say that no AMQP `content-type` implies JSON. Is it intended to, or is no-content-type intended to be illegal?
