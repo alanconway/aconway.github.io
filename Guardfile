@@ -2,7 +2,6 @@
 require 'asciidoctor'
 guard :shell do
   watch(/^.*\.adoc$/) {|m|
-    m[0]
-    Asciidoctor.convert_file(m[0])
+    Asciidoctor.convert_file m[0], :attributes => { "sectanchors" => true }
   }
 end
