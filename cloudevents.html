@@ -15,7 +15,7 @@
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_base_cloudevents_specification">Base CloudEvents specification</a></li>
+<li><a href="#_base_cloudevents_specification">Base CloudEvents Specification</a></li>
 <li><a href="#_mqtt_3_1_1_transport_binding">MQTT 3.1.1 transport binding</a></li>
 <li><a href="#_mqtt_5_0_transport_binding">MQTT 5.0 transport binding</a></li>
 <li><a href="#_amqp_message_mapping">AMQP Message mapping</a></li>
@@ -25,10 +25,13 @@
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_base_cloudevents_specification"><a class="anchor" href="#_base_cloudevents_specification"></a>Base CloudEvents specification</h2>
+<h2 id="_base_cloudevents_specification"><a class="anchor" href="#_base_cloudevents_specification"></a>Base CloudEvents Specification</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Types: <strong>Integer</strong>, <strong>String</strong>, <strong>Binary</strong>, <strong>Map</strong>, <strong>Time</strong>, <strong>URI</strong>, <strong>Any</strong> (any of Integer, String, Binary or Map)</p>
+<p>Official specification: <a href="https://github.com/cloudevents/spec" class="bare">https://github.com/cloudevents/spec</a></p>
+</div>
+<div class="paragraph">
+<p>Types: <strong>Integer</strong>, <strong>String</strong>, <strong>Binary</strong>, <strong>Map</strong>, <strong>Time</strong>, <strong>URI</strong>, <strong>Any</strong> (can be any of Integer, String, Binary or Map)</p>
 </div>
 <div class="paragraph">
 <p>An <strong>event</strong> is a collection of named attributes of the above types.</p>
@@ -47,7 +50,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>The definition of an event is independent of the <strong>format</strong> or <strong>transport binding</strong> used to serialize and deliver them</p>
+<p>The abstract definition of events is independent of the <strong>format</strong> or <strong>transport binding</strong> used to serialize and deliver them.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -57,7 +60,7 @@
 </dd>
 <dt class="hdlist1">Transport binding</dt>
 <dd>
-<p>Defines how to map an event to/from a "message" as defined by some messaging transport (e.g. AMQP, MQTT) so that events can be carried by that transport. A transport binding can offer either or both of the following <strong>modes</strong> of operation:</p>
+<p>Defines how to map an event to/from a "message" as defined by some messaging transport (e.g. HTTP, AMQP, MQTT) so that events can be carried by that transport. A transport binding can offer either or both of the following <strong>modes</strong> of operation:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Structured</dt>
@@ -70,7 +73,7 @@
 <div class="title">Note</div>
 </td>
 <td class="content">
-The <em>format</em> media type is distinct from the event&#8217;s <em>contenttype</em>. It describes the encoding of the entire event in the transport message body. Once decoded, the event&#8217;s <em>contenttype</em> describes the encoding its <em>data</em> attribute.
+The <em>format</em> media type is distinct from the event&#8217;s <em>contenttype</em>. It describes the encoding of the entire event in the transport message body. Once decoded, the event&#8217;s <em>contenttype</em> describes the encoding of its <em>data</em> attribute.
 </td>
 </tr>
 </table>
@@ -78,7 +81,7 @@ The <em>format</em> media type is distinct from the event&#8217;s <em>contenttyp
 </dd>
 <dt class="hdlist1">Binary</dt>
 <dd>
-<p>The <em>data</em> attribute value is stored directly in binary form as the transport message payload. All other attributes are mapped transport meta-data (message "annotations", "properties" or the like). In this case the receiver of the transport message can directly access the binary data and other attributes without decoding an additional <em>format</em> envelope.</p>
+<p>The <em>data</em> attribute value is stored directly in binary form as the transport message payload. All other attributes are mapped to transport meta-data ("headers", "annotations", "properties" or s imilar). In this case the receiver of the transport message can directly access the binary data and other attributes without decoding an additional <em>format</em> envelope.</p>
 </dd>
 </dl>
 </div>
@@ -91,7 +94,7 @@ The <em>format</em> media type is distinct from the event&#8217;s <em>contenttyp
 <h2 id="_mqtt_3_1_1_transport_binding"><a class="anchor" href="#_mqtt_3_1_1_transport_binding"></a>MQTT 3.1.1 transport binding</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Structured only. MQTT PUBLISH message payload is <code>application/cloudEvents+json</code>. That&#8217;s it.</p>
+<p>Structured JSON only. MQTT PUBLISH payload is an <code>application/cloudEvents+json</code> format event. That&#8217;s all folks.</p>
 </div>
 </div>
 </div>
@@ -102,14 +105,14 @@ The <em>format</em> media type is distinct from the event&#8217;s <em>contenttyp
 <dl>
 <dt class="hdlist1">Structured</dt>
 <dd>
-<p>MQTT <code>Content Type</code> is an <code>application/cloudEvents+</code> <em>format</em>, empty/missing <code>Content Type</code> implies <code>application/cloudEvents+json</code> for MQTT 3.1.1 compatibility. Payload is cloud message in <em>format</em>.</p>
+<p>MQTT <code>Content Type</code> is some <code>application/cloudEvents+</code> <em>format</em>. If there is no <code>Content Type</code> then <code>application/cloudEvents+json</code> is assumed (MQTT 3.1.1 compatible).</p>
 </dd>
 <dt class="hdlist1">Binary</dt>
 <dd>
 <div class="ulist">
 <ul>
 <li>
-<p><em>contenttype</em>== MQTT <code>Content Type</code> (must not be empty or an <code>application/cloudEvents</code> <em>format</em>)</p>
+<p><em>contenttype</em>== MQTT <code>Content Type</code> (must not be empty or start with <code>application/cloudEvents</code>)</p>
 </li>
 <li>
 <p><em>data</em> == MQTT payload</p>
@@ -131,20 +134,20 @@ The <em>format</em> media type is distinct from the event&#8217;s <em>contenttyp
 <dl>
 <dt class="hdlist1">Structured</dt>
 <dd>
-<p>AMQP <code>content-type</code> is an <code>application/cloudEvents</code> format, empty/missing <code>content-type</code> implies <code>application/cloudEvents+json</code> . Payload is cloud message in <em>format</em>.</p>
+<p>AMQP <code>content-type</code> is some <code>application/cloudEvents+</code> format. If there is no <code>content-type</code> then <code>application/cloudEvents+json</code>  is assumed. A single AMQP data section carries the event serialized with <em>format</em> .</p>
 </dd>
 <dt class="hdlist1">Binary</dt>
 <dd>
 <div class="ulist">
 <ul>
 <li>
-<p><em>contenttype</em> == AMQP <code>content-type</code> (must not be empty or an <code>application/cloudEvents</code> <em>format</em>)</p>
+<p><em>contenttype</em> == AMQP <code>content-type</code> (must not be empty or start with <code>application/cloudEvents</code>)</p>
 </li>
 <li>
-<p><em>data</em> == AMQP data section</p>
+<p><em>data</em> == Single AMQP data section</p>
 </li>
 <li>
-<p>other event attributes == AMQP <code>application-properties</code>, names are prefixed with <code>cloudEvents:</code></p>
+<p>other event attributes == AMQP <code>application-properties</code>, attribute names prefixed with <code>cloudEvents:</code></p>
 </li>
 </ul>
 </div>
@@ -190,7 +193,7 @@ The <em>format</em> media type is distinct from the event&#8217;s <em>contenttyp
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-12-11 17:01:49 EST
+Last updated 2018-12-12 11:01:36 EST
 </div>
 </div>
 </body>

@@ -1,10 +1,11 @@
 = CloudEvents cheat-sheet
 :toc:
 
+== Base CloudEvents Specification
 
-== Base CloudEvents specification
+Official specification: https://github.com/cloudevents/spec
 
-Types: *Integer*, *String*, *Binary*, *Map*, *Time*, *URI*, *Any* (any of Integer, String, Binary or Map)
+Types: *Integer*, *String*, *Binary*, *Map*, *Time*, *URI*, *Any* (can be any of Integer, String, Binary or Map)
 
 An *event* is a collection of named attributes of the above types.
 
@@ -12,41 +13,42 @@ An *event* is a collection of named attributes of the above types.
 * _Optional_:  *time*(Time), *schemaurl*(URI), *contenttype*(String), *data*(Any)
 * _Custom_: defined by an application
 
-The definition of an event is independent of the *format* or *transport binding* used to serialize and deliver them
+The abstract definition of events is independent of the *format* or *transport binding* used to serialize and deliver them.
 
 Format:: Defines how an event is serialized as a sequence of bytes (e.g. JSON, Protocol Buffer). Each _format_ is identified a media type starting with `application/cloudEvents+` (e.g. `application/cloudEvents+json`, `application/cloudEvents+proto`)
 
-Transport binding:: Defines how to map an event to/from a "message" as defined by some messaging transport (e.g. AMQP, MQTT) so that events can be carried by that transport. A transport binding can offer either or both of the following *modes* of operation:
+Transport binding:: Defines how to map an event to/from a "message" as defined by some messaging transport (e.g. HTTP, AMQP, MQTT) so that events can be carried by that transport. A transport binding can offer either or both of the following *modes* of operation:
 +
 Structured::: The event is serialized using a known _format_ and stored in the transport message "body" or "payload". If the binding allows multiple formats, the _format_ media type must be part of the message meta-data.
 +
-NOTE: The _format_ media type is distinct from the event's _contenttype_. It describes the encoding of the entire event in the transport message body. Once decoded, the event's _contenttype_ describes the encoding its _data_ attribute.
+NOTE: The _format_ media type is distinct from the event's _contenttype_. It describes the encoding of the entire event in the transport message body. Once decoded, the event's _contenttype_ describes the encoding of its _data_ attribute.
 
-Binary::: The _data_ attribute value is stored directly in binary form as the transport message payload. All other attributes are mapped transport meta-data (message "annotations", "properties" or the like). In this case the receiver of the transport message can directly access the binary data and other attributes without decoding an additional _format_ envelope.
+Binary::: The _data_ attribute value is stored directly in binary form as the transport message payload. All other attributes are mapped to transport meta-data ("headers", "annotations", "properties" or s imilar). In this case the receiver of the transport message can directly access the binary data and other attributes without decoding an additional _format_ envelope.
 
 == MQTT 3.1.1 transport binding
 
-Structured only. MQTT PUBLISH message payload is `application/cloudEvents+json`. That's it.
+Structured JSON only. MQTT PUBLISH payload is an `application/cloudEvents+json` format event. That's all folks.
 
 == MQTT 5.0 transport binding
 
 Structured::
-MQTT `Content Type` is an `application/cloudEvents+` _format_, empty/missing `Content Type` implies `application/cloudEvents+json` for MQTT 3.1.1 compatibility. Payload is cloud message in _format_.
+MQTT `Content Type` is some `application/cloudEvents+` _format_. If there is no `Content Type` then `application/cloudEvents+json` is assumed (MQTT 3.1.1 compatible).
 
 Binary::
 
-- _contenttype_== MQTT `Content Type` (must not be empty or an `application/cloudEvents` _format_)
+- _contenttype_== MQTT `Content Type` (must not be empty or start with `application/cloudEvents`)
 - _data_ == MQTT payload
 -  other event attributes == MQTT _User Properties_ with the same names
 
 == AMQP Message mapping
 
-Structured:: AMQP `content-type` is an `application/cloudEvents` format, empty/missing `content-type` implies `application/cloudEvents+json` . Payload is cloud message in _format_.
+Structured::
+AMQP `content-type` is some `application/cloudEvents+` format. If there is no `content-type` then `application/cloudEvents+json`  is assumed. A single AMQP data section carries the event serialized with _format_ .
 
 Binary::
-- _contenttype_ == AMQP `content-type` (must not be empty or an `application/cloudEvents` _format_)
-- _data_ == AMQP data section
--  other event attributes == AMQP `application-properties`, names are prefixed with `cloudEvents:`
+- _contenttype_ == AMQP `content-type` (must not be empty or start with `application/cloudEvents`)
+- _data_ == Single AMQP data section
+-  other event attributes == AMQP `application-properties`, attribute names prefixed with `cloudEvents:`
 
 == Spec Questions
 
