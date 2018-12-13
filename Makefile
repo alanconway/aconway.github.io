@@ -1,4 +1,8 @@
-all: index.html cloudevents.html proton-ruby proton-c proton-cpp
+all: pages
+
+pages: index.html cloudevents.html
+
+proton: proton-ruby proton-c proton-cpp
 
 %.html: %.adoc
 	asciidoctor $<
