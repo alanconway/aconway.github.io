@@ -1,9 +1,8 @@
 = Alan's stuff =
 :nofooter:
 
-- link:cloudevents.html[Cloud Events]
+Current work: link:knative/kntransport.pdf[Easy Knative eventing sources]
 
-Proposed "Advanced Topics" for proton-C documentation:
+Old stuff:
+- link:cloudevents.html[Cloud Events Cheat Sheet]
 
-- link:proton-c/threads.html[Multi-threading]
-- link:proton-c/buffering.html[Buffering]
