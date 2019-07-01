@@ -1,36 +1,10 @@
-all: pages
+ADOC := $(shell find . -name '*.adoc')
+HTML := $(patsubst %.adoc,%.html,$(ADOC))
 
-pages: index.html cloudevents.html
-
-proton: proton-ruby proton-c proton-cpp
-
-%.html: %.adoc
-	asciidoctor $<
-
-SRC = ~/proton
-BLD = ~/proton/bld-doc
-
-adoc_html := $(patsubst %.adoc,%.html,$(wildcard *.adoc))
-
-all: adoc
+all: $(HTML)
 
 clean:
-	rm $(adoc_html)
-
-proton: proton-ruby proton-c proton-cpp
-
-adoc: $(adoc_html)
+	rm -f $(HTML)
 
 %.html: %.adoc
-	asciidoctor -a sectanchors $<
-
-$(BLD):
-	mkdir $(BLD) && cd $(BLD) && my-cmake
-
-proton-%: $(BLD) force
-	( cd $(BLD) && make docs-$*; )
-	mkdir -p proton-$*
-	rsync -ar $(dir $(shell find $(BLD)/$*/doc* -name index.html)) $(PWD)/proton-$*/
-	touch $@
-
-force::
+	asciidoctor -a sectanchors -o $@ $<

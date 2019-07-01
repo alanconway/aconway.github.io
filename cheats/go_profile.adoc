@@ -1,0 +1,102 @@
+= Go profiling cheat-sheet
+
+This is a short list of things I do to profile in go, not an introduction to profiling.
+You can (should) get lots of good info on the web, I've included a few pointers.
+
+== First impressions
+
+`sysprof` (Fedora: `dnf install sysprof sysprof-cli`) is great for a quick CPU profile of any executable (or of your entire system)
+
+....
+sysprof-cli -c 'odo list' odo.syscap
+# Ctrl-C when the program is done, sysprof-cli does not return automatically.
+sysprof odo.syscap
+....
+
+== Profile a Go command
+
+This https://blog.golang.org/profiling-go-programs[Go blog] outlines the profiling tools, I use https://godoc.org/github.com/pkg/profile[this library] as a simplifying wrapper. Modify your `main()` like this:
+
+[source,options=nowrap]
+----
+import "github.com/pkg/profile""
+func main() {
+     	defer profile.Start(profile.CPUProfile, profile.ProfilePath(".")).Stop()
+----
+
+You can replace `CPUProfile` with `MemProfile`, `MutexProfile`, `BlockProfile` or `TraceProfile`
+Running your command will now generate files called `*.pprof` or `trace.out` in the current directory.
+
+There are many ways to examine a `*.pprof` profile, here are two:
+....
+go tool pprof -web cpu.pprof # Open HTML in a browser.
+go tool pprof -kcachegrind cpu.pprof # Start kcachegrind visualizer.
+....
+I strongly recommend `kcachegrind` (Fedora: `dnf install kcachegrind`)
+
+NOTE: If your command has a signal handler, add `profile.NoShutdownHook` to
+disable the signal handler built in to the profile wrapper.
+
+=== Trace profiles
+
+For `trace.out` files this opens the trace in a browser:
+....
+go tool trace trace.out
+....
+You need Google Chrome for the full benefit, and it takes a bit of
+getting used to, but it is worth it!
+
+You can also extract pprof-format profiles from a trace like this:
+
+....
+go tool trace -pprof=net trace.out > net.pprof
+go tool pprof -kcachegrind net.pprof
+....
+
+You can replace `net` with any of: `net`, `sync`, `syscall` or `scheduler`
+
+== Go benchmarks
+
+To seriously investigate performance-sensitive code, add https://dave.cheney.net/2013/06/30/how-to-write-benchmarks-in-go:[benchmarks] to your test suite. Benchmarks are similar to tests but instead of testing correctness they measure performance. They are a repeatable way to measure the impact of changes on specific performance-sensitive code.
+
+
+Benchmarks don't run by default in `go test` so:
+
+1. They won't slow down with CI or normal developer test runs
+2. They are not a substitute for tests, code that has benchmarks must _also_ have tests.
+
+
+`go test` has built in support for enabling the various profilers on tests and benchmarks. Here are some examples of things you can do with a benchmark:
+
+....
+# Generate and examine a memory profile
+go test -v -run=- -bench=BenchmarkCopy -memprofile mem.pprof && go tool pprof -kcachegrind mem.pprof
+# Generate and examine a CPU profile
+go test -v -run=- -bench=BenchmarkCopy -cpuprofile cpu.pprof && go tool pprof -kcachegrind cpu.pprof
+
+# Generate and examine a trace profile
+go test -v -run=- -bench BenchmarkCopy -trace trace.out && go tool trace trace.out
+
+# Examine the network profile from the trace generated in the last step using kcachegrind
+go tool trace -pprof=net trace.out > net.pprof && go tool pprof -kcachegrind net.pprof
+....
+
+Things to note:
+
+* `-run=-` prevents tests from also running
+* `-bench` takes a regexp for benchmarks to run, -bench=. runs all benchmarks.
+
+You can compare before/after profiles with benchcmp: `
+....
+go get golang.org/x/tools/cmd/benchcmp`
+
+# Run the 'before' benchmark
+go test -v -run=- -bench=BenchmarkCopy | tee before.txt
+
+# Now change branch and rebuild to run an 'after' benchmark
+go test -v -run=- -bench=BenchmarkCopy | tee after.txt
+benchcmp before.txt after.txt
+....
+
+NOTE:  Profile times are affected by other activity on you machine, and even with identical code the numbers will vary from run to run. Comparisons are only significant if the difference can be reproduced in multiple "after" runs, and is significantly bigger than the differences you see when running the "before" code repeatedly.
+R

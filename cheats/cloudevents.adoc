@@ -1,0 +1,55 @@
+= CloudEvents cheat-sheet
+:toc:
+:data-uri:
+== Base CloudEvents Specification
+
+Official specification: https://github.com/cloudevents/spec
+
+Types: *Integer*, *String*, *Binary*, *Map*, *Time*, *URI*, *Any* (can be any of Integer, String, Binary or Map)
+
+An *event* is a collection of named attributes of the above types:
+
+* _Required_: `type`(String), `specversion`(String), `source`(URI), `id`(String)
+* _Optional_:  `time`(Time), `schemaurl`(URI), `contenttype`(String), `data`(Any)
+* _Custom Extensions_: defined by an application
+
+The `data` attribute carries the "payload" of the event. The other attributes are *context* (metadata).
+The abstract event definition is independent of the *format* or *transport binding* used to serialize and deliver them.
+
+Format:: Serialize a complete event (context+data) as a sequence of bytes (e.g. JSON, Protocol buffer). Each _format_ is identified by a media type like `application/cloudEvents+json`, `application/cloudEvents+proto`
+
+Transport binding:: Map an event to/from a *message* defined by some transport (e.g. HTTP, AMQP, MQTT). Bindings can support one or both of the following *modes*: 
+
+Structured::: The complete event __structure__ (context + data) is serialized using a known _format_ and stored as the message body. The _format_ media type is stored as message meta-data.
+
+Binary::: The _binary_ `data` value becomes the message body. Context attributes (including `contenttype`) are stored as message meta-data ("headers", "annotations", "properties" or similar). The receiver can access the binary data and context attributes directly, without decoding a _format_ envelope.
+
+NOTE: The _format_ media type is separate from the event's _contenttype_. For example an event with _contenttype_ = `text/xml` could be encoded as `application/cloudEvents+json`
+The receiver decodes the event as JSON, but treats the `data` attribute as XML.
+
+
+== MQTT 3.1.1 transport binding
+
+Structured JSON only. MQTT PUBLISH payload is an `application/cloudEvents+json` format event. That's all folks.
+
+== MQTT 5.0 transport binding
+
+Structured::
+MQTT `Content Type` is an `application/cloudEvents+` _format_. No `Content Type` means `application/cloudEvents+json` (MQTT 3.1.1 compatible).
+
+Binary::
+- _contenttype_== MQTT `Content Type` property (must not be empty or start with `application/cloudEvents`)
+- `data` == MQTT binary payload
+-  Context attributes == MQTT _User Properties_ with the same names
+
+== AMQP Message mapping
+
+Structured::
+AMQP `content-type` is an `application/cloudEvents+` _format_. No `content-type` means `application/cloudEvents+json`.
+
+Binary::
+- _contenttype_ == AMQP `content-type` (must not be empty or start with `application/cloudEvents`)
+- `data` == AMQP body (single data section)
+-  Context attributes == AMQP `application-properties`, attribute names prefixed with `cloudEvents:`
+
+
