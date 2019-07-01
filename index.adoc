@@ -1,8 +1,0 @@
-= Alan's stuff =
-:nofooter:
-
-Current work: link:knative/kntransport.pdf[Easy Knative eventing sources]
-
-Old stuff:
-- link:cloudevents.html[Cloud Events Cheat Sheet]
-
