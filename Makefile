@@ -8,3 +8,8 @@ clean:
 
 %.html: %.adoc
 	asciidoctor -a sectanchors -o $@ $<
+
+.PHONY: force
+
+godoc: force
+	godoc-grab github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x

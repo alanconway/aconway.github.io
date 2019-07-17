@@ -4,3 +4,4 @@
 * link:cheats/go_profile.html[Go profiling cheat sheet]
 * link:cheats/cloudevents.html[Cloud Events Cheat Sheet]
 * link:knative/kntransport.pdf[Easy Knative eventing sources]
+* link:godoc/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/index.html[Proposed cloudevent.transport changes]

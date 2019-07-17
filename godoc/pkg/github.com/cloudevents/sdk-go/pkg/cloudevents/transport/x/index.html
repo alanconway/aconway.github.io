@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>x - The Go Programming Language</title>
+
+<link type="text/css" rel="stylesheet" href="../../../../../../../../lib/godoc/style.css">
+
+<link rel="search" type="application/opensearchdescription+xml" title="godoc" href="http://localhost:6060/opensearch.xml" />
+
+
+<script>window.initFuncs = [];</script>
+
+<script src="../../../../../../../../lib/godoc/jquery.js" defer></script>
+
+
+
+<script src="../../../../../../../../lib/godoc/playground.js" defer></script>
+
+<script>var goVersion = "go1.12.5";</script>
+<script src="../../../../../../../../lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="http://localhost:6060/">The Go Programming Language</a></div>
+<div class="top-heading" id="heading-narrow"><a href="http://localhost:6060/">Go</a></div>
+<a href="index.html#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="http://localhost:6060/search">
+<div id="menu">
+<a href="http://localhost:6060/doc/">Documents</a>
+<a href="http://localhost:6060/pkg/">Packages</a>
+<a href="http://localhost:6060/project/">The Project</a>
+<a href="http://localhost:6060/help/">Help</a>
+
+<a href="http://localhost:6060/blog/">Blog</a>
+
+
+<a id="playgroundButton" href="http://play.golang.org/" title="Show Go Playground">Play</a>
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+<div id="playground" class="play">
+	<div class="input"><textarea class="code" spellcheck="false">package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}</textarea></div>
+	<div class="output"></div>
+	<div class="buttons">
+		<a class="run" title="Run this code [shift-enter]">Run</a>
+		<a class="fmt" title="Format this code">Format</a>
+		
+		<a class="share" title="Share this code">Share</a>
+		
+	</div>
+</div>
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package x
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="index.html#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="index.html#pkg-index" class="indexLink">Index</a></dd>
+			
+				<dd><a href="index.html#pkg-examples" class="examplesLink">Examples</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package transport/x shows proposed modifications to package transport.
+</p>
+<p>
+They are here for discussion purposes, anything that we can agree on
+should be merged into the transport package and may involve
+incompatible changes.
+</p>
+<h3 id="hdr-Goals">Goals</h3>
+<p>
+Support for intermediaries that receive and send events via different
+transports, for example adapters, importers, brokers or channels.
+</p>
+<p>
+Support for reliable messaging qualities of service between different
+transports
+</p>
+<p>
+Provide the option of blocking Receive vs. callback SetReceiver.
+There are many situations where the blocking style is easier to
+implement and work with.
+</p>
+<h3 id="hdr-Overview_of_changes">Overview of changes</h3>
+<p>
+Sender/Receiver interfaces that can be implemented and used separately.
+Implementations can easily be combined into a single Transport that does both
+(e.g. for use by the client package)
+</p>
+<p>
+Message.Event() allows conversion from any message to the common
+in-memory Event representation, without knowing its transport/codec of
+origin. Explict use of Codecs is not required. (Transports should
+still provide a way for users to build/interpret transport messages if they
+want to bypass our transport APIs, but that&#39;s a separate issue.)
+</p>
+<p>
+Message.Structured() optionally allows a structured encoding to be
+forwarded without decoding. This is a special case, but an important
+one.
+</p>
+<p>
+Reliable messaging: Transport implementation must provide the actual
+reliability (resends, storing delivery state etc.) the Message
+interface allows hand-over responsibility between a Receiver and a
+Sender on different transports so we don&#39;t create a &#34;hole&#34; in the
+guarantee. The overall guarantee is the weaker of the sender and
+receiver.
+</p>
+<p>
+No reliability examples yet, wanted to get some feedback before going further.
+</p>
+
+				<div id="example__implementing" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example (Implementing)</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example (Implementing)</span></p>
+		<p>Example of implementing a transport including a simple message type,
+and a transport sender and receiver.
+</p>
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code" spellcheck="false">package main
+
+import (
+	&#34;context&#34;
+	&#34;encoding/json&#34;
+	&#34;io&#34;
+
+	&#34;github.com/cloudevents/sdk-go/pkg/cloudevents&#34;
+	&#34;github.com/cloudevents/sdk-go/pkg/cloudevents/transport&#34;
+	&#34;github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x&#34;
+)
+
+// ExMessage is a json.RawMessage, which is just a byte slice
+// containing a JSON encoded event.
+type ExMessage struct{ json.RawMessage }
+
+func (m ExMessage) Structured() (string, []byte) {
+	return cloudevents.ApplicationCloudEventsJSON, []byte(m.RawMessage)
+}
+
+func (m ExMessage) Event() (e cloudevents.Event, err error) {
+	err = json.Unmarshal(m.RawMessage, &amp;e)
+	return e, err
+}
+
+func (m ExMessage) Finish(error) {}
+
+// ExSender sends by writing JSON encoded events to an io.Writer
+type ExSender struct{ *json.Encoder }
+
+func NewExSender(w io.Writer) ExSender { return ExSender{json.NewEncoder(w)} }
+
+func (s ExSender) Send(ctx context.Context, m x.Message) error {
+	if t, b := m.Structured(); t != &#34;&#34; {
+		// Fast case: if the Message is already structured JSON we can
+		// send it directly, no need to decode and re-encode. Encoding a
+		// json.RawMessage to a json.Encoder() is just a byte-buffer copy.
+		return s.Encode(json.RawMessage(b))
+	} else {
+		// Some other message encoding. Decode as a generic cloudevents.Event
+		// and then re-encode as JSON
+		if e, err := m.Event(); err != nil {
+			return err
+		} else if err := s.Encode(e); err != nil {
+			return err
+		}
+		return nil
+	}
+}
+
+// ExReceiver receives by reading JSON encoded events from an io.Reader
+type ExReceiver struct{ *json.Decoder }
+
+func NewExReceiver(r io.Reader) ExReceiver { return ExReceiver{json.NewDecoder(r)} }
+
+func (sr ExReceiver) Receive(context.Context) (x.Message, error) {
+	var m ExMessage
+	err := sr.Decode(&amp;m) // This is just a byte copy since m is a json.RawMessage
+	return m, err
+}
+
+// NewExTransport returns a transport.Transport which is implemented by
+// an ExSender and an ExReceiver
+func NewExTransport(r io.Reader, w io.Writer) transport.Transport {
+	return x.NewTransport(NewExSender(w), NewExReceiver(r))
+}
+
+// Example of implementing a transport including a simple message type,
+// and a transport sender and receiver.
+func main() {}
+</textarea></div>
+				<div class="output"><pre></pre></div>
+				<div class="buttons">
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					
+					<a class="share" title="Share this code">Share</a>
+					
+				</div>
+			</div>
+		
+	</div>
+</div>
+<div id="example__using" class="toggle">
+	<div class="collapsed">
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example (Using)</span></p>
+	</div>
+	<div class="expanded">
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example (Using)</span></p>
+		<p>This example shows how to use a transport in sender, receiver,
+and intermediary processes.
+
+The sender and receiver use the client.Client API to send and
+receive messages.  the transport.  Only the intermediary example
+actually uses the transport APIs for efficiency and reliability in
+forwarding events.
+</p>
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code" spellcheck="false">package main
+
+import (
+	&#34;context&#34;
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;strconv&#34;
+
+	&#34;github.com/cloudevents/sdk-go/pkg/cloudevents&#34;
+	&#34;github.com/cloudevents/sdk-go/pkg/cloudevents/client&#34;
+)
+
+var count = 3 // Example ends after this many events.
+
+// The sender uses the cloudevents.Client API, not the transport APIs directly.
+func runSender(w io.Writer) error {
+	c, err := client.New(NewExTransport(nil, w))
+	if err != nil {
+		return err
+	}
+	for i := 0; i &lt; count; i++ {
+		e := cloudevents.New()
+		e.SetType(&#34;example.com/event&#34;)
+		e.SetSource(&#34;example.com/source&#34;)
+		e.SetID(strconv.Itoa(i))
+		if err := e.SetData(fmt.Sprintf(&#34;hello %d&#34;, i)); err != nil {
+			return err
+		}
+		if _, err := c.Send(context.TODO(), e); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// The receiver uses the cloudevents.Client API, not the transport APIs directly.
+func runReceiver(r io.Reader) error {
+	i := 0
+	process := func(e cloudevents.Event) error {
+		fmt.Printf(&#34;%s\n&#34;, e)
+		i++
+		if i == count {
+			return io.EOF
+		}
+		return nil
+	}
+	if c, err := client.New(NewExTransport(r, nil)); err != nil {
+		return err
+	} else {
+		return c.StartReceiver(context.TODO(), process)
+	}
+}
+
+// The intermediary receives events and forwards them to another
+// process using ExReceiver and ExSender directly.
+//
+// By forwarding a transport.Message instead of a cloudevents.Event,
+// it allows the transports to avoid un-necessary decoding of
+// structured events, and to exchange delivery status between reliable
+// transports. Even transports using different protocols can ensure
+// reliable delivery.
+//
+func runIntermediary(r io.Reader, w io.WriteCloser) error {
+	for {
+		receiver := NewExReceiver(r)
+		sender := NewExSender(w)
+		for i := 0; i &lt; count; i++ {
+			if m, err := receiver.Receive(context.TODO()); err != nil {
+				return err
+			} else if err := sender.Send(context.TODO(), m); err != nil {
+				return err
+			}
+		}
+	}
+}
+
+// This example shows how to use a transport in sender, receiver,
+// and intermediary processes.
+//
+// The sender and receiver use the client.Client API to send and
+// receive messages.  the transport.  Only the intermediary example
+// actually uses the transport APIs for efficiency and reliability in
+// forwarding events.
+func main() {
+	r1, w1 := io.Pipe() // The sender-to-intermediary pipe
+	r2, w2 := io.Pipe() // The intermediary-to-receiver pipe
+
+	done := make(chan error)
+	go func() { done &lt;- runReceiver(r2) }()
+	go func() { done &lt;- runIntermediary(r1, w2) }()
+	go func() { done &lt;- runSender(w1) }()
+	for i := 0; i &lt; 2; i++ {
+		if err := &lt;-done; err != nil &amp;&amp; err != io.EOF {
+			fmt.Println(err)
+		}
+	}
+
+}
+</textarea></div>
+				<div class="output"><pre>Validation: valid
+Context Attributes,
+  specversion: 0.2
+  type: example.com/event
+  source: example.com/source
+  id: 0
+  contenttype: application/json
+Data,
+  &#34;hello 0&#34;
+
+Validation: valid
+Context Attributes,
+  specversion: 0.2
+  type: example.com/event
+  source: example.com/source
+  id: 1
+  contenttype: application/json
+Data,
+  &#34;hello 1&#34;
+
+Validation: valid
+Context Attributes,
+  specversion: 0.2
+  type: example.com/event
+  source: example.com/source
+  id: 2
+  contenttype: application/json
+Data,
+  &#34;hello 2&#34;
+</pre></div>
+				<div class="buttons">
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					
+					<a class="share" title="Share this code">Share</a>
+					
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="index.html#EventMessage">type EventMessage</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EventMessage.Event">func (m EventMessage) Event() (cloudevents.Event, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EventMessage.Finish">func (_ EventMessage) Finish(error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#EventMessage.Structured">func (_ EventMessage) Structured() (string, []byte)</a></dd>
+				
+			
+				
+				<dd><a href="index.html#ExactlyOnceMessage">type ExactlyOnceMessage</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Message">type Message</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Receiver">type Receiver</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Sender">type Sender</a></dd>
+				
+				
+			
+				
+				<dd><a href="index.html#Transport">type Transport</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#NewTransport">func NewTransport(s Sender, r Receiver) *Transport</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Transport.HasConverter">func (t *Transport) HasConverter() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Transport.Send">func (t *Transport) Send(ctx context.Context, e cloudevents.Event) (*cloudevents.Event, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Transport.SetConverter">func (t *Transport) SetConverter(transport.Converter)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Transport.SetReceiver">func (t *Transport) SetReceiver(r transport.Receiver)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="index.html#Transport.StartReceiver">func (t *Transport) StartReceiver(ctx context.Context) error</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+		<div id="pkg-examples">
+			<h3>Examples</h3>
+			<div class="js-expandAll expandAll collapsed">(Expand All)</div>
+			<dl>
+			
+			<dd><a class="exampleLink" href="index.html#example__implementing">Package (Implementing)</a></dd>
+			
+			<dd><a class="exampleLink" href="index.html#example__using">Package (Using)</a></dd>
+			
+			</dl>
+		</div>
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/doc.go">doc.go</a>
+			
+				<a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go">message.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="EventMessage">type <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=2389:2424#L61">EventMessage</a>
+				<a class="permalink" href="index.html#EventMessage">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+EventMessage wraps a local cloudevents.Event as a Message.
+</p>
+
+			<pre>type EventMessage <a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/">cloudevents</a>.<a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/#Event">Event</a></pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="EventMessage.Event">func (EventMessage) <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=2426:2482#L63">Event</a>
+					<a class="permalink" href="index.html#EventMessage.Event">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (m <a href="index.html#EventMessage">EventMessage</a>) Event() (<a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/">cloudevents</a>.<a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/#Event">Event</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EventMessage.Finish">func (EventMessage) <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=2596:2631#L65">Finish</a>
+					<a class="permalink" href="index.html#EventMessage.Finish">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (_ <a href="index.html#EventMessage">EventMessage</a>) Finish(<a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="EventMessage.Structured">func (EventMessage) <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=2520:2571#L64">Structured</a>
+					<a class="permalink" href="index.html#EventMessage.Structured">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (_ <a href="index.html#EventMessage">EventMessage</a>) Structured() (<a href="http://localhost:6060/pkg/builtin/#string">string</a>, []<a href="http://localhost:6060/pkg/builtin/#byte">byte</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ExactlyOnceMessage">type <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=1758:2325#L44">ExactlyOnceMessage</a>
+				<a class="permalink" href="index.html#ExactlyOnceMessage">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+ExactlyOnceMessage is implemented by incoming transport messages
+that support QoS 2.  Only transports that support QoS 2 need to
+implement or use this interface.
+</p>
+
+			<pre>type ExactlyOnceMessage interface {
+    <a href="index.html#Message">Message</a>
+
+    <span class="comment">// Received is called by a Sender when it gets acknowledgment of receipt</span>
+    <span class="comment">// (e.g. AMQP ACCEPT or MQTT PUBREC)</span>
+    <span class="comment">//</span>
+    <span class="comment">// The sender passes a finish() function that the original receiver</span>
+    <span class="comment">// must call when it get&#39;s the ack-of-the-ack (e.g. AMQP SETTLE, MQTT</span>
+    <span class="comment">// PUBCOMP)</span>
+    <span class="comment">//</span>
+    <span class="comment">// If sending fails, the sender must call Finish(err) with a non-nil error</span>
+    <span class="comment">// instead of Ack. ExactlyOnceMessage implementations must also be prepared to</span>
+    <span class="comment">// handle Finish(nil) if the sender does not support QoS 3.</span>
+    Received(finish func(<a href="http://localhost:6060/pkg/builtin/#error">error</a>))
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Message">type <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=718:1585#L16">Message</a>
+				<a class="permalink" href="index.html#Message">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Message is the interface to a transport-specific message containing an event.
+</p>
+<p>
+There are 3 reliable qualities of service for messages:
+</p>
+<p>
+0/at-most-once/unreliable: messages can be dropped silently.
+</p>
+<p>
+1/at-least-once: messages are not dropped without signaling an error
+at the sender but may be duplicated.
+</p>
+<p>
+2/exactly-once: messages are never dropped (without error) or
+duplicated, as long as both ends maintain some transport-specific
+state.
+</p>
+<p>
+The Message interface supports QoS 0 and 1, the ExactlyOnceMessage inteface
+supports QoS 2
+</p>
+
+			<pre>type Message interface {
+    <span class="comment">// Event decodes and returns the contained Event.</span>
+    Event() (<a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/">cloudevents</a>.<a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/#Event">Event</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+
+    <span class="comment">// Structured optionally returns an encoded structured event if it</span>
+    <span class="comment">// is efficient to do so, or (&#34;&#34;, nil) if not.</span>
+    <span class="comment">//</span>
+    <span class="comment">// Enables Senders to optimize the case where structured events are</span>
+    <span class="comment">// passed from transport to transport without being decoded and</span>
+    <span class="comment">// re-encoded.</span>
+    <span class="comment">//</span>
+    <span class="comment">// Transport Message and Sender implementations are not required to</span>
+    <span class="comment">// implement the optimization, they can ignore it.</span>
+    Structured() (encodingMediaType <a href="http://localhost:6060/pkg/builtin/#string">string</a>, encodedEvent []<a href="http://localhost:6060/pkg/builtin/#byte">byte</a>)
+
+    <span class="comment">// Finish *must* be called when message from a Receiver can be</span>
+    <span class="comment">// forgotten by the receiver.</span>
+    <span class="comment">//</span>
+    <span class="comment">// A QoS 1 sender forwarding messages should not call Finish()</span>
+    <span class="comment">// until it gets an acknowledgment of receipt.</span>
+    <span class="comment">//</span>
+    <span class="comment">// A non-nil error indicates an error in sending or processing.</span>
+    Finish(<a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Receiver">type <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=2776:2850#L70">Receiver</a>
+				<a class="permalink" href="index.html#Receiver">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Receiver is the receiving half of a transport.
+</p>
+
+			<pre>type Receiver interface {
+    Receive(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>) (<a href="index.html#Message">Message</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Sender">type <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=2898:2967#L75">Sender</a>
+				<a class="permalink" href="index.html#Sender">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Sender is the sending half of a transport.
+</p>
+
+			<pre>type Sender interface {
+    Send(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, m <a href="index.html#Message">Message</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a>
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Transport">type <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=3059:3149#L81">Transport</a>
+				<a class="permalink" href="index.html#Transport">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Transport implements the transport.Transport interface using a
+Sender and Receiver.
+</p>
+
+			<pre>type Transport struct {
+<span id="Transport.Sender"></span>    Sender   <a href="index.html#Sender">Sender</a>
+<span id="Transport.Receiver"></span>    Receiver <a href="index.html#Receiver">Receiver</a>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewTransport">func <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=3235:3285#L89">NewTransport</a>
+					<a class="permalink" href="index.html#NewTransport">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewTransport(s <a href="index.html#Sender">Sender</a>, r <a href="index.html#Receiver">Receiver</a>) *<a href="index.html#Transport">Transport</a></pre>
+				
+				
+				
+			
+
+			
+				
+				<h3 id="Transport.HasConverter">func (*Transport) <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=4044:4083#L119">HasConverter</a>
+					<a class="permalink" href="index.html#Transport.HasConverter">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (t *<a href="index.html#Transport">Transport</a>) HasConverter() <a href="http://localhost:6060/pkg/builtin/#bool">bool</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Transport.Send">func (*Transport) <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=3334:3428#L93">Send</a>
+					<a class="permalink" href="index.html#Transport.Send">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (t *<a href="index.html#Transport">Transport</a>) Send(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>, e <a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/">cloudevents</a>.<a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/#Event">Event</a>) (*<a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/">cloudevents</a>.<a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/#Event">Event</a>, <a href="http://localhost:6060/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Transport.SetConverter">func (*Transport) <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=3903:3956#L115">SetConverter</a>
+					<a class="permalink" href="index.html#Transport.SetConverter">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (t *<a href="index.html#Transport">Transport</a>) SetConverter(<a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/">transport</a>.<a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/#Converter">Converter</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Transport.SetReceiver">func (*Transport) <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=3483:3536#L97">SetReceiver</a>
+					<a class="permalink" href="index.html#Transport.SetReceiver">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (t *<a href="index.html#Transport">Transport</a>) SetReceiver(r <a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/">transport</a>.<a href="http://localhost:6060/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/#Receiver">Receiver</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Transport.StartReceiver">func (*Transport) <a href="http://localhost:6060/src/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/message.go?s=3556:3616#L99">StartReceiver</a>
+					<a class="permalink" href="index.html#Transport.StartReceiver">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (t *<a href="index.html#Transport">Transport</a>) StartReceiver(ctx <a href="http://localhost:6060/pkg/context/">context</a>.<a href="http://localhost:6060/pkg/context/#Context">Context</a>) <a href="http://localhost:6060/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.12.5.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="http://localhost:6060/LICENSE">BSD license</a>.<br>
+<a href="http://localhost:6060/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+</body>
+</html>
+

@@ -13,6 +13,9 @@ sysprof-cli -c 'odo list' odo.syscap
 sysprof odo.syscap
 ....
 
+`wireshark` (Fedora: `dnf install wireshark`) shows you what's happening on the wire.
+Start it and run your test code.
+
 == Profile a Go command
 
 This https://blog.golang.org/profiling-go-programs[Go blog] outlines the profiling tools, I use https://godoc.org/github.com/pkg/profile[this library] as a simplifying wrapper. Modify your `main()` like this:
