@@ -1,7 +1,29 @@
 = Alan's stuff =
 :nofooter:
 
+== Knative eventing
+
+[.lead]
+*Goal*: Provide a simple path to integrate "foreign" transport code (AMQP, MQTT, other...), with _little or no reference to knative APIs or concepts_, into a fully-featured knative importer. Separate concerns so that foreign and knative-specific code can be independently maintained by the right people for each task.
+
+* Initial ssue: link:https://github.com/knative/eventing-contrib/issues/343[Eventing sources framework]
+* Initial proposal: link:knative/kntransport.pdf[Transports for knative eventing]
+
+Related links
+
+* link:https://github.com/knative/eventing/issues/1554[Importer spec]
+* link:https://github.com/knative/eventing/issues/1550[Discover of importers]
+* link:https://github.com/knative/pkg/blob/master/apis/duck/v1beta1/source_types.go[Duck type for source]
+
+=== Cloudevent transports
+
+Package
+link:https://godoc.org/github.com/cloudevents/sdk-go/pkg/cloudevents/transport[cloudevents/transport]
+provides an abstraction for replaceable transport implementations.
+
+Sender/Receiver proposal: link:godoc/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/index.html[documentation],  link:https://github.com/cloudevents/sdk-go/pull/164[pull request]
+
+== Cheat sheets
+
 * link:cheats/go_profile.html[Go profiling cheat sheet]
-* link:cheats/cloudevents.html[Cloud Events Cheat Sheet]
-* link:knative/kntransport.pdf[Easy Knative eventing sources]
-* link:godoc/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/index.html[Proposed cloudevent.transport changes]
+* link:cheats/cloudevents.html[Cloudevents Cheat Sheet]

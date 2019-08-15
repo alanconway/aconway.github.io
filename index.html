@@ -430,21 +430,65 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>Alan&#8217;s stuff</h1>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_knative_eventing"><a class="anchor" href="#_knative_eventing"></a>Knative eventing</h2>
+<div class="sectionbody">
+<div class="paragraph lead">
+<p><strong>Goal</strong>: Provide a simple path to integrate "foreign" transport code (AMQP, MQTT, other&#8230;&#8203;), with <em>little or no reference to knative APIs or concepts</em>, into a fully-featured knative importer. Separate concerns so that foreign and knative-specific code can be independently maintained by the right people for each task.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Initial ssue: <a href="https://github.com/knative/eventing-contrib/issues/343">Eventing sources framework</a></p>
+</li>
+<li>
+<p>Initial proposal: <a href="knative/kntransport.pdf">Transports for knative eventing</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Related links</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/knative/eventing/issues/1554">Importer spec</a></p>
+</li>
+<li>
+<p><a href="https://github.com/knative/eventing/issues/1550">Discover of importers</a></p>
+</li>
+<li>
+<p><a href="https://github.com/knative/pkg/blob/master/apis/duck/v1beta1/source_types.go">Duck type for source</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_cloudevent_transports"><a class="anchor" href="#_cloudevent_transports"></a>Cloudevent transports</h3>
+<div class="paragraph">
+<p>Package
+<a href="https://godoc.org/github.com/cloudevents/sdk-go/pkg/cloudevents/transport">cloudevents/transport</a>
+provides an abstraction for replaceable transport implementations.</p>
+</div>
+<div class="paragraph">
+<p>Sender/Receiver proposal: <a href="godoc/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/index.html">documentation</a>,  <a href="https://github.com/cloudevents/sdk-go/pull/164">pull request</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cheat_sheets"><a class="anchor" href="#_cheat_sheets"></a>Cheat sheets</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
 <p><a href="cheats/go_profile.html">Go profiling cheat sheet</a></p>
 </li>
 <li>
-<p><a href="cheats/cloudevents.html">Cloud Events Cheat Sheet</a></p>
-</li>
-<li>
-<p><a href="knative/kntransport.pdf">Easy Knative eventing sources</a></p>
-</li>
-<li>
-<p><a href="godoc/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/index.html">Proposed cloudevent.transport changes</a></p>
+<p><a href="cheats/cloudevents.html">Cloudevents Cheat Sheet</a></p>
 </li>
 </ul>
+</div>
+</div>
 </div>
 </div>
 </body>
