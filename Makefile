@@ -11,5 +11,14 @@ clean:
 
 .PHONY: force
 
-godoc: force
-	godoc-grab github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x
+
+PKGS := github.com/cloudevents/sdk-go/pkg/binding
+URLS := $(patsubst %,http://localhost:6060/pkg/%/,$(PKGS))
+godoc: all FORCE
+	wget -v --no-host-directories -e robots=off --recursive --level=5 --convert-links --no-parent --page-requisites --directory-prefix godoc $(URLS)
+	xdg-open file://./github.com/cloudevents/sdk-go/pkg/binding/index.html
+
+
+FORCE:
+.PHONY: FORCE
+

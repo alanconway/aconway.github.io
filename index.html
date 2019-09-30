@@ -431,6 +431,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
+<h2 id="_cloudevents_sdk_go"><a class="anchor" href="#_cloudevents_sdk_go"></a>CloudEvents sdk-go</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Package <a href="godoc/pkg/github.com/cloudevents/sdk-go/pkg/binding">binding</a> is an API for protocol bindings.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>See the <a href="github/pkg/cloudevents/sdk-go/issues/180">Pull Request</a> for code.</p>
+</li>
+<li>
+<p>There is an <a href="godoc/pkg/github.com/cloudevents/sdk-go/pkg/bindings/amqp">AMQP binding</a> example.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Goal is to make this the standard for Go-based knative eventing sources and other
+applications, to enable plug-and-play exchange of protocols.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_knative_eventing"><a class="anchor" href="#_knative_eventing"></a>Knative eventing</h2>
 <div class="sectionbody">
 <div class="paragraph lead">
@@ -461,17 +483,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><a href="https://github.com/knative/pkg/blob/master/apis/duck/v1beta1/source_types.go">Duck type for source</a></p>
 </li>
 </ul>
-</div>
-<div class="sect2">
-<h3 id="_cloudevent_transports"><a class="anchor" href="#_cloudevent_transports"></a>Cloudevent transports</h3>
-<div class="paragraph">
-<p>Package
-<a href="https://godoc.org/github.com/cloudevents/sdk-go/pkg/cloudevents/transport">cloudevents/transport</a>
-provides an abstraction for replaceable transport implementations.</p>
-</div>
-<div class="paragraph">
-<p>Sender/Receiver proposal: <a href="godoc/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/index.html">documentation</a>,  <a href="https://github.com/cloudevents/sdk-go/pull/164">pull request</a></p>
-</div>
 </div>
 </div>
 </div>

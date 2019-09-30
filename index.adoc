@@ -1,10 +1,26 @@
 = Alan's stuff =
-:nofooter:
 
-== Knative eventing
+== CloudEvents sdk-go
+
+_Last update: 2019-09-30_
 
 [.lead]
-*Goal*: Provide a simple path to integrate "foreign" transport code (AMQP, MQTT, other...), with _little or no reference to knative APIs or concepts_, into a fully-featured knative importer. Separate concerns so that foreign and knative-specific code can be independently maintained by the right people for each task.
+*Goal*: Standard interface for Go-Based CloudEvents protocol bindings, for use
+ In Knative eventing sources and similar applications: enable plug-and-play
+ exchange protocol selection.
+
+Package link:godoc/pkg/github.com/cloudevents/sdk-go/pkg/binding[binding] is an API for protocol bindings.
+
+* See the link:github/pkg/cloudevents/sdk-go/issues/180[Pull Request] for code.
+* There is an link:godoc/pkg/github.com/cloudevents/sdk-go/pkg/bindings/amqp[AMQP binding] example.
+
+
+== Knative Eventing "Easy Sources"
+
+
+*Goal*: Provide a simple path to integrate "foreign" protocol (AMQP, MQTT, other...), with _little or no knowledge of knative APIs or concepts_, into a fully-featured knative eventing source. Separate concerns so that foreign and knative-specific code can be independently maintained by the right people for each task.
+
+_As of 2019-09-30 ongoing but refs below are a little outdated_
 
 * Initial ssue: link:https://github.com/knative/eventing-contrib/issues/343[Eventing sources framework]
 * Initial proposal: link:knative/kntransport.pdf[Transports for knative eventing]
@@ -14,14 +30,6 @@ Related links
 * link:https://github.com/knative/eventing/issues/1554[Importer spec]
 * link:https://github.com/knative/eventing/issues/1550[Discover of importers]
 * link:https://github.com/knative/pkg/blob/master/apis/duck/v1beta1/source_types.go[Duck type for source]
-
-=== Cloudevent transports
-
-Package
-link:https://godoc.org/github.com/cloudevents/sdk-go/pkg/cloudevents/transport[cloudevents/transport]
-provides an abstraction for replaceable transport implementations.
-
-Sender/Receiver proposal: link:godoc/pkg/github.com/cloudevents/sdk-go/pkg/cloudevents/transport/x/index.html[documentation],  link:https://github.com/cloudevents/sdk-go/pull/164[pull request]
 
 == Cheat sheets
 
